@@ -1,0 +1,20 @@
+on:
+  - push
+  - pull_request
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.11.0
+
+      - name: Install 
+        run:
+          pnpm install
+
+      - lint: Lint
+        run:
+          pnpm lintCheck

@@ -1,3 +1,3 @@
-export const openExternalLink = (url: string) => {
-    window.open(url, "_blank");
+export const openExternalLink = (url: string): void => {
+  window.open(url, '_blank')
 }

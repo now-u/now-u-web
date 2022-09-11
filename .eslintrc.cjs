@@ -4,6 +4,7 @@ module.exports = {
     es2021: true
   },
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
     'standard-with-typescript'
   ],
@@ -18,5 +19,8 @@ module.exports = {
     'react'
   ],
   rules: {
+  },
+  settings: {
+    react: { version: '18.2.0' }
   }
 }

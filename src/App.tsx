@@ -7,17 +7,19 @@ import {
 import { Home } from '@/pages/Home';
 import { Route as PageRoute } from "@/utils/constants"
 import { About } from '@/pages/About';
-import { Header } from "./components/Header";
+import { Navbar } from "./components/Navbar";
+import { CausesPage } from "./pages/causes";
 
 export default function App() {
   return (
     <BrowserRouter>
       <div>
-        <Header />
+        <Navbar/>
 
         <Routes>
           <Route path={PageRoute.HOME} element={<Home />} />
           <Route path={PageRoute.ABOUT} element={<About />} />
+          <Route path={PageRoute.CAUSES} element={<CausesPage/>} />
         </Routes>
 
       </div>

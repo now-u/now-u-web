@@ -19,7 +19,7 @@ export const navigation: NamedRoute[] = [
   { text: 'Get In Touch', to: Route.HOME },
 ]
 
-const HeaderLink = (props: NamedRoute & { isMobile?: boolean } ): JSX.Element => {
+const NavbarLink = (props: NamedRoute & { isMobile?: boolean } ): JSX.Element => {
   const { text, to, isMobile } = props;
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
@@ -38,7 +38,7 @@ const HeaderLink = (props: NamedRoute & { isMobile?: boolean } ): JSX.Element =>
   </Link>
 }
 
-export const Header = (): JSX.Element => {
+export const Navbar = (): JSX.Element => {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -79,7 +79,7 @@ export const Header = (): JSX.Element => {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <HeaderLink {...item} />
+                    <NavbarLink {...item} />
                   ))}
                 </div>
               </div>
@@ -89,7 +89,7 @@ export const Header = (): JSX.Element => {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
-                <HeaderLink isMobile={true} {...item} />
+                <NavbarLink isMobile={true} {...item} />
               ))}
             </div>
           </Disclosure.Panel>

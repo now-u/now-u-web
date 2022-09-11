@@ -28,8 +28,8 @@ const NavbarLink = (props: NamedRoute & { isMobile?: boolean } ): JSX.Element =>
     key={text}
     to={to}
     className={classNames(
-      isActive ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-      'px-3 py-2 rounded-md font-medium',
+      isActive ? 'underline underline-offset-2' : 'hover:bg-blue hover:text-white',
+      'px-3 py-2 text-black rounded-md font-medium',
       isMobile ? 'block text-base' : 'text-sm'
     )}
     aria-current={isActive ? 'page' : undefined}
@@ -40,7 +40,7 @@ const NavbarLink = (props: NamedRoute & { isMobile?: boolean } ): JSX.Element =>
 
 export const Navbar = (): JSX.Element => {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

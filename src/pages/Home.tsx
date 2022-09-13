@@ -12,7 +12,7 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
-const icons = [
+export const icons = [
   {
     icon: faInstagram,
     title: "Jadon Smith",

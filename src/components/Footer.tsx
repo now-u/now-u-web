@@ -45,17 +45,21 @@ const socialMediaLinks: Array<{ icon: IconDefinition; link: string }> = [
 export const Footer = (): JSX.Element => {
   return (
     <div className="bg-cream w-full px-5 py-5">
-      <img className="hidden h-5 w-auto lg:block" src={NowULogo} alt="now-u" />
-      <div className="flex justify-between">
-        <div className="divide-x-2 divide-current">
+      <img
+        className="mx-auto md:mx-0 h-5 w-auto mb-5"
+        src={NowULogo}
+        alt="now-u"
+      />
+      <div className="flex flex-col">
+        <div className="grid grid-cols-2 grid-rows-3 text-center mb-5 md:mb-0 md:flex md:divide-x-2 md:divide-current">
           {navigation.map((route) => (
-            <Link className="px-5 first:pl-0" key={route.text} to={route.to}>
+            <Link className="px-5 md:first:pl-0" key={route.text} to={route.to}>
               {" "}
               {route.text}{" "}
             </Link>
           ))}
         </div>
-        <div className="flex space-x-8">
+        <div className="flex justify-center md:justify-end mb-3 space-x-8">
           {socialMediaLinks.map((socialMedia) => {
             return (
               <FontAwesomeIcon
@@ -68,9 +72,8 @@ export const Footer = (): JSX.Element => {
           })}
         </div>
       </div>
-      <div className="flex justify-between">
-        <p>Registered charity number: 000000</p>
-        <div className="flex flex-row pt-4">
+      <div className="flex flex-col text-center md:text-start">
+        <div className="flex justify-center md:justify-end pt-4 mb-5 md:mb-0">
           {[GooglePlayBadgeType, AppleStoreBadgeType].map((type) => {
             return (
               <div className="w-20 pl-1" key={type.link}>
@@ -80,6 +83,7 @@ export const Footer = (): JSX.Element => {
             );
           })}
         </div>
+        <p className="text-slate-500">Registered charity number: 000000</p>
       </div>
     </div>
   );

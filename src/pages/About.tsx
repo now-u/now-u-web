@@ -11,7 +11,7 @@ import { IconRow, icons } from "@/components/IconRow";
 
 export const About = (): JSX.Element => {
   return (
-    <div>
+  <div>
       <PageHeader
         title="About Us"
         body={[

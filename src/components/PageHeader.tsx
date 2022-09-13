@@ -68,7 +68,7 @@ export const PageHeader = (props: TitleBodyButtonProps): JSX.Element => {
 
 export const PageSection = (props: ImageSectionHeaderProps): JSX.Element => {
   return (
-    <div className="flex flex-col md:flex-row place-content-around bg-cream place-items-center px-5 py-20">
+    <div className="flex flex-col lg:flex-row place-content-around bg-cream place-items-center px-0 sm:px-5 py-10">
       <TitleBodyButton
         title={props.title}
         body={props.body}
@@ -76,7 +76,7 @@ export const PageSection = (props: ImageSectionHeaderProps): JSX.Element => {
         buttonText={props.buttonText}
       />
       <img
-        className=" w-2/3 md:w-1/2 lg:w-1/3 p-10 xl:p-1"
+        className=" w-4/5 md:w-1/2 lg:w-1/3 p-10 xl:p-1"
         src={props.image}
         alt=""
       />

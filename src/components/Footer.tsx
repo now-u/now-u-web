@@ -20,7 +20,7 @@ import {
 
 const navigation: NamedRoute[] = [
   ...headerNavigation,
-  { text: "FAQ", to: Route.HOME },
+  { text: "FAQ", to: Route.FAQ },
 ];
 
 const socialMediaLinks: Array<{ icon: IconDefinition; link: string }> = [

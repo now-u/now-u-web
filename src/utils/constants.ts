@@ -2,6 +2,7 @@ export enum Route {
   HOME = '/',
   ABOUT = '/about',
   CAUSES = '/causes',
+  FAQ = '/FAQ',
 }
 
 export const APPLE_STORE_URL = 'https://apps.apple.com/us/app/now-u/id1516126639'

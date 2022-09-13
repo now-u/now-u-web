@@ -8,7 +8,7 @@ interface ButtonProps {
 export const Button = (props: ButtonProps): JSX.Element => {
   return (
     <button
-      className="bg-orange text-black font-bold mt-2 py-2 px-2 rounded-md"
+      className="bg-orange text-black font-bold my-2 py-2 px-2 rounded-md hover:drop-shadow-xl hover:-translate-y-[0.1rem] active:translate-y-[0.2rem] active:drop-shadow-md"
       onClick={props.onClick}
     >
       {props.buttonText}

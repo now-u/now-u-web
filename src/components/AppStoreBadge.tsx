@@ -25,7 +25,7 @@ export const AppStoreBadge = (props: {
   return (
     <div className="hover:cursor-pointer">
       <a onClick={() => openExternalLink(props.type.link)}>
-        <img src={props.type.asset} alt="app download from apple store" />
+        <img src={props.type.asset} alt="download app from apple store" />
       </a>
     </div>
   );

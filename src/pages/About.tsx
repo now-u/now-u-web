@@ -7,8 +7,7 @@ import {
 } from "@/components/PageHeader";
 import Elgars from "@/assets/images/elgars.png";
 import { CircularPortraitGrid } from "@/components/CircularPortraitGrid";
-import { IconRow } from "@/components/IconRow";
-import { icons } from "./Home";
+import { IconRow, icons } from "@/components/IconRow";
 
 export const About = (): JSX.Element => {
   return (

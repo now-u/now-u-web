@@ -5,6 +5,7 @@ export enum Route {
   BLOG = "/blog",
   GET_IN_TOUCH = "/get-in-touch",
   FAQ = "/FAQ",
+  PRESS = '/press'
 }
 
 export const APPLE_STORE_URL =

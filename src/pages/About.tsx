@@ -6,12 +6,13 @@ import {
   PageSection,
 } from "@/components/PageHeader";
 import Elgars from "@/assets/images/elgars.png";
-import { CircularPortraitGrid } from "@/components/CircularPortraitGrid";
-import { IconRow, icons } from "@/components/IconRow";
+import { TeamGrid } from "@/components/TeamGrid";
+import { IconRow } from "@/components/IconRow";
+import { icons } from "@/pages/Home";
 
 export const About = (): JSX.Element => {
   return (
-  <div>
+    <div>
       <PageHeader
         title="About Us"
         body={[
@@ -44,7 +45,7 @@ export const About = (): JSX.Element => {
           />
         </div>
         <div className="flex-1">
-          <CircularPortraitGrid />
+          <TeamGrid />
         </div>
       </div>
       <IconRow iconList={icons} />

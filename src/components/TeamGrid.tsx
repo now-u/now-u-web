@@ -34,7 +34,7 @@ const CircularPortraitTile = (props: {
   );
 };
 
-export const CircularPortraitGrid = (): JSX.Element => {
+export const TeamGrid = (): JSX.Element => {
   return (
     <div>
       <div className="hidden md:grid md:grid-rows-2 md:grid-cols-3 text-center">

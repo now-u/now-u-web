@@ -21,6 +21,7 @@ import {
 const navigation: NamedRoute[] = [
   ...headerNavigation,
   { text: "FAQ", to: Route.FAQ },
+  { text: "Press", to: Route.PRESS },
 ];
 
 const socialMediaLinks: Array<{ icon: IconDefinition; link: string }> = [
@@ -51,9 +52,13 @@ export const Footer = (): JSX.Element => {
         alt="now-u"
       />
       <div className="flex flex-col">
-        <div className="grid grid-cols-2 grid-rows-3 text-center mb-5 md:mb-0 md:flex md:divide-x-2 md:divide-current">
+        <div className="grid grid-cols-2 grid-rows-3 text-center mb-5 lg:mb-0 md:flex md:divide-x-2 md:divide-current">
           {navigation.map((route) => (
-            <Link className="px-5 md:first:pl-0" key={route.text} to={route.to}>
+            <Link
+              className="hover:underline px-5 md:first:pl-0"
+              key={route.text}
+              to={route.to}
+            >
               {" "}
               {route.text}{" "}
             </Link>
@@ -63,7 +68,7 @@ export const Footer = (): JSX.Element => {
           {socialMediaLinks.map((socialMedia) => {
             return (
               <FontAwesomeIcon
-                className="hover:cursor-pointer"
+                className="hover:cursor-pointer hover:text-orange"
                 size="2xl"
                 icon={socialMedia.icon}
                 key={socialMedia.link}
@@ -76,7 +81,7 @@ export const Footer = (): JSX.Element => {
         <div className="flex justify-center md:justify-end pt-4 mb-5 md:mb-0">
           {[GooglePlayBadgeType, AppleStoreBadgeType].map((type) => {
             return (
-              <div className="w-20 pl-1" key={type.link}>
+              <div className="w-32 pl-1" key={type.link}>
                 {" "}
                 <AppStoreBadge type={type} />{" "}
               </div>

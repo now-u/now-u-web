@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../components/Button";
 
-import { TitleBodyButton } from "@/components/PageHeader";
+import { SectionText } from "@/components/Header";
 import { PartnerGrid, partners } from "@/components/PartnerGrid";
 import { IconRow } from "@/components/IconRow";
 
@@ -37,12 +37,15 @@ export const Home = (): JSX.Element => {
   return (
     <div className="grid place-items-center">
       <IconRow iconList={icons} />
-      <TitleBodyButton
-        title="Meet our partners"
-        body={["Aenean interdum varius ultrices.", "Ut at egestas lorem."]}
-        buttonRequired={false}
-        buttonText=""
-      />
+      <div>
+        <SectionText
+          title="Meet The Team"
+          body={[
+            "Aenean interdum varius ultrices.",
+            "Aenean interdum varius ultrices. ",
+          ]}
+        />
+      </div>
       <PartnerGrid partnersList={partners} />
       <Button buttonText="View All" onClick={() => {}} />
     </div>

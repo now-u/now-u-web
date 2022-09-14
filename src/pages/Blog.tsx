@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 import Elgars from "@/assets/images/elgars.png";
-import { PageHeader } from "@/components/PageHeader";
+import { HeaderSubtitle } from "@/components/Header";
 
 interface BlogTileProps {
   image: string;
@@ -76,14 +76,9 @@ export const Blog = (): JSX.Element => {
   const firstBlog = blogs[1];
   return (
     <div>
-      <PageHeader
+      <HeaderSubtitle
         title="Blog"
-        body={[
-          "Aenean interdum varius ultrices.",
-          "Aenean interdum varius ultrices.",
-        ]}
-        buttonRequired={false}
-        buttonText=""
+        subtitle="Aenean interdum varius ultrices."
       />
       <div className="mx-32 my-10">
         <BlogTile

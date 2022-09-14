@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TitleText } from "@/components/PageHeader";
+import { TitleText } from "@/components/Header";
 
 const AnswerTile = (props: { answer: string }): JSX.Element => {
   return (

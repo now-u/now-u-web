@@ -28,7 +28,7 @@ export const PartnerGrid = (props: {
 }): JSX.Element => {
   return (
     <div>
-      <div className="grid md:grid-cols-4 md:grid-rows-1 grid-cols-2 grid-rows-2 gap-4 justify-items-center lg:px-60 p-5">
+      <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 justify-items-center lg:px-60 p-5">
         {props.partnersList.slice(0, 4).map((partner) => (
           <PartnerTile image={partner.image} link={partner.link} />
         ))}

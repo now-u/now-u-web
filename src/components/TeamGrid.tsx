@@ -29,7 +29,7 @@ const CircularPortraitTile = (props: {
         alt="Circular Portrait Image"
       />
       <h2 className="font-bold">{props.portrait.name}</h2>
-      <h3>{props.portrait.role}</h3>
+      <h3 className="mb-3">{props.portrait.role}</h3>
     </div>
   );
 };
@@ -37,12 +37,12 @@ const CircularPortraitTile = (props: {
 export const TeamGrid = (): JSX.Element => {
   return (
     <div>
-      <div className="hidden md:grid md:grid-rows-2 md:grid-cols-3 text-center">
+      <div className="hidden lg:grid lg:grid-rows-2 lg:grid-cols-3 text-center">
         {portraits.map((portrait) => (
           <CircularPortraitTile portrait={portrait} />
         ))}
       </div>
-      <div className="md:hidden grid grid-rows-2 grid-cols-2 text-center">
+      <div className="lg:hidden grid grid-rows-2 grid-cols-2 text-center">
         {portraits.slice(0, 4).map((portrait) => (
           <CircularPortraitTile portrait={portrait} />
         ))}

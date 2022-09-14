@@ -1,4 +1,4 @@
-import { PageHeader } from "@/components/PageHeader";
+import { HeaderCauses } from "@/components/Header";
 import { Cause } from "@/models/cause";
 
 const mockCauses = [
@@ -41,20 +41,6 @@ const mockCauses = [
   },
 ];
 
-const CausesHeader = (): JSX.Element => {
-  return (
-    <PageHeader
-      buttonRequired={false}
-      buttonText=""
-      title="Our Causes"
-      body={[
-        "Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-        "Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-      ]}
-    />
-  );
-};
-
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   return (
     <div className="max-w-sm bg-cream rounded-lg h-full">
@@ -92,9 +78,14 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
 
 export const CausesPage = (): JSX.Element => {
   return (
-    <>
-      <CausesHeader />
-
+    <div>
+      <HeaderCauses
+        title="Our Causes"
+        body={[
+          "Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          "Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+        ]}
+      />
       <div className="flex flex-col items-center space-y-1 py-20">
         <div className="grid grid-cols-2 gap-10 items-start">
           {mockCauses.map((cause) => (
@@ -102,6 +93,6 @@ export const CausesPage = (): JSX.Element => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };

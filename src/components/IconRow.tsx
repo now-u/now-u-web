@@ -2,10 +2,8 @@ import {} from "@fortawesome/free-brands-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { TitleText, SubTitleText } from "./PageHeader";
-import {
-  IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
+import { TitleText, SubTitleText } from "./Header";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 interface IconTileProps {
   icon: IconDefinition;
@@ -25,7 +23,7 @@ const IconTile = (props: IconTileProps): JSX.Element => {
 
 export const IconRow = (props: { iconList: IconTileProps[] }): JSX.Element => {
   return (
-    <div className="flex flex-col md:grid md:grid-cols-3 md:gap-x-20 lg:gap-x-44 justify-around my-10 px-5 lg:px-20 w-full">
+    <div className="flex flex-col md:grid md:grid-cols-3 md:gap-x-20 lg:gap-x-44 justify-around my-0 px-5 lg:px-20 lg:my-10 w-full">
       {props.iconList.map((icon) => (
         <IconTile
           icon={icon.icon}

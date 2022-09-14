@@ -8,7 +8,7 @@ import {
   faHandHoldingDollar,
   IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
-import { TitleText } from "@/components/PageHeader";
+import { TitleText } from "@/components/Header";
 
 interface ContactTileProps {
   icon: IconDefinition;

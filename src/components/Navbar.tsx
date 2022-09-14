@@ -67,17 +67,19 @@ export const Navbar = (): JSX.Element => {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   {/* Mobile Icon */}
-                  <img
-                    className="block h-8 w-auto lg:hidden"
-                    src={NowULogo}
-                    alt="now-u"
-                  />
-                  {/* Web Icon */}
-                  <img
-                    className="hidden h-5 w-auto lg:block"
-                    src={NowULogo}
-                    alt="now-u"
-                  />
+                  <Link to={Route.HOME}>
+                    <img
+                      className="block h-8 w-auto lg:hidden"
+                      src={NowULogo}
+                      alt="now-u"
+                    />
+                    {/* Web Icon */}
+                    <img
+                      className="hidden h-5 w-auto lg:block"
+                      src={NowULogo}
+                      alt="now-u"
+                    />
+                  </Link>
                 </div>
               </div>
 

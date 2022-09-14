@@ -46,11 +46,13 @@ const socialMediaLinks: Array<{ icon: IconDefinition; link: string }> = [
 export const Footer = (): JSX.Element => {
   return (
     <div className="bg-cream w-full px-5 py-5">
-      <img
-        className="mx-auto md:mx-0 h-5 w-auto mb-5"
-        src={NowULogo}
-        alt="now-u"
-      />
+      <Link to={Route.HOME}>
+        <img
+          className="mx-auto md:mx-0 h-5 w-auto mb-5"
+          src={NowULogo}
+          alt="now-u"
+        />
+      </Link>
       <div className="flex flex-col">
         <div className="grid grid-cols-2 grid-rows-3 text-center mb-5 lg:mb-0 md:flex md:divide-x-2 md:divide-current">
           {navigation.map((route) => (
@@ -67,12 +69,14 @@ export const Footer = (): JSX.Element => {
         <div className="flex justify-center md:justify-end mb-3 space-x-8">
           {socialMediaLinks.map((socialMedia) => {
             return (
-              <FontAwesomeIcon
-                className="hover:cursor-pointer hover:text-orange"
-                size="2xl"
-                icon={socialMedia.icon}
-                key={socialMedia.link}
-              />
+              <a href={socialMedia.link} target="_blank">
+                {" "}
+                <FontAwesomeIcon
+                  className="hover:cursor-pointer hover:text-orange"
+                  size="2xl"
+                  icon={socialMedia.icon}
+                />
+              </a>
             );
           })}
         </div>

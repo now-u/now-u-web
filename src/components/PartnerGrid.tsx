@@ -20,7 +20,9 @@ export const partners = [
 ];
 
 const PartnerTile = (props: PartnerTileProps): JSX.Element => {
-  return <img src={props.image} alt="" className="wmax" />;
+  return (
+    <img src={props.image} alt="" className="h-44 object-cover object-top" />
+  );
 };
 
 export const PartnerGrid = (props: {
@@ -28,12 +30,12 @@ export const PartnerGrid = (props: {
 }): JSX.Element => {
   return (
     <div>
-      <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 justify-items-center lg:px-60 p-5">
+      <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4 justify-items-center xl:px-60 p-5">
         {props.partnersList.slice(0, 4).map((partner) => (
           <PartnerTile image={partner.image} link={partner.link} />
         ))}
       </div>
-      <div className="hidden md:grid md:grid-cols-4 md:grid-rows-1 gap-4 justify-items-center lg:px-60 p-5">
+      <div className="hidden md:grid md:grid-cols-4 md:grid-rows-1 gap-4 justify-items-center xl:px-60 p-5">
         {props.partnersList.slice(4, 8).map((partner) => (
           <PartnerTile image={partner.image} link={partner.link} />
         ))}

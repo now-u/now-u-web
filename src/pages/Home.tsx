@@ -39,7 +39,7 @@ export const Home = (): JSX.Element => {
       <IconRow iconList={icons} />
       <div>
         <SectionText
-          title="Meet The Team"
+          title="Meet The Partners"
           body={[
             "Aenean interdum varius ultrices.",
             "Aenean interdum varius ultrices. ",

@@ -5,6 +5,7 @@ import { faClock, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 import Elgars from "@/assets/images/elgars.png";
 import { HeaderSubtitle } from "@/components/Header";
+import { Newsletter } from "@/components/Newsletter";
 
 interface BlogTileProps {
   image: string;

@@ -1,4 +1,5 @@
 import { HeaderCauses } from "@/components/Header";
+import { Newsletter } from "@/components/Newsletter";
 import { Cause } from "@/models/cause";
 
 const mockCauses = [
@@ -43,7 +44,7 @@ const mockCauses = [
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   return (
-    <div className="max-w-sm bg-cream rounded-lg h-full">
+    <div className="max-w-sm bg-cream rounded-lg h-full ">
       <a href="#">
         <img
           className="rounded-t-lg h-60 w-full object-cover"
@@ -78,7 +79,7 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
 
 export const CausesPage = (): JSX.Element => {
   return (
-    <div>
+    <div className="grid place-items-center">
       <HeaderCauses
         title="Our Causes"
         body={[
@@ -92,6 +93,9 @@ export const CausesPage = (): JSX.Element => {
             <CauseTile cause={cause} />
           ))}
         </div>
+      </div>
+      <div className="md:px-20">
+        <Newsletter />
       </div>
     </div>
   );

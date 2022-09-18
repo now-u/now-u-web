@@ -14,7 +14,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {
   AppleStoreBadgeType,
-  AppStoreBadge,
+  AppStoreBadges,
   GooglePlayBadgeType,
 } from "./AppStoreBadge";
 
@@ -83,14 +83,7 @@ export const Footer = (): JSX.Element => {
       </div>
       <div className="flex flex-col text-center md:text-start">
         <div className="flex justify-center md:justify-end pt-4 mb-5 md:mb-0">
-          {[GooglePlayBadgeType, AppleStoreBadgeType].map((type) => {
-            return (
-              <div className="w-32 pl-1" key={type.link}>
-                {" "}
-                <AppStoreBadge type={type} />{" "}
-              </div>
-            );
-          })}
+          <AppStoreBadges />
         </div>
         <p className="text-slate-500">Registered charity number: 000000</p>
       </div>

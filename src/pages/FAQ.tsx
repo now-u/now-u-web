@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TitleText } from "@/components/Header";
+import { TitleText } from "@/components/Text";
 
 const AnswerTile = (props: { answer: string }): JSX.Element => {
   return (
@@ -10,20 +10,23 @@ const AnswerTile = (props: { answer: string }): JSX.Element => {
   );
 };
 
-const QuestionTile = (props: {
+interface QuestionTileProps {
+  questionIndex: string;
+  currentQuestionIndex: string;
   question: string;
-  value: string;
   settingFunction: Function;
-}): JSX.Element => {
+}
+
+const QuestionTile = (props: QuestionTileProps): JSX.Element => {
   return (
     <button
-      value={props.value}
-      onClick={(event) =>
+      value={props.questionIndex}
+      onClick={(event) => {
         props.settingFunction(
           parseInt((event.target as HTMLButtonElement).value)
-        )
-      }
-      className="bg-cream h-32 justify-center hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm"
+        );
+      }}
+      className="bg-cream h-32 justify-center hover:-translate-y-1 hover:drop-shadow-lg active:translate-y-0 active:drop-shadow-none"
     >
       {props.question}
     </button>
@@ -53,20 +56,21 @@ export const FAQPage = (): JSX.Element => {
   const questions = questionAndAnswers.map((el) => el.Q);
   const answers = questionAndAnswers.map((el) => el.A);
 
-  const [QuestionIndex, setQuestionIndex] = React.useState(0);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
 
   return (
     <div>
       <div className="bg-gradient-to-b from-gradlight to-graddark grid place-items-center px-5 py-20">
         <TitleText text="FAQs" />
       </div>
-      <AnswerTile answer={answers[QuestionIndex]} />
+      <AnswerTile answer={answers[currentQuestionIndex]} />
       <div className="grid grid-rows-2 gap-4 grid-cols-5 mb-5">
         {numList.slice(1).map((num) => (
           <QuestionTile
-            value={num.toString()}
+            currentQuestionIndex={currentQuestionIndex.toString()}
+            questionIndex={num.toString()}
             question={questions[num]}
-            settingFunction={setQuestionIndex}
+            settingFunction={setCurrentQuestionIndex}
           />
         ))}
       </div>

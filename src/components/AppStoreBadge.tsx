@@ -19,14 +19,27 @@ export const AppleStoreBadgeType: AppStoreBadgeType = {
   link: APPLE_STORE_URL,
 };
 
-export const AppStoreBadge = (props: {
-  type: AppStoreBadgeType;
-}): JSX.Element => {
+const AppStoreBadge = (props: { type: AppStoreBadgeType }): JSX.Element => {
   return (
     <div className="hover:cursor-pointer">
       <a onClick={() => openExternalLink(props.type.link)}>
         <img src={props.type.asset} alt="download app from apple store" />
       </a>
+    </div>
+  );
+};
+
+export const AppStoreBadges = (): JSX.Element => {
+  return (
+    <div className="flex pt-4 mb-5 md:mb-0">
+      {[GooglePlayBadgeType, AppleStoreBadgeType].map((type) => {
+        return (
+          <div className="w-32 pr-1 mx-4 md:mx-0" key={type.link}>
+            {" "}
+            <AppStoreBadge type={type} />{" "}
+          </div>
+        );
+      })}
     </div>
   );
 };

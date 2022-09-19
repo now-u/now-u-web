@@ -12,7 +12,7 @@ import { GetInTouch } from './pages/GetInTouch'
 import { Blog } from './pages/Blog'
 import { Press } from './pages/Press'
 
-export const App = (): JSX.Element => {
+export default function App (): JSX.Element {
   return (
     <BrowserRouter>
       <div>

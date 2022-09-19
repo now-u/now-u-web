@@ -1,48 +1,48 @@
-import React from "react";
+import React from 'react'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faQuestion,
   faHandshakeAngle,
   faNewspaper,
   faHandHoldingDollar,
-  IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
+  IconDefinition
+} from '@fortawesome/free-solid-svg-icons'
 
-import { TitleText } from "@/components/Text";
+import { TitleText } from '@/components/Text'
 
 interface ContactTileProps {
-  icon: IconDefinition;
-  email: string;
-  emailDescription: string;
+  icon: IconDefinition
+  email: string
+  emailDescription: string
 }
 
 const contacts = [
   {
     icon: faQuestion,
-    email: "hello@now-u.com",
+    email: 'hello@now-u.com',
     emailDescription:
-      "For all other enquiries, leave a message on the above email.",
+      'For all other enquiries, leave a message on the above email.'
   },
   {
     icon: faHandshakeAngle,
-    email: "(partnership)@now-u.com",
+    email: '(partnership)@now-u.com',
     emailDescription:
-      "For all other enquiries, leave a message on the above email.",
+      'For all other enquiries, leave a message on the above email.'
   },
   {
     icon: faNewspaper,
-    email: "press@now-u.com",
+    email: 'press@now-u.com',
     emailDescription:
-      "For all other enquiries, leave a message on the above email.",
+      'For all other enquiries, leave a message on the above email.'
   },
   {
     icon: faHandHoldingDollar,
-    email: "(fundraising)@now-u.com",
+    email: '(fundraising)@now-u.com',
     emailDescription:
-      "For all other enquiries, leave a message on the above email.",
-  },
-];
+      'For all other enquiries, leave a message on the above email.'
+  }
+]
 
 const ContactTile = (props: ContactTileProps): JSX.Element => {
   return (
@@ -53,8 +53,8 @@ const ContactTile = (props: ContactTileProps): JSX.Element => {
         <h3>{props.emailDescription}</h3>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const GetInTouch = (): JSX.Element => {
   return (
@@ -63,14 +63,15 @@ export const GetInTouch = (): JSX.Element => {
         <TitleText text="Get in touch" />
       </div>
       <div className="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-10 m-10">
-        {contacts.map((contact) => (
+        {contacts.map(({ email, icon, emailDescription }) => (
           <ContactTile
-            icon={contact.icon}
-            email={contact.email}
-            emailDescription={contact.emailDescription}
+          key = {email}
+            icon={icon}
+            email={email}
+            emailDescription={emailDescription}
           />
         ))}
       </div>
     </div>
-  );
-};
+  )
+}

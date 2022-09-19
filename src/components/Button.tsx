@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
 interface ButtonProps {
-  buttonText: string;
-  onClick: () => void;
+  buttonText: string
+  onClick: () => void
 }
 
 export const Button = (props: ButtonProps): JSX.Element => {
@@ -13,5 +13,5 @@ export const Button = (props: ButtonProps): JSX.Element => {
     >
       {props.buttonText}
     </button>
-  );
-};
+  )
+}

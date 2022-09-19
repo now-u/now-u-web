@@ -1,21 +1,21 @@
-import React from "react";
-
-interface HeaderSubtitleProps {
-  title: string;
-  subtitle: string;
-}
-
-interface HeaderCausesProps {
-  title: string;
-  body: string[];
-}
+import React from 'react'
 
 import {
   BodyText,
   HeaderText,
   SubtitleText,
-  TitleText,
-} from "@/components/Text";
+  TitleText
+} from '@/components/Text'
+
+interface HeaderSubtitleProps {
+  title: string
+  subtitle: string
+}
+
+interface HeaderCausesProps {
+  title: string
+  body: string[]
+}
 
 // ***** Header Components *****
 export const Header = (props: { title: string }): JSX.Element => {
@@ -23,8 +23,8 @@ export const Header = (props: { title: string }): JSX.Element => {
     <div className="bg-gradient-to-b from-gradlight to-graddark grid place-items-center px-5 py-20">
       <HeaderText text={props.title} />
     </div>
-  );
-};
+  )
+}
 
 export const HeaderSubtitle = (props: HeaderSubtitleProps): JSX.Element => {
   return (
@@ -32,8 +32,8 @@ export const HeaderSubtitle = (props: HeaderSubtitleProps): JSX.Element => {
       <HeaderText text={props.title} />
       <SubtitleText text={props.subtitle} />
     </div>
-  );
-};
+  )
+}
 
 export const HeaderCauses = (props: HeaderCausesProps): JSX.Element => {
   return (
@@ -41,8 +41,8 @@ export const HeaderCauses = (props: HeaderCausesProps): JSX.Element => {
       <HeaderText text={props.title} />
       <BodyText text={props.body} />
     </div>
-  );
-};
+  )
+}
 
 // ***** Section Components *****
 
@@ -52,5 +52,5 @@ export const SectionBody = (props: HeaderCausesProps): JSX.Element => {
       <TitleText text={props.title} />
       <BodyText text={props.body} />
     </div>
-  );
-};
+  )
+}

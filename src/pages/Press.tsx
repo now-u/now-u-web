@@ -1,13 +1,13 @@
-import { Header } from "@/components/Header";
-import { HeaderText, SubtitleText } from "@/components/Text";
-import React from "react";
+import { Header } from '@/components/Header'
+import { HeaderText, SubtitleText } from '@/components/Text'
+import React from 'react'
 
-import Elgars from "@/assets/images/elgars.png";
+import Elgars from '@/assets/images/elgars.png'
 
 interface PressTileProps {
-  image: string;
-  title: string;
-  newspaper: string;
+  image: string
+  title: string
+  newspaper: string
 }
 const PressTile = (props: PressTileProps): JSX.Element => {
   return (
@@ -22,41 +22,47 @@ const PressTile = (props: PressTileProps): JSX.Element => {
         <h2 className="font-bold text-xs">{props.newspaper}</h2>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const pressPieces = [
   {
+    id: 1,
     image: Elgars,
-    title: "Holidays & Hats with the Elgars",
-    newspaper: "Sevenoaks Chronicle",
+    title: 'Holidays & Hats with the Elgars',
+    newspaper: 'Sevenoaks Chronicle'
   },
   {
+    id: 2,
     image: Elgars,
-    title: "Holidays & Hats with the Elgars",
-    newspaper: "Sevenoaks Chronicle",
+    title: 'Holidays & Hats with the Elgars',
+    newspaper: 'Sevenoaks Chronicle'
   },
   {
+    id: 3,
     image: Elgars,
-    title: "Holidays & Hats with the Elgars",
-    newspaper: "Sevenoaks Chronicle",
+    title: 'Holidays & Hats with the Elgars',
+    newspaper: 'Sevenoaks Chronicle'
   },
   {
+    id: 4,
     image: Elgars,
-    title: "Holidays & Hats with the Elgars",
-    newspaper: "Sevenoaks Chronicle",
+    title: 'Holidays & Hats with the Elgars',
+    newspaper: 'Sevenoaks Chronicle'
   },
   {
+    id: 5,
     image: Elgars,
-    title: "Holidays & Hats with the Elgars",
-    newspaper: "Sevenoaks Chronicle",
+    title: 'Holidays & Hats with the Elgars',
+    newspaper: 'Sevenoaks Chronicle'
   },
   {
+    id: 6,
     image: Elgars,
-    title: "Holidays & Hats with the Elgars",
-    newspaper: "Sevenoaks Chronicle",
-  },
-];
+    title: 'Holidays & Hats with the Elgars',
+    newspaper: 'Sevenoaks Chronicle'
+  }
+]
 
 // TODO: Press Pack
 export const Press = (): JSX.Element => {
@@ -72,6 +78,7 @@ export const Press = (): JSX.Element => {
       <div className="grid grid-cols-3 md:grid-cols-5 gap-5 m-10">
         {pressPieces.slice(1).map((piece) => (
           <PressTile
+            key={piece.id}
             image={piece.image}
             title={piece.title}
             newspaper={piece.newspaper}
@@ -79,5 +86,5 @@ export const Press = (): JSX.Element => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}

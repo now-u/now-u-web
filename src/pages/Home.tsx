@@ -1,47 +1,44 @@
-import React from "react";
-import { Button } from "../components/Button";
+import React from 'react'
+import { Button } from '../components/Button'
 
-import { SectionBody } from "@/components/Header";
+import { SectionBody } from '@/components/Header'
 
-import { HeaderText, SubtitleText } from "@/components/Text";
+import { HeaderText, SubtitleText } from '@/components/Text'
 
-import { PartnerGrid, partners } from "@/components/PartnerGrid";
-import { IconRow } from "@/components/IconRow";
-import Elgars from "@/assets/images/elgars.png";
+import { PartnerGrid, partners } from '@/components/PartnerGrid'
+import { IconRow } from '@/components/IconRow'
+import Elgars from '@/assets/images/elgars.png'
 
 import {
-  IconDefinition,
   faCheck,
   faClipboardList,
-  faEarthAfrica,
-} from "@fortawesome/free-solid-svg-icons";
+  faEarthAfrica
+} from '@fortawesome/free-solid-svg-icons'
 import {
-  AppleStoreBadgeType,
-  AppStoreBadges,
-  GooglePlayBadgeType,
-} from "@/components/AppStoreBadge";
-import { Newsletter } from "@/components/Newsletter";
+  AppStoreBadges
+} from '@/components/AppStoreBadge'
+import { Newsletter } from '@/components/Newsletter'
 
 export const icons = [
   {
     icon: faCheck,
-    title: "Choose a cause",
+    title: 'Choose a cause',
     subtitle:
-      "Download the app and discover our 6 causes. Choose the ones that mean the most to you.",
+      'Download the app and discover our 6 causes. Choose the ones that mean the most to you.'
   },
   {
     icon: faClipboardList,
-    title: "Take action",
+    title: 'Take action',
     subtitle:
-      "From signing a petition to spreading the world, take action for your causes in simple but impactful ways.",
+      'From signing a petition to spreading the world, take action for your causes in simple but impactful ways.'
   },
   {
     icon: faEarthAfrica,
-    title: "Shape a better world",
+    title: 'Shape a better world',
     subtitle:
-      "The more actions you take, the bigger impact we make. Support your chosen social and environmental causes, and help change the world.",
-  },
-];
+      'The more actions you take, the bigger impact we make. Support your chosen social and environmental causes, and help change the world.'
+  }
+]
 
 export const Home = (): JSX.Element => {
   return (
@@ -94,17 +91,17 @@ export const Home = (): JSX.Element => {
           <SectionBody
             title="Meet The Partners"
             body={[
-              "Aenean interdum varius ultrices.",
-              "Aenean interdum varius ultrices. ",
+              'Aenean interdum varius ultrices.',
+              'Aenean interdum varius ultrices. '
             ]}
           />
         </div>
-        <PartnerGrid partnersList={partners} />
+        <PartnerGrid partners={partners} />
         <Button buttonText="View All" onClick={() => {}} />
       </div>
       <div className="md:px-20">
         <Newsletter />
       </div>
     </div>
-  );
-};
+  )
+}

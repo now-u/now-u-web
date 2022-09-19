@@ -1,46 +1,48 @@
-import { HeaderCauses } from "@/components/Header";
-import { Newsletter } from "@/components/Newsletter";
-import { Cause } from "@/models/cause";
+import React from 'react'
+
+import { HeaderCauses } from '@/components/Header'
+import { Newsletter } from '@/components/Newsletter'
+import { Cause } from '@/models/cause'
 
 const mockCauses = [
   {
     id: 61,
     image:
-      "https://images.unsplash.com/photo-1656490268345-db5139f42497?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-    icon: "ic_getinvolved",
-    name: "Water",
+      'https://images.unsplash.com/photo-1656490268345-db5139f42497?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
+    icon: 'ic_getinvolved',
+    name: 'Water',
     description:
-      "Some campaign thing about water with a dog as the photo. Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor.",
+      'Some campaign thing about water with a dog as the photo. Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor.',
     joiners: null,
-    created_at: "2022-06-29T20:22:44.977Z",
-    updated_at: "2022-06-29T21:09:34.558Z",
-    joined: "Authentication failed",
+    created_at: '2022-06-29T20:22:44.977Z',
+    updated_at: '2022-06-29T21:09:34.558Z',
+    joined: 'Authentication failed'
   },
   {
     id: 61,
     image:
-      "https://images.unsplash.com/photo-1656490268345-db5139f42497?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-    icon: "ic_getinvolved",
-    name: "Water",
-    description: "Some campaign thing about water with a dog as the photo",
+      'https://images.unsplash.com/photo-1656490268345-db5139f42497?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
+    icon: 'ic_getinvolved',
+    name: 'Water',
+    description: 'Some campaign thing about water with a dog as the photo',
     joiners: null,
-    created_at: "2022-06-29T20:22:44.977Z",
-    updated_at: "2022-06-29T21:09:34.558Z",
-    joined: "Authentication failed",
+    created_at: '2022-06-29T20:22:44.977Z',
+    updated_at: '2022-06-29T21:09:34.558Z',
+    joined: 'Authentication failed'
   },
   {
     id: 61,
     image:
-      "https://images.unsplash.com/photo-1656490268345-db5139f42497?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-    icon: "ic_getinvolved",
-    name: "Water",
-    description: "Some campaign thing about water with a dog as the photo",
+      'https://images.unsplash.com/photo-1656490268345-db5139f42497?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
+    icon: 'ic_getinvolved',
+    name: 'Water',
+    description: 'Some campaign thing about water with a dog as the photo',
     joiners: null,
-    created_at: "2022-06-29T20:22:44.977Z",
-    updated_at: "2022-06-29T21:09:34.558Z",
-    joined: "Authentication failed",
-  },
-];
+    created_at: '2022-06-29T20:22:44.977Z',
+    updated_at: '2022-06-29T21:09:34.558Z',
+    joined: 'Authentication failed'
+  }
+]
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   return (
@@ -74,8 +76,8 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const CausesPage = (): JSX.Element => {
   return (
@@ -83,14 +85,14 @@ export const CausesPage = (): JSX.Element => {
       <HeaderCauses
         title="Our Causes"
         body={[
-          "Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-          "Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+          'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+          'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
         ]}
       />
       <div className="flex flex-col items-center space-y-1 py-20">
         <div className="grid grid-cols-2 gap-10 items-start">
           {mockCauses.map((cause) => (
-            <CauseTile cause={cause} />
+            <CauseTile key={cause.id} cause={cause} />
           ))}
         </div>
       </div>
@@ -98,5 +100,5 @@ export const CausesPage = (): JSX.Element => {
         <Newsletter />
       </div>
     </div>
-  );
-};
+  )
+}

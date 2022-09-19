@@ -1,16 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "@/pages/Home";
-import { Route as PageRoute } from "@/utils/constants";
-import { About } from "@/pages/About";
-import { Navbar } from "@/components/Navbar";
-import { CausesPage } from "@/pages/causes";
-import { FAQPage } from "@/pages/FAQ";
-import { Footer } from "@/components/Footer";
-import { GetInTouch } from "./pages/GetInTouch";
-import { Blog } from "./pages/Blog";
-import { Press } from "./pages/Press";
+import React from 'react'
 
-export default function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Home } from '@/pages/Home'
+import { Route as PageRoute } from '@/utils/constants'
+import { About } from '@/pages/About'
+import { Navbar } from '@/components/Navbar'
+import { CausesPage } from '@/pages/causes'
+import { FAQPage } from '@/pages/FAQ'
+import { Footer } from '@/components/Footer'
+import { GetInTouch } from './pages/GetInTouch'
+import { Blog } from './pages/Blog'
+import { Press } from './pages/Press'
+
+export const App = (): JSX.Element => {
   return (
     <BrowserRouter>
       <div>
@@ -29,5 +31,5 @@ export default function App() {
         <Footer />
       </div>
     </BrowserRouter>
-  );
+  )
 }

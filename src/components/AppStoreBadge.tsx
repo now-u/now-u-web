@@ -1,23 +1,23 @@
-import React from "react";
-import GoogleStoreBadgeSVG from "@/assets/google-store.svg";
-import AppleStoreBadgeSVG from "@/assets/apple-store.svg";
-import { APPLE_STORE_URL, GOOGLE_STORE_URL } from "@/utils/constants";
-import { openExternalLink } from "@/utils/router";
+import React from 'react'
+import GoogleStoreBadgeSVG from '@/assets/google-store.svg'
+import AppleStoreBadgeSVG from '@/assets/apple-store.svg'
+import { APPLE_STORE_URL, GOOGLE_STORE_URL } from '@/utils/constants'
+import { openExternalLink } from '@/utils/router'
 
 interface AppStoreBadgeType {
-  asset: string;
-  link: string;
+  asset: string
+  link: string
 }
 
 export const GooglePlayBadgeType: AppStoreBadgeType = {
   asset: GoogleStoreBadgeSVG,
-  link: GOOGLE_STORE_URL,
-};
+  link: GOOGLE_STORE_URL
+}
 
 export const AppleStoreBadgeType: AppStoreBadgeType = {
   asset: AppleStoreBadgeSVG,
-  link: APPLE_STORE_URL,
-};
+  link: APPLE_STORE_URL
+}
 
 const AppStoreBadge = (props: { type: AppStoreBadgeType }): JSX.Element => {
   return (
@@ -26,8 +26,8 @@ const AppStoreBadge = (props: { type: AppStoreBadgeType }): JSX.Element => {
         <img src={props.type.asset} alt="download app from apple store" />
       </a>
     </div>
-  );
-};
+  )
+}
 
 export const AppStoreBadges = (): JSX.Element => {
   return (
@@ -35,11 +35,11 @@ export const AppStoreBadges = (): JSX.Element => {
       {[GooglePlayBadgeType, AppleStoreBadgeType].map((type) => {
         return (
           <div className="w-32 pr-1 mx-4 md:mx-0" key={type.link}>
-            {" "}
-            <AppStoreBadge type={type} />{" "}
+            {' '}
+            <AppStoreBadge type={type} />{' '}
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}

@@ -1,47 +1,48 @@
-import React from "react";
-import { Route } from "@/utils/constants";
-import { Link } from "react-router-dom";
-import {} from "@heroicons/react/24/outline";
-import NowULogo from "@/assets/now-u-logo.svg";
-import { navigation as headerNavigation, NamedRoute } from "./Navbar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react'
+import { Route } from '@/utils/constants'
+import { Link } from 'react-router-dom'
+import {} from '@heroicons/react/24/outline'
+import NowULogo from '@/assets/now-u-logo.svg'
+import { navigation as headerNavigation, NamedRoute } from './Navbar'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faInstagram,
   faTwitter,
-  IconDefinition,
   faFacebookF,
-  faLinkedinIn,
-} from "@fortawesome/free-brands-svg-icons";
+  faLinkedinIn
+} from '@fortawesome/free-brands-svg-icons'
 import {
-  AppleStoreBadgeType,
-  AppStoreBadges,
-  GooglePlayBadgeType,
-} from "./AppStoreBadge";
+  AppStoreBadges
+} from './AppStoreBadge'
 
 const navigation: NamedRoute[] = [
   ...headerNavigation,
-  { text: "FAQ", to: Route.FAQ },
-  { text: "Press", to: Route.PRESS },
-];
+  { text: 'FAQ', to: Route.FAQ },
+  { text: 'Press', to: Route.PRESS }
+]
 
-const socialMediaLinks: Array<{ icon: IconDefinition; link: string }> = [
+const socialMediaLinks = [
   {
+    key: 1,
     icon: faInstagram,
-    link: "https://google.com",
+    link: 'https://google.com'
   },
   {
+    key: 2,
     icon: faFacebookF,
-    link: "https://google.com",
+    link: 'https://google.com'
   },
   {
+    key: 3,
     icon: faTwitter,
-    link: "https://google.com",
+    link: 'https://google.com'
   },
   {
+    key: 4,
     icon: faLinkedinIn,
-    link: "https://google.com",
-  },
-];
+    link: 'https://google.com'
+  }
+]
 
 export const Footer = (): JSX.Element => {
   return (
@@ -61,23 +62,23 @@ export const Footer = (): JSX.Element => {
               key={route.text}
               to={route.to}
             >
-              {" "}
-              {route.text}{" "}
+              {' '}
+              {route.text}{' '}
             </Link>
           ))}
         </div>
         <div className="flex justify-center md:justify-end mb-3 space-x-8">
           {socialMediaLinks.map((socialMedia) => {
             return (
-              <a href={socialMedia.link} target="_blank">
-                {" "}
+              <a key={socialMedia.key} href={socialMedia.link} target="_blank" rel="noreferrer">
+                {' '}
                 <FontAwesomeIcon
                   className="hover:cursor-pointer hover:text-orange"
                   size="2xl"
                   icon={socialMedia.icon}
                 />
               </a>
-            );
+            )
           })}
         </div>
       </div>
@@ -88,5 +89,5 @@ export const Footer = (): JSX.Element => {
         <p className="text-slate-500">Registered charity number: 000000</p>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,5 +1,5 @@
-import React from "react";
-import { Button } from "./Button";
+import React from 'react'
+import { Button } from './Button'
 
 export const Newsletter = (): JSX.Element => {
   return (
@@ -15,10 +15,10 @@ export const Newsletter = (): JSX.Element => {
         <input
           placeholder="Your email address"
           type="text"
-          className="h-10 mt-4 mr-4 rounded-md w-2/3 placeholder:pl-2 block"
+          className="h-10 mt-4 mr-4 rounded-md w-2/3 placeholder:pl-2 block "
         />
         <Button buttonText="Submit" onClick={() => {}} />
       </div>
     </div>
-  );
-};
+  )
+}

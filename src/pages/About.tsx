@@ -1,20 +1,18 @@
-import React from "react";
+import React from 'react'
 
-import { HeaderSubtitle, SectionBody } from "@/components/Header";
+import { HeaderSubtitle, SectionBody } from '@/components/Header'
 
-import { BodyText, TitleText } from "@/components/Text";
+import { BodyText, TitleText } from '@/components/Text'
 
-import Elgars from "@/assets/images/elgars.png";
-import { TeamGrid } from "@/components/TeamGrid";
-import { IconRow } from "@/components/IconRow";
-import { icons } from "@/pages/Home";
-import { Button } from "@/components/Button";
+import Elgars from '@/assets/images/elgars.png'
+import { TeamGrid } from '@/components/TeamGrid'
+import { IconRow } from '@/components/IconRow'
+import { icons } from '@/pages/Home'
+import { Button } from '@/components/Button'
 import {
-  AppleStoreBadgeType,
-  AppStoreBadges,
-  GooglePlayBadgeType,
-} from "@/components/AppStoreBadge";
-import { Newsletter } from "@/components/Newsletter";
+  AppStoreBadges
+} from '@/components/AppStoreBadge'
+import { Newsletter } from '@/components/Newsletter'
 
 export const About = (): JSX.Element => {
   return (
@@ -28,8 +26,8 @@ export const About = (): JSX.Element => {
           <SectionBody
             title="Our Story"
             body={[
-              "Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
-              "Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+              'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
+              'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
             ]}
           />
         </div>
@@ -49,9 +47,9 @@ export const About = (): JSX.Element => {
           <TitleText text="Our charity journey" />
           <BodyText
             text={[
-              "now-u started life as a Community Interest Company (CIC), but at the end of 2021, we established the now-u community charity. These two organisations now work together closely under the shared now-u brand.",
-              "The CIC remains in place to develop and manage the now-u digital products, whilst the Charitable Incorporated Organisation (CIO) creates charitable campaigns and builds strategic partnerships with selected charities tackling our six now-u charitable causes.",
-              "Please get in touch if you have any questions!",
+              'now-u started life as a Community Interest Company (CIC), but at the end of 2021, we established the now-u community charity. These two organisations now work together closely under the shared now-u brand.',
+              'The CIC remains in place to develop and manage the now-u digital products, whilst the Charitable Incorporated Organisation (CIO) creates charitable campaigns and builds strategic partnerships with selected charities tackling our six now-u charitable causes.',
+              'Please get in touch if you have any questions!'
             ]}
           />
           <Button buttonText="Learn more" onClick={() => {}} />
@@ -62,8 +60,8 @@ export const About = (): JSX.Element => {
           <SectionBody
             title="Meet The Team"
             body={[
-              "Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut.",
-              "Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut.",
+              'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut.',
+              'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut.'
             ]}
           />
           <div className="grid place-items-center">
@@ -87,5 +85,5 @@ export const About = (): JSX.Element => {
         <Newsletter />
       </div>
     </div>
-  );
-};
+  )
+}

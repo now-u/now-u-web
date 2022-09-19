@@ -1,51 +1,55 @@
-import React from "react";
+import React from 'react'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
 
-import Elgars from "@/assets/images/elgars.png";
-import { HeaderSubtitle } from "@/components/Header";
-import { Newsletter } from "@/components/Newsletter";
+import Elgars from '@/assets/images/elgars.png'
+import { HeaderSubtitle } from '@/components/Header'
 
 interface BlogTileProps {
-  image: string;
-  title: string;
-  author: string;
-  filter_time: string;
+  image: string
+  title: string
+  author: string
+  filter_time: string
 }
 
 const blogs = [
   {
+    id: 1,
     image: Elgars,
-    title: "Holidays & Hats with the",
-    author: "Elgars",
-    filter_time: "1",
+    title: 'Holidays & Hats with the',
+    author: 'Elgars',
+    filter_time: '1'
   },
   {
+    id: 2,
     image: Elgars,
-    title: "Holidays & Hats with the",
-    author: "Elgars",
-    filter_time: "1",
+    title: 'Holidays & Hats with the',
+    author: 'Elgars',
+    filter_time: '1'
   },
   {
+    id: 3,
     image: Elgars,
-    title: "Holidays & Hats with the",
-    author: "Elgars",
-    filter_time: "1",
+    title: 'Holidays & Hats with the',
+    author: 'Elgars',
+    filter_time: '1'
   },
   {
+    id: 4,
     image: Elgars,
-    title: "Holidays & Hats with the",
-    author: "Elgars",
-    filter_time: "1",
+    title: 'Holidays & Hats with the',
+    author: 'Elgars',
+    filter_time: '1'
   },
   {
+    id: 5,
     image: Elgars,
-    title: "Holidays & Hats with the",
-    author: "Elgars",
-    filter_time: "1",
-  },
-];
+    title: 'Holidays & Hats with the',
+    author: 'Elgars',
+    filter_time: '1'
+  }
+]
 
 // TODO: remove object-top, it's only there to see the hats
 
@@ -65,16 +69,16 @@ const BlogTile = (props: BlogTileProps): JSX.Element => {
         <div className="grid grid-cols-2 place-content-center">
           <FontAwesomeIcon icon={faClock} size="1x" className="m-auto" />
           <h4>
-            {props.filter_time} {props.filter_time == "1" ? "min" : "mins"}
+            {props.filter_time} {props.filter_time === '1' ? 'min' : 'mins'}
           </h4>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const Blog = (): JSX.Element => {
-  const firstBlog = blogs[1];
+  const firstBlog = blogs[1]
   return (
     <div>
       <HeaderSubtitle
@@ -89,9 +93,10 @@ export const Blog = (): JSX.Element => {
           filter_time={firstBlog.filter_time}
         />
       </div>
-      <div className="grid grid-cols-2 gap-5 mx-32 my-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-32 my-10">
         {blogs.slice(1).map((blog) => (
           <BlogTile
+          key={blog.id}
             image={blog.image}
             title={blog.title}
             author={blog.author}
@@ -100,5 +105,5 @@ export const Blog = (): JSX.Element => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}

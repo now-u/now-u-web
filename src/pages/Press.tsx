@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header'
-import { HeaderText, SubtitleText } from '@/components/Text'
+import { SubtitleText } from '@/components/Text'
 import React from 'react'
 
 import Elgars from '@/assets/images/elgars.png'

@@ -24,7 +24,7 @@ const CircularPortraitTile = (props: {
   return (
     <div>
       <img
-        className="rounded-full w-3/4 m-auto"
+        className="rounded-full p-2 m-auto"
         src={props.portrait.image}
         alt="Circular Portrait Image"
       />

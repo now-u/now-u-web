@@ -32,14 +32,14 @@ export const About = (): JSX.Element => {
           />
         </div>
         <img
-          className=" w-4/5 md:w-1/2 lg:w-1/3 p-10 xl:p-1"
+          className="order-1 md:order-2 w-2/3 md:w-1/2 lg:w-1/3 xl:p-1"
           src={Elgars}
           alt=""
         />
       </div>
       <div className="bg-slate-100  w-full flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
-        <img
-          className="w-2/3 md:w-1/2 lg:w-1/3 p-10 xl:p-1"
+      <img
+          className="w-2/3 md:w-1/2 lg:w-1/3 pb-5 xl:p-1"
           src={Elgars}
           alt=""
         />

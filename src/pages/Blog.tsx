@@ -85,7 +85,7 @@ export const Blog = (): JSX.Element => {
         title="Blog"
         subtitle="Aenean interdum varius ultrices."
       />
-      <div className="mx-32 my-10">
+      <div className="m-5 sm:mx-32 sm:my-10">
         <BlogTile
           image={firstBlog.image}
           title={firstBlog.title}
@@ -93,7 +93,7 @@ export const Blog = (): JSX.Element => {
           filter_time={firstBlog.filter_time}
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-32 my-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 m-5 sm:mx-32 sm:my-10">
         {blogs.slice(1).map((blog) => (
           <BlogTile
           key={blog.id}

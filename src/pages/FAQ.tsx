@@ -40,6 +40,7 @@ export const FAQPage = (): JSX.Element => {
     { Q: 'q9', A: 'A9' },
     { Q: 'q10', A: 'A10' }
   ]
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState<number | null>(null)
 
   return (

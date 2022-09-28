@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios, { AxiosResponse } from 'axios'
 
 import { HeaderCauses } from '@/components/Header'
 import { Newsletter } from '@/components/Newsletter'
 import { Cause } from '@/models/cause'
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+
+const baseURL = 'https://staging.api.now-u.com/api/v2/causes'
 
 // TODO: React + axios for get requests
 
@@ -82,6 +86,11 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
 }
 
 export const CausesPage = (): JSX.Element => {
+  const [Causes, setCauses] = useState<Cause[]>([])
+  axios.get<Cause[]>(baseURL).then((response: AxiosResponse) => {
+    setCauses(response.data.data)
+  }, [])
+
   return (
     <div className="grid place-items-center">
       <HeaderCauses
@@ -94,7 +103,7 @@ export const CausesPage = (): JSX.Element => {
       />
       <div className="flex flex-col items-center space-y-1 py-20">
         <div className="grid grid-cols-2 gap-10 items-start">
-          {mockCauses.map((cause) => (
+          {Causes.map((cause) => (
             <CauseTile key={cause.id} cause={cause} />
           ))}
         </div>

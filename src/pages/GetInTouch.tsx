@@ -1,6 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Mailto } from 'react-mailto'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -51,19 +49,19 @@ const contacts = [
     icon: faHandshakeAngle,
     email: '(partnership)@now-u.com',
     emailDescription:
-      'For all other enquiries, leave a message on the above email.'
+      'For all partnership enquiries, leave a message on the above provided email.'
   },
   {
     icon: faNewspaper,
     email: 'press@now-u.com',
     emailDescription:
-      'For all other enquiries, leave a message on the above email.'
+      'For all press enquiries, leave a message on the above provided email.'
   },
   {
     icon: faHandHoldingDollar,
     email: '(fundraising)@now-u.com',
     emailDescription:
-      'For all other enquiries, leave a message on the above email.'
+      'For all fundraising enquiries, leave a message on the above provided email.'
   }
 ]
 

@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Mailto } from 'react-mailto'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -9,12 +11,33 @@ import {
   IconDefinition
 } from '@fortawesome/free-solid-svg-icons'
 
-import { TitleText } from '@/components/Text'
+import { Header } from '@/components/Header'
 
 interface ContactTileProps {
   icon: IconDefinition
   email: string
   emailDescription: string
+}
+
+interface ContactTileProps {
+  icon: IconDefinition
+  email: string
+  emailDescription: string
+}
+
+const ContactTile = (props: ContactTileProps): JSX.Element => {
+  return (
+    <div className="bg-cream flex p-4 justify-around text-center hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm">
+        <a href={`mailto:${props.email}`}
+        >
+        <FontAwesomeIcon icon={props.icon} size="3x" />
+        <div>
+          <h2 className="font-bold mb-2">{props.email}</h2>
+          <h3>{props.emailDescription}</h3>
+        </div>
+      </a>
+      </div>
+  )
 }
 
 const contacts = [
@@ -44,24 +67,10 @@ const contacts = [
   }
 ]
 
-const ContactTile = (props: ContactTileProps): JSX.Element => {
-  return (
-    <div className="bg-cream flex p-4 justify-around text-center">
-      <FontAwesomeIcon icon={props.icon} size="3x" />
-      <div>
-        <h2 className="font-bold mb-2">{props.email}</h2>
-        <h3>{props.emailDescription}</h3>
-      </div>
-    </div>
-  )
-}
-
 export const GetInTouch = (): JSX.Element => {
   return (
     <div>
-      <div className="bg-gradient-to-b from-gradlight to-graddark grid place-items-center px-5 py-20">
-        <TitleText text="Get in touch" />
-      </div>
+      <Header title="Get in Touch" />
       <div className="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-10 m-10">
         {contacts.map(({ email, icon, emailDescription }) => (
           <ContactTile

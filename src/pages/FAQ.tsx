@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react'
 
-import { TitleText } from '@/components/Text'
+import { Header } from '@/components/Header'
 
 const AnswerTile = (props: { answer: string }): JSX.Element => {
   return (
@@ -44,9 +44,7 @@ export const FAQPage = (): JSX.Element => {
 
   return (
     <div>
-      <div className="bg-gradient-to-b from-gradlight to-graddark grid place-items-center px-5 py-20">
-        <TitleText text="FAQs" />
-      </div>
+      <Header title='FAQs' />
       <AnswerTile answer={currentQuestionIndex !== null ? questionsAndAnswers[currentQuestionIndex].A : 'Click a question below and your answer will appear here!'} />
       <div className="grid grid-rows-2 gap-4 grid-cols-5 mb-5">
         {questionsAndAnswers.map(({ Q: question }, index) => (

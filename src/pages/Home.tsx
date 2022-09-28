@@ -7,33 +7,34 @@ import { HeaderText, SubtitleText } from '@/components/Text'
 
 import { PartnerGrid, partners } from '@/components/PartnerGrid'
 import { IconRow } from '@/components/IconRow'
-import Elgars from '@/assets/images/elgars.png'
+import ExploreScreenImage from '@/assets/graphics/explore_screen.png'
+import CausesGlobe from '@/assets/graphics/causes_globe.png'
+import LoveGlobe from '@/assets/graphics/love_globe.png'
 
-import {
-  faCheck,
-  faClipboardList,
-  faEarthAfrica
-} from '@fortawesome/free-solid-svg-icons'
+import TickIcon from '@/assets/graphics/tick_icon.png'
+import ClipboardIcon from '@/assets/graphics/clipboard_icon.png'
+import GlobeIcon from '@/assets/graphics/globe_icon.png'
+
 import {
   AppStoreBadges
 } from '@/components/AppStoreBadge'
 import { Newsletter } from '@/components/Newsletter'
 
-export const icons = [
+const icons = [
   {
-    icon: faCheck,
+    icon: TickIcon,
     title: 'Choose a cause',
     subtitle:
       'Download the app and discover our 6 causes. Choose the ones that mean the most to you.'
   },
   {
-    icon: faClipboardList,
+    icon: ClipboardIcon,
     title: 'Take action',
     subtitle:
       'From signing a petition to spreading the world, take action for your causes in simple but impactful ways.'
   },
   {
-    icon: faEarthAfrica,
+    icon: GlobeIcon,
     title: 'Shape a better world',
     subtitle:
       'The more actions you take, the bigger impact we make. Support your chosen social and environmental causes, and help change the world.'
@@ -55,7 +56,7 @@ export const Home = (): JSX.Element => {
         </div>
         <img
           className="order-1 md:order-2 w-2/3 md:w-1/2 lg:w-1/3 pb-5 xl:p-1"
-          src={Elgars}
+          src={ExploreScreenImage}
           alt=""
         />
       </div>
@@ -70,14 +71,14 @@ export const Home = (): JSX.Element => {
         </div>
         <img
           className="order-1 md:order-2 w-2/3 md:w-1/2 lg:w-1/3 pb-5 xl:p-1"
-          src={Elgars}
+          src={CausesGlobe}
           alt=""
         />
       </div>
       <div className="bg-slate-100  w-full flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
         <img
           className="w-2/3 md:w-1/2 lg:w-1/3 pb-5 xl:p-1"
-          src={Elgars}
+          src={LoveGlobe}
           alt=""
         />
         <div className="text-center pb-5 md:w-1/2">
@@ -91,8 +92,8 @@ export const Home = (): JSX.Element => {
           <SectionBody
             title="Meet The Partners"
             body={[
-              'Aenean interdum varius ultrices.',
-              'Aenean interdum varius ultrices. '
+              'We work with charities doing amazing work across the world. Want to find out more about partnering with now-u?',
+              'Download our partnership guide here or get in touch!'
             ]}
           />
         </div>

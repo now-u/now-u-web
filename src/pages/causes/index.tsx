@@ -4,6 +4,8 @@ import { HeaderCauses } from '@/components/Header'
 import { Newsletter } from '@/components/Newsletter'
 import { Cause } from '@/models/cause'
 
+// TODO: React + axios for get requests
+
 const mockCauses = [
   {
     id: 61,
@@ -85,8 +87,9 @@ export const CausesPage = (): JSX.Element => {
       <HeaderCauses
         title="Our Causes"
         body={[
-          'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
-          'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
+          'We focus on 6 core causes at now-u, which all support the UN’s Sustainable Development Goals. These causes include Health and Wellbeing, Equality and Human Rights, Environment, Econimic Opportunity, Education & Citizenship and Safe & Inclusive Communities.',
+          'We partner with trusted charities and social enterprises to bring you focused campaigns every month. Each campaign connects you with the resources and actions you need to make an impact.',
+          'Explore how the causes link to the UN’s Sustainable Development Goals below...'
         ]}
       />
       <div className="flex flex-col items-center space-y-1 py-20">

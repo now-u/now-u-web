@@ -1,15 +1,9 @@
-import {} from '@fortawesome/free-brands-svg-icons'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react'
 
 import { SubtitleText, TitleText } from '@/components/Text'
 
-import { IconDefinition } from '@fortawesome/free-solid-svg-icons'
-
-import React from 'react'
-
 interface IconTileProps {
-  icon: IconDefinition
+  icon: string
   title: string
   subtitle: string
 }
@@ -17,7 +11,7 @@ interface IconTileProps {
 const IconTile = (props: IconTileProps): JSX.Element => {
   return (
     <div className="text-center py-5 md:py-0">
-      <FontAwesomeIcon className="text-orange" size="6x" icon={props.icon} />
+      <img src={props.icon} className='w-1/4 md:w-1/2 m-auto' />
       <TitleText text={props.title} />
       <SubtitleText text={props.subtitle} />
     </div>

@@ -14,6 +14,7 @@ import {
 import {
   AppStoreBadges
 } from './AppStoreBadge'
+import { openExternalLink } from '@/utils/router'
 
 const navigation: NamedRoute[] = [
   ...headerNavigation,
@@ -70,7 +71,7 @@ export const Footer = (): JSX.Element => {
         <div className="flex justify-center md:justify-end mb-3 space-x-8">
           {socialMediaLinks.map((socialMedia) => {
             return (
-              <a key={socialMedia.key} href={socialMedia.link} target="_blank" rel="noreferrer">
+              <a key={socialMedia.key} onClick={() => openExternalLink(socialMedia.link)} target="_blank" rel="noreferrer">
                 {' '}
                 <FontAwesomeIcon
                   className="hover:cursor-pointer hover:text-orange"
@@ -91,3 +92,5 @@ export const Footer = (): JSX.Element => {
     </div>
   )
 }
+
+// TODO: Make sure footer goes to end of the page on 'Get in Touch' page

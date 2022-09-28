@@ -4,30 +4,61 @@ import { HeaderSubtitle, SectionBody } from '@/components/Header'
 
 import { BodyText, TitleText } from '@/components/Text'
 
-import Elgars from '@/assets/images/elgars.png'
 import { TeamGrid } from '@/components/TeamGrid'
 import { IconRow } from '@/components/IconRow'
-import { icons } from '@/pages/Home'
+
 import { Button } from '@/components/Button'
+
 import {
   AppStoreBadges
 } from '@/components/AppStoreBadge'
+
 import { Newsletter } from '@/components/Newsletter'
+import { openExternalLink } from '@/utils/router'
+
+import Elgars from '@/assets/images/elgars.png'
+
+import OrganisationGraphic from '@/assets/graphics/organisation_graphic.png'
+import PhoneIcon from '@/assets/graphics/phone_icon.png'
+import LoudspeakerIcon from '@/assets/graphics/loudspeaker_icon.png'
+import LightbulbIcon from '@/assets/graphics/lightbulb_icon.png'
+
+const icons = [
+  {
+    icon: PhoneIcon,
+    title: '1. Download the app',
+    subtitle:
+      'Download the now-u app and start supporting causes you care about, through impactful actions that suit you.'
+  },
+  {
+    icon: LoudspeakerIcon,
+    title: '2. Spread the word!',
+    subtitle:
+      'Help us change the world for the better by sharing our work on social media, and telling your family and friends.'
+  },
+  {
+    icon: LightbulbIcon,
+    title: '3. Support us',
+    subtitle:
+      'Support us to improve our impact by suggesting charities and campaigns.'
+  }
+]
 
 export const About = (): JSX.Element => {
   return (
     <div className="grid place-items-center">
       <HeaderSubtitle
         title="About Us"
-        subtitle="Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+        subtitle="Our app connects you with impactful actions you can take to help tackle pressing social and environmental issues. We aspire to become the new model of collective action and altruism, bringing people together to create a world of good. "
       />
       <div className="flex flex-col lg:flex-row place-content-around bg-cream place-items-center px-10 py-10">
         <div className="md:w-3/4 lg:w-1/2 xl:w-1/3">
           <SectionBody
             title="Our Story"
             body={[
-              'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.',
-              'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut. Quisque ultrices, metus nec malesuada tristique, libero purus lacinia erat, sit amet porta nulla odio mattis ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
+              'Founded by brother and sister, James and Lizzie Elgar, in April 2020, now-u was inspired by the acts of kindness and solidarity that were seen all over the world during the Covid-19 pandemic.',
+              'Our founders noticed that many people wanted to take action to help others during these difficult times, but weren’t sure how.',
+              'They decided to create a platform to empower everyone to support causes they care about, and the charities working on the front lines of global issues.'
             ]}
           />
         </div>
@@ -40,7 +71,7 @@ export const About = (): JSX.Element => {
       <div className="bg-slate-100  w-full flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
       <img
           className="w-2/3 md:w-1/2 lg:w-1/3 pb-5 xl:p-1"
-          src={Elgars}
+          src={OrganisationGraphic}
           alt=""
         />
         <div className="text-center pb-5 lg:w-1/2 xl:w-1/3">
@@ -60,12 +91,12 @@ export const About = (): JSX.Element => {
           <SectionBody
             title="Meet The Team"
             body={[
-              'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut.',
-              'Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor. Donec volutpat efficitur lectus et consequat. Proin tempus lorem enim, sit amet malesuada mauris tincidunt ut.'
+              'now-u has grown into a team of more than (insert figure)  from across the world who support us with everything from web development to marketing.',
+              'Want to join us on our journey? Get in touch here to discover volunteering opportunities at now-u.'
             ]}
           />
           <div className="grid place-items-center">
-            <Button buttonText="Meet the team" onClick={() => {}} />
+            <Button buttonText="Meet the team" onClick={() => openExternalLink('https://www.linkedin.com/company/now-u/people/')} />
           </div>
         </div>
         <div className="flex-1 order-1 md:order-2">

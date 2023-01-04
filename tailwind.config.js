@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{ts,tsx}"],
+  content: ['./src/components/**/*.{js,ts,jsx,tsx}', './src/app/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -12,7 +12,12 @@ module.exports = {
         'cream': '#FFF3E5',
         'gradlight': '#FD8824',
         'graddark': '#FFDC79',
-      }
+      },
+      fontFamily: {
+        sans: ['var(--font-nunito-sans)'],
+        heading: ["var(--font-nunito)"],
+        subheading: ["var(--font-nunito-sans)"],
+      },
     },
   },
   plugins: [],

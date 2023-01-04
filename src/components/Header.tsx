@@ -30,7 +30,9 @@ export const HeaderSubtitle = (props: HeaderSubtitleProps): JSX.Element => {
   return (
     <div className="bg-gradient-to-b from-gradlight to-graddark grid place-items-center px-5 md:px-20 lg:px-32 xl:px-64 py-20">
       <HeaderText text={props.title} />
-      <SubtitleText text={props.subtitle} />
+      <div className="text-center w-2/3">
+        <SubtitleText text={props.subtitle} />
+      </div>
     </div>
   )
 }

@@ -7,14 +7,13 @@ import { BodyText, TitleText } from '@/components/Text'
 import { TeamGrid } from '@/components/TeamGrid'
 import { IconRow } from '@/components/IconRow'
 
-import { Button } from '@/components/Button'
+import { LinkButton } from '@/components/Button'
 
 import {
   AppStoreBadges
 } from '@/components/AppStoreBadge'
 
 import { Newsletter } from '@/components/Newsletter'
-import { openExternalLink } from '@/utils/router'
 
 import Elgars from '@/assets/images/elgars.png'
 
@@ -22,6 +21,8 @@ import OrganisationGraphic from '@/assets/graphics/organisation_graphic.png'
 import PhoneIcon from '@/assets/graphics/phone_icon.png'
 import LoudspeakerIcon from '@/assets/graphics/loudspeaker_icon.png'
 import LightbulbIcon from '@/assets/graphics/lightbulb_icon.png'
+
+import Image from 'next/image'
 
 const icons = [
   {
@@ -44,7 +45,7 @@ const icons = [
   }
 ]
 
-export const About = (): JSX.Element => {
+const About = (): JSX.Element => {
   return (
     <div className="grid place-items-center">
       <HeaderSubtitle
@@ -62,14 +63,14 @@ export const About = (): JSX.Element => {
             ]}
           />
         </div>
-        <img
+        <Image
           className="order-1 md:order-2 w-2/3 md:w-1/2 lg:w-1/3 xl:p-1"
           src={Elgars}
           alt=""
         />
       </div>
       <div className="bg-slate-100  w-full flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
-      <img
+      <Image
           className="w-2/3 md:w-1/2 lg:w-1/3 pb-5 xl:p-1"
           src={OrganisationGraphic}
           alt=""
@@ -83,20 +84,21 @@ export const About = (): JSX.Element => {
               'Please get in touch if you have any questions!'
             ]}
           />
-          <Button buttonText="Learn more" onClick={() => {}} />
+          {/** TODO Update route */}
+          <LinkButton buttonText="Learn more" href={{ pathname: '/' }}/>
         </div>
       </div>
       <div className="flex flex-col md:flex-row py-20 px-10 place-items-center">
         <div className="flex-1 order-2 md:order-1 my-auto lg:mx-10 xl:mx-20">
           <SectionBody
-            title="Meet The Team"
+            title="Meet the team"
             body={[
               'now-u has grown into a team of more than (insert figure)  from across the world who support us with everything from web development to marketing.',
               'Want to join us on our journey? Get in touch here to discover volunteering opportunities at now-u.'
             ]}
           />
           <div className="grid place-items-center">
-            <Button buttonText="Meet the team" onClick={() => openExternalLink('https://www.linkedin.com/company/now-u/people/')} />
+            <LinkButton buttonText="Meet the team" href={{ href: 'https://www.linkedin.com/company/now-u/people/' }} />
           </div>
         </div>
         <div className="flex-1 order-1 md:order-2">
@@ -118,3 +120,5 @@ export const About = (): JSX.Element => {
     </div>
   )
 }
+
+export default About

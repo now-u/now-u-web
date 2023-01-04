@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from './Button'
+import { LinkButton } from './Button'
 
 export const Newsletter = (): JSX.Element => {
   return (
@@ -17,7 +17,8 @@ export const Newsletter = (): JSX.Element => {
           type="text"
           className="h-10 mt-4 mr-4 rounded-md w-2/3 placeholder:pl-2 block "
         />
-        <Button buttonText="Submit" onClick={() => {}} />
+        {/** TODO This should not be a button text but an actual network call */}
+        <LinkButton buttonText="Submit" href="/" />
       </div>
     </div>
   )

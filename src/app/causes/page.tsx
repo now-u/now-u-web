@@ -1,54 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import axios, { AxiosResponse } from 'axios'
+import React from 'react'
 
 import { HeaderCauses } from '@/components/Header'
 import { Newsletter } from '@/components/Newsletter'
 import { Cause } from '@/models/cause'
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
-
-const baseURL = 'https://staging.api.now-u.com/api/v2/causes'
-
-// TODO: React + axios for get requests
-
-const mockCauses = [
-  {
-    id: 61,
-    image:
-      'https://images.unsplash.com/photo-1656490268345-db5139f42497?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
-    icon: 'ic_getinvolved',
-    name: 'Water',
-    description:
-      'Some campaign thing about water with a dog as the photo. Aenean interdum varius ultrices. Ut at egestas lorem. Suspendisse vehicula ex id libero dapibus tempor.',
-    joiners: null,
-    created_at: '2022-06-29T20:22:44.977Z',
-    updated_at: '2022-06-29T21:09:34.558Z',
-    joined: 'Authentication failed'
-  },
-  {
-    id: 61,
-    image:
-      'https://images.unsplash.com/photo-1656490268345-db5139f42497?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
-    icon: 'ic_getinvolved',
-    name: 'Water',
-    description: 'Some campaign thing about water with a dog as the photo',
-    joiners: null,
-    created_at: '2022-06-29T20:22:44.977Z',
-    updated_at: '2022-06-29T21:09:34.558Z',
-    joined: 'Authentication failed'
-  },
-  {
-    id: 61,
-    image:
-      'https://images.unsplash.com/photo-1656490268345-db5139f42497?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80',
-    icon: 'ic_getinvolved',
-    name: 'Water',
-    description: 'Some campaign thing about water with a dog as the photo',
-    joiners: null,
-    created_at: '2022-06-29T20:22:44.977Z',
-    updated_at: '2022-06-29T21:09:34.558Z',
-    joined: 'Authentication failed'
-  }
-]
+import { apiClient } from '@/services/causesApi'
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   return (
@@ -85,11 +40,19 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
   )
 }
 
-export const CausesPage = (): JSX.Element => {
-  const [Causes, setCauses] = useState<Cause[]>([])
-  axios.get<Cause[]>(baseURL).then((response: AxiosResponse) => {
-    setCauses(response.data.data)
-  }, [])
+async function getCauses (): Promise<Cause[]> {
+  console.log('Causes are loading')
+  const getCauses = apiClient.path('/api/v2/causes').method('get').create()
+  const response = await getCauses({})
+  if (!response.ok) {
+    console.error('Failed to fetch causes data')
+    return []
+  }
+  return response.data.data
+}
+
+export default async function CausesPage (): Promise<JSX.Element> {
+  const causes = await getCauses()
 
   return (
     <div className="grid place-items-center">
@@ -103,9 +66,11 @@ export const CausesPage = (): JSX.Element => {
       />
       <div className="flex flex-col items-center space-y-1 py-20">
         <div className="grid grid-cols-2 gap-10 items-start">
-          {Causes.map((cause) => (
-            <CauseTile key={cause.id} cause={cause} />
-          ))}
+          {
+            causes?.map((cause) => {
+              console.log('Cause is ', cause)
+              return <CauseTile key={cause.id} cause={cause} />
+            })}
         </div>
       </div>
       <div className="md:px-20">

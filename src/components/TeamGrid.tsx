@@ -2,6 +2,8 @@ import React from 'react'
 
 import Elgars from '@/assets/images/elgars.png'
 
+import Image from 'next/image'
+
 interface CircularPortrait {
   image: string
   name: string
@@ -23,7 +25,7 @@ const CircularPortraitTile = (props: {
 }): JSX.Element => {
   return (
     <div>
-      <img
+      <Image
         className="rounded-full p-2 m-auto"
         src={props.portrait.image}
         alt="Circular Portrait Image"

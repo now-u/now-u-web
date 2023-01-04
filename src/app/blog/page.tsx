@@ -6,6 +6,8 @@ import { faClock } from '@fortawesome/free-solid-svg-icons'
 import Elgars from '@/assets/images/elgars.png'
 import { HeaderSubtitle } from '@/components/Header'
 
+import Image from 'next/image'
+
 interface BlogTileProps {
   image: string
   title: string
@@ -56,7 +58,7 @@ const blogs = [
 const BlogTile = (props: BlogTileProps): JSX.Element => {
   return (
     <div className="flex flex-col hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm">
-      <img
+      <Image
         src={props.image}
         alt="Blog Image"
         className="object-cover h-64 object-top"
@@ -77,7 +79,7 @@ const BlogTile = (props: BlogTileProps): JSX.Element => {
   )
 }
 
-export const Blog = (): JSX.Element => {
+const Blog = (): JSX.Element => {
   const firstBlog = blogs[1]
   return (
     <div>
@@ -107,3 +109,5 @@ export const Blog = (): JSX.Element => {
     </div>
   )
 }
+
+export default Blog

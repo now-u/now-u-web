@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { SubtitleText, TitleText } from '@/components/Text'
+import Image from 'next/image'
 
 interface IconTileProps {
   icon: string
@@ -8,12 +9,12 @@ interface IconTileProps {
   subtitle: string
 }
 
-const IconTile = (props: IconTileProps): JSX.Element => {
+const IconTile = ({ icon, title, subtitle }: IconTileProps): JSX.Element => {
   return (
-    <div className="text-center py-5 md:py-0">
-      <img src={props.icon} className='w-1/4 md:w-1/2 m-auto' />
-      <TitleText text={props.title} />
-      <SubtitleText text={props.subtitle} />
+    <div className="text-center py-5 md:py-0 max-w-xs">
+      <Image src={icon} className='w-1/4 md:w-1/2 m-auto mb-8' alt={title}/>
+      <TitleText text={title} />
+      <SubtitleText text={subtitle} />
     </div>
   )
 }

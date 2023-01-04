@@ -1,40 +1,41 @@
+'use client'
+
 import React from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Route } from '@/utils/constants'
 import { classNames } from '@/utils/classNames'
-import { Link, useMatch, useResolvedPath } from 'react-router-dom'
+import Link from 'next/link'
 import NowULogo from '@/assets/now-u-logo.svg'
+import Image from 'next/image'
 
 export interface NamedRoute {
-  to: Route
+  to: string
   text: string
 }
 
 export const navigation: NamedRoute[] = [
-  { text: 'Home', to: Route.HOME },
-  { text: 'Causes', to: Route.CAUSES },
-  { text: 'About Us', to: Route.ABOUT },
-  { text: 'Blog', to: Route.BLOG },
-  { text: 'Get In Touch', to: Route.GET_IN_TOUCH }
+  { text: 'Home', to: '/' },
+  { text: 'Causes', to: '/causes' },
+  { text: 'About Us', to: '/about' },
+  { text: 'Blog', to: '/blog' },
+  { text: 'Get In Touch', to: '/get-in-touch' }
 ]
 
 const NavbarLink = (
   props: NamedRoute & { isMobile?: boolean }
 ): JSX.Element => {
   const { text, to, isMobile } = props
-  const resolvedPath = useResolvedPath(to)
-  const isActive = useMatch({ path: resolvedPath.pathname, end: true })
+  const isActive = false
 
   return (
     <Link
       key={text}
-      to={to}
+      href={to}
       className={classNames(
-        isActive != null
+        isActive
           ? 'underline underline-offset-2'
           : 'hover:bg-blue hover:text-white',
-        'px-3 py-2 text-black rounded-md font-medium',
+        'px-3 py-2 text-xl font-bold rounded-md font-heading',
         isMobile ?? false ? 'block text-base' : 'text-sm'
       )}
       aria-current={isActive != null ? 'page' : undefined}
@@ -49,7 +50,7 @@ export const Navbar = (): JSX.Element => {
     <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="mx-10 px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               {/* Mobile menu button */}
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -69,17 +70,17 @@ export const Navbar = (): JSX.Element => {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   {/* Mobile Icon */}
-                  <Link to={Route.HOME}>
-                    <img
+                  <Link href='/'>
+                    <Image
                       className="block h-8 w-auto lg:hidden"
                       src={NowULogo}
-                      alt="now-u"
+                      alt="now-u logo"
                     />
                     {/* Web Icon */}
-                    <img
+                    <Image
                       className="hidden h-5 w-auto lg:block"
                       src={NowULogo}
-                      alt="now-u"
+                      alt="now-u logo"
                     />
                   </Link>
                 </div>
@@ -88,7 +89,8 @@ export const Navbar = (): JSX.Element => {
               {/* Links */}
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
-                  {navigation.map((item) => (
+                  {/* Slice 1 to skip the home link when not on mobile */}
+                  {navigation.slice(1).map((item) => (
                     <NavbarLink key={item.to} {...item} />
                   ))}
                 </div>

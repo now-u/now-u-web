@@ -5,6 +5,7 @@
 // prettier-ignore
 declare module "nextjs-routes" {
   export type Route =
+    | DynamicRoute<"/api/trpc/[trpc]", { "trpc": string }>
     | StaticRoute<"/about">
     | StaticRoute<"/blog">
     | StaticRoute<"/causes">

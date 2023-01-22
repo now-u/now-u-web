@@ -3,8 +3,9 @@
  * Do not make direct changes to the file.
  */
 
+
 export interface paths {
-  '/api/v1/articles': {
+  "/api/v1/articles": {
     /** Retrieves all articles */
     get: {
       /** Retrieves all articles */
@@ -12,111 +13,111 @@ export interface paths {
         /** @description articles found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              body?: Record<string, never>
-              header_image?: string
-              full_article_link?: string
-              video_link?: string
-              campaign_action_id?: number
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              video_of_the_day?: boolean
-              subtitle?: string
-              link_text?: string
-              source?: string
-              enabled?: boolean
-              release_date?: Record<string, never>
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v1/articles/{id}': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              body?: Record<string, never>;
+              header_image?: string;
+              full_article_link?: string;
+              video_link?: string;
+              campaign_action_id?: number;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              video_of_the_day?: boolean;
+              subtitle?: string;
+              link_text?: string;
+              source?: string;
+              enabled?: boolean;
+              release_date?: Record<string, never>;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v1/articles/{id}": {
     /** Retrieves a article */
     get: {
       /** Retrieves a article */
       parameters: {
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description article found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              body?: Record<string, never>
-              header_image?: string
-              full_article_link?: string
-              video_link?: string
-              campaign_action_id?: number
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              video_of_the_day?: boolean
-              subtitle?: string
-              link_text?: string
-              source?: string
-              enabled?: boolean
-              release_date?: Record<string, never>
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              body?: Record<string, never>;
+              header_image?: string;
+              full_article_link?: string;
+              video_link?: string;
+              campaign_action_id?: number;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              video_of_the_day?: boolean;
+              subtitle?: string;
+              link_text?: string;
+              source?: string;
+              enabled?: boolean;
+              release_date?: Record<string, never>;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/blogs': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/blogs": {
     /** Retrieves all blogs */
     get: {
       /** Retrieves all blogs */
       responses: {
         /** @description blogs found */
-        200: never
-      }
-    }
-  }
-  '/api/v1/blogs/{id}': {
+        200: never;
+      };
+    };
+  };
+  "/api/v1/blogs/{id}": {
     /** Retrieves a blog */
     get: {
       /** Retrieves a blog */
       parameters: {
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description blog found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              subtitle?: string
-              campaign_action_id?: number
-              user_id?: number
-              campaign_id?: number
-              reading_time?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              enabled?: boolean
-              header_image?: string
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              subtitle?: string;
+              campaign_action_id?: number;
+              user_id?: number;
+              campaign_id?: number;
+              reading_time?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              enabled?: boolean;
+              header_image?: string;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/campaigns': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/campaigns": {
     /** Retrieves all Campaigns */
     get: {
       /** Retrieves all Campaigns */
@@ -124,314 +125,314 @@ export interface paths {
         /** @description Campaigns found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description_app?: Record<string, never>
-              header_image?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              video_link?: string
-              description_web?: Record<string, never>
-              enabled?: boolean
-              start_date?: Record<string, never>
-              end_date?: Record<string, never>
-              short_name?: string
-              infographic_url?: string
-              of_the_month?: boolean
-              recommended?: boolean
-              status?: number
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v1/campaigns/{campaign_id}': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              description_app?: Record<string, never>;
+              header_image?: string;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              video_link?: string;
+              description_web?: Record<string, never>;
+              enabled?: boolean;
+              start_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+              short_name?: string;
+              infographic_url?: string;
+              of_the_month?: boolean;
+              recommended?: boolean;
+              status?: number;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v1/campaigns/{campaign_id}": {
     /** Retrieves a Campaign */
     get: {
       /** Retrieves a Campaign */
       parameters: {
         path: {
-          campaign_id: string
-        }
-      }
+          campaign_id: string;
+        };
+      };
       responses: {
         /** @description Campaign found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description_app?: Record<string, never>
-              header_image?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              video_link?: string
-              description_web?: Record<string, never>
-              enabled?: boolean
-              start_date?: Record<string, never>
-              end_date?: Record<string, never>
-              short_name?: string
-              infographic_url?: string
-              of_the_month?: boolean
-              recommended?: boolean
-              status?: number
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              description_app?: Record<string, never>;
+              header_image?: string;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              video_link?: string;
+              description_web?: Record<string, never>;
+              enabled?: boolean;
+              start_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+              short_name?: string;
+              infographic_url?: string;
+              of_the_month?: boolean;
+              recommended?: boolean;
+              status?: number;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/campaigns/{campaign_id}/actions': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/campaigns/{campaign_id}/actions": {
     /** Retrieves a Campaigns actions */
     get: {
       /** Retrieves a Campaigns actions */
       parameters: {
         path: {
-          campaign_id: string
-        }
-      }
+          campaign_id: string;
+        };
+      };
       responses: {
         /** @description Campaigns actions found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              link?: string
-              type?: string
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              what_description?: string
-              why_description?: string
-              time?: Record<string, never>
-              enabled?: boolean
-              release_date?: Record<string, never>
-              end_date?: Record<string, never>
-              of_the_month?: boolean
-              recommended?: boolean
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              link?: string;
+              type?: string;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              what_description?: string;
+              why_description?: string;
+              time?: Record<string, never>;
+              enabled?: boolean;
+              release_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+              of_the_month?: boolean;
+              recommended?: boolean;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/campaigns/{campaign_id}/actions/{action_id}': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/campaigns/{campaign_id}/actions/{action_id}": {
     /** Retrieves a Campaigns action through action id */
     get: {
       /** Retrieves a Campaigns action through action id */
       parameters: {
         path: {
-          campaign_id: string
-          action_id: string
-        }
-      }
+          campaign_id: string;
+          action_id: string;
+        };
+      };
       responses: {
         /** @description Campaign found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              link?: string
-              type?: string
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              what_description?: string
-              why_description?: string
-              time?: Record<string, never>
-              enabled?: boolean
-              release_date?: Record<string, never>
-              end_date?: Record<string, never>
-              of_the_month?: boolean
-              recommended?: boolean
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              link?: string;
+              type?: string;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              what_description?: string;
+              why_description?: string;
+              time?: Record<string, never>;
+              enabled?: boolean;
+              release_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+              of_the_month?: boolean;
+              recommended?: boolean;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/campaigns/{campaign_id}/actions/{action_id}/articles': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/campaigns/{campaign_id}/actions/{action_id}/articles": {
     /** Retrieves a Campaigns articles through action id */
     get: {
       /** Retrieves a Campaigns articles through action id */
       parameters: {
         path: {
-          campaign_id: string
-          action_id: string
-        }
-      }
+          campaign_id: string;
+          action_id: string;
+        };
+      };
       responses: {
         /** @description Campaign found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              body?: Record<string, never>
-              header_image?: string
-              full_article_link?: string
-              video_link?: string
-              campaign_action_id?: number
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              video_of_the_day?: boolean
-              subtitle?: string
-              link_text?: string
-              source?: string
-              enabled?: boolean
-              release_date?: Record<string, never>
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              body?: Record<string, never>;
+              header_image?: string;
+              full_article_link?: string;
+              video_link?: string;
+              campaign_action_id?: number;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              video_of_the_day?: boolean;
+              subtitle?: string;
+              link_text?: string;
+              source?: string;
+              enabled?: boolean;
+              release_date?: Record<string, never>;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/campaigns/{campaign_id}/actions/{action_id}/offers': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/campaigns/{campaign_id}/actions/{action_id}/offers": {
     /** Retrieves a Campaigns offers through action id */
     get: {
       /** Retrieves a Campaigns offers through action id */
       parameters: {
         path: {
-          campaign_id: string
-          action_id: string
-        }
-      }
+          campaign_id: string;
+          action_id: string;
+        };
+      };
       responses: {
         /** @description Campaign found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description?: Record<string, never>
-              link?: string
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              campaign_action_id?: number
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              description?: Record<string, never>;
+              link?: string;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              campaign_action_id?: number;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/campaigns/{campaign_id}/articles': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/campaigns/{campaign_id}/articles": {
     /** Retrieves a Campaigns articles */
     get: {
       /** Retrieves a Campaigns articles */
       parameters: {
         path: {
-          campaign_id: string
-          action_id: string
-        }
-      }
+          campaign_id: string;
+          action_id: string;
+        };
+      };
       responses: {
         /** @description Campaign found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              body?: Record<string, never>
-              header_image?: string
-              full_article_link?: string
-              video_link?: string
-              campaign_action_id?: number
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              video_of_the_day?: boolean
-              subtitle?: string
-              link_text?: string
-              source?: string
-              enabled?: boolean
-              release_date?: Record<string, never>
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              body?: Record<string, never>;
+              header_image?: string;
+              full_article_link?: string;
+              video_link?: string;
+              campaign_action_id?: number;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              video_of_the_day?: boolean;
+              subtitle?: string;
+              link_text?: string;
+              source?: string;
+              enabled?: boolean;
+              release_date?: Record<string, never>;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/campaigns/{campaign_id}/offers': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/campaigns/{campaign_id}/offers": {
     /** Retrieves a Campaigns articles */
     get: {
       /** Retrieves a Campaigns articles */
       parameters: {
         path: {
-          campaign_id: string
-          action_id: string
-        }
-      }
+          campaign_id: string;
+          action_id: string;
+        };
+      };
       responses: {
         /** @description Campaign found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description?: Record<string, never>
-              link?: string
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              campaign_action_id?: number
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              description?: Record<string, never>;
+              link?: string;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              campaign_action_id?: number;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/campaigns/{campaign_id}/learning_topics': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/campaigns/{campaign_id}/learning_topics": {
     /** Retrieves a Campaigns learning topics */
     get: {
       /** Retrieves a Campaigns learning topics */
       parameters: {
         path: {
-          campaign_id: string
-          action_id: string
-        }
-      }
+          campaign_id: string;
+          action_id: string;
+        };
+      };
       responses: {
         /** @description Campaign found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description?: Record<string, never>
-              link?: string
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              campaign_action_id?: number
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              description?: Record<string, never>;
+              link?: string;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              campaign_action_id?: number;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/causes': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/causes": {
     /** Retrieves all causes */
     get: {
       /** Retrieves all causes */
@@ -439,52 +440,52 @@ export interface paths {
         /** @description causes found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              image?: string
-              icon?: string
-              name?: string
-              description?: string
-              joiners?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v1/causes/{id}': {
+            "application/json": {
+              id?: number;
+              image?: string;
+              icon?: string;
+              name?: string;
+              description?: string;
+              joiners?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v1/causes/{id}": {
     /** Retrieves a cause */
     get: {
       /** Retrieves a cause */
       parameters: {
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description cause found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              image?: string
-              icon?: string
-              name?: string
-              description?: string
-              joiners?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              image?: string;
+              icon?: string;
+              name?: string;
+              description?: string;
+              joiners?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/faqs': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/faqs": {
     /** Retrieves all faqs */
     get: {
       /** Retrieves all faqs */
@@ -492,15 +493,15 @@ export interface paths {
         /** @description faqs found */
         200: {
           content: {
-            'application/json': {
-              data: Array<components['schemas']['faq']>
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v1/offers': {
+            "application/json": {
+              data: (components["schemas"]["faq"])[];
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v1/offers": {
     /** Retrieves all offers */
     get: {
       /** Retrieves all offers */
@@ -508,52 +509,52 @@ export interface paths {
         /** @description offers found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description?: Record<string, never>
-              link?: string
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              campaign_action_id?: number
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v1/offers/{id}': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              description?: Record<string, never>;
+              link?: string;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              campaign_action_id?: number;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v1/offers/{id}": {
     /** Retrieves a offer */
     get: {
       /** Retrieves a offer */
       parameters: {
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description offer found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description?: Record<string, never>
-              link?: string
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              campaign_action_id?: number
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              description?: Record<string, never>;
+              link?: string;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              campaign_action_id?: number;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/organisations': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/organisations": {
     /** Retrieves all organisations */
     get: {
       /** Retrieves all organisations */
@@ -561,36 +562,38 @@ export interface paths {
         /** @description organisations found */
         200: {
           content: {
-            'application/json': {
-              data: Array<components['schemas']['organisation']>
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v1/organisations/{id}': {
+            "application/json": {
+              data: (components["schemas"]["organisation"])[];
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v1/organisations/{id}": {
     /** Retrieves a organisation */
     get: {
       /** Retrieves a organisation */
       parameters: {
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description organisation found */
         200: {
           content: {
-            'application/json': components['schemas']['organisation']
-          }
-        }
+            "application/json": {
+              data: components["schemas"]["organisation"];
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/press_coverage': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/press_coverage": {
     /** Retrieves all press_coverage */
     get: {
       /** Retrieves all press_coverage */
@@ -598,50 +601,36 @@ export interface paths {
         /** @description press_coverage found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              image_url?: string
-              link?: string
-              media_name?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              title?: string
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v1/press_coverage/{id}': {
+            "application/json": {
+              data: (components["schemas"]["press_article"])[];
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v1/press_coverage/{id}": {
     /** Retrieves a press_coverage */
     get: {
       /** Retrieves a press_coverage */
       parameters: {
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description press_coverage found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              image_url?: string
-              link?: string
-              media_name?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              title?: string
-            }
-          }
-        }
+            "application/json": components["schemas"]["press_article"];
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v1/quizzes': {
+        404: never;
+      };
+    };
+  };
+  "/api/v1/quizzes": {
     /** Retrieves all quizzes */
     get: {
       /** Retrieves all quizzes */
@@ -649,599 +638,637 @@ export interface paths {
         /** @description quizzes found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v1/quizzes/{id}': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              description?: string;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v1/quizzes/{id}": {
     /** Retrieves a quiz */
     get: {
       /** Retrieves a quiz */
       parameters: {
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description quiz found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              title?: string;
+              description?: string;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+            };
+          };
+        };
         /** @description Not found */
-        404: never
-      }
-    }
-  }
-  '/api/v2/actions': {
+        404: never;
+      };
+    };
+  };
+  "/api/v2/actions": {
     /** If no user token header present, completed: 'User not authenticated' */
     get: {
       /** If no user token header present, completed: 'User not authenticated' */
       parameters?: {
         header?: {
-          token?: string
-        }
-      }
+          token?: string;
+        };
+      };
       responses: {
         /** @description Campaign Actions found! */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              link?: string
-              type?: string
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              what_description?: string
-              why_description?: string
-              time?: Record<string, never>
-              enabled?: boolean
-              release_date?: Record<string, never>
-              end_date?: Record<string, never>
-              of_the_month?: boolean
-              recommended?: boolean
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/actions?cause__in=[{cause_id}]': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              link?: string;
+              type?: string;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              what_description?: string;
+              why_description?: string;
+              time?: Record<string, never>;
+              enabled?: boolean;
+              release_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+              of_the_month?: boolean;
+              recommended?: boolean;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/actions?cause__in=[{cause_id}]": {
     /** Filters campaign actions by cause id's */
     get: {
       /** Filters campaign actions by cause id's */
       parameters: {
         path: {
-          cause_id: string
-        }
-      }
+          cause_id: string;
+        };
+      };
       responses: {
         /** @description Campaign Action found! */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              link?: string
-              type?: string
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              what_description?: string
-              why_description?: string
-              time?: Record<string, never>
-              enabled?: boolean
-              release_date?: Record<string, never>
-              end_date?: Record<string, never>
-              of_the_month?: boolean
-              recommended?: boolean
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/actions/{id}': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              link?: string;
+              type?: string;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              what_description?: string;
+              why_description?: string;
+              time?: Record<string, never>;
+              enabled?: boolean;
+              release_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+              of_the_month?: boolean;
+              recommended?: boolean;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/actions/{id}": {
     /** Getting a specific action */
     get: {
       /** Getting a specific action */
       parameters: {
         header?: {
-          token?: string
-        }
+          token?: string;
+        };
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description Campaign Action found! (with user header) */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              link?: string
-              type?: string
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              what_description?: string
-              why_description?: string
-              time?: Record<string, never>
-              enabled?: boolean
-              release_date?: Record<string, never>
-              end_date?: Record<string, never>
-              of_the_month?: boolean
-              recommended?: boolean
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/campaigns': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              link?: string;
+              type?: string;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              what_description?: string;
+              why_description?: string;
+              time?: Record<string, never>;
+              enabled?: boolean;
+              release_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+              of_the_month?: boolean;
+              recommended?: boolean;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/campaigns": {
     /** Retrieves all Campaigns. If user token header present, returns with a completed: true/false param. */
     get: {
       /** Retrieves all Campaigns. If user token header present, returns with a completed: true/false param. */
       parameters?: {
         header?: {
-          token?: string
-        }
-      }
+          token?: string;
+        };
+      };
       responses: {
         /** @description Campaign found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description_app?: Record<string, never>
-              header_image?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              video_link?: string
-              description_web?: Record<string, never>
-              enabled?: boolean
-              start_date?: Record<string, never>
-              end_date?: Record<string, never>
-              short_name?: string
-              infographic_url?: string
-              of_the_month?: boolean
-              recommended?: boolean
-              status?: number
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/campaigns/{id}': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              description_app?: Record<string, never>;
+              header_image?: string;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              video_link?: string;
+              description_web?: Record<string, never>;
+              enabled?: boolean;
+              start_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+              short_name?: string;
+              infographic_url?: string;
+              of_the_month?: boolean;
+              recommended?: boolean;
+              status?: number;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/campaigns/{id}": {
     /** Getting a specific campaign */
     get: {
       /** Getting a specific campaign */
       parameters: {
         header?: {
-          token?: string
-        }
+          token?: string;
+        };
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description Campaign found! (with user header) */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description_app?: Record<string, never>
-              header_image?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              video_link?: string
-              description_web?: Record<string, never>
-              enabled?: boolean
-              start_date?: Record<string, never>
-              end_date?: Record<string, never>
-              short_name?: string
-              infographic_url?: string
-              of_the_month?: boolean
-              recommended?: boolean
-              status?: number
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/campaigns?cause__in=[{cause_id}]': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              description_app?: Record<string, never>;
+              header_image?: string;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              video_link?: string;
+              description_web?: Record<string, never>;
+              enabled?: boolean;
+              start_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+              short_name?: string;
+              infographic_url?: string;
+              of_the_month?: boolean;
+              recommended?: boolean;
+              status?: number;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/campaigns?cause__in=[{cause_id}]": {
     /** Filters campaigns by cause id's */
     get: {
       /** Filters campaigns by cause id's */
       parameters: {
         path: {
-          cause_id: string
-        }
-      }
+          cause_id: string;
+        };
+      };
       responses: {
         /** @description Campaign found! */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              description_app?: Record<string, never>
-              header_image?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              video_link?: string
-              description_web?: Record<string, never>
-              enabled?: boolean
-              start_date?: Record<string, never>
-              end_date?: Record<string, never>
-              short_name?: string
-              infographic_url?: string
-              of_the_month?: boolean
-              recommended?: boolean
-              status?: number
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/causes': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              description_app?: Record<string, never>;
+              header_image?: string;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              video_link?: string;
+              description_web?: Record<string, never>;
+              enabled?: boolean;
+              start_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+              short_name?: string;
+              infographic_url?: string;
+              of_the_month?: boolean;
+              recommended?: boolean;
+              status?: number;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/causes": {
     /** Retrieves all Causes. If user token header present, returns with joined: true/false. */
     get: {
       /** Retrieves all Causes. If user token header present, returns with joined: true/false. */
       parameters?: {
         header?: {
-          token?: string
-        }
-      }
+          token?: string;
+        };
+      };
       responses: {
         /** @description Cause found */
         200: {
           content: {
-            'application/json': {
-              data: Array<components['schemas']['cause']>
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/causes/{id}': {
+            "application/json": {
+              data: (components["schemas"]["cause"])[];
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/causes/{id}": {
     /** Retrieves cause from cause id. If user token header present, returns with joined: true/false. */
     get: {
       /** Retrieves cause from cause id. If user token header present, returns with joined: true/false. */
-      parameters?: {
+      parameters: {
         header?: {
-          token?: string
-        }
-      }
+          token?: string;
+        };
+        path: {
+          id: string;
+        };
+      };
       responses: {
         /** @description Cause found */
         200: {
           content: {
-            'application/json': components['schemas']['cause']
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/learning_resources': {
+            "application/json": {
+              data: components["schemas"]["cause"];
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/learning_resources": {
     /** Retrieves all Learning Resources. If user token header present, returns with a completed: null/completed param. */
     get: {
       /** Retrieves all Learning Resources. If user token header present, returns with a completed: null/completed param. */
       parameters?: {
         header?: {
-          token?: string
-        }
-      }
+          token?: string;
+        };
+      };
       responses: {
         /** @description Learning Resource found! */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              time?: Record<string, never>
-              link?: string
-              type?: string
-              learning_topic_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              source?: string
-              release_date?: Record<string, never>
-              end_date?: Record<string, never>
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/learning_resources/{id}': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              time?: Record<string, never>;
+              link?: string;
+              type?: string;
+              learning_topic_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              source?: string;
+              release_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/learning_resources/{id}": {
     /** Getting a specific learning_resource */
     get: {
       /** Getting a specific learning_resource */
       parameters: {
         header?: {
-          token?: string
-        }
+          token?: string;
+        };
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description Learning Resource found! (with user header) */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              time?: Record<string, never>
-              link?: string
-              type?: string
-              learning_topic_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              source?: string
-              release_date?: Record<string, never>
-              end_date?: Record<string, never>
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/learning_resources?cause__in=[{cause_id}]': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              time?: Record<string, never>;
+              link?: string;
+              type?: string;
+              learning_topic_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              source?: string;
+              release_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/learning_resources?cause__in=[{cause_id}]": {
     /** Filters learning_resources by cause id's */
     get: {
       /** Filters learning_resources by cause id's */
       parameters: {
         path: {
-          cause_id: string
-        }
-      }
+          cause_id: string;
+        };
+      };
       responses: {
         /** @description Learning Resource found! */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              title?: string
-              time?: Record<string, never>
-              link?: string
-              type?: string
-              learning_topic_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              source?: string
-              release_date?: Record<string, never>
-              end_date?: Record<string, never>
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/user/actions': {
+            "application/json": {
+              id?: number;
+              title?: string;
+              time?: Record<string, never>;
+              link?: string;
+              type?: string;
+              learning_topic_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              source?: string;
+              release_date?: Record<string, never>;
+              end_date?: Record<string, never>;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/user/actions": {
     /** Retrieves all actions from said user */
     get: {
       /** Retrieves all actions from said user */
       parameters?: {
         header?: {
-          token?: string
-        }
-      }
+          token?: string;
+        };
+      };
       responses: {
         /** @description User actions found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              user_id?: number
-              campaign_action_id?: number
-              status?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              comment?: string
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              user_id?: number;
+              campaign_action_id?: number;
+              status?: string;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              comment?: string;
+            };
+          };
+        };
         /** @description User not authenticated */
         401: {
           content: {
-            'application/json': {
-              id?: number
-              user_id?: number
-              campaign_action_id?: number
-              status?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              comment?: string
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/user/actions/{id}': {
+            "application/json": {
+              id?: number;
+              user_id?: number;
+              campaign_action_id?: number;
+              status?: string;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              comment?: string;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/user/actions/{id}": {
     /** Getting a specific user action */
     get: {
       /** Getting a specific user action */
       parameters: {
         header?: {
-          token?: string
-        }
+          token?: string;
+        };
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description User action found! */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              user_id?: number
-              campaign_action_id?: number
-              status?: string
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              comment?: string
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/user/campaigns': {
+            "application/json": {
+              id?: number;
+              user_id?: number;
+              campaign_action_id?: number;
+              status?: string;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              comment?: string;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/user/campaigns": {
     /** Not including the correct header */
     get: {
       /** Not including the correct header */
       parameters?: {
         header?: {
-          token?: string
-        }
-      }
+          token?: string;
+        };
+      };
       responses: {
         /** @description User campaigns found */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              user_id?: number
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              progress?: number
-            }
-          }
-        }
+            "application/json": {
+              id?: number;
+              user_id?: number;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              progress?: number;
+            };
+          };
+        };
         /** @description User not authenticated */
         401: {
           content: {
-            'application/json': {
-              id?: number
-              user_id?: number
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              progress?: number
-            }
-          }
-        }
-      }
-    }
-  }
-  '/api/v2/user/campaigns/{id}': {
+            "application/json": {
+              id?: number;
+              user_id?: number;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              progress?: number;
+            };
+          };
+        };
+      };
+    };
+  };
+  "/api/v2/user/campaigns/{id}": {
     /** Getting a specific user action */
     get: {
       /** Getting a specific user action */
       parameters: {
         header?: {
-          token?: string
-        }
+          token?: string;
+        };
         path: {
-          id: string
-        }
-      }
+          id: string;
+        };
+      };
       responses: {
         /** @description User campaign found! */
         200: {
           content: {
-            'application/json': {
-              id?: number
-              user_id?: number
-              campaign_id?: number
-              created_at?: Record<string, never>
-              updated_at?: Record<string, never>
-              progress?: number
-            }
-          }
-        }
-      }
-    }
-  }
+            "application/json": {
+              id?: number;
+              user_id?: number;
+              campaign_id?: number;
+              created_at?: Record<string, never>;
+              updated_at?: Record<string, never>;
+              progress?: number;
+            };
+          };
+        };
+      };
+    };
+  };
 }
 
-export type webhooks = Record<string, never>
+export type webhooks = Record<string, never>;
 
 export interface components {
   schemas: {
     cause: {
-      joined: string
-      id: number
-      image: string
-      icon: string
-      name: string
-      description: string
-      joiners: number | null
+      joined: boolean;
+      id: number;
+      image: string;
+      icon: string;
+      name: string;
+      description: string;
+      joiners: number | null;
       /** Format: date-time */
-      created_at: string
+      created_at: string;
       /** Format: date-time */
-      updated_at: string
-    }
+      updated_at: string;
+    };
     faq: {
-      id: number
-      question: string
-      answer: string
+      id: number;
+      question: string;
+      answer: string;
       /** Format: date-time */
-      created_at: string
+      created_at: string;
       /** Format: date-time */
-      updated_at: string
-    }
+      updated_at: string;
+    };
     organisation: {
-      id: number
-      name: string | null
-      description: string | null
-      logo_link: string | null
+      campaigns: components["schemas"]["campaign"];
+      id: number;
+      name: string | null;
+      description: string | null;
+      logo_link: string | null;
       /** Format: date-time */
-      created_at: string
+      created_at: string;
       /** Format: date-time */
-      updated_at: string
-      email: string | null
-      website: string | null
-      IG_link: string | null
-      FB_link: string | null
-      twitter_link: string | null
-      extra_text_1: string | null
-      extra_text_2: string | null
-      extra_text_3: string | null
-      extra_link_1: string | null
-      extra_link_2: string | null
-      extra_link_3: string | null
-      organisation_type: string | null
-      code: string | null
-      geographic_reach: string | null
-    }
-  }
-  responses: never
-  parameters: never
-  requestBodies: never
-  headers: never
-  pathItems: never
+      updated_at: string;
+      email: string | null;
+      website: string | null;
+      IG_link: string | null;
+      FB_link: string | null;
+      twitter_link: string | null;
+      extra_text_1: string | null;
+      extra_text_2: string | null;
+      extra_text_3: string | null;
+      extra_link_1: string | null;
+      extra_link_2: string | null;
+      extra_link_3: string | null;
+      organisation_type: string | null;
+      code: string | null;
+      geographic_reach: string | null;
+    };
+    press_article: {
+      id: number;
+      image_url: string | null;
+      link: string | null;
+      media_name: string | null;
+      /** Format: date-time */
+      created_at: string;
+      /** Format: date-time */
+      updated_at: string;
+      title: string | null;
+    };
+    news_article: {
+      id: number;
+      title: string | null;
+      body: Record<string, unknown> | null;
+      header_image: string | null;
+      full_article_link: string | null;
+      video_link: string | null;
+      campaign_action_id: number | null;
+      campaign_id: number | null;
+      /** Format: date-time */
+      created_at: string;
+      /** Format: date-time */
+      updated_at: string;
+      video_of_the_day: boolean | null;
+      subtitle: string | null;
+      link_text: string | null;
+      source: string | null;
+      enabled: boolean | null;
+      /** Format: date-time */
+      release_date: string | null;
+    };
+  };
+  responses: never;
+  parameters: never;
+  requestBodies: never;
+  headers: never;
+  pathItems: never;
 }
 
-export type external = Record<string, never>
+export type external = Record<string, never>;
 
-export type operations = Record<string, never>
+export type operations = Record<string, never>;

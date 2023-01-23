@@ -5,9 +5,9 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:react/recommended",
     "standard-with-typescript",
     "prettier",
+    "next",
   ],
   overrides: [],
   parserOptions: {

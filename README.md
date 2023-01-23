@@ -9,6 +9,6 @@ Install `pnpm`
 Run:
 
 ```
-pnpm install 
-pnpm run dev 
+pnpm install
+pnpm run dev
 ```

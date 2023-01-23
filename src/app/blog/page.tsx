@@ -1,113 +1,65 @@
-import React from 'react'
+import React from "react";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
-import Elgars from '@/assets/images/elgars.png'
-import { HeaderSubtitle } from '@/components/Header'
+import Elgars from "@/assets/images/elgars.png";
+import { HeaderSubtitle } from "@/components/Header";
 
-import Image from 'next/image'
+import Image from "next/image";
+import Link from "next/link";
 
-interface BlogTileProps {
-  image: string
-  title: string
-  author: string
-  filter_time: string
-}
+import { Post, getPosts } from "./utils";
 
-const blogs = [
-  {
-    id: 1,
-    image: Elgars,
-    title: 'Holidays & Hats with the',
-    author: 'Elgars',
-    filter_time: '1'
-  },
-  {
-    id: 2,
-    image: Elgars,
-    title: 'Holidays & Hats with the',
-    author: 'Elgars',
-    filter_time: '1'
-  },
-  {
-    id: 3,
-    image: Elgars,
-    title: 'Holidays & Hats with the',
-    author: 'Elgars',
-    filter_time: '1'
-  },
-  {
-    id: 4,
-    image: Elgars,
-    title: 'Holidays & Hats with the',
-    author: 'Elgars',
-    filter_time: '1'
-  },
-  {
-    id: 5,
-    image: Elgars,
-    title: 'Holidays & Hats with the',
-    author: 'Elgars',
-    filter_time: '1'
-  }
-]
-
-// TODO: remove object-top, it's only there to see the hats
-
-const BlogTile = (props: BlogTileProps): JSX.Element => {
+function BlogTile(props: { post: Post }): JSX.Element {
+  const { slug, headerImage, title, author, readingTime } = props.post;
   return (
-    <div className="flex flex-col hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm">
-      <Image
-        src={props.image}
-        alt="Blog Image"
-        className="object-cover h-64 object-top"
-      />
-      <div className="flex bg-cream justify-between px-1">
-        <div>
-          <h2 className="font-bold">{props.title}</h2>
-          <h2>{props.author}</h2>
+    <Link href={`blog/${slug}`}>
+      <div className="bg-cream rounded-lg hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm">
+        <div className="w-full h-64 relative top-0 right-0 rounded-lg">
+          <Image
+            src={headerImage}
+            alt="Blog Image"
+            className="object-cover w-full h-full rounded-lg"
+            sizes="100vw"
+            fill
+          />
         </div>
-        <div className="grid grid-cols-2 place-content-center">
-          <FontAwesomeIcon icon={faClock} size="1x" className="m-auto" />
-          <h4>
-            {props.filter_time} {props.filter_time === '1' ? 'min' : 'mins'}
-          </h4>
+        <div className="flex flex-row justify-between p-4 items-stretch">
+          <div>
+            <h2 className="flex-1 font-bold">{title}</h2>
+            <h2>{author?.full_name}</h2>
+          </div>
+          <div className="flex items-center w-32 justify-end">
+            <FontAwesomeIcon icon={faClock} size="1x" className="mr-2" />
+            <h4>
+              {readingTime} {readingTime === "1" ? "min" : "mins"}
+            </h4>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    </Link>
+  );
 }
 
-const Blog = (): JSX.Element => {
-  const firstBlog = blogs[1]
+async function Blog(): Promise<JSX.Element> {
+  const blogs = await getPosts();
   return (
     <div>
       <HeaderSubtitle
         title="Blog"
         subtitle="Include copy about sustainable development goals and that below you can see which causes are linked to which goals. We partner with trusted charities and social enterprises to bring you focused monthly campaigns with clear and attainable objectives. Each campaign contains informative resources and actions you can complete, curated to inform, involve and inspire..."
       />
-      <div className="m-5 sm:mx-32 sm:my-10">
-        <BlogTile
-          image={firstBlog.image}
-          title={firstBlog.title}
-          author={firstBlog.author}
-          filter_time={firstBlog.filter_time}
-        />
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 m-5 sm:mx-32 sm:my-10">
-        {blogs.slice(1).map((blog) => (
+      <div className="grid col-span-1 first:col-span-2 sm:grid-cols-2 gap-5 m-5 sm:mx-32 sm:my-10">
+        {blogs.map((blog) => (
           <BlogTile
-          key={blog.id}
-            image={blog.image}
-            title={blog.title}
-            author={blog.author}
-            filter_time={blog.filter_time}
+            key={blog.slug}
+            post={blog}
           />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Blog
+export default Blog;

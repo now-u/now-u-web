@@ -1,0 +1,7 @@
+﻿id,img_url,blog_article_id,appearance_order,created_at,updated_at,section_type
+1,https://images.unsplash.com/photo-1596005935874-c57d5739cf5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80,2,1,2020-06-27 11:27:21.873962,2020-07-29 10:32:04.429,image_section
+12,https://now-u.s3.eu-west-2.amazonaws.com/Climate_9481b14877.jpeg,27,1,2021-09-21 11:45:28.954,2021-09-22 14:45:39.15,image_section
+3,https://images.unsplash.com/photo-1596005935874-c57d5739cf5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80,6,2,2020-08-20 07:15:35.292,2020-08-20 07:15:35.298,image_section
+13,https://now-u.s3.eu-west-2.amazonaws.com/Poverty_ea6c0bd95b.jpeg,27,4,2021-09-21 12:01:51.154,2021-09-22 14:45:47.917,image_section
+7,https://now-u.s3.eu-west-2.amazonaws.com/menstrual_intro_e6efb31231.png,13,6,2020-10-07 22:11:16.902,2020-10-09 11:48:25.959,image_section
+8,https://now-u.s3.eu-west-2.amazonaws.com/sopot_1c5f05f0ec.jpeg,25,1,2021-06-30 15:23:31.787,2021-06-30 15:34:53.352,image_section

@@ -15,10 +15,8 @@ jobs:
         with:
           version: 7.11.0
 
-      - name: Install 
-        run:
-          pnpm install
+      - name: Install
+        run: pnpm install
 
       - name: Lint
-        run:
-          pnpm lintCheck
+        run: pnpm lintCheck

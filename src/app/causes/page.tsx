@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import { HeaderCauses } from '@/components/Header'
-import { Newsletter } from '@/components/Newsletter'
-import { Cause } from '@/models/cause'
-import { apiClient } from '@/services/causesApi'
+import { HeaderCauses } from "@/components/Header";
+import { Newsletter } from "@/components/Newsletter";
+import { Cause } from "@/models/cause";
+import { apiClient } from "@/services/causesApi";
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   return (
@@ -37,45 +37,42 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-async function getCauses (): Promise<Cause[]> {
-  console.log('Causes are loading')
-  const getCauses = apiClient.path('/api/v2/causes').method('get').create()
-  const response = await getCauses({})
+async function getCauses(): Promise<Cause[]> {
+  console.log("Causes are loading");
+  const getCauses = apiClient.path("/api/v2/causes").method("get").create();
+  const response = await getCauses({});
   if (!response.ok) {
-    console.error('Failed to fetch causes data')
-    return []
+    console.error("Failed to fetch causes data");
+    return [];
   }
-  return response.data.data
+  return response.data.data;
 }
 
-export default async function CausesPage (): Promise<JSX.Element> {
-  const causes = await getCauses()
+export default async function CausesPage(): Promise<JSX.Element> {
+  const causes = await getCauses();
 
   return (
     <div className="grid place-items-center">
       <HeaderCauses
         title="Our Causes"
         body={[
-          'We focus on 6 core causes at now-u, which all support the UN’s Sustainable Development Goals. These causes include Health and Wellbeing, Equality and Human Rights, Environment, Econimic Opportunity, Education & Citizenship and Safe & Inclusive Communities.',
-          'We partner with trusted charities and social enterprises to bring you focused campaigns every month. Each campaign connects you with the resources and actions you need to make an impact.',
-          'Explore how the causes link to the UN’s Sustainable Development Goals below...'
+          "We focus on 6 core causes at now-u, which all support the UN’s Sustainable Development Goals. These causes include Health and Wellbeing, Equality and Human Rights, Environment, Econimic Opportunity, Education & Citizenship and Safe & Inclusive Communities.",
+          "We partner with trusted charities and social enterprises to bring you focused campaigns every month. Each campaign connects you with the resources and actions you need to make an impact.",
+          "Explore how the causes link to the UN’s Sustainable Development Goals below...",
         ]}
       />
       <div className="flex flex-col items-center space-y-1 py-20">
         <div className="grid grid-cols-2 gap-10 items-start">
-          {
-            causes?.map((cause) => {
-              console.log('Cause is ', cause)
-              return <CauseTile key={cause.id} cause={cause} />
-            })}
+          {causes?.map((cause) => {
+            console.log("Cause is ", cause);
+            return <CauseTile key={cause.id} cause={cause} />;
+          })}
         </div>
       </div>
-      <div className="md:px-20">
-        <Newsletter />
-      </div>
+      <Newsletter />
     </div>
-  )
+  );
 }

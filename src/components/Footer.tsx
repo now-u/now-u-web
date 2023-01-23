@@ -1,51 +1,49 @@
-'use client'
+"use client";
 
-import React from 'react'
-import Link from 'next/link'
-import {} from '@heroicons/react/24/outline'
-import NowULogo from '@/assets/now-u-logo.svg'
-import { navigation as headerNavigation, NamedRoute } from './Navbar'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from "react";
+import Link from "next/link";
+import {} from "@heroicons/react/24/outline";
+import NowULogo from "@/assets/now-u-logo.svg";
+import { navigation as headerNavigation, NamedRoute } from "./Navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faTwitter,
   faFacebookF,
-  faLinkedinIn
-} from '@fortawesome/free-brands-svg-icons'
-import {
-  AppStoreBadges
-} from './AppStoreBadge'
+  faLinkedinIn,
+} from "@fortawesome/free-brands-svg-icons";
+import { AppStoreBadges } from "./AppStoreBadge";
 
-import Image from 'next/image'
+import Image from "next/image";
 
 const navigation: NamedRoute[] = [
   ...headerNavigation,
-  { text: 'FAQ', to: '/faq' },
-  { text: 'Press', to: '/press' }
-]
+  { text: "FAQ", to: "/faq" },
+  { text: "Press", to: "/press" },
+];
 
 const socialMediaLinks = [
   {
     key: 1,
     icon: faInstagram,
-    link: 'https://google.com'
+    link: "https://google.com",
   },
   {
     key: 2,
     icon: faFacebookF,
-    link: 'https://google.com'
+    link: "https://google.com",
   },
   {
     key: 3,
     icon: faTwitter,
-    link: 'https://google.com'
+    link: "https://google.com",
   },
   {
     key: 4,
     icon: faLinkedinIn,
-    link: 'https://google.com'
-  }
-]
+    link: "https://google.com",
+  },
+];
 
 export const Footer = (): JSX.Element => {
   return (
@@ -66,23 +64,28 @@ export const Footer = (): JSX.Element => {
                 key={route.text}
                 href={route.to}
               >
-                {' '}
-                {route.text}{' '}
+                {" "}
+                {route.text}{" "}
               </Link>
             ))}
           </div>
           <div className="flex justify-center md:justify-end mb-3 space-x-8">
             {socialMediaLinks.map((socialMedia) => {
               return (
-                <Link key={socialMedia.key} href={socialMedia.link} target="_blank" rel="noreferrer">
-                  {' '}
+                <Link
+                  key={socialMedia.key}
+                  href={socialMedia.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {" "}
                   <FontAwesomeIcon
                     className="hover:cursor-pointer hover:text-orange"
                     size="2xl"
                     icon={socialMedia.icon}
                   />
                 </Link>
-              )
+              );
             })}
           </div>
         </div>
@@ -94,7 +97,7 @@ export const Footer = (): JSX.Element => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 // TODO: Make sure footer goes to end of the page on 'Get in Touch' page

@@ -1,22 +1,35 @@
-import Link from 'next/link'
-import React from 'react'
-import { UrlObject } from 'url'
+import Link from "next/link";
+import React from "react";
+import { UrlObject } from "url";
 
 interface ButtonProps {
-  buttonText: string
-  href: string | UrlObject
+  buttonText: string;
+  href: string | UrlObject;
 }
 
+export const buttonStyle =
+  "bg-orange text-black font-bold py-3 px-4 rounded-lg hover:drop-shadow-xl hover:-translate-y-1 active:translate-y-0 active:drop-shadow-none";
+
 export const LinkButton = (props: ButtonProps): JSX.Element => {
-  const { href, buttonText } = props
+  const { href, buttonText } = props;
   return (
     <div className="m-10">
-        <Link
-          className="bg-orange text-black font-bold my-4 py-3 px-4 rounded-lg hover:drop-shadow-xl hover:-translate-y-1 active:translate-y-0 active:drop-shadow-none"
-          href={href}
-        >
-          {buttonText}
-        </Link>
+      <Link className={buttonStyle} href={href}>
+        {buttonText}
+      </Link>
     </div>
-  )
-}
+  );
+};
+
+export const Button = (
+  props: React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >
+): JSX.Element => {
+  return (
+    <button className={buttonStyle} {...props}>
+      {props.children}
+    </button>
+  );
+};

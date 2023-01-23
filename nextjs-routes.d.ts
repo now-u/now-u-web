@@ -7,6 +7,7 @@ declare module "nextjs-routes" {
   export type Route =
     | DynamicRoute<"/api/trpc/[trpc]", { "trpc": string }>
     | StaticRoute<"/about">
+    | DynamicRoute<"/blog/[slug]", { "slug": string }>
     | StaticRoute<"/blog">
     | StaticRoute<"/causes">
     | StaticRoute<"/faq">

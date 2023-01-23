@@ -12,3 +12,11 @@ Run:
 pnpm install
 pnpm run dev
 ```
+
+## TODO
+
+- Blog view page -> add header image and way to go back
+- Blog list page -> fix tile heights not matching
+- Home fix all partner images
+- Fix copy on all pages
+- FAQ page for mobile

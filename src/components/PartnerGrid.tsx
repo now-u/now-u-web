@@ -8,6 +8,8 @@ const PartnerTile = (props: { partner: Organisation }): JSX.Element => {
   return (
     <div className="p-4">
       <Image
+        // TODO Update API types for organisation to always include a logo link
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         src={partner.logo_link!}
         alt=""
         width={500}

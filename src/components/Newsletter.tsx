@@ -5,7 +5,7 @@ import React from "react";
 import Image from "next/image";
 
 import NewsletterGraphic from "@/assets/graphics/newsletter_graphic.png";
-import { Button, buttonStyle } from "./Button";
+import { Button } from "./Button";
 
 export function Newsletter(): JSX.Element {
   async function handleSubmit(

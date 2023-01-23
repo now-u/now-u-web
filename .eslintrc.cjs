@@ -16,7 +16,14 @@ module.exports = {
     project: ["./tsconfig.json"],
   },
   plugins: ["react"],
-  rules: {},
+  ignorePatterns: ["src/services/causesApiTypes.ts", "src/vite-env.d.ts"],
+  rules: {
+    "@typescript-eslint/no-misused-promises": [2, {
+      "checksVoidReturn": {
+        "attributes": false
+      }
+    }],
+  },
   settings: {
     react: { version: "18.2.0" },
   },

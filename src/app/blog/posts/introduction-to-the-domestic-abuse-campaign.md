@@ -20,15 +20,11 @@ A common thread that runs through many domestic abuse survivor stories is feelin
 
 Abuse is a many-headed beast. It’s psychological, physical, sexual, financial and emotional. It can be digital and face-to-face. It can be controlling and coercive. It can be immediate and incremental. It can manifest in one way or many ways. It can happen at any point in any relationship. It can victimise anyone, regardless of gender, age, class, race, sexuality or background.
 
-
-
 ### Forms of domestic abuse
 
 **Gender based violence**
 
 Women are disproportionately affected by domestic abuse. In fact, women make up 89% of all those who have experienced 4 or more incidents of domestic violence ([Pankhurst Trust](https://www.pankhursttrust.org/advice-and-support/what-domestic-violence-and-abuse)), and men are overwhelmingly the perpetrators. That’s not to say that men, children or trans people don’t experience abuse, but that male-perpetrated violence against women is more ubiquitous, has higher rates of repeated victimisation, and is much more likely to lead to domestic homicide ([Women’s Aid](https://www.womensaid.org.uk/information-support/what-is-domestic-abuse/domestic-abuse-is-a-gendered-crime/)).
-
-
 
 ### Impact of coronavirus on domestic abuse
 
@@ -36,8 +32,7 @@ Unfortunately, the advent of COVID-19 has aggravated the toxicity of a situation
 
 Lockdown has reduced an already limited set of options for victims. Since 2010, funding for women’s refuges has been cut by nearly £7 million (Guardian), which leaves charities with no choice but to operate on a shoestring budget. The human cost of this is that in 2019, 64% of refuge referrals were turned away. Women and children fleeing their homes in search of safety are being denied shelter because of a lack of funding, making it even more difficult for them to escape their abusers.
 
-Funding issues are one side of the coin. A lack of awareness of domestic abuse charities is the other. Many victims don’t know where to go or who to turn to. Some stay with their abusers, biding their time, and planning their own escape because they feel as though there is no help.   
-
+Funding issues are one side of the coin. A lack of awareness of domestic abuse charities is the other. Many victims don’t know where to go or who to turn to. Some stay with their abusers, biding their time, and planning their own escape because they feel as though there is no help.
 
 ### Domestic abuse charities on the front line
 
@@ -45,12 +40,8 @@ But there is always a helping hand to pull victims out of abusive environments. 
 
 The AVA project devise toolkits, e-Learning modules and other learning materials that help professionals better support survivors of abuse. They provide training to adults and young people to help raise a generation who understand abuse more than their predecessors. There are also some amazing local and regional domestic abuse charities, such as our partner, NIDAS, who offer Nottinghamshire residents a family-based approach to tackling abuse, supporting those living with or experiencing abuse from crisis to recovery. We’re also working with IDAS, who cooperate with survivors to identify exactly what they need, from helping them through the criminal justice system to referring them on for counselling. These charities are a lifeline for victims, but most of them depend on public support to fund their services and raise awareness.
 
-
 ### How you can get involved
 
 This is where you come in. Through our app, you can get involved with UK charities like the AVA project, NIDAS and IDAS. We invite you to join our domestic abuse campaign to learn about the different types of abuse and how to spot domestic abuse. Then, you’ll be given easy, quick actions you can take to support these charities. Via our app, you can sign petitions, use your social network to share survivor stories, write to politicians, have your say on the Domestic Abuse Bill, and so much more.
 
 Download the now-u app to join a community of people fighting for change.
- 
-
-

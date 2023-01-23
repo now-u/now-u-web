@@ -3,7 +3,6 @@
  * Do not make direct changes to the file.
  */
 
-
 export interface paths {
   "/api/v1/articles": {
     /** Retrieves all articles */
@@ -494,7 +493,7 @@ export interface paths {
         200: {
           content: {
             "application/json": {
-              data: (components["schemas"]["faq"])[];
+              data: components["schemas"]["faq"][];
             };
           };
         };
@@ -563,7 +562,7 @@ export interface paths {
         200: {
           content: {
             "application/json": {
-              data: (components["schemas"]["organisation"])[];
+              data: components["schemas"]["organisation"][];
             };
           };
         };
@@ -602,7 +601,7 @@ export interface paths {
         200: {
           content: {
             "application/json": {
-              data: (components["schemas"]["press_article"])[];
+              data: components["schemas"]["press_article"][];
             };
           };
         };
@@ -910,7 +909,7 @@ export interface paths {
         200: {
           content: {
             "application/json": {
-              data: (components["schemas"]["cause"])[];
+              data: components["schemas"]["cause"][];
             };
           };
         };

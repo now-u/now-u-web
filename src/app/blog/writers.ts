@@ -57,12 +57,12 @@ const blogWriters = [
   },
 ];
 
-export type BlogWriter = typeof blogWriters[number];
+export type BlogWriter = (typeof blogWriters)[number];
 
 export function getBlogWriter(id: number): BlogWriter {
-    const writer = blogWriters.find(writer => writer.id === id)
-    if (writer == null) {
-        throw new Error(`Blog writter with id ${id} not found`)
-    }
-    return writer
+  const writer = blogWriters.find((writer) => writer.id === id);
+  if (writer == null) {
+    throw new Error(`Blog writter with id ${id} not found`);
+  }
+  return writer;
 }

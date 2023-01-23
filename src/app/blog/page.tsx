@@ -3,7 +3,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 
-import Elgars from "@/assets/images/elgars.png";
 import { HeaderSubtitle } from "@/components/Header";
 
 import Image from "next/image";
@@ -52,10 +51,7 @@ async function Blog(): Promise<JSX.Element> {
       />
       <div className="grid col-span-1 first:col-span-2 sm:grid-cols-2 gap-5 m-5 sm:mx-32 sm:my-10">
         {blogs.map((blog) => (
-          <BlogTile
-            key={blog.slug}
-            post={blog}
-          />
+          <BlogTile key={blog.slug} post={blog} />
         ))}
       </div>
     </div>

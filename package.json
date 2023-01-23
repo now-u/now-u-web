@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm generate-api-client && next dev",
-    "build": "pnpm generate-api-client && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "format": "prettier --write .",
     "lint": "next lint",

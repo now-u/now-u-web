@@ -12,7 +12,8 @@ declare module "nextjs-routes" {
     | StaticRoute<"/causes">
     | StaticRoute<"/faq">
     | StaticRoute<"/get-in-touch">
-    | StaticRoute<"">;
+    | StaticRoute<"">
+    | StaticRoute<"/press">;
 
   interface StaticRoute<Pathname> {
     pathname: Pathname;

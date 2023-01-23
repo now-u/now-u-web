@@ -2,8 +2,7 @@ import React from "react";
 
 import { HeaderCauses } from "@/components/Header";
 import { Newsletter } from "@/components/Newsletter";
-import { Cause } from "@/models/cause";
-import { apiClient } from "@/services/causesApi";
+import { apiClient, Cause } from "@/services/causesApi";
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   return (

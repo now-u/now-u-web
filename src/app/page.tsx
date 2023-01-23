@@ -108,6 +108,7 @@ function Home(): JSX.Element {
             ]}
           />
         </div>
+        {/* @ts-expect-error Server Component */}
         <PartnerGrid />
         <LinkButton buttonText="View All" href="/" />
       </div>

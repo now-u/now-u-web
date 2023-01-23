@@ -3,6 +3,7 @@
  * Do not make direct changes to the file.
  */
 
+
 export interface paths {
   "/api/v1/articles": {
     /** Retrieves all articles */
@@ -493,7 +494,7 @@ export interface paths {
         200: {
           content: {
             "application/json": {
-              data: components["schemas"]["faq"][];
+              data: (components["schemas"]["faq"])[];
             };
           };
         };
@@ -562,7 +563,7 @@ export interface paths {
         200: {
           content: {
             "application/json": {
-              data: components["schemas"]["organisation"][];
+              data: (components["schemas"]["list_organisation"])[];
             };
           };
         };
@@ -601,7 +602,7 @@ export interface paths {
         200: {
           content: {
             "application/json": {
-              data: components["schemas"]["press_article"][];
+              data: (components["schemas"]["press_article"])[];
             };
           };
         };
@@ -621,7 +622,9 @@ export interface paths {
         /** @description press_coverage found */
         200: {
           content: {
-            "application/json": components["schemas"]["press_article"];
+            "application/json": {
+              data: components["schemas"]["press_article"];
+            };
           };
         };
         /** @description Not found */
@@ -909,7 +912,7 @@ export interface paths {
         200: {
           content: {
             "application/json": {
-              data: components["schemas"]["cause"][];
+              data: (components["schemas"]["cause"])[];
             };
           };
         };
@@ -1204,7 +1207,31 @@ export interface components {
       updated_at: string;
     };
     organisation: {
-      campaigns: components["schemas"]["campaign"];
+      id: number;
+      name: string | null;
+      description: string | null;
+      logo_link: string | null;
+      /** Format: date-time */
+      created_at: string;
+      /** Format: date-time */
+      updated_at: string;
+      email: string | null;
+      website: string | null;
+      IG_link: string | null;
+      FB_link: string | null;
+      twitter_link: string | null;
+      extra_text_1: string | null;
+      extra_text_2: string | null;
+      extra_text_3: string | null;
+      extra_link_1: string | null;
+      extra_link_2: string | null;
+      extra_link_3: string | null;
+      organisation_type: string | null;
+      code: string | null;
+      geographic_reach: string | null;
+    };
+    list_organisation: {
+      campaigns: (components["schemas"]["campaign"])[];
       id: number;
       name: string | null;
       description: string | null;
@@ -1230,14 +1257,14 @@ export interface components {
     };
     press_article: {
       id: number;
-      image_url: string | null;
-      link: string | null;
-      media_name: string | null;
+      image_url: string;
+      link: string;
+      media_name: string;
       /** Format: date-time */
       created_at: string;
       /** Format: date-time */
       updated_at: string;
-      title: string | null;
+      title: string;
     };
     news_article: {
       id: number;
@@ -1259,6 +1286,28 @@ export interface components {
       enabled: boolean | null;
       /** Format: date-time */
       release_date: string | null;
+    };
+    campaign: {
+      id: number;
+      title: string | null;
+      description_app: Record<string, unknown> | null;
+      header_image: string | null;
+      /** Format: date-time */
+      created_at: string;
+      /** Format: date-time */
+      updated_at: string;
+      video_link: string | null;
+      description_web: Record<string, unknown> | null;
+      enabled: boolean | null;
+      /** Format: date-time */
+      start_date: string | null;
+      /** Format: date-time */
+      end_date: string | null;
+      short_name: string | null;
+      infographic_url: string | null;
+      of_the_month: boolean | null;
+      recommended: boolean | null;
+      status: number | null;
     };
   };
   responses: never;

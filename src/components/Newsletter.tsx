@@ -9,7 +9,7 @@ import { Button } from "./Button";
 
 export function Newsletter(): JSX.Element {
   async function handleSubmit(
-    event: React.FormEvent<HTMLInputElement>
+    event: React.FormEvent<HTMLFormElement>
   ): Promise<void> {
     event.preventDefault();
     const target = event.target as typeof event.target & {

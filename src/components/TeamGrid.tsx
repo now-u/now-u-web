@@ -12,12 +12,12 @@ interface CircularPortrait {
 
 // Most Valuable Players (MVPs) should be at start of this list so are shown to mobile users
 const portraits = [
-  { id: 1, image: Elgars, name: "J&L", role: "Cult Leaders" },
-  { id: 2, image: Elgars, name: "J&L", role: "Cult Leaders" },
-  { id: 3, image: Elgars, name: "J&L", role: "Cult Leaders" },
-  { id: 4, image: Elgars, name: "J&L", role: "Cult Leaders" },
-  { id: 5, image: Elgars, name: "J&L", role: "Cult Leaders" },
-  { id: 6, image: Elgars, name: "J&L", role: "Cult Leaders" },
+  { id: 1, image: Elgars, name: "J&L", role: "People" },
+  { id: 2, image: Elgars, name: "J&L", role: "People" },
+  { id: 3, image: Elgars, name: "J&L", role: "People" },
+  { id: 4, image: Elgars, name: "J&L", role: "People" },
+  { id: 5, image: Elgars, name: "J&L", role: "People" },
+  { id: 6, image: Elgars, name: "J&L", role: "People" },
 ];
 
 const CircularPortraitTile = (props: {

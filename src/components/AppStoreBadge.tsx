@@ -4,47 +4,45 @@ import AppleStoreBadgeSVG from "@/assets/apple-store.svg";
 import { APPLE_STORE_URL, GOOGLE_STORE_URL } from "@/utils/constants";
 import Link from "next/link";
 import Image from "next/image";
+import { classNames } from "@/utils/classNames";
 
-interface AppStoreBadgeType {
+interface AppStoreData {
   asset: string;
   link: string;
 }
 
-export const GooglePlayBadgeType: AppStoreBadgeType = {
+export const GooglePlayBadgeType: AppStoreData = {
   asset: GoogleStoreBadgeSVG,
   link: GOOGLE_STORE_URL,
 };
 
-export const AppleStoreBadgeType: AppStoreBadgeType = {
+export const AppleStoreBadgeType: AppStoreData = {
   asset: AppleStoreBadgeSVG,
   link: APPLE_STORE_URL,
 };
 
-const AppStoreBadge = (props: { type: AppStoreBadgeType }): JSX.Element => {
-  return (
-    <div className="hover:cursor-pointer">
-      <Link href={props.type.link}>
-        <Image
-          src={props.type.asset}
-          alt="download app from apple store"
-          className="border-4 border-white rounded-lg bg-white"
-        />
-      </Link>
-    </div>
-  );
-};
+type AppStore = "AppleStore" | "GooglePlayStore";
+const appStoreDataMap: Record<AppStore, AppStoreData> = {
+    AppleStore: {
+        asset: AppleStoreBadgeSVG,
+        link: APPLE_STORE_URL,
+    },
+    GooglePlayStore: {
+        asset: GoogleStoreBadgeSVG,
+        link: GOOGLE_STORE_URL,
+    }
+}
 
-export const AppStoreBadges = (): JSX.Element => {
-  return (
-    <div className="flex pt-4 mb-5 md:mb-0">
-      {[GooglePlayBadgeType, AppleStoreBadgeType].map((type) => {
-        return (
-          <div className="w-64 pr-8 mx-4 md:mx-0" key={type.link}>
-            {" "}
-            <AppStoreBadge type={type} />{" "}
-          </div>
-        );
-      })}
-    </div>
-  );
+export function AppStoreBadge (props: { store: AppStore, border?: boolean }): JSX.Element {
+    const { asset, link } = appStoreDataMap[props.store]
+    return (
+        <Link href={link}>
+            <Image
+              src={asset}
+              alt="download app from apple store"
+              className={props.border === true ? "border-4 border-white rounded-lg bg-white" : ""}
+              fill
+            />
+        </Link>
+    );
 };

@@ -17,7 +17,7 @@ import GlobeIcon from "@/assets/graphics/globe_icon.png";
 
 import Image from "next/image";
 
-import { AppStoreBadges } from "@/components/AppStoreBadge";
+import { AppStoreBadge } from "@/components/AppStoreBadge";
 import { Newsletter } from "@/components/Newsletter";
 
 const icons = [
@@ -45,8 +45,8 @@ function Home(): JSX.Element {
   return (
     <div className="grid place-items-center">
       <div className="bg-gradient-to-b from-gradlight w-full to-graddark flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
-        <div className="order-2 md:order-1 w-full ml-32">
-          <div className="text-center md:text-start pb-5">
+        <div className="order-2 md:order-1 w-full">
+          <div className="text-center mt-3 md:mt-0 md:text-start pb-5 flex flex-col items-center">
             <div className="w-96 mb-3">
               <HeaderText text="It’s time to change together" />
             </div>
@@ -55,7 +55,12 @@ function Home(): JSX.Element {
             </div>
           </div>
           <div className="flex justify-center md:justify-start pt-4 mb-5 md:mb-0">
-            <AppStoreBadges />
+            <div className="w-36 h-12 md:w-60 md:h-20 relative mr-3">
+              <AppStoreBadge store="AppleStore" border/>
+            </div>
+            <div className="w-36 h-12 md:w-60 md:h-20 relative">
+              <AppStoreBadge store="GooglePlayStore" border/>
+            </div>
           </div>
         </div>
         <div className="order-1 md:order-2 w-full">
@@ -94,7 +99,6 @@ function Home(): JSX.Element {
           <div className="w-2/3 m-auto">
             <SubtitleText text="Our mission is to inform, involve and inspire people to help tackle some of the world’s most pressing social and environmental issues, in partnership with charities." />
           </div>
-          {/** TODO Update route */}
           <LinkButton buttonText="Learn more" href="/about" />
         </div>
       </div>

@@ -44,9 +44,11 @@ async function getCauses(): Promise<Cause[]> {
   const getCauses = apiClient.path("/api/v2/causes").method("get").create();
   const response = await getCauses({});
   if (!response.ok) {
-    console.error("Failed to fetch causes data");
+    console.error("failed to fetch causes data");
     return [];
   }
+  console.info(response);
+  console.info("Success");
   return response.data.data;
 }
 

@@ -47,7 +47,7 @@ const NavbarLink = (
 
 export const Navbar = (): JSX.Element => {
   return (
-    <Disclosure as="nav" className="bg-white">
+    <Disclosure as="nav" className="bg-white w-full">
       {({ open }) => (
         <>
           <div className="mx-10 px-2 sm:px-6 lg:px-8">

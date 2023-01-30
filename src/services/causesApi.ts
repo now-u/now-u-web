@@ -8,5 +8,5 @@ export type PressCoverage = components["schemas"]["press_article"];
 
 export const apiClient = Fetcher.for<paths>();
 apiClient.configure({
-  baseUrl: "https://api.now-u.com",
+  baseUrl: "https://staging.api.now-u.com",
 });

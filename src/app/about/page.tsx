@@ -9,7 +9,7 @@ import { IconRow } from "@/components/IconRow";
 
 import { LinkButton } from "@/components/Button";
 
-import { AppStoreBadges } from "@/components/AppStoreBadge";
+import { AppStoreBadge } from "@/components/AppStoreBadge";
 
 import { Newsletter } from "@/components/Newsletter";
 
@@ -106,13 +106,18 @@ const About = (): JSX.Element => {
           <TeamGrid />
         </div>
       </div>
-      <div className="bg-slate-100 py-10 md:py-20 xl:py-32 flex flex-col place-items-center">
+      <div className="bg-slate-100 py-10 md:py-20 xl:pt-32 flex flex-col place-items-center">
         <TitleText text="How you can help" />
         <div className="py-5">
           <IconRow iconList={icons} />
         </div>
-        <div className="flex pt-4 mb-5 md:mb-0">
-          <AppStoreBadges />
+        <div className="flex items-center mt-5 md:justify-start">
+          <div className="w-36 h-12 md:w-60 md:h-20 relative mr-3">
+            <AppStoreBadge store="AppleStore" />
+          </div>
+          <div className="w-36 h-12 md:w-60 md:h-20 relative">
+            <AppStoreBadge store="GooglePlayStore" />
+          </div>
         </div>
       </div>
       <Newsletter />

@@ -38,7 +38,7 @@ export async function PartnerGrid(): Promise<JSX.Element> {
 
   return (
     <div>
-      <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-12 justify-items-center xl:px-60 p-5">
+      <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-12 justify-items-center xl:px-60 p-5 overflow-hidden">
         {partners.slice(0, 8).map((partner) => (
           <PartnerTile key={partner.id.toString()} partner={partner} />
         ))}

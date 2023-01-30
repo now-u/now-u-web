@@ -12,7 +12,7 @@ import {
   faFacebookF,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
-import { AppStoreBadges } from "./AppStoreBadge";
+import { AppStoreBadge } from "./AppStoreBadge";
 
 import Image from "next/image";
 
@@ -91,7 +91,14 @@ export const Footer = (): JSX.Element => {
         </div>
         <div className="flex flex-col text-center md:text-start">
           <div className="flex justify-center md:justify-end pt-4 mb-5 md:mb-0">
-            <AppStoreBadges />
+            <div className="flex pt-4">
+              <div className="w-36 h-12 hover:cursor-pointer relative mr-2">
+                <AppStoreBadge store="AppleStore" />
+              </div>
+              <div className="w-36 h-12 hover:cursor-pointer relative">
+                <AppStoreBadge store="GooglePlayStore" />
+              </div>
+            </div>
           </div>
           <p className="text-slate-500">Registered charity number: 000000</p>
         </div>

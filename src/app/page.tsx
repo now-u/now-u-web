@@ -45,8 +45,8 @@ function Home(): JSX.Element {
   return (
     <div className="grid place-items-center">
       <div className="bg-gradient-to-b from-gradlight w-full to-graddark flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
-        <div className="order-2 md:order-1 w-full">
-          <div className="text-center mt-3 md:mt-0 md:text-start pb-5 flex flex-col items-center">
+        <div className="order-2 md:order-1 md:ml-12 w-full">
+          <div className="text-center md:text-start mt-3 md:mt-0 md:text-start pb-5 flex flex-col items-center md:items-start">
             <div className="w-96 mb-3">
               <HeaderText text="It’s time to change together" />
             </div>

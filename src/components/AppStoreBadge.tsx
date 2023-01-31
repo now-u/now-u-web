@@ -4,7 +4,6 @@ import AppleStoreBadgeSVG from "@/assets/apple-store.svg";
 import { APPLE_STORE_URL, GOOGLE_STORE_URL } from "@/utils/constants";
 import Link from "next/link";
 import Image from "next/image";
-import { classNames } from "@/utils/classNames";
 
 interface AppStoreData {
   asset: string;

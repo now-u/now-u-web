@@ -40,15 +40,12 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
 };
 
 async function getCauses(): Promise<Cause[]> {
-  console.log("Causes are loading");
   const getCauses = apiClient.path("/api/v2/causes").method("get").create();
   const response = await getCauses({});
   if (!response.ok) {
     console.error("failed to fetch causes data");
     return [];
   }
-  console.info(response);
-  console.info("Success");
   return response.data.data;
 }
 
@@ -68,7 +65,6 @@ export default async function CausesPage(): Promise<JSX.Element> {
       <div className="flex flex-col items-center space-y-1 py-20">
         <div className="grid grid-cols-2 gap-10 items-start">
           {causes?.map((cause) => {
-            console.log("Cause is ", cause);
             return <CauseTile key={cause.id} cause={cause} />;
           })}
         </div>

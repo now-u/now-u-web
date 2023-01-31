@@ -7,7 +7,6 @@ import { FAQ, apiClient } from "@/services/causesApi";
 import { FAQDisplay } from "./localPage";
 
 async function getFaqs(): Promise<FAQ[]> {
-  console.log("FAQs are loading");
   const getFaqs = apiClient.path("/api/v1/faqs").method("get").create();
   const response = await getFaqs({});
   if (!response.ok) {

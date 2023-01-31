@@ -7,7 +7,7 @@ import { FAQ } from "@/services/causesApi";
 const AnswerTile = ({ answer }: { answer: string | null }): JSX.Element => {
   return (
     <div
-      className={`bg-slate-50 my-5 py-36 px-36 h-32 text-center rounded-lg flex flex-col justify-center ${
+      className={`bg-slate-50 my-5 px-5 h-72 md:h-32 text-center rounded-lg flex flex-col justify-center ${
         answer === null ? "text-gray-400" : ""
       }`}
     >
@@ -48,12 +48,11 @@ export function FAQDisplay({ faqs }: { faqs: FAQ[] }): JSX.Element {
     return faqs.find((faq) => faq.id === selectedQuestionId)?.answer ?? null;
   }
 
-  // TODO Mobile support
-  // Both styling and hover will not work
+  // TODO Mobile support, clicking is really strange
   return (
     <div className="m-10">
       <AnswerTile answer={getCurrentAnswer()} />
-      <div className="grid grid-rows-2 gap-6 grid-cols-5 mb-5">
+      <div className="grid grid-rows-2 gap-6 grid-cols-1 md:grid-cols-3 xl:grid-cols-5 mb-5">
         {faqs.map(({ id, question }) => (
           <QuestionTile
             key={question}

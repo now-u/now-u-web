@@ -9,14 +9,16 @@ import Placeholder from '@/assets/graphics/placeholder.png';
 
 export function BlogTile(props: { post: Post }): JSX.Element {
   const { slug, headerImage, title, author, readingTime } = props.post;
-  const [src, setSrc] = useState<string | StaticImageData>(headerImage || Placeholder);
+  const [src, setSrc] = useState<string | StaticImageData>(headerImage ?? Placeholder);
   return (
     <Link href={`blog/${slug}`}>
       <div className="bg-cream h-full rounded-lg hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm">
         <div className="w-full h-64 relative top-0 right-0 rounded-lg">
           <Image
             src={src}
-            onError={() => setSrc(Placeholder)}
+            onError={() => {
+              setSrc(Placeholder)
+            }}
             alt="Blog Image"
             className="object-cover w-full h-full rounded-lg"
             sizes="100vw"

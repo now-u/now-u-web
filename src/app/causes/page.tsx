@@ -3,15 +3,16 @@ import React from "react";
 import { HeaderCauses } from "@/components/Header";
 import { Newsletter } from "@/components/Newsletter";
 import { apiClient, Cause } from "@/services/causesApi";
+import Image from 'next/image';
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   return (
     <div className="max-w-sm bg-cream rounded-lg h-full ">
       <a href="#">
-        <img
+        <Image
           className="rounded-t-lg h-60 w-full object-cover"
           src={props.cause.image}
-          alt=""
+          alt={props.cause.name ?? 'cause-image'}
         />
       </a>
       <div className="p-5">

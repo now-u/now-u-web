@@ -1,8 +1,9 @@
 name: Lint
 
 on:
-  - push
-  - pull_request
+  push:
+    branches: [main, dev]
+  pull_request:
 
 jobs:
   lint:
@@ -19,4 +20,4 @@ jobs:
         run: pnpm install
 
       - name: Lint
-        run: pnpm lintCheck
+        run: pnpm lint

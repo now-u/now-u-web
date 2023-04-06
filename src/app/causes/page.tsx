@@ -11,7 +11,7 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
         <img
           className="rounded-t-lg h-60 w-full object-cover"
           src={props.cause.image}
-          alt=""
+          alt={props.cause.name ?? "cause-image"}
         />
       </a>
       <div className="p-5">

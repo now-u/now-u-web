@@ -4,6 +4,7 @@ import md from "markdown-it";
 import { getPostBySlug } from "../utils";
 import { BlogWriter } from "../writers";
 import Image from "next/image";
+import { LinkButton } from '@/components/Button';
 
 // NOTE: https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour
 
@@ -32,7 +33,7 @@ function AuthorTile(props: { author: BlogWriter }): JSX.Element {
 export async function generateStaticParams(): Promise<any> {
   const postsFilePath = "src/app/blog/posts";
   const fileNames = fs.readdirSync(postsFilePath);
-  return fileNames.map((fileName) => ({ 
+  return fileNames.map((fileName) => ({
     slug: fileName.replace(".md", "")
   }));
 }
@@ -43,8 +44,10 @@ export default async function Page({
   params: { slug: string };
 }): Promise<JSX.Element> {
   const blog = await getPostBySlug(params.slug);
+
   return (
     <div className="prose mx-auto my-20">
+      <LinkButton buttonText={'Back'} href={'/blog'} />
       <div dangerouslySetInnerHTML={{ __html: md().render(blog.content) }} />
       {blog.author !== null && <AuthorTile author={blog.author} />}
     </div>

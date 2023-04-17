@@ -8,7 +8,7 @@ interface ButtonProps {
 }
 
 export const buttonStyle =
-  "bg-orange text-black font-bold py-3 px-4 rounded-lg hover:drop-shadow-xl hover:-translate-y-1 active:translate-y-0 active:drop-shadow-none";
+  "bg-orange text-black font-bold py-3 px-4 rounded-lg hover:drop-shadow-xl hover:-translate-y-1 active:translate-y-0 active:drop-shadow-none no-underline";
 
 export const LinkButton = (props: ButtonProps): JSX.Element => {
   const { href, buttonText } = props;

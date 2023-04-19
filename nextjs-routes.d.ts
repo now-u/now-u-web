@@ -117,7 +117,7 @@ declare module "next/link" {
 
 // prettier-ignore
 declare module "next/router" {
-  import type { Locale, Route, RoutedQuery } from "nextjs-routes";
+  import type { Locale, Route } from "nextjs-routes";
   import type { NextRouter as Router } from "next/dist/client/router";
   export * from "next/dist/client/router";
   export { default } from "next/dist/client/router";

@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import {} from "@heroicons/react/24/outline";
 import NowULogo from "@/assets/now-u-logo.svg";
 import { navigation as headerNavigation, NamedRoute } from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -47,60 +46,62 @@ const socialMediaLinks = [
 
 export const Footer = (): JSX.Element => {
   return (
-    <div className="bg-cream w-full px-5 py-5">
-      <div className="mx-10">
-        <Link href="/home">
-          <Image
-            className="mx-auto md:mx-0 h-5 w-auto mb-5"
-            src={NowULogo}
-            alt="now-u"
-          />
-        </Link>
-        <div className="flex flex-col">
-          <div className="grid grid-cols-2 grid-rows-3 text-center mb-5 lg:mb-0 md:flex md:divide-x-2 md:divide-current">
-            {navigation.map((route) => (
-              <Link
-                className="hover:underline px-5 md:first:pl-0"
-                key={route.text}
-                href={route.to}
-              >
-                {" "}
-                {route.text}{" "}
-              </Link>
-            ))}
-          </div>
-          <div className="flex justify-center md:justify-end mb-3 space-x-8">
-            {socialMediaLinks.map((socialMedia) => {
-              return (
+    <div className="bg-cream w-full flex px-5 py-5 justify-center">
+      <div className="max-w-screen-2xl flex w-full">
+        <div className="mx-10 mt-5 w-full">
+          <Link href="/">
+            <Image
+              className="mx-auto md:mx-0 h-5 w-auto"
+              src={NowULogo}
+              alt="now-u"
+            />
+          </Link>
+          <div className="flex flex-col">
+            <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-3 text-center mb-5 lg:mb-0 md:flex md:divide-x-2 md:divide-current my-5">
+              {navigation.map((route) => (
                 <Link
-                  key={socialMedia.key}
-                  href={socialMedia.link}
-                  target="_blank"
-                  rel="noreferrer"
+                  className="hover:underline px-5 md:first:pl-0 my-1"
+                  key={route.text}
+                  href={route.to}
                 >
                   {" "}
-                  <FontAwesomeIcon
-                    className="hover:cursor-pointer hover:text-orange"
-                    size="2xl"
-                    icon={socialMedia.icon}
-                  />
+                  {route.text}{" "}
                 </Link>
-              );
-            })}
-          </div>
-        </div>
-        <div className="flex flex-col text-center md:text-start">
-          <div className="flex justify-center md:justify-end pt-4 mb-5 md:mb-0">
-            <div className="flex pt-4">
-              <div className="w-36 h-12 hover:cursor-pointer relative mr-2">
-                <AppStoreBadge store="AppleStore" />
-              </div>
-              <div className="w-36 h-12 hover:cursor-pointer relative">
-                <AppStoreBadge store="GooglePlayStore" />
-              </div>
+              ))}
+            </div>
+            <div className="flex justify-center md:justify-end mb-3 space-x-8">
+              {socialMediaLinks.map((socialMedia) => {
+                return (
+                  <Link
+                    key={socialMedia.key}
+                    href={socialMedia.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {" "}
+                    <FontAwesomeIcon
+                      className="hover:cursor-pointer hover:text-orange"
+                      size="2xl"
+                      icon={socialMedia.icon}
+                    />
+                  </Link>
+                );
+              })}
             </div>
           </div>
-          <p className="text-slate-500">Registered charity number: 000000</p>
+          <div className="flex flex-col text-center md:text-start">
+            <div className="flex justify-center md:justify-end pt-4 mb-5 md:mb-0">
+              <div className="flex-col items-center flex sm:flex-row pt-4 gap-2">
+                <div className="w-36 h-12 hover:cursor-pointer relative">
+                  <AppStoreBadge store="AppleStore" />
+                </div>
+                <div className="w-36 h-12 hover:cursor-pointer relative">
+                  <AppStoreBadge store="GooglePlayStore" />
+                </div>
+              </div>
+            </div>
+            <p className="text-slate-500">Registered charity number: 000000</p>
+          </div>
         </div>
       </div>
     </div>

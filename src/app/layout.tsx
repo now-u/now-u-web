@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html className={`${nunito.variable} ${nunitoSans.variable} font-sans`}>
       <head />
-      <body>
+      <body className="flex flex-col align-items-center">
         <Navbar />
         {children}
         <Footer />

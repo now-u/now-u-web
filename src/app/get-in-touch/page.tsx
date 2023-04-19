@@ -71,19 +71,26 @@ const ContactTile = (props: ContactTileProps): JSX.Element => {
 
 const GetInTouch = (): JSX.Element => {
   return (
-    <div>
-      <Header title="Get in Touch" />
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-20 m-10">
-        {contacts.map(({ email, icon, emailDescription }) => (
-          <ContactTile
-            key={email}
-            icon={icon}
-            email={email}
-            emailDescription={emailDescription}
-          />
-        ))}
+    <>
+      <div
+        className="text-center"
+      >
+      <Header
+        title="Get in Touch" />
       </div>
-    </div>
+      <div className="flex flex-col items-center">
+        <div className="max-w-screen-2xl grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-20 m-10">
+          {contacts.map(({ email, icon, emailDescription }) => (
+            <ContactTile
+              key={email}
+              icon={icon}
+              email={email}
+              emailDescription={emailDescription}
+            />
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 

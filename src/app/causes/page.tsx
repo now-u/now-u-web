@@ -53,7 +53,7 @@ export default async function CausesPage(): Promise<JSX.Element> {
   const causes = await getCauses();
 
   return (
-    <div className="grid place-items-center">
+    <div className="flex flex-col">
       <HeaderCauses
         title="Our Causes"
         body={[
@@ -63,13 +63,20 @@ export default async function CausesPage(): Promise<JSX.Element> {
         ]}
       />
       <div className="flex flex-col items-center space-y-1 py-20">
-        <div className="grid grid-cols-2 gap-10 items-start">
+        <div
+          className="
+            grid grid-cols-1 gap-10 mx-2
+            md:grid-cols-2 md:mx-10
+            "
+        >
           {causes?.map((cause) => {
             return <CauseTile key={cause.id} cause={cause} />;
           })}
         </div>
       </div>
-      <Newsletter />
+      <div className="flex justify-center">
+        <Newsletter />
+      </div>
     </div>
   );
 }

@@ -85,7 +85,6 @@ const About = (): JSX.Element => {
                 "Please get in touch if you have any questions!",
               ]}
             />
-            {/** TODO Update route */}
             <LinkButton buttonText="Get in Touch" href={{ pathname: "/get-in-touch" }} />
           </div>
         </div>

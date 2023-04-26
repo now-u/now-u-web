@@ -47,14 +47,35 @@ const NavbarLink = (
 
 export const Navbar = (): JSX.Element => {
   return (
-    <Disclosure as="nav" className="bg-white w-full">
+    <Disclosure as="nav" className="flex flex-col bg-white w-full items-center">
       {({ open }) => (
         <>
-          <div className="mx-10 px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
+          <div className="max-w-screen-2xl flex w-full justify-between">
+            <div className="flex w-full h-16 items-center justify-between mx-4 sm:mx-8 lg:mx-10">
+
+              {/* Logo */}
+              <div className="flex flex-1 items-center lg:items-stretch lg:justify-start">
+                <div className="flex flex-shrink-0 items-center">
+                  {/* Mobile Icon */}
+                  <Link href="/">
+                    <Image
+                      className="block h-5 w-auto lg:hidden"
+                      src={NowULogo}
+                      alt="now-u logo"
+                    />
+                    {/* Web Icon */}
+                    <Image
+                      className="hidden h-8 w-auto lg:block"
+                      src={NowULogo}
+                      alt="now- u logo"
+                    />
+                  </Link>
+                </div>
+              </div>
+
               {/* Mobile menu button */}
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+              <div className="inset-y-0 left-0 flex items-center md:hidden" >
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -64,28 +85,8 @@ export const Navbar = (): JSX.Element => {
                 </Disclosure.Button>
               </div>
 
-              {/* Logo */}
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  {/* Mobile Icon */}
-                  <Link href="/">
-                    <Image
-                      className="block h-8 w-auto lg:hidden"
-                      src={NowULogo}
-                      alt="now-u logo"
-                    />
-                    {/* Web Icon */}
-                    <Image
-                      className="hidden h-5 w-auto lg:block"
-                      src={NowULogo}
-                      alt="now-u logo"
-                    />
-                  </Link>
-                </div>
-              </div>
-
               {/* Links */}
-              <div className="hidden sm:ml-6 sm:block">
+              <div className="hidden sm:ml-6 md:block">
                 <div className="flex space-x-4">
                   {/* Slice 1 to skip the home link when not on mobile */}
                   {navigation.slice(1).map((item) => (
@@ -96,8 +97,8 @@ export const Navbar = (): JSX.Element => {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pt-2 pb-3">
+          <Disclosure.Panel className="relative md:hidden flex flex-col w-full items-end">
+            <div className="absolute bg-white w-full space-y-1 px-2 pt-2 pb-3 text-right border-t-2 border-orange drop-shadow-lg">
               {navigation.map((item) => (
                 <NavbarLink key={item.to} isMobile={true} {...item} />
               ))}

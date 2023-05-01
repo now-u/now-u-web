@@ -1,7 +1,7 @@
 import React from "react";
-import { getRequiredEnvironmentVariable } from '@/utils/getRequiredEnvironmentVariable';
 import Script from 'next/script';
-export const GTAG = getRequiredEnvironmentVariable("GTAG");
+// const GTAG = getRequiredEnvironmentVariable("GTAG");
+import {GTAG} from '@/utils/constants';
 
 export default function Head(): JSX.Element {
   return (

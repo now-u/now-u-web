@@ -4,3 +4,4 @@ export const GOOGLE_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.nowu.app";
 
 export const PRESS_EMAIL = "press@now-u.com";
+export const GTAG="G-E0Y830HJM2"

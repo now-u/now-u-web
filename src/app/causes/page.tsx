@@ -53,30 +53,34 @@ export default async function CausesPage(): Promise<JSX.Element> {
   const causes = await getCauses();
 
   return (
-    <div className="flex flex-col">
-      <HeaderCauses
-        title="Our Causes"
-        body={[
-          "We focus on 6 core causes at now-u, which all support the UN’s Sustainable Development Goals. These causes include Health and Wellbeing, Equality and Human Rights, Environment, Econimic Opportunity, Education & Citizenship and Safe & Inclusive Communities.",
-          "We partner with trusted charities and social enterprises to bring you focused campaigns every month. Each campaign connects you with the resources and actions you need to make an impact.",
-          "Explore how the causes link to the UN’s Sustainable Development Goals below...",
-        ]}
-      />
-      <div className="flex flex-col items-center space-y-1 py-20">
-        <div
-          className="
+    <>
+      <title>now-u | Causes</title>
+
+      <div className="flex flex-col">
+        <HeaderCauses
+          title="Our Causes"
+          body={[
+            "We focus on 6 core causes at now-u, which all support the UN’s Sustainable Development Goals. These causes include Health and Wellbeing, Equality and Human Rights, Environment, Econimic Opportunity, Education & Citizenship and Safe & Inclusive Communities.",
+            "We partner with trusted charities and social enterprises to bring you focused campaigns every month. Each campaign connects you with the resources and actions you need to make an impact.",
+            "Explore how the causes link to the UN’s Sustainable Development Goals below...",
+          ]}
+        />
+        <div className="flex flex-col items-center space-y-1 py-20">
+          <div
+            className="
             grid grid-cols-1 gap-10 mx-2
             md:grid-cols-2 md:mx-10
             "
-        >
-          {causes?.map((cause) => {
-            return <CauseTile key={cause.id} cause={cause} />;
-          })}
+          >
+            {causes?.map((cause) => {
+              return <CauseTile key={cause.id} cause={cause} />;
+            })}
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <Newsletter />
         </div>
       </div>
-      <div className="flex justify-center">
-        <Newsletter />
-      </div>
-    </div>
+    </>
   );
 }

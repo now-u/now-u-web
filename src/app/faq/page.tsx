@@ -19,6 +19,8 @@ async function FAQPage(): Promise<JSX.Element> {
 
   return (
     <>
+      <title>now-u | FAQs</title>
+
       <Header title="FAQs" />
       <FAQBlock faqs={ faqs } />
       <p className="text-center mb-10 text-3xl w-4/5 self-center">

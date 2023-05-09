@@ -16,19 +16,18 @@ const nunitoSans = Nunito_Sans({
   weight: ["400"],
 });
 
-export default function RootLayout({
-  children,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode;
-}): JSX.Element {
+}
+
+export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <html className={`${nunito.variable} ${nunitoSans.variable} font-sans`}>
-      <head />
-      <body className="flex flex-col align-items-center">
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+        <body className="flex flex-col align-items-center">
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
     </html>
   );
 }

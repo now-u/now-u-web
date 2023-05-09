@@ -5,6 +5,8 @@ import React from "react";
 export default function YMetrica(): JSX.Element {
   return (
     <Script
+      id={"yandex-metrica"}
+      strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: `
                 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

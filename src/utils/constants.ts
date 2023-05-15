@@ -4,7 +4,3 @@ export const GOOGLE_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.nowu.app";
 
 export const PRESS_EMAIL = "press@now-u.com";
-
-// TODO: better to put GTAG and YM to env
-export const GTAG="G-E0Y830HJM2"
-export const YM="93469759"

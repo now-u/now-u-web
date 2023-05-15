@@ -1,6 +1,8 @@
 import Script from 'next/script';
-import { GTAG } from '@/utils/constants';
 import React from 'react';
+import { getRequiredEnvironmentVariable } from '@/utils/getRequiredEnvironmentVariable';
+
+export const GTAG = getRequiredEnvironmentVariable("GTAG_ID");
 
 export default function GAnalytics(): JSX.Element {
   return (

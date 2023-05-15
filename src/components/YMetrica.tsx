@@ -1,6 +1,8 @@
 import Script from "next/script";
-import { YM } from "@/utils/constants";
 import React from "react";
+import { getRequiredEnvironmentVariable } from '@/utils/getRequiredEnvironmentVariable';
+
+export const YM = getRequiredEnvironmentVariable("YM_ID");
 
 export default function YMetrica(): JSX.Element {
   return (

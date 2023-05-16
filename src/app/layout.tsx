@@ -4,7 +4,8 @@ import "./globals.css";
 
 import { Nunito, Nunito_Sans } from "@next/font/google";
 import { Footer } from "@/components/Footer";
-import { YM } from '@/utils/constants';
+import { YM } from '@/components/YMetrica';
+
 
 const nunito = Nunito({
   subsets: ["latin"],

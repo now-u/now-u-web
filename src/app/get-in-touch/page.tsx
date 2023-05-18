@@ -72,6 +72,8 @@ const ContactTile = (props: ContactTileProps): JSX.Element => {
 const GetInTouch = (): JSX.Element => {
   return (
     <>
+      <title>now-u | Get In Touch</title>
+
       <div
         className="text-center"
       >

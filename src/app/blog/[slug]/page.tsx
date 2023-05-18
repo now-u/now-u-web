@@ -46,10 +46,14 @@ export default async function Page({
   const blog = await getPostBySlug(params.slug);
 
   return (
+    <>
+      <title>{ `now-u | ${blog.title}` }</title>
+
     <div className="prose mx-auto my-20">
       <LinkButton buttonText={'Back'} href={'/blog'} />
       <div dangerouslySetInnerHTML={{ __html: md().render(blog.content) }} />
       {blog.author !== null && <AuthorTile author={blog.author} />}
     </div>
+    </>
   );
 }

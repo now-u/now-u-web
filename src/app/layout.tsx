@@ -4,8 +4,12 @@ import "./globals.css";
 
 import { Nunito, Nunito_Sans } from "@next/font/google";
 import { Footer } from "@/components/Footer";
-import { YM } from '@/components/YMetrica';
-
+import { YM } from "@/components/YMetrica";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { getRequiredEnvironmentVariable } from "@/utils/getRequiredEnvironmentVariable";
+import CookieBanner from "@/components/CookieBanner";
+import { getLocalStorage } from "@/utils/storageHelper";
+const GTAG = getRequiredEnvironmentVariable("GTAG_ID");
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -23,18 +27,21 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
+
   return (
     <html className={`${nunito.variable} ${nunitoSans.variable} font-sans`}>
+      <GoogleAnalytics GTAG={GTAG} />
       <body className="flex flex-col align-items-center">
         <div>
           <img
-            src={ "https://mc.yandex.ru/watch/" + YM }
+            src={"https://mc.yandex.ru/watch/" + YM}
             style={{ position: "absolute", left: "-9999px" }}
             alt=""
           />
         </div>
         <Navbar />
         {children}
+        <CookieBanner />
         <Footer />
       </body>
     </html>

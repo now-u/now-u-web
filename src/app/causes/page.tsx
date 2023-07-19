@@ -3,15 +3,18 @@ import React from "react";
 import { HeaderCauses } from "@/components/Header";
 import { Newsletter } from "@/components/Newsletter";
 import { apiClient, Cause } from "@/services/causesApi";
+import Image from "next/image";
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   return (
     <div className="max-w-sm bg-cream rounded-lg h-full ">
       <a href="#">
-        <img
+        <Image
           className="rounded-t-lg h-60 w-full object-cover"
           src={props.cause.image}
           alt={props.cause.name ?? "cause-image"}
+          width={100}
+          height={100}
         />
       </a>
       <div className="p-5">
@@ -60,9 +63,9 @@ export default async function CausesPage(): Promise<JSX.Element> {
         <HeaderCauses
           title="Our Causes"
           body={[
-            "We focus on 6 core causes at now-u, which all support the UN’s Sustainable Development Goals. These causes include Health and Wellbeing, Equality and Human Rights, Environment, Econimic Opportunity, Education & Citizenship and Safe & Inclusive Communities.",
-            "We partner with trusted charities and social enterprises to bring you focused campaigns every month. Each campaign connects you with the resources and actions you need to make an impact.",
-            "Explore how the causes link to the UN’s Sustainable Development Goals below...",
+            "Built around the United Nations Sustainable Development Goals (SDGs), our work at now-u focuses on six core causes.",
+            "Our causes support the call to action to end poverty and inequality, protect the planet and ensure that all people enjoy health, justice and prosperity.",
+            "We work with trusted non-profits to bring you targeted campaigns across these cause areas every month, connecting you to resources and actions to drive lasting change.",
           ]}
         />
         <div className="flex flex-col items-center space-y-1 py-20">

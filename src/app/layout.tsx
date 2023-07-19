@@ -8,7 +8,7 @@ import YMetrica  from "@/components/YMetrica";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { getRequiredEnvironmentVariable } from "@/utils/getRequiredEnvironmentVariable";
 import CookieBanner from "@/components/CookieBanner";
-import { getLocalStorage } from "@/utils/storageHelper";
+import Image from "next/image";
 const GTAG = getRequiredEnvironmentVariable("GTAG_ID");
 const YM = getRequiredEnvironmentVariable("YM_ID");
 
@@ -35,10 +35,12 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
       <YMetrica YM={YM} />
       <body className="flex flex-col align-items-center">
         <div>
-          <img
+          <Image
             src={"https://mc.yandex.ru/watch/" + YM}
             style={{ position: "absolute", left: "-9999px" }}
             alt=""
+            width={100}
+            height={100}
           />
         </div>
         <Navbar />

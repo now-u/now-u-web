@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { pageview } from "@/utils/tagHelper";
 import { getLocalStorage } from "@/utils/storageHelper";
 
-export default function GoogleAnalytics({ GTAG }: { GTAG: string }) {
+export default function GoogleAnalytics({ GTAG }: { GTAG: string }):JSX.Element {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -14,15 +14,20 @@ export default function GoogleAnalytics({ GTAG }: { GTAG: string }) {
   const storedCookieConsent = getLocalStorage("cookie_consent", null)
 
   useEffect(() => {
-    const url = pathname + searchParams.toString();
-    storedCookieConsent && setCookieConsent(storedCookieConsent);
-    cookieConsent && pageview(GTAG, url);
-  }, [pathname, searchParams, GTAG, cookieConsent]);
+    if (pathname !== null) {
+      const url = `${pathname}${searchParams.toString()} `;
+      setCookieConsent(storedCookieConsent);
+      cookieConsent && pageview(GTAG, url);
+    } else {
+      console.log("No pathname")
+    }
+
+  }, [pathname, searchParams, GTAG, cookieConsent, storedCookieConsent]);
   return (
      <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${cookieConsent && GTAG}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}
       />
       <Script
         id="google-analytics"
@@ -37,7 +42,7 @@ export default function GoogleAnalytics({ GTAG }: { GTAG: string }) {
                     'analytics_storage': 'denied'
                 });
                 
-                gtag('config', '${cookieConsent && GTAG}', {
+                gtag('config', '${GTAG}', {
                     page_path: window.location.pathname,
                 });
                 `,

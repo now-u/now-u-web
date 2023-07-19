@@ -4,34 +4,30 @@ import Link from "next/link";
 import { getLocalStorage, setLocalStorage } from "@/utils/storageHelper";
 import { useState, useEffect } from "react";
 
-export default function CookieBanner() {
+export default function CookieBanner(): JSX.Element {
   const [cookieConsent, setCookieConsent] = useState(false);
 
-  useEffect (() => {
-    const storedCookieConsent = getLocalStorage("cookie_consent", null)
+  useEffect(() => {
+    const storedCookieConsent = getLocalStorage("cookie_consent", null);
 
-    setCookieConsent(storedCookieConsent)
-  }, [setCookieConsent, getLocalStorage])
+    setCookieConsent(storedCookieConsent);
+  }, [setCookieConsent]);
 
-  const onAcceptCookie = () => {
+  const onAcceptCookie = (): void => {
     setLocalStorage("cookie_consent", true);
     setCookieConsent(true);
   };
-  const onDenyCookie = () => {
+  const onDenyCookie = (): void => {
     setLocalStorage("cookie_consent", false);
     setCookieConsent(false);
-  }
+  };
 
   useEffect(() => {
-    const newValue = cookieConsent ? 'granted' : 'denied'
+    const newValue = cookieConsent ? "granted" : "denied";
 
-    window.gtag("consent", 'update', {
-      'analytics_storage': newValue
+    window.gtag("consent", "update", {
+      analytics_storage: newValue,
     });
-
-    //For Testing
-    console.log("Cookie Consent: ", cookieConsent)
-
   }, [cookieConsent]);
   return (
     <div
@@ -44,8 +40,8 @@ export default function CookieBanner() {
       <div className="text-center">
         <Link href="/info/cookies">
           <p className="text-gray-300">
-            We use <span className="font-bold text-orange">cookies</span> on
-            our site.
+            We use <span className="font-bold text-orange">cookies</span> on our
+            site.
           </p>
         </Link>
       </div>
@@ -53,13 +49,17 @@ export default function CookieBanner() {
       <div className="flex gap-2">
         <button
           className="px-5 py-2 text-gray-300 font-bold rounded-md border-gray-900"
-          onClick={() => onDenyCookie()}
+          onClick={() => {
+            onDenyCookie();
+          }}
         >
           Decline
         </button>
         <button
           className="bg-orange text-black font-bold px-5 py-2 rounded-lg"
-          onClick={() => onAcceptCookie()}
+          onClick={() => {
+            onAcceptCookie();
+          }}
         >
           Allow Cookies
         </button>

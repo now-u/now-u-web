@@ -50,7 +50,7 @@ export const HeaderCauses = (props: HeaderCausesProps): JSX.Element => {
 
 export const SectionBody = (props: HeaderCausesProps): JSX.Element => {
   return (
-    <div className="text-center pb-5">
+    <div className="pb-5">
       <TitleText text={props.title} />
       <BodyText text={props.body} />
     </div>

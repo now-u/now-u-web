@@ -17,25 +17,25 @@ const contacts = [
     icon: faComments,
     email: "hello@now-u.com",
     emailDescription:
-      "For all other enquiries, leave a message on the above email.",
+      "For all general enquiries",
   },
   {
     icon: faHandshake,
-    email: "(partnership)@now-u.com",
+    email: "partnerships@now-u.com",
     emailDescription:
-      "For all partnership enquiries, leave a message on the above provided email.",
+      "For all collaboration enquiries",
   },
   {
     icon: faNewspaper,
     email: "press@now-u.com",
     emailDescription:
-      "For all press enquiries, leave a message on the above provided email.",
+      "For all press enquiries",
   },
   {
     icon: faMoneyBill1,
-    email: "(fundraising)@now-u.com",
+    email: "outreach@now-u.com",
     emailDescription:
-      "For all fundraising enquiries, leave a message on the above provided email.",
+      "For all fundraising enquiries",
   },
 ];
 

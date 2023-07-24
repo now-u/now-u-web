@@ -2,27 +2,25 @@
 
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { pageview } from "@/utils/tagHelper";
-import { getLocalStorage } from "@/utils/storageHelper";
+import { useCookieConsent } from "@/hooks/useCookieConsent";
 
 export default function GoogleAnalytics({ GTAG }: { GTAG: string }):JSX.Element {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const [cookieConsent, setCookieConsent] = useState(false);
-  const storedCookieConsent = getLocalStorage("cookie_consent", null)
+  const [cookieConsent] = useCookieConsent()
 
   useEffect(() => {
     if (pathname !== null) {
       const url = `${pathname}${searchParams.toString()} `;
-      setCookieConsent(storedCookieConsent);
       cookieConsent && pageview(GTAG, url);
     } else {
       console.log("No pathname")
     }
 
-  }, [pathname, searchParams, GTAG, cookieConsent, storedCookieConsent]);
+  }, [pathname, searchParams, GTAG, cookieConsent]);
   return (
      <>
       <Script

@@ -1,25 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { getLocalStorage, setLocalStorage } from "@/utils/storageHelper";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useCookieConsent } from "@/hooks/useCookieConsent";
 
 export default function CookieBanner(): JSX.Element {
-  const [cookieConsent, setCookieConsent] = useState(false);
-
-  useEffect(() => {
-    const storedCookieConsent = getLocalStorage("cookie_consent", null);
-
-    setCookieConsent(storedCookieConsent);
-  }, [setCookieConsent]);
+  const [cookieConsent, setCookieConsent] = useCookieConsent();
 
   const onAcceptCookie = (): void => {
-    setLocalStorage("cookie_consent", true);
-    setCookieConsent(true);
+	setCookieConsent(true);
   };
   const onDenyCookie = (): void => {
-    setLocalStorage("cookie_consent", false);
-    setCookieConsent(false);
+	setCookieConsent(false);
   };
 
   useEffect(() => {

@@ -1,18 +1,13 @@
 "use client";
 
 import Script from "next/script";
-import React, { useEffect, useState } from "react";
-import { getLocalStorage } from '@/utils/storageHelper';
+import React from "react";
+import { COOKIE_CONSENT_VALUE, useCookieConsent } from "@/hooks/useCookieConsent";
 
 export default function YMetrica({ YM }: { YM: string }): JSX.Element {
-  const [cookieConsent, setCookieConsent] = useState(false);
-  const storedCookieConsent = getLocalStorage("cookie_consent", null)
+  const [cookieConsent] = useCookieConsent();
 
-  useEffect(() => {
-    setCookieConsent(storedCookieConsent);
-  }, [storedCookieConsent]);
-  return (
-    cookieConsent ?
+  return cookieConsent === COOKIE_CONSENT_VALUE.GRANTED ? (
     <>
       <Script
         id={"yandex-metrica"}
@@ -32,6 +27,8 @@ export default function YMetrica({ YM }: { YM: string }): JSX.Element {
                 `,
         }}
       />
-    </> : <></>
+    </>
+  ) : (
+    <></>
   );
 }

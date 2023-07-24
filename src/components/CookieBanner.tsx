@@ -1,37 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { getLocalStorage, setLocalStorage } from "@/utils/storageHelper";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import {
+  COOKIE_CONSENT_VALUE,
+  useCookieConsent,
+} from "@/hooks/useCookieConsent";
 
 export default function CookieBanner(): JSX.Element {
-  const [cookieConsent, setCookieConsent] = useState(false);
-
-  useEffect(() => {
-    const storedCookieConsent = getLocalStorage("cookie_consent", null);
-
-    setCookieConsent(storedCookieConsent);
-  }, [setCookieConsent]);
+  const [cookieConsent, setCookieConsent] = useCookieConsent();
 
   const onAcceptCookie = (): void => {
-    setLocalStorage("cookie_consent", true);
-    setCookieConsent(true);
+    setCookieConsent(COOKIE_CONSENT_VALUE.GRANTED);
   };
   const onDenyCookie = (): void => {
-    setLocalStorage("cookie_consent", false);
-    setCookieConsent(false);
+    setCookieConsent(COOKIE_CONSENT_VALUE.DENIED);
   };
 
   useEffect(() => {
-    const newValue = cookieConsent ? "granted" : "denied";
+    const newValue =
+      cookieConsent === COOKIE_CONSENT_VALUE.GRANTED ? "granted" : "denied";
 
     window.gtag("consent", "update", {
       analytics_storage: newValue,
     });
   }, [cookieConsent]);
+
   return (
     <div
-      className={`${cookieConsent != null ? "hidden" : "flex"} 
+      className={`${
+        cookieConsent === COOKIE_CONSENT_VALUE.NOT_SET ? "flex" : "hidden"
+      } 
                         my-10 mx-auto max-w-max md:max-w-screen-sm
                         fixed bottom-0 left-0 right-0 
                         flex px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  

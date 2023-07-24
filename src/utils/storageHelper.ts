@@ -1,6 +1,6 @@
 import "client-only";
 
-export function getLocalStorage(key: string, defaultValue: string): string {
+export function getLocalStorage<T>(key: string, defaultValue: T): T {
   if (typeof window !== "undefined") {
     const stickyValue = localStorage.getItem(key);
 

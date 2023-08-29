@@ -3,7 +3,7 @@ import React from "react";
 import { apiClient, Organisation } from "@/services/causesApi";
 import { PartnerTile } from './PartnerTile';
 
-async function getPartners(): Promise<Organisation[]> {
+export async function getPartners(): Promise<Organisation[]> {
   const getPartners = apiClient
     .path("/api/v1/organisations")
     .method("get")

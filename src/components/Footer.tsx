@@ -21,7 +21,7 @@ const navigation: NamedRoute[] = [
   { text: "Press", to: "/press" },
 ];
 
-const socialMediaLinks = [
+export const socialMediaLinks = [
   {
     key: 1,
     icon: faInstagram,

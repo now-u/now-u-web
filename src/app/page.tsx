@@ -42,8 +42,8 @@ function Home(): JSX.Element {
 
       <div className="grid place-items-center">
         <div className="bg-gradient-to-b from-gradlight w-full to-graddark flex justify-around">
-          <div className="max-w-screen-2xl flex flex-col md:flex-row w-full place-items-center py-20">
-            <div className="order-2 md:order-1 max-md:px-4 sm:mx-8 lg:mx-10">
+          <div className="max-w-screen-xl flex flex-col md:flex-row w-full place-items-center py-20 px-5">
+            <div className="">
               <div className="text-center mt-3 md:mt-0 md:text-start pb-5 flex flex-col items-center md:items-start">
                 <div className="md:w-4/5 mb-3">
                   <HeaderText text="Let’s drive change" />
@@ -73,9 +73,9 @@ function Home(): JSX.Element {
         <div className="py-5 md:py-20 xl:py-32">
           <IconRow iconList={icons} />
         </div>
-        <div className="bg-cream w-full flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
-          <div className="max-w-screen-xl flex flex-col md:flex-row ">
-            <div className="order-2 md:order-1 pb-5 md:w-3/5">
+        <div className="bg-cream w-full flex flex-col md:flex-row justify-center place-items-center py-20">
+          <div className="max-w-screen-xl flex flex-col md:flex-row  px-5 ">
+            <div className="order-2 md:order-1 md:w-3/5">
               <TitleText text="Explore our causes" />
               <div className="w-4/5">
                 <SubtitleText text="Drawing on the United Nations Sustainable Development Goals, we focus on 6 social and environmental causes." />

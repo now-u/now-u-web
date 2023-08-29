@@ -59,13 +59,12 @@ export default async function CausesPage(): Promise<JSX.Element> {
     <>
       <title>now-u | Causes</title>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col text-center">
         <HeaderCauses
           title="Our Causes"
           body={[
             "Built around the United Nations Sustainable Development Goals (SDGs), our work at now-u focuses on six core causes.",
             "Our causes support the call to action to end poverty and inequality, protect the planet and ensure that all people enjoy health, justice and prosperity.",
-            "We work with trusted non-profits to bring you targeted campaigns across these cause areas every month, connecting you to resources and actions to drive lasting change.",
           ]}
         />
         <div className="flex flex-col items-center space-y-1 py-20">

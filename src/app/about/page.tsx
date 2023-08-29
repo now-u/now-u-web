@@ -45,9 +45,9 @@ const About = (): JSX.Element => {
             "We aspire to become the new model of collective action and altruism, connecting you with charitable campaigns and bringing people together to create a world of good.",
           ]}
         />
-        <div className="flex flex-col lg:flex-row place-content-around bg-cream place-items-center px-10 py-10">
-          <div className="max-w-screen-2xl flex flex-col md:flex-row justify-around my-10">
-            <div className="md:w-3/4 lg:w-1/2 xl:w-2/5 text-left">
+        <div className="flex flex-col lg:flex-row place-content-around bg-cream place-items-center px-5 py-10">
+          <div className="max-w-screen-xl flex flex-col md:flex-row justify-between my-10">
+            <div className="md:w-2/4 lg:w-1/2 xl:w-3/5 text-left">
               <SectionBody
                 title="Our Story"
                 body={[
@@ -60,7 +60,7 @@ const About = (): JSX.Element => {
             <Image
               className="order-1 md:order-2 w-2/3 w-full md:w-1/2 lg:w-1/3 p-4 xl:p-5 md:object-cover"
               src={Elgars}
-              alt=""
+              alt="Founders of the now-u"
             />
           </div>
         </div>
@@ -99,7 +99,7 @@ const About = (): JSX.Element => {
         </div>
         <div className="bg-slate-100 py-10 md:py-20 xl:pt-32 flex flex-col place-items-center">
           <TitleText text="How you can help" />
-          <div className="py-5 max-w-screen-2xl text-center">
+          <div className="py-5 max-w-screen-xl text-center">
             <IconRow iconList={icons} />
           </div>
           <div className="flex items-center mt-5 md:justify-start">

@@ -16,6 +16,7 @@ interface ButtonVariant {
 export const buttonVariant: ButtonVariant = {
   orange: "bg-orange text-black font-bold py-3 px-4 rounded-lg hover:drop-shadow-xl hover:-translate-y-1 active:translate-y-0 active:drop-shadow-none no-underline",
   white: "bg-white text-black font-bold py-3 px-4 rounded-lg hover:drop-shadow-xl hover:-translate-y-1 active:translate-y-0 active:drop-shadow-none no-underline",
+  disabled: "border border-black text-black font-bold py-3 px-4 rounded-lg no-underline opacity-25 cursor-not-allowed",
 }
 
 export const buttonStyle =

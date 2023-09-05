@@ -18,6 +18,8 @@ declare module "nextjs-routes" {
     | StaticRoute<"/causes">
     | StaticRoute<"/faq">
     | StaticRoute<"/get-in-touch">
+    | StaticRoute<"/info/cookie-policy">
+    | StaticRoute<"/info/privacy-notice">
     | StaticRoute<"/">
     | StaticRoute<"/partners">
     | StaticRoute<"/press">;

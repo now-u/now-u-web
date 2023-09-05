@@ -10,8 +10,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Organisation } from "@/services/api";
 
-export function PartnerCard(props: { partner: any }): JSX.Element {
+export function PartnerCard(props: { partner: Organisation }): JSX.Element {
   const {
     name,
     description,

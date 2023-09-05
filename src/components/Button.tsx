@@ -6,7 +6,7 @@ interface ButtonProps {
   buttonText: string;
   href: string | UrlObject;
   target?: string;
-  variant: string;
+  variant?: string;
 }
 
 interface ButtonVariant {

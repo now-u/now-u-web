@@ -23,6 +23,7 @@ module.exports = {
         "attributes": false
       }
     }],
+    "@typescript-eslint/naming-convention": 1
   },
   settings: {
     react: { version: "18.2.0" },

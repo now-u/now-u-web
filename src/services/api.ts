@@ -1,10 +1,7 @@
 import { components, paths } from "./apiTypes";
 import { Fetcher } from "openapi-typescript-fetch";
 
-export type Cause = components["schemas"]["cause"];
-export type FAQ = components["schemas"]["faq"];
 export type Organisation = components["schemas"]["organisation"];
-export type PressCoverage = components["schemas"]["press_article"];
 
 export const newApiClient = Fetcher.for<paths>();
 newApiClient.configure({

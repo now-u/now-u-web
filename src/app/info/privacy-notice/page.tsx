@@ -7,7 +7,7 @@ export default async function Page(): Promise<JSX.Element> {
 
   return (
     <>
-      <title>{`now-u | Cookie Policy`}</title>
+      <title>{`now-u | Privacy Notice`}</title>
 
       <div className="prose mx-auto my-20">
         <h1>Privacy Notice</h1>

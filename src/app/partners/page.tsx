@@ -20,8 +20,6 @@ const PartnersPage = async (): Promise<JSX.Element> => {
   }
   const partners = await getOrganizations();
 
-  // TODO change the limit when api is fixed
-
   return (
     <>
       <title>now-u | Partners</title>

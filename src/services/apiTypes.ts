@@ -7,7 +7,25 @@ export interface paths {
         /** @description organisations found */
         200: {
           content: {
-            "application/json": Array<(components["schemas"]["list_organisation"])>;
+            "application/json": Array<
+              components["schemas"]["list_organisation"]
+            >;
+          };
+        };
+      };
+    };
+  };
+  "/causes": {
+    /** Retrieves all causes */
+    get: {
+      /** Retrieves all causes */
+      responses: {
+        /** @description causes found */
+        200: {
+          content: {
+            "application/json": Array<
+              components["schemas"]["cause"]
+              >;
           };
         };
       };
@@ -15,9 +33,24 @@ export interface paths {
   };
 }
 
-
 export interface components {
   schemas: {
+    cause: {
+      id?: number;
+      title?: string;
+      header_image: {
+        id: string;
+        url: string;
+        alt_text: string;
+      };
+      icon?: string;
+      description?: string;
+      is_selected?: boolean;
+      /** Format: date-time */
+      created_at: string;
+      /** Format: date-time */
+      updated_at: string;
+    };
     organisation: {
       id: number;
       logo: {

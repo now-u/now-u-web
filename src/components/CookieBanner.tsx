@@ -36,11 +36,16 @@ export default function CookieBanner(): JSX.Element {
                         flex px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
                         bg-blue  rounded-lg shadow`}
     >
-      <div className="text-center">
-        <Link href="/info/cookies">
+      <div className="text-left">
+        <Link href="/info/cookie-policy">
           <p className="text-gray-300">
             We use <span className="font-bold text-orange">cookies</span> on our
             site.
+          </p>
+        </Link>
+        <Link href="/info/privacy-notice">
+          <p className="text-gray-300">
+            Check our Privacy Notice <span className="font-bold text-orange">here</span>.
           </p>
         </Link>
       </div>

@@ -15,6 +15,7 @@ module.exports = {
         cream: "#FFF3E5",
         gradlight: "#FD8824",
         graddark: "#FFDC79",
+        orangepartners: "#FFA033",
       },
       fontFamily: {
         sans: ["var(--font-nunito-sans)"],

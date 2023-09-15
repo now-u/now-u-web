@@ -21,7 +21,7 @@ const navigation: NamedRoute[] = [
   { text: "Press", to: "/press" },
 ];
 
-const socialMediaLinks = [
+export const socialMediaLinks = [
   {
     key: 1,
     icon: faInstagram,
@@ -100,7 +100,7 @@ export const Footer = (): JSX.Element => {
                 </div>
               </div>
             </div>
-            <p className="text-slate-500">Registered charity number: 000000</p>
+            <p className="text-slate-500">Registration Number: 12709184</p>
           </div>
         </div>
       </div>

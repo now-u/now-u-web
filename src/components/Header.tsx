@@ -40,8 +40,10 @@ export const HeaderSubtitle = (props: HeaderSubtitleProps): JSX.Element => {
 export const HeaderCauses = (props: HeaderCausesProps): JSX.Element => {
   return (
     <div className="bg-gradient-to-b from-gradlight to-graddark grid place-items-center px-5 md:px-20 lg:px-64 py-20">
-      <HeaderText text={props.title} />
-      <BodyText text={props.body} />
+      <div className="max-w-screen-lg px-5">
+        <HeaderText text={props.title} />
+        <BodyText text={props.body} />
+      </div>
     </div>
   );
 };

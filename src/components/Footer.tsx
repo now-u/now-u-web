@@ -19,6 +19,8 @@ const navigation: NamedRoute[] = [
   ...headerNavigation,
   { text: "FAQ", to: "/faq" },
   { text: "Press", to: "/press" },
+  { text: "Cookie Notice", to: "/info/cookie-policy" },
+  { text: "Privacy Notice", to: "/info/privacy-notice" },
 ];
 
 export const socialMediaLinks = [

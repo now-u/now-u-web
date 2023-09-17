@@ -25,22 +25,22 @@ export const socialMediaLinks = [
   {
     key: 1,
     icon: faInstagram,
-    link: "https://google.com",
+    link: "https://www.instagram.com/now_u_app",
   },
   {
     key: 2,
     icon: faFacebookF,
-    link: "https://google.com",
+    link: "https://www.facebook.com/nowufb",
   },
   {
     key: 3,
     icon: faTwitter,
-    link: "https://google.com",
+    link: "https://twitter.com/now_u_app",
   },
   {
     key: 4,
     icon: faLinkedinIn,
-    link: "https://google.com",
+    link: "https://www.linkedin.com/company/now-u",
   },
 ];
 

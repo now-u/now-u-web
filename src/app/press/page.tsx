@@ -16,30 +16,31 @@ interface PressPack {
 const pressPacks: PressPack[] = [
   {
     title: "About now-u",
-    link: "",
+	// TODO Probably move press folder to public? And then reference here
+    link: "/press/About_now-u.pdf",
   },
   {
     title: "App walk-through",
-    link: "",
+    link: "/press/App_design_walk_through.pdf",
   },
   {
     title: "About the founders",
-    link: "",
+    link: "/press/About_the_founders.pdf",
   },
   {
     title: "now-u branding",
-    link: "",
+    link: "/press/now-u_Brand_Guide.pdf",
   },
   {
     title: "Press release",
-    link: "",
+    link: "/press/Press_Release_now-u_app_launch.pdf",
   },
 ];
 
 function PressTile(props: { article: PressCoverage }): JSX.Element {
-  const { image_url: imageUrl, title, media_name: mediaName } = props.article;
+  const { image_url: imageUrl, title, media_name: mediaName, link } = props.article;
   return (
-    <div className="bg-white shadow-xl shadow-grey-400 w-full flex flex-col hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm">
+    <a href={link} className="bg-white shadow-xl shadow-grey-400 w-full flex flex-col hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm">
       <div className="relative h-32">
         <Image
           // TODO Make imageUrl required
@@ -53,7 +54,7 @@ function PressTile(props: { article: PressCoverage }): JSX.Element {
         <h2 className="font-bold mb-2">{title}</h2>
         <h2 className="font-bold text-xs">{mediaName}</h2>
       </div>
-    </div>
+    </a>
   );
 }
 

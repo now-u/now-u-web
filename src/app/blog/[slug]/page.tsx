@@ -49,7 +49,7 @@ export default async function Page({
     <>
       <title>{ `now-u | ${blog.title}` }</title>
 
-    <div className="prose mx-auto my-20">
+    <div className="flex-col self-center prose mx-4">
       <LinkButton buttonText={'Back'} href={'/blog'} />
       <div dangerouslySetInnerHTML={{ __html: md().render(blog.content) }} />
       {blog.author !== null && <AuthorTile author={blog.author} />}

@@ -6,12 +6,12 @@ import Image from "next/image";
 import { newApiClient, Cause } from "@/services/api";
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
-  const { header_image, title } = props.cause;
+  const { header_image: headerImage, title } = props.cause;
   return (
     <div className="max-w-sm bg-cream rounded-lg h-full ">
       <Image
         className="rounded-t-lg h-60 w-full object-cover"
-        src={header_image.url}
+        src={headerImage.url}
         alt={title ?? "cause-image"}
         width={100}
         height={100}
@@ -30,7 +30,7 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
 
 export default async function CausesPage(): Promise<JSX.Element> {
   async function getCauses(): Promise<Cause[]> {
-    const getPartners = newApiClient.path("/causes").method("get").create();
+    const getPartners = newApiClient.path("/causes/").method("get").create();
     const response = await getPartners({});
 
     if (!response.ok) {

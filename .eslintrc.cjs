@@ -16,7 +16,7 @@ module.exports = {
     project: ["./tsconfig.json"],
   },
   plugins: ["react"],
-  ignorePatterns: ["src/services/causesApiTypes.ts", "src/vite-env.d.ts"],
+  ignorePatterns: ["src/services/causesApiTypes.ts", "src/services/apiTypes.ts", "src/vite-env.d.ts"],
   rules: {
     "@typescript-eslint/no-misused-promises": [2, {
       "checksVoidReturn": {

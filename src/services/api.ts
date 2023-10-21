@@ -1,8 +1,8 @@
 import { components, paths } from "./apiTypes";
 import { Fetcher } from "openapi-typescript-fetch";
 
-export type Cause = components["schemas"]["cause"];
-export type Organisation = components["schemas"]["organisation"];
+export type Cause = components["schemas"]["Cause"];
+export type Organisation = components["schemas"]["Organisation"];
 
 export const newApiClient = Fetcher.for<paths>();
 newApiClient.configure({

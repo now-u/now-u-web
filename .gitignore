@@ -1,3 +1,8 @@
+.env
+nextjs-routes.d.ts
+src/services/apiTypes.ts
+src/services/causesApiTypes.ts
+
 # Logs
 logs
 *.log
@@ -24,5 +29,3 @@ dist-ssr
 *.sw?
 
 .next/
-
-.env

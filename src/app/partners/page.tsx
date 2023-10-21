@@ -6,7 +6,7 @@ import { newApiClient, Organisation } from "@/services/api";
 const PartnersPage = async (): Promise<JSX.Element> => {
   async function getOrganizations(): Promise<Organisation[]> {
     const getPartners = newApiClient
-      .path("/organisations")
+      .path("/organisations/")
       .method("get")
       .create();
     const response = await getPartners({});

@@ -17,10 +17,10 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
     name,
     description,
     logo,
-    website_link,
-    instagram_link,
-    facebook_link,
-    twitter_link,
+    website_link: websiteLink,
+    instagram_link: instagramLink,
+    facebook_link: facebookLink,
+    twitter_link: twitterLink,
   } = props.partner;
   const [src, setSrc] = useState<string | StaticImageData>(
     logo.url ?? Placeholder
@@ -48,8 +48,8 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
         <div className="flex justify-between flex-wrap">
           <ul className="flex self-center my-4 py-6">
             <li className="px-2">
-              {instagram_link !== null ? (
-                <Link href={instagram_link} target="_blank" rel="noreferrer">
+              {instagramLink != null ? (
+                <Link href={instagramLink} target="_blank" rel="noreferrer">
                   <FontAwesomeIcon
                     className="hover:cursor-pointer hover:text-white"
                     size="xl"
@@ -59,8 +59,8 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
               ): null}
             </li>
             <li className="px-2">
-              {facebook_link  !== null ? (
-                <Link href={facebook_link} target="_blank" rel="noreferrer">
+              {facebookLink  != null ? (
+                <Link href={facebookLink} target="_blank" rel="noreferrer">
                   <FontAwesomeIcon
                     className="hover:cursor-pointer hover:text-white"
                     size="xl"
@@ -70,8 +70,8 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
               ) : null}
             </li>
             <li className="px-2">
-              {twitter_link  !== null ? (
-                <Link href={twitter_link} target="_blank" rel="noreferrer">
+              {twitterLink  != null ? (
+                <Link href={twitterLink} target="_blank" rel="noreferrer">
                   <FontAwesomeIcon
                     className="hover:cursor-pointer hover:text-white"
                     size="xl"
@@ -81,10 +81,10 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
               ) : null}
             </li>
           </ul>
-          {website_link !== null ? <LinkButton
+          {websiteLink != null ? <LinkButton
             variant={ "white" }
             buttonText={ "View website" }
-            href={ website_link }
+            href={ websiteLink }
             target={ "_blank" }
           ></LinkButton> : null}
         </div>

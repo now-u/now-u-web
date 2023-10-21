@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "pnpm run generate && next dev",
+    "build": "pnpm run generate && next build",
     "start": "next start",
     "format": "prettier --write .",
     "lint": "next lint",
-    "generate-api-client": "npx openapi-typescript http://localhost:3001/api-docs/v1/swagger.yaml --output src/services/causesApiTypes.ts"
+    "generate": "pnpm run generate-old-api-client && pnpm run generate-new-api-client",
+    "generate-old-api-client": "npx openapi-typescript https://staging.api.now-u.com/api-docs/v1/swagger.yaml --output src/services/causesApiTypes.ts",
+    "generate-new-api-client": "npx openapi-typescript https://causes.dev.apiv2.now-u.com/api/schema/ --output src/services/apiTypes.ts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",

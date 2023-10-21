@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 
-import { Nunito, Nunito_Sans } from "@next/font/google";
+import { Nunito, Nunito_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import YMetrica  from "@/components/YMetrica";
 import GoogleAnalytics from "@/components/GoogleAnalytics";

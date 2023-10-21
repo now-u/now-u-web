@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import NowULogo from "@/assets/now-u-logo.svg";
-import { navigation as headerNavigation, NamedRoute } from "./Navbar";
+import { navigation as headerNavigation, type NamedRoute } from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,

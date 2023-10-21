@@ -1,6 +1,6 @@
 'use client'
-import { Organisation } from '@/services/causesApi';
-import Image, { StaticImageData } from 'next/image';
+import { type Organisation } from '@/services/causesApi';
+import Image, { type StaticImageData } from 'next/image';
 import React, { useState } from 'react';
 import Placeholder from "@/assets/graphics/placeholder.png";
 

@@ -1,4 +1,4 @@
-import { components, paths } from "./causesApiTypes";
+import { type components, type paths } from "./causesApiTypes";
 import { Fetcher } from "openapi-typescript-fetch";
 
 export type Cause = components["schemas"]["cause"];

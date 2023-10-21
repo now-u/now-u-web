@@ -7,7 +7,7 @@ import {
   faHandshake,
   faNewspaper,
   faMoneyBill1,
-  IconDefinition,
+  type IconDefinition,
 } from "@fortawesome/free-regular-svg-icons";
 
 import { Header } from "@/components/Header";

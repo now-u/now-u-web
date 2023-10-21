@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { FAQ, apiClient } from "@/services/causesApi";
+import { type FAQ, apiClient } from "@/services/causesApi";
 import { FAQBlock } from '@/app/faq/FAQBlock';
 
 async function getFaqs(): Promise<FAQ[]> {

@@ -3,7 +3,7 @@ import React from "react";
 import { HeaderCauses } from "@/components/Header";
 import { Newsletter } from "@/components/Newsletter";
 import Image from "next/image";
-import { newApiClient, Cause } from "@/services/api";
+import { newApiClient, type Cause } from "@/services/api";
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   const { header_image: headerImage, title } = props.cause;

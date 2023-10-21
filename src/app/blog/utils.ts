@@ -1,6 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
-import { BlogWriter, getBlogWriter } from "./writers";
+import { type BlogWriter, getBlogWriter } from "./writers";
 
 const POSTS_FILE_PATH = "src/app/blog/posts";
 

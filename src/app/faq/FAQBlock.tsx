@@ -1,6 +1,6 @@
 "use client";
 import { Disclosure, Transition } from "@headlessui/react";
-import { FAQ } from '@/services/causesApi';
+import { type FAQ } from '@/services/causesApi';
 
 export function FAQBlock({ faqs }: { faqs: FAQ[] }): JSX.Element {
   return (

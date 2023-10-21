@@ -4,7 +4,7 @@ import React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import { apiClient, PressCoverage } from "@/services/causesApi";
+import { apiClient, type PressCoverage } from "@/services/causesApi";
 import { PRESS_EMAIL } from "@/utils/constants";
 
 interface PressPack {

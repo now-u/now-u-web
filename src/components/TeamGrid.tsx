@@ -2,7 +2,7 @@ import React from "react";
 
 import Elgars from "@/assets/images/elgars.png";
 
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 interface CircularPortrait {
   image: StaticImageData;

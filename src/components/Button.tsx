@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { UrlObject } from "url";
+import { type UrlObject } from "url";
 
 interface ButtonProps {
   buttonText: string;

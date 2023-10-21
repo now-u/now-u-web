@@ -1,7 +1,7 @@
 'use client'
-import { Post } from '@/app/blog/utils';
+import { type Post } from '@/app/blog/utils';
 import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';

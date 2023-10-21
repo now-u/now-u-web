@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import { FAQ } from "@/services/causesApi";
+import { type FAQ } from "@/services/causesApi";
 
 const AnswerTile = ({ answer }: { answer: string | null }): JSX.Element => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { SubtitleText, TitleText } from "@/components/Text";
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 
 interface IconTileProps {
   icon: StaticImageData;

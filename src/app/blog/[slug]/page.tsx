@@ -2,7 +2,7 @@ import React from "react";
 import fs from "fs";
 import md from "markdown-it";
 import { getPostBySlug } from "../utils";
-import { BlogWriter } from "../writers";
+import { type BlogWriter } from "../writers";
 import Image from "next/image";
 import { LinkButton } from '@/components/Button';
 

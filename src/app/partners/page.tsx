@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import React from "react";
 import { PartnerCard } from "@/app/partners/PartnerCard";
-import { newApiClient, Organisation } from "@/services/api";
+import { newApiClient, type Organisation } from "@/services/api";
 
 const PartnersPage = async (): Promise<JSX.Element> => {
   async function getOrganizations(): Promise<Organisation[]> {

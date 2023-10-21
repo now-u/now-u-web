@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Placeholder from "@/assets/graphics/placeholder.png";
 import { LinkButton } from "@/components/Button";
 import {
@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Organisation } from "@/services/api";
+import { type Organisation } from "@/services/api";
 
 export function PartnerCard(props: { partner: Organisation }): JSX.Element {
   const {

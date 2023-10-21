@@ -1,6 +1,6 @@
 import React from "react";
 
-import { apiClient, Organisation } from "@/services/causesApi";
+import { apiClient, type Organisation } from "@/services/causesApi";
 import { PartnerTile } from './PartnerTile';
 import { LinkButton } from "@/components/Button";
 

@@ -31,7 +31,7 @@ export default function CookieBanner(): JSX.Element {
       className={`${
         cookieConsent === COOKIE_CONSENT_VALUE.NOT_SET ? "flex" : "hidden"
       } 
-                        my-10 mx-auto max-w-max md:max-w-screen-sm
+                        z-20 my-10 mx-auto max-w-max md:max-w-screen-sm
                         fixed bottom-0 left-0 right-0 
                         flex px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
                         bg-blue  rounded-lg shadow`}

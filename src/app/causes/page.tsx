@@ -15,6 +15,7 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
         alt={title ?? "cause-image"}
         width={500}
         height={500}
+        quality={100}
       />
       <div className="p-5">
         <div className="flex items-center justify-start flex-1 space-x-4">

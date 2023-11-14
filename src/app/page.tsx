@@ -119,7 +119,6 @@ function Home(): JSX.Element {
               ]}
             />
           </div>
-          { /* @ts-expect-error Server Component */ }
           <PartnerGrid />
         </div>
         <Newsletter />

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import { type FAQ } from "@/services/causesApi";
+import { type Faq } from "@/services/api";
 
 const AnswerTile = ({ answer }: { answer: string | null }): JSX.Element => {
   return (
@@ -36,7 +36,7 @@ const QuestionTile = (props: QuestionTileProps): JSX.Element => {
   );
 };
 
-export function FAQDisplay({ faqs }: { faqs: FAQ[] }): JSX.Element {
+export function FAQDisplay({ faqs }: { faqs: Faq[] }): JSX.Element {
   const [selectedQuestionId, setSelectedQuestionId] = useState<number | null>(
     null
   );

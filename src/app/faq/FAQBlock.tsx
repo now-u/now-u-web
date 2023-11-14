@@ -1,8 +1,8 @@
 "use client";
 import { Disclosure, Transition } from "@headlessui/react";
-import { type FAQ } from '@/services/causesApi';
+import { type Faq } from '@/services/api';
 
-export function FAQBlock({ faqs }: { faqs: FAQ[] }): JSX.Element {
+export function FAQBlock({ faqs }: { faqs: Faq[] }): JSX.Element {
   return (
     <div className="flex flex-col items-center bg-cream bg-opacity-20 py-20">
         {faqs.map(({ id, question, answer }) => (

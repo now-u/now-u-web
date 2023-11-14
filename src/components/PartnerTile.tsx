@@ -1,5 +1,5 @@
 'use client'
-import { type Organisation } from '@/services/causesApi';
+import { type Organisation } from '@/services/api';
 import Image, { type StaticImageData } from 'next/image';
 import React, { useState } from 'react';
 import Placeholder from "@/assets/graphics/placeholder.png";
@@ -8,7 +8,7 @@ export const PartnerTile =  (props: { partner: Organisation }): JSX.Element => {
   const partner = props.partner;
 
   // To handle the case where the partner does not have a logo or logo link is broken
-  const [src, setSrc] = useState<string | StaticImageData>(partner.logo_link ?? Placeholder);
+  const [src, setSrc] = useState<string | StaticImageData>(partner.logo.url ?? Placeholder);
 
   return (
     <div className="p-4">

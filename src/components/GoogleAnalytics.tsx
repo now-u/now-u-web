@@ -18,7 +18,7 @@ export default function GoogleAnalytics({
 
   useEffect(() => {
     if (pathname !== null) {
-      const url = `${pathname}${searchParams.toString()} `;
+      const url = `${pathname}${searchParams?.toString() ?? ''}`;
       cookieConsent === COOKIE_CONSENT_VALUE.GRANTED && pageview(GTAG, url);
     } else {
       console.log("No pathname");

@@ -4,6 +4,7 @@ import React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
+// TODO Add press coverage to new api
 import { apiClient, type PressCoverage } from "@/services/causesApi";
 import { PRESS_EMAIL } from "@/utils/constants";
 

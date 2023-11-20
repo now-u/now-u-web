@@ -3,6 +3,7 @@ import { Fetcher } from "openapi-typescript-fetch";
 
 export type Cause = components["schemas"]["Cause"];
 export type Organisation = components["schemas"]["Organisation"];
+export type Faq = components["schemas"]["Faq"];
 
 export const newApiClient = Fetcher.for<paths>();
 newApiClient.configure({

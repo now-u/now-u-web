@@ -16,7 +16,6 @@ const PartnersPage = async (): Promise<JSX.Element> => {
       return [];
     }
     return response.data;
-
   }
   const partners = await getOrganizations();
 

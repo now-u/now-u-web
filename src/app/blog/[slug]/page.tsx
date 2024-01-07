@@ -4,7 +4,7 @@ import md from "markdown-it";
 import { getPostBySlug } from "../utils";
 import { type BlogWriter } from "../writers";
 import Image from "next/image";
-import { LinkButton } from '@/components/Button';
+import { LinkButton } from "@/components/Button";
 
 // NOTE: https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour
 
@@ -34,7 +34,7 @@ export async function generateStaticParams(): Promise<any> {
   const postsFilePath = "src/app/blog/posts";
   const fileNames = fs.readdirSync(postsFilePath);
   return fileNames.map((fileName) => ({
-    slug: fileName.replace(".md", "")
+    slug: fileName.replace(".md", ""),
   }));
 }
 
@@ -47,13 +47,13 @@ export default async function Page({
 
   return (
     <>
-      <title>{ `now-u | ${blog.title}` }</title>
+      <title>{`now-u | ${blog.title}`}</title>
 
-    <div className="flex-col self-center prose mx-4">
-      <LinkButton buttonText={'Back'} href={'/blog'} />
-      <div dangerouslySetInnerHTML={{ __html: md().render(blog.content) }} />
-      {blog.author !== null && <AuthorTile author={blog.author} />}
-    </div>
+      <div className="flex-col self-center prose mx-4">
+        <LinkButton buttonText={"Back"} href={"/blog"} />
+        <div dangerouslySetInnerHTML={{ __html: md().render(blog.content) }} />
+        {blog.author !== null && <AuthorTile author={blog.author} />}
+      </div>
     </>
   );
 }

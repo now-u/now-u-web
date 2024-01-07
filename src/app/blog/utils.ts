@@ -23,7 +23,14 @@ export async function getPostSlugs(): Promise<string[]> {
 export async function getPostBySlug(slug: string): Promise<Post> {
   const readFile = fs.readFileSync(`${POSTS_FILE_PATH}/${slug}.md`, "utf-8");
   const {
-    data: { title, subtitle, authorId, headerImage, readingTime, publishedDate },
+    data: {
+      title,
+      subtitle,
+      authorId,
+      headerImage,
+      readingTime,
+      publishedDate,
+    },
     content,
   } = matter(readFile);
 
@@ -37,13 +44,17 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     author,
     headerImage,
     readingTime,
-	publishedDate,
+    publishedDate,
   };
 }
 
 export async function getPosts(): Promise<Post[]> {
   const slugs = await getPostSlugs();
   const blogs = await Promise.all(slugs.map(getPostBySlug));
-  blogs.sort((b1, b2) => new Date(b2.publishedDate).getTime() - new Date(b1.publishedDate).getTime())
-  return blogs
+  blogs.sort(
+    (b1, b2) =>
+      new Date(b2.publishedDate).getTime() -
+      new Date(b1.publishedDate).getTime(),
+  );
+  return blogs;
 }

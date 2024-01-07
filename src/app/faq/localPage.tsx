@@ -38,7 +38,7 @@ const QuestionTile = (props: QuestionTileProps): JSX.Element => {
 
 export function FAQDisplay({ faqs }: { faqs: Faq[] }): JSX.Element {
   const [selectedQuestionId, setSelectedQuestionId] = useState<number | null>(
-    null
+    null,
   );
 
   function getCurrentAnswer(): string | null {

@@ -3,7 +3,10 @@ import fs from "fs";
 import md from "markdown-it";
 
 export default async function Page(): Promise<JSX.Element> {
-  const privacyNoticeFile = fs.readFileSync(`src/app/info/privacy-notice/privacy-notice.md`, "utf-8");
+  const privacyNoticeFile = fs.readFileSync(
+    `src/app/info/privacy-notice/privacy-notice.md`,
+    "utf-8",
+  );
 
   return (
     <>
@@ -11,7 +14,10 @@ export default async function Page(): Promise<JSX.Element> {
 
       <div className="prose mx-auto my-20">
         <h1>Privacy Notice</h1>
-        <div id={"cookie-cookie-policy"} dangerouslySetInnerHTML={{ __html: md().render(privacyNoticeFile)}} />
+        <div
+          id={"cookie-cookie-policy"}
+          dangerouslySetInnerHTML={{ __html: md().render(privacyNoticeFile) }}
+        />
       </div>
     </>
   );

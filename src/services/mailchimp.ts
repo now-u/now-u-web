@@ -6,5 +6,6 @@ mailchimp.setConfig({
   server: process.env.MAILCHIMP_SERVER_PREFIX,
 });
 
-export const MAILCHIMP_LIST_ID = getRequiredEnvironmentVariable("MAILCHIMP_LIST_ID");
+export const MAILCHIMP_LIST_ID =
+  getRequiredEnvironmentVariable("MAILCHIMP_LIST_ID");
 export const mailchimpClient = mailchimp.lists;

@@ -2,7 +2,10 @@
 
 import Script from "next/script";
 import React from "react";
-import { COOKIE_CONSENT_VALUE, useCookieConsent } from "@/hooks/useCookieConsent";
+import {
+  COOKIE_CONSENT_VALUE,
+  useCookieConsent,
+} from "@/hooks/useCookieConsent";
 
 export default function YMetrica({ YM }: { YM: string }): JSX.Element {
   const [cookieConsent] = useCookieConsent();

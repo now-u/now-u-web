@@ -1,15 +1,17 @@
-'use client'
-import { type Post } from '@/app/blog/utils';
-import Link from 'next/link';
-import Image, { type StaticImageData } from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
-import Placeholder from '@/assets/graphics/placeholder.png';
+"use client";
+import { type Post } from "@/app/blog/utils";
+import Link from "next/link";
+import Image, { type StaticImageData } from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
+import Placeholder from "@/assets/graphics/placeholder.png";
 
 export function BlogTile(props: { post: Post }): JSX.Element {
   const { slug, headerImage, title, author, readingTime } = props.post;
-  const [src, setSrc] = useState<string | StaticImageData>(headerImage ?? Placeholder);
+  const [src, setSrc] = useState<string | StaticImageData>(
+    headerImage ?? Placeholder,
+  );
   return (
     <Link href={`blog/${slug}`}>
       <div className="bg-cream h-full rounded-lg hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm">
@@ -17,7 +19,7 @@ export function BlogTile(props: { post: Post }): JSX.Element {
           <Image
             src={src}
             onError={() => {
-              setSrc(Placeholder)
+              setSrc(Placeholder);
             }}
             alt="Blog Image"
             className="object-cover w-full h-full rounded-lg"

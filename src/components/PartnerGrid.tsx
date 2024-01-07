@@ -1,7 +1,7 @@
 import React from "react";
 
 import { newApiClient, type Organisation } from "@/services/api";
-import { PartnerTile } from './PartnerTile';
+import { PartnerTile } from "./PartnerTile";
 import { LinkButton } from "@/components/Button";
 
 export async function getPartners(): Promise<Organisation[]> {
@@ -24,10 +24,10 @@ export async function PartnerGrid(): Promise<JSX.Element> {
     <div className="max-w-screen-xl flex flex-col ">
       <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-1 md:gap-3 justify-items-center overflow-hidden">
         {partners.slice(0, 8).map((partner) => (
-          <PartnerTile key={ partner.id.toString() } partner={ partner }/>
+          <PartnerTile key={partner.id.toString()} partner={partner} />
         ))}
       </div>
-      <LinkButton buttonText={"View All"} href={"/partners"}/>
+      <LinkButton buttonText={"View All"} href={"/partners"} />
     </div>
   );
 }

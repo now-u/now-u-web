@@ -16,26 +16,22 @@ const contacts = [
   {
     icon: faComments,
     email: "hello@now-u.com",
-    emailDescription:
-      "For all general enquiries",
+    emailDescription: "For all general enquiries",
   },
   {
     icon: faHandshake,
     email: "partnerships@now-u.com",
-    emailDescription:
-      "For all collaboration enquiries",
+    emailDescription: "For all collaboration enquiries",
   },
   {
     icon: faNewspaper,
     email: "press@now-u.com",
-    emailDescription:
-      "For all press enquiries",
+    emailDescription: "For all press enquiries",
   },
   {
     icon: faMoneyBill1,
     email: "outreach@now-u.com",
-    emailDescription:
-      "For all fundraising enquiries",
+    emailDescription: "For all fundraising enquiries",
   },
 ];
 
@@ -74,11 +70,8 @@ const GetInTouch = (): JSX.Element => {
     <>
       <title>now-u | Get In Touch</title>
 
-      <div
-        className="text-center"
-      >
-      <Header
-        title="Get in Touch" />
+      <div className="text-center">
+        <Header title="Get in Touch" />
       </div>
       <div className="flex flex-col items-center">
         <div className="max-w-screen-2xl grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-20 m-10">

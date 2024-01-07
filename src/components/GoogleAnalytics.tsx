@@ -4,7 +4,10 @@ import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { pageview } from "@/utils/tagHelper";
-import { COOKIE_CONSENT_VALUE, useCookieConsent } from "@/hooks/useCookieConsent";
+import {
+  COOKIE_CONSENT_VALUE,
+  useCookieConsent,
+} from "@/hooks/useCookieConsent";
 
 export default function GoogleAnalytics({
   GTAG,
@@ -18,7 +21,7 @@ export default function GoogleAnalytics({
 
   useEffect(() => {
     if (pathname !== null) {
-      const url = `${pathname}${searchParams?.toString() ?? ''}`;
+      const url = `${pathname}${searchParams?.toString() ?? ""}`;
       cookieConsent === COOKIE_CONSENT_VALUE.GRANTED && pageview(GTAG, url);
     } else {
       console.log("No pathname");

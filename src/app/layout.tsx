@@ -4,7 +4,7 @@ import "./globals.css";
 
 import { Nunito, Nunito_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
-import YMetrica  from "@/components/YMetrica";
+import YMetrica from "@/components/YMetrica";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { getRequiredEnvironmentVariable } from "@/utils/getRequiredEnvironmentVariable";
 import CookieBanner from "@/components/CookieBanner";
@@ -28,7 +28,6 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
-
   return (
     <html className={`${nunito.variable} ${nunitoSans.variable} font-sans`}>
       <GoogleAnalytics GTAG={GTAG} />

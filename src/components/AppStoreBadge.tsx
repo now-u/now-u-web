@@ -22,26 +22,33 @@ export const AppleStoreBadgeType: AppStoreData = {
 
 type AppStore = "AppleStore" | "GooglePlayStore";
 const appStoreDataMap: Record<AppStore, AppStoreData> = {
-    AppleStore: {
-        asset: AppleStoreBadgeSVG,
-        link: APPLE_STORE_URL,
-    },
-    GooglePlayStore: {
-        asset: GoogleStoreBadgeSVG,
-        link: GOOGLE_STORE_URL,
-    }
-}
-
-export function AppStoreBadge (props: { store: AppStore, border?: boolean }): JSX.Element {
-    const { asset, link } = appStoreDataMap[props.store]
-    return (
-        <Link href={link}>
-            <Image
-              src={asset}
-              alt="download app from apple store"
-              className={props.border === true ? "border-4 border-white rounded-lg bg-white" : ""}
-              fill
-            />
-        </Link>
-    );
+  AppleStore: {
+    asset: AppleStoreBadgeSVG,
+    link: APPLE_STORE_URL,
+  },
+  GooglePlayStore: {
+    asset: GoogleStoreBadgeSVG,
+    link: GOOGLE_STORE_URL,
+  },
 };
+
+export function AppStoreBadge(props: {
+  store: AppStore;
+  border?: boolean;
+}): JSX.Element {
+  const { asset, link } = appStoreDataMap[props.store];
+  return (
+    <Link href={link}>
+      <Image
+        src={asset}
+        alt="download app from apple store"
+        className={
+          props.border === true
+            ? "border-4 border-white rounded-lg bg-white"
+            : ""
+        }
+        fill
+      />
+    </Link>
+  );
+}

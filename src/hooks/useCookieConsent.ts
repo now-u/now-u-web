@@ -11,17 +11,17 @@ export enum COOKIE_CONSENT_VALUE {
 
 export function useCookieConsent(): [
   ActiveCookiesType,
-  (cookiesActive: ActiveCookiesType) => void
+  (cookiesActive: ActiveCookiesType) => void,
 ] {
   const [cookiesActive, setCookiesActive] = useState<ActiveCookiesType>(
-    COOKIE_CONSENT_VALUE.LOADING
+    COOKIE_CONSENT_VALUE.LOADING,
   );
 
   useEffect(() => {
     const storedCookieConsent: ActiveCookiesType =
       getLocalStorage<ActiveCookiesType>(
         "cookie_consent",
-        COOKIE_CONSENT_VALUE.NOT_SET
+        COOKIE_CONSENT_VALUE.NOT_SET,
       );
     setCookieConsent(storedCookieConsent);
   }, [setCookiesActive]);

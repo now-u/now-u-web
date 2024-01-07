@@ -1,5 +1,4 @@
-﻿
-## Updated August 2023
+﻿## Updated August 2023
 
 Website: [wwwnow-u.com](https://now-u.com)
 
@@ -13,15 +12,11 @@ By using the wording “we”, “us”, “our” or “now-u” throughout thi
 
 This Cookie Policy explains how we use cookies and similar technologies to recognise you when you visit our website at [now-u.com](https://now-u.com) ("Website"). It explains what these technologies are and why we use them, as well as your rights to control our use of them.
 
-  
-
 In some cases we may use cookies to collect personal information, or that becomes personal information if we combine it with other information.
 
 ## What are cookies?
 
 Cookies are small data files that are placed on your computer or mobile device when you visit a website. Cookies are widely used by website owners in order to make their websites work, or to work more efficiently, as well as to provide reporting information.
-
-  
 
 Cookies set by the website owner are called "first-party cookies". Cookies set by parties other than the website owner are called "third-party cookies”. Third-party cookies enable third-party features or functionality to be provided on or through the website (e.g., advertising, interactive content, and analytics). The parties that set these third-party cookies can recognize your computer both when it visits the website in question and also when it visits certain other websites.
 
@@ -33,32 +28,26 @@ We use first- and third-party cookies for several reasons. Some cookies are requ
 
 You have the right to decide whether to accept or reject cookies. You can exercise your cookie rights by setting your preferences in the Cookie Consent Manager. The Cookie Consent Manager allows you to select which categories of cookies you accept or reject. Essential cookies cannot be rejected as they are strictly necessary to provide you with services.
 
-  
-
 The Cookie Consent Manager can be found in the notification banner and on our website. If you choose to reject cookies, you may still use our website though your access to some functionality and areas of our website may be restricted. You may also set or amend your web browser controls to accept or refuse cookies. The specific types of first- and third-party cookies served through our Website and the purposes they perform are described in the table below (please note that the specific cookies served may vary depending on the specific Online Properties you visit):
 
 ### Analytics and customization cookies
 
 These cookies collect information that is used either in aggregate form to help us understand how our Website is being used or how effective our marketing campaigns are, or to help us customise our Website for you.
 
-  
-
 #### Google Analytics
-|**COOKIE NAME**|**DESCRIPTION**|**COUNTRY**|
-|--|--|--|
-|**_gat**|Used to monitor number of Google Analytics server requests when using Google Tag Manager|United States|
-|**#collect**|Sends data such as visitor’s behaviour and device to Google Analytics. It is able to keep track of the visitor across marketing channels and devices. It is a pixel tracker type cookie whose activity lasts within the browsing session.|United States|
-|**_ga_#**|Used to distinguish individual users by means of designation of a randomly generated number as client identifier, which allows calculation of visits and sessions|United States|
-|**_gat#**|Enables Google Analytics regulate the rate of requesting. It is a HTTP cookie type that lasts for a session.|United States|
-|**_gid**|Keeps an entry of unique ID which is then used to come up with statistical data on website usage by visitors. It is a HTTP cookie type and expires after a browsing session.|United States|
-|**_ga**|Keeps an entry of unique ID which is then used to come up with statistical data on website usage by visitors. It is a HTTP cookie type and expires after a browsing session.|United States|
 
-
-  
+| **COOKIE NAME** | **DESCRIPTION**                                                                                                                                                                                                                           | **COUNTRY**   |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| **\_gat**       | Used to monitor number of Google Analytics server requests when using Google Tag Manager                                                                                                                                                  | United States |
+| **#collect**    | Sends data such as visitor’s behaviour and device to Google Analytics. It is able to keep track of the visitor across marketing channels and devices. It is a pixel tracker type cookie whose activity lasts within the browsing session. | United States |
+| **_ga_#**       | Used to distinguish individual users by means of designation of a randomly generated number as client identifier, which allows calculation of visits and sessions                                                                         | United States |
+| **\_gat#**      | Enables Google Analytics regulate the rate of requesting. It is a HTTP cookie type that lasts for a session.                                                                                                                              | United States |
+| **\_gid**       | Keeps an entry of unique ID which is then used to come up with statistical data on website usage by visitors. It is a HTTP cookie type and expires after a browsing session.                                                              | United States |
+| **\_ga**        | Keeps an entry of unique ID which is then used to come up with statistical data on website usage by visitors. It is a HTTP cookie type and expires after a browsing session.                                                              | United States |
 
 #### In detail
 
-Name:**_gat**
+Name:**\_gat**
 
 Purpose: Used to monitor number of Google Analytics server requests when using Google Tag Manager
 
@@ -71,7 +60,6 @@ Country: United States
 Type: http_cookie
 
 Expires in: 1 minute
-
 
 Name: **#collect**
 
@@ -101,7 +89,7 @@ Type: http_cookie
 
 Expires in: 1 year 11 months 29 days
 
-Name: **_gat#**
+Name: **\_gat#**
 
 Purpose: Enables Google Analytics to regulate the rate of requesting. It is a HTTP cookie type that lasts for a session.
 
@@ -115,7 +103,7 @@ Type: http_cookie
 
 Expires in: 1 minute
 
-Name:**_gid**
+Name:**\_gid**
 
 Purpose:Keeps an entry of unique ID which is then used to come up with statistical data on website usage by visitors. It is a HTTP cookie type and expires after a browsing session.
 
@@ -129,7 +117,7 @@ Type:http_cookie
 
 Expires in:1 day
 
-Name: **_ga**
+Name: **\_ga**
 
 Purpose: Records a particular ID used to come up with data about website usage by the user
 
@@ -149,21 +137,19 @@ These cookies are used to make advertising messages more relevant to you. They p
 
 #### Facebook
 
-
-|**COOKIE NAME**|**DESCRIPTION**|**COUNTRY**|
-|--|--|--|
-|**_fbp**|Facebook tracking pixel used to identify visitors for personalised advertising.|United States|
+| **COOKIE NAME** | **DESCRIPTION**                                                                 | **COUNTRY**   |
+| --------------- | ------------------------------------------------------------------------------- | ------------- |
+| **\_fbp**       | Facebook tracking pixel used to identify visitors for personalised advertising. | United States |
 
 #### AdWords
 
-
-|**COOKIE NAME**|**DESCRIPTION**|**COUNTRY**|
-|--|--|--|
-|**ga-audiencs**|Used by Google AdWords to re-engage visitors that are likely to convert to customers based on the visitor's online behaviour across websites|United States|
+| **COOKIE NAME** | **DESCRIPTION**                                                                                                                              | **COUNTRY**   |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| **ga-audiencs** | Used by Google AdWords to re-engage visitors that are likely to convert to customers based on the visitor's online behaviour across websites | United States |
 
 #### In detail
 
-Name: **_fbp**
+Name: **\_fbp**
 
 Purpose: Facebook tracking pixel used to identify visitors for personalised advertising.
 
@@ -190,8 +176,6 @@ Country: United States
 Type: pixel_tracker
 
 Expires in: session
-
-  
 
 ## How can I control cookies on my browser?
 

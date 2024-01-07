@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { type Faq, newApiClient } from "@/services/api";
-import { FAQBlock } from '@/app/faq/FAQBlock';
+import { FAQBlock } from "@/app/faq/FAQBlock";
 
 async function getFaqs(): Promise<Faq[]> {
   const getFaqs = newApiClient.path("/faqs/").method("get").create();
@@ -22,7 +22,7 @@ async function FAQPage(): Promise<JSX.Element> {
       <title>now-u | FAQs</title>
 
       <Header title="FAQs" />
-      <FAQBlock faqs={ faqs } />
+      <FAQBlock faqs={faqs} />
       <p className="text-center mb-10 text-3xl w-4/5 self-center">
         Want to ask something else?{" "}
         <Link

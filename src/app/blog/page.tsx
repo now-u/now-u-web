@@ -3,8 +3,8 @@ import React from "react";
 import { HeaderSubtitle } from "@/components/Header";
 
 import { getPosts } from "./utils";
-import { BlogTile } from '@/components/BlogTile';
-import { Newsletter } from '@/components/Newsletter';
+import { BlogTile } from "@/components/BlogTile";
+import { Newsletter } from "@/components/Newsletter";
 
 async function Blog(): Promise<JSX.Element> {
   const blogs = await getPosts();

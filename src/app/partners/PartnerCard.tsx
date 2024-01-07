@@ -23,7 +23,7 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
     twitter_link: twitterLink,
   } = props.partner;
   const [src, setSrc] = useState<string | StaticImageData>(
-    logo.url ?? Placeholder
+    logo.url ?? Placeholder,
   );
 
   return (
@@ -56,10 +56,10 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
                     icon={faInstagram}
                   />
                 </Link>
-              ): null}
+              ) : null}
             </li>
             <li className="px-2">
-              {facebookLink  != null ? (
+              {facebookLink != null ? (
                 <Link href={facebookLink} target="_blank" rel="noreferrer">
                   <FontAwesomeIcon
                     className="hover:cursor-pointer hover:text-white"
@@ -70,7 +70,7 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
               ) : null}
             </li>
             <li className="px-2">
-              {twitterLink  != null ? (
+              {twitterLink != null ? (
                 <Link href={twitterLink} target="_blank" rel="noreferrer">
                   <FontAwesomeIcon
                     className="hover:cursor-pointer hover:text-white"
@@ -81,12 +81,14 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
               ) : null}
             </li>
           </ul>
-          {websiteLink != null ? <LinkButton
-            variant={ "white" }
-            buttonText={ "View website" }
-            href={ websiteLink }
-            target={ "_blank" }
-          ></LinkButton> : null}
+          {websiteLink != null ? (
+            <LinkButton
+              variant={"white"}
+              buttonText={"View website"}
+              href={websiteLink}
+              target={"_blank"}
+            ></LinkButton>
+          ) : null}
         </div>
       </div>
     </div>

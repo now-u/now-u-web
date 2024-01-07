@@ -22,7 +22,7 @@ export const navigation: NamedRoute[] = [
 ];
 
 const NavbarLink = (
-  props: NamedRoute & { isMobile?: boolean }
+  props: NamedRoute & { isMobile?: boolean },
 ): JSX.Element => {
   const { text, to, isMobile } = props;
   const isActive = false;
@@ -36,7 +36,7 @@ const NavbarLink = (
           ? "underline underline-offset-2"
           : "hover:bg-blue hover:text-white",
         "px-3 py-2 text-xl font-bold rounded-md font-heading",
-        isMobile ?? false ? "block text-base" : "text-sm"
+        isMobile ?? false ? "block text-base" : "text-sm",
       )}
       aria-current={isActive != null ? "page" : undefined}
     >
@@ -52,7 +52,6 @@ export const Navbar = (): JSX.Element => {
         <>
           <div className="max-w-screen-2xl flex w-full justify-between">
             <div className="flex w-full h-16 items-center justify-between mx-4 sm:mx-8 lg:mx-10">
-
               {/* Logo */}
               <div className="flex flex-1 items-center lg:items-stretch lg:justify-start">
                 <div className="flex flex-shrink-0 items-center">
@@ -74,7 +73,7 @@ export const Navbar = (): JSX.Element => {
               </div>
 
               {/* Mobile menu button */}
-              <div className="inset-y-0 left-0 flex items-center md:hidden" >
+              <div className="inset-y-0 left-0 flex items-center md:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (

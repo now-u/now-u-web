@@ -17,7 +17,7 @@ interface PressPack {
 const pressPacks: PressPack[] = [
   {
     title: "About now-u",
-	// TODO Probably move press folder to public? And then reference here
+    // TODO Probably move press folder to public? And then reference here
     link: "/press/About_now-u.pdf",
   },
   {
@@ -39,15 +39,25 @@ const pressPacks: PressPack[] = [
 ];
 
 function PressTile(props: { article: PressCoverage }): JSX.Element {
-  const { image_url: imageUrl, title, media_name: mediaName, link } = props.article;
+  const {
+    image_url: imageUrl,
+    title,
+    media_name: mediaName,
+    link,
+  } = props.article;
 
-   // TODO Make imageUrl required in api v2
+  // TODO Make imageUrl required in api v2
   if (imageUrl == null) {
-	throw new Error('imageUrl is null for a media article! This needs to be fixed in staging admin panel');
+    throw new Error(
+      "imageUrl is null for a media article! This needs to be fixed in staging admin panel",
+    );
   }
 
   return (
-    <a href={link} className="bg-white shadow-xl shadow-grey-400 w-full flex flex-col hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm">
+    <a
+      href={link}
+      className="bg-white shadow-xl shadow-grey-400 w-full flex flex-col hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm"
+    >
       <div className="relative h-32">
         <Image
           src={imageUrl}

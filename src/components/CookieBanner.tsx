@@ -45,7 +45,8 @@ export default function CookieBanner(): JSX.Element {
         </Link>
         <Link href="/info/privacy-notice">
           <p className="text-gray-300">
-            Check our Privacy Notice <span className="font-bold text-orange">here</span>.
+            Check our Privacy Notice{" "}
+            <span className="font-bold text-orange">here</span>.
           </p>
         </Link>
       </div>

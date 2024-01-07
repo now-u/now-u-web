@@ -4,7 +4,7 @@ import md from "markdown-it";
 import { getPostBySlug } from "../utils";
 import { type BlogWriter } from "../writers";
 import Image from "next/image";
-import { LinkButton } from "@/components/Button";
+import Link from "next/link";
 
 // NOTE: https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour
 
@@ -49,9 +49,15 @@ export default async function Page({
     <>
       <title>{`now-u | ${blog.title}`}</title>
 
-      <div className="flex-col self-center prose mx-4">
-        <LinkButton buttonText={"Back"} href={"/blog"} />
-        <div dangerouslySetInnerHTML={{ __html: md().render(blog.content) }} />
+      <div className="flex-col self-center prose px-4 w-full lg:mt-5">
+        <Link className="underline text-orange font-bold" href={"/blog"}>
+          {" "}
+          {"< "} Back{" "}
+        </Link>
+        <div
+          className="mt-2"
+          dangerouslySetInnerHTML={{ __html: md().render(blog.content) }}
+        />
         {blog.author !== null && <AuthorTile author={blog.author} />}
       </div>
     </>

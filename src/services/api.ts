@@ -5,7 +5,7 @@ export type Cause = components["schemas"]["Cause"];
 export type Organisation = components["schemas"]["Organisation"];
 export type Faq = components["schemas"]["Faq"];
 
-export const newApiClient = Fetcher.for<paths>();
-newApiClient.configure({
+export const apiClient = Fetcher.for<paths>();
+apiClient.configure({
   baseUrl: "https://causes.dev.apiv2.now-u.com",
 });

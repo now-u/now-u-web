@@ -4,9 +4,8 @@ import React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-// TODO Add press coverage to new api
-import { apiClient, type PressCoverage } from "@/services/causesApi";
 import { PRESS_EMAIL } from "@/utils/constants";
+import { type PressArticle, pressArticles } from "./pressArticles";
 
 interface PressPack {
   title: string;
@@ -38,7 +37,7 @@ const pressPacks: PressPack[] = [
   },
 ];
 
-function PressTile(props: { article: PressCoverage }): JSX.Element {
+function PressTile(props: { article: PressArticle }): JSX.Element {
   const {
     image_url: imageUrl,
     title,
@@ -86,17 +85,8 @@ function PressPackLink(props: { pack: PressPack }): JSX.Element {
   );
 }
 
-async function getPressArticles(): Promise<PressCoverage[]> {
-  const getArticles = apiClient
-    .path("/api/v1/press_coverage")
-    .method("get")
-    .create();
-  const response = await getArticles({});
-  if (!response.ok) {
-    console.error("Failed to fetch causes data");
-    return [];
-  }
-  return response.data.data;
+async function getPressArticles(): Promise<PressArticle[]> {
+  return pressArticles;
 }
 
 // TODO: Press Pack

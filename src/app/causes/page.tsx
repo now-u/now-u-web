@@ -3,7 +3,7 @@ import React from "react";
 import { HeaderCauses } from "@/components/Header";
 import { Newsletter } from "@/components/Newsletter";
 import Image from "next/image";
-import { newApiClient, type Cause } from "@/services/api";
+import { apiClient, type Cause } from "@/services/api";
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   const { header_image: headerImage, title } = props.cause;
@@ -32,7 +32,7 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
 
 export default async function CausesPage(): Promise<JSX.Element> {
   async function getCauses(): Promise<Cause[]> {
-    const getPartners = newApiClient.path("/causes/").method("get").create();
+    const getPartners = apiClient.path("/causes/").method("get").create();
     const response = await getPartners({});
 
     if (!response.ok) {

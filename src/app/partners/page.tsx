@@ -1,11 +1,11 @@
 import { Header } from "@/components/Header";
 import React from "react";
 import { PartnerCard } from "@/app/partners/PartnerCard";
-import { newApiClient, type Organisation } from "@/services/api";
+import { apiClient, type Organisation } from "@/services/api";
 
 const PartnersPage = async (): Promise<JSX.Element> => {
   async function getOrganizations(): Promise<Organisation[]> {
-    const getPartners = newApiClient
+    const getPartners = apiClient
       .path("/organisations/")
       .method("get")
       .create();

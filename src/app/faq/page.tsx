@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { type Faq, newApiClient } from "@/services/api";
+import { type Faq, apiClient } from "@/services/api";
 import { FAQBlock } from "@/app/faq/FAQBlock";
 
 async function getFaqs(): Promise<Faq[]> {
-  const getFaqs = newApiClient.path("/faqs/").method("get").create();
+  const getFaqs = apiClient.path("/faqs/").method("get").create();
   const response = await getFaqs({});
   if (!response.ok) {
     console.error("Failed to fetch faqs");

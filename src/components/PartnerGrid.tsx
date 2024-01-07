@@ -1,14 +1,11 @@
 import React from "react";
 
-import { newApiClient, type Organisation } from "@/services/api";
+import { apiClient, type Organisation } from "@/services/api";
 import { PartnerTile } from "./PartnerTile";
 import { LinkButton } from "@/components/Button";
 
 export async function getPartners(): Promise<Organisation[]> {
-  const getPartners = newApiClient
-    .path("/organisations/")
-    .method("get")
-    .create();
+  const getPartners = apiClient.path("/organisations/").method("get").create();
   const response = await getPartners({});
   if (!response.ok) {
     console.error("Failed to fetch partners");

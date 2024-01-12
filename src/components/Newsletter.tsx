@@ -1,11 +1,11 @@
 "use client";
 
-import { trpc } from "@/services/trpc";
 import React from "react";
 import Image from "next/image";
 
 import NewsletterGraphic from "@/assets/graphics/newsletter_graphic.png";
 import { Button } from "./Button";
+import { subscribeToNewsLetter } from "@/actions/mailchimp";
 
 export function Newsletter(): JSX.Element {
   async function handleSubmit(
@@ -15,8 +15,8 @@ export function Newsletter(): JSX.Element {
     const target = event.target as typeof event.target & {
       email: { value: string };
     };
-    const response = await trpc.submit.mutate({ email: target.email.value });
-    if (response.ok) {
+    const response = await subscribeToNewsLetter({ email: target.email.value });
+    if (response.success) {
       // TODO Show some flashbar or something
       // TODO Maybe set a cookie so that we stop showing hte newsletter signup?
     }

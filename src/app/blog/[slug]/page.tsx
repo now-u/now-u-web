@@ -11,7 +11,7 @@ import Link from "next/link";
 function AuthorTile(props: { author: BlogWriter }): JSX.Element {
   const { author } = props;
   return (
-    <div className="flex flex-col md:flex-row ">
+    <div className="flex flex-col md:flex-row">
       <div className="h-32 w-32 mb-6 md:w-96 relative mr-5">
         <Image
           src={author.profile_picture_url}
@@ -49,16 +49,18 @@ export default async function Page({
     <>
       <title>{`now-u | ${blog.title}`}</title>
 
-      <div className="flex-col self-center prose px-4 w-full lg:mt-5">
-        <Link className="underline text-orange font-bold" href={"/blog"}>
-          {" "}
-          {"< "} Back{" "}
-        </Link>
-        <div
-          className="mt-2"
-          dangerouslySetInnerHTML={{ __html: md().render(blog.content) }}
-        />
-        {blog.author !== null && <AuthorTile author={blog.author} />}
+      <div className="w-full flex flex-col items-center lg:my-10">
+        <div className="flex-col prose mx-4">
+          <Link className="underline text-orange font-bold" href={"/blog"}>
+            {" "}
+            {"< "} Back{" "}
+          </Link>
+          <div
+            className="mt-2"
+            dangerouslySetInnerHTML={{ __html: md().render(blog.content) }}
+          />
+          {blog.author !== null && <AuthorTile author={blog.author} />}
+        </div>
       </div>
     </>
   );

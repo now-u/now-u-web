@@ -9,6 +9,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { getRequiredEnvironmentVariable } from "@/utils/getRequiredEnvironmentVariable";
 import CookieBanner from "@/components/CookieBanner";
 import Image from "next/image";
+import { Toaster } from "@/components/ui/toaster";
 const GTAG = getRequiredEnvironmentVariable("GTAG_ID");
 const YM = getRequiredEnvironmentVariable("YM_ID");
 
@@ -33,19 +34,22 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
       <GoogleAnalytics GTAG={GTAG} />
       <YMetrica YM={YM} />
       <body className="flex flex-col align-items-center">
-        <div>
-          <Image
-            src={"https://mc.yandex.ru/watch/" + YM}
-            style={{ position: "absolute", left: "-9999px" }}
-            alt=""
-            width={100}
-            height={100}
-          />
-        </div>
-        <Navbar />
-        {children}
-        <CookieBanner />
-        <Footer />
+        <main>
+          <div>
+            <Image
+              src={"https://mc.yandex.ru/watch/" + YM}
+              style={{ position: "absolute", left: "-9999px" }}
+              alt=""
+              width={100}
+              height={100}
+            />
+          </div>
+          <Navbar />
+          {children}
+          <CookieBanner />
+          <Footer />
+        </main>
+        <Toaster />
       </body>
     </html>
   );

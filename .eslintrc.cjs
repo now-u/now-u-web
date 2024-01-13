@@ -20,6 +20,7 @@ module.exports = {
     "src/services/causesApiTypes.ts",
     "src/services/apiTypes.ts",
     "src/vite-env.d.ts",
+    "src/components/ui/**",
   ],
   rules: {
     "@typescript-eslint/no-misused-promises": [

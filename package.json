@@ -49,7 +49,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/gtag.js": "0.0.17",
+    "@types/gtag.js": "0.0.19",
     "@types/mailchimp__mailchimp_marketing": "^3.0.17",
     "@types/markdown-it": "^13.0.7",
     "@types/node": "20.8.7",

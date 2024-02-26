@@ -106,8 +106,8 @@ dependencies:
 
 devDependencies:
   "@types/gtag.js":
-    specifier: 0.0.17
-    version: 0.0.17
+    specifier: 0.0.19
+    version: 0.0.19
   "@types/mailchimp__mailchimp_marketing":
     specifier: ^3.0.17
     version: 3.0.17
@@ -1252,10 +1252,10 @@ packages:
       tailwindcss: 3.4.1
     dev: false
 
-  /@types/gtag.js@0.0.17:
+  /@types/gtag.js@0.0.19:
     resolution:
       {
-        integrity: sha512-OsSO6Yyuygr3DeeTovOY0ppLiAVHoXg4CSanO9/vzDQCV+e8pkZNE+HR2dVxGJfUbtRe2IqzC97PYuHSNUepJw==,
+        integrity: sha512-KHoDzrf9rSd0mooKN576PjExpdk/XRrNu4RQnmigsScSTSidwyOUe9kDrHz9UPKjiBrx2QEsSkexbJSgS0j72w==,
       }
     dev: true
 

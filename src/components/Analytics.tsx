@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { run } from "vanilla-cookieconsent";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { usePathname, useSearchParams } from "next/navigation";
+import Script from "next/script";
 
 const enum CookieCategory {
   Necessary = "necessary",
@@ -12,29 +12,9 @@ const enum CookieCategory {
   Marketing = "marketing",
 }
 
+const dataLayerName = "dataLayer";
+
 export default function Analytics(props: { gtmId: string }): JSX.Element {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  const [analyticsStorageGranted, setAnalyticsStorageGranted] = useState(false);
-
-  // Initially disabled google analytics storage until consent is granted
-  useEffect(() => {
-    window.gtag("consent", "update", {
-      analytics_storage: "denied",
-      ad_storage: "denied",
-    });
-  }, []);
-
-  useEffect(() => {
-    if (analyticsStorageGranted) {
-      const url = `${pathname}${searchParams?.toString() ?? ""}`;
-      window.gtag("config", props.gtmId, {
-        page_path: url,
-      });
-    }
-  }, [pathname, searchParams, props.gtmId, analyticsStorageGranted]);
-
   useEffect(() => {
     void run({
       hideFromBots: true,
@@ -103,17 +83,41 @@ export default function Analytics(props: { gtmId: string }): JSX.Element {
         const analyticsGranted = cookie.categories.includes(
           CookieCategory.Analytics,
         );
+        const marketingGranted = cookie.categories.includes(
+          CookieCategory.Marketing,
+        );
+        function boolToGranted(value: boolean): "granted" | "denied" {
+          return value ? "granted" : "denied";
+        }
         window.gtag("consent", "update", {
-          analytics_storage: analyticsGranted ? "granted" : "denied",
-          ad_storage: cookie.categories.includes(CookieCategory.Marketing)
-            ? "granted"
-            : "denied",
+          analytics_storage: boolToGranted(analyticsGranted),
+          ad_storage: boolToGranted(marketingGranted),
+          ad_personalization: boolToGranted(marketingGranted),
+          ad_user_data: boolToGranted(marketingGranted),
         });
-
-        setAnalyticsStorageGranted(analyticsGranted);
       },
     });
   }, []);
 
-  return <GoogleAnalytics gaId={props.gtmId} />;
+  return (
+    <>
+      <Script
+        id="consent-default"
+        dangerouslySetInnerHTML={{
+          __html: `
+					window['${dataLayerName}'] = window['${dataLayerName}'] || [];
+					function gtag(){window['${dataLayerName}'].push(arguments);}
+
+					window.gtag("consent", "default", {
+    				  analytics_storage: "denied",
+    				  ad_storage: "denied",
+    				  ad_user_data: "denied",
+    				  ad_personalization: "denied",
+    				});
+				`,
+        }}
+      />
+      <GoogleAnalytics gaId={props.gtmId} dataLayerName={dataLayerName} />
+    </>
+  );
 }

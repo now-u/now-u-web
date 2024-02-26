@@ -18,6 +18,9 @@ export function Newsletter(): JSX.Element {
     const target = event.target as typeof event.target & {
       email: { value: string };
     };
+
+    window.gtag("event", "newsletter_signup", {});
+
     const response = await subscribeToNewsLetter({ email: target.email.value });
     switch (response.result) {
       case "ADDED":

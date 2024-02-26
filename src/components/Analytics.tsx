@@ -54,36 +54,38 @@ export default function Analytics(props: { gtmId: string }): JSX.Element {
               title: "We use cookies 🍪😋",
               description:
                 "We use cookies to ensure you get the best experience on our website and to get anonymized statistics about usage. Please review the options below.",
-              acceptAllBtn: "Accept",
+              acceptAllBtn: "Accept all",
               acceptNecessaryBtn: "Reject",
               showPreferencesBtn: "Preferences",
             },
             preferencesModal: {
               title: "Manage cookie preferences",
               acceptAllBtn: "Accept all",
-              acceptNecessaryBtn: "Reject all",
+              acceptNecessaryBtn: "Reject",
               savePreferencesBtn: "Accept current selection",
               closeIconLabel: "Close modal",
               sections: [
                 {
                   title: "Yep we use cookies! 🍪😋",
-                  description: "I want one!",
+                  description:
+                    "Some of our cookies are essential, while others help us to improve your experience by providing insights into how the site is being used. You can opt in for ‘performance’ and ‘marketing’ cookies by clicking the individual controls below.",
                 },
                 {
                   title: "Strictly Necessary cookies",
                   description:
-                    "These cookies are essential for the proper functioning of the website and cannot be disabled.",
+                    "Necessary cookies enable core functionality such as page navigation and access to secure areas. The website cannot function properly without these cookies, and can only be disabled by changing your browser preferences.",
                   linkedCategory: CookieCategory.Necessary,
                 },
                 {
                   title: "Performance and Analytics",
                   description:
-                    "These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you.",
+                    "We use software including Google Analytics to help us improve our website by collecting and reporting information on how you use it. The cookies collect information in a way that does not directly identify anyone.",
                   linkedCategory: CookieCategory.Analytics,
                 },
                 {
                   title: "Marketing",
-                  description: "Lorem ipsum",
+                  description:
+                    "We use software including Google Analytics to help us improve our website by collecting and reporting information on how you use it. The cookies collect information in a way that does not directly identify anyone.",
                   linkedCategory: CookieCategory.Marketing,
                 },
                 {

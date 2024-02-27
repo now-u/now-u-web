@@ -102,7 +102,10 @@ export const Footer = (): JSX.Element => {
                 </div>
               </div>
             </div>
-            <p className="text-slate-500">Registration Number: 12709184</p>
+            <p className="text-slate-500">
+              Community Interest Company (12709184) and Charitable Incorporated
+              Organisation (1196568)
+            </p>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import React from "react";
-import { PartnerCard } from "@/app/partners/PartnerCard";
+import { PartnerCard } from "@/app/collaborations/PartnerCard";
 import { apiClient, type Organisation } from "@/services/api";
 
 const PartnersPage = async (): Promise<JSX.Element> => {
@@ -21,10 +21,10 @@ const PartnersPage = async (): Promise<JSX.Element> => {
 
   return (
     <>
-      <title>now-u | Partners</title>
+      <title>now-u | Collaborations</title>
 
       <div className="text-center">
-        <Header title="Partners" />
+        <Header title="Collaborations" />
       </div>
       <div className="flex justify-around">
         <div className="flex max-w-screen-xl justify-center flex-wrap gap-8 py-8">

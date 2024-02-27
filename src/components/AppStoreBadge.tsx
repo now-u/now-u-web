@@ -38,7 +38,7 @@ export function AppStoreBadge(props: {
 }): JSX.Element {
   const { asset, link } = appStoreDataMap[props.store];
   return (
-    <Link href={link}>
+    <Link href={link} target="_blank" rel="noreferrer">
       <Image
         src={asset}
         alt="download app from apple store"

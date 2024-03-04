@@ -6,6 +6,7 @@ import { Nunito, Nunito_Sans } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { getRequiredEnvironmentVariable } from "@/utils/getRequiredEnvironmentVariable";
 import { Toaster } from "@/components/ui/toaster";
+import { ScrollHack } from "@/components/ScrollHack";
 
 const Analytics = lazy(async () => await import("@/components/Analytics"));
 
@@ -30,8 +31,9 @@ export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <html className={`${nunito.variable} ${nunitoSans.variable} font-sans`}>
       <Analytics gtmId={GTAG} />
-      <body className="flex flex-col align-items-center">
-        <main>
+      <body>
+	    <ScrollHack />
+        <main className="flex flex-col align-items-center">
           <Navbar />
           {children}
           <Footer />

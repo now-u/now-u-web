@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.nowu.app",
+    "sha256_cert_fingerprints": ["C1:F6:16:4B:40:EC:A9:6E:B7:D1:38:2D:C3:FC:B9:D9:F6:E3:D8:23:AD:01:A2:CD:84:14:C7:59:48:7C:35:90"]
+  }
+}]

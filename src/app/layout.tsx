@@ -10,8 +10,9 @@ import { ScrollHack } from "@/components/ScrollHack";
 
 const Analytics = lazy(async () => await import("@/components/Analytics"));
 
-const GTAG = getRequiredEnvironmentVariable("GTAG_ID");
-const ANALYTICS_GTAG = getRequiredEnvironmentVariable("ANALYTICS_GTAG_ID");
+const GA_TAG = getRequiredEnvironmentVariable("GA_TAG_ID");
+const GTAG_TAG = getRequiredEnvironmentVariable("GTAG_TAG_ID");
+const AW_TAG = getRequiredEnvironmentVariable("AW_TAG_ID");
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -31,9 +32,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps): JSX.Element {
   return (
     <html className={`${nunito.variable} ${nunitoSans.variable} font-sans`}>
-      <Analytics gtmId={GTAG} analyticsTag={ANALYTICS_GTAG} />
+      <Analytics gaId={GA_TAG} gtmId={GTAG_TAG} analyticsTag={AW_TAG} />
       <body>
-	    <ScrollHack />
+        <ScrollHack />
         <main className="flex flex-col align-items-center">
           <Navbar />
           {children}

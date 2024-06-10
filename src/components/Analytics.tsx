@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { run } from "vanilla-cookieconsent";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
 
 const enum CookieCategory {
@@ -14,7 +14,7 @@ const enum CookieCategory {
 
 const dataLayerName = "dataLayer";
 
-export default function Analytics(props: { gtmId: string, analyticsTag: string }): JSX.Element {
+export default function Analytics(props: { gaId: string, gtmId: string, analyticsTag: string }): JSX.Element {
   useEffect(() => {
     void run({
       hideFromBots: true,
@@ -119,7 +119,8 @@ export default function Analytics(props: { gtmId: string, analyticsTag: string }
           `,
         }}
       />
-      <GoogleAnalytics gaId={props.gtmId} dataLayerName={dataLayerName} />
+      <GoogleAnalytics gaId={props.gaId} dataLayerName={dataLayerName} />
+      <GoogleTagManager gtmId={props.gtmId} />
     </>
   );
 }

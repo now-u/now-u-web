@@ -14,7 +14,7 @@ const enum CookieCategory {
 
 const dataLayerName = "dataLayer";
 
-export default function Analytics(props: { gtmId: string }): JSX.Element {
+export default function Analytics(props: { gtmId: string, analyticsTag: string }): JSX.Element {
   useEffect(() => {
     void run({
       hideFromBots: true,
@@ -105,16 +105,18 @@ export default function Analytics(props: { gtmId: string }): JSX.Element {
         id="consent-default"
         dangerouslySetInnerHTML={{
           __html: `
-					window['${dataLayerName}'] = window['${dataLayerName}'] || [];
-					function gtag(){window['${dataLayerName}'].push(arguments);}
+            window['${dataLayerName}'] = window['${dataLayerName}'] || [];
+            function gtag(){window['${dataLayerName}'].push(arguments);}
 
-					window.gtag("consent", "default", {
-    				  analytics_storage: "denied",
-    				  ad_storage: "denied",
-    				  ad_user_data: "denied",
-    				  ad_personalization: "denied",
-    				});
-				`,
+            window.gtag("consent", "default", {
+              analytics_storage: "denied",
+              ad_storage: "denied",
+              ad_user_data: "denied",
+              ad_personalization: "denied",
+            });
+
+            window.gtag('config', '${props.analyticsTag}')
+          `,
         }}
       />
       <GoogleAnalytics gaId={props.gtmId} dataLayerName={dataLayerName} />

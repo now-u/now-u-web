@@ -5,6 +5,7 @@ import { HeaderSubtitle } from "@/components/Header";
 import { getPosts } from "./utils";
 import { BlogTile } from "@/components/BlogTile";
 import { Newsletter } from "@/components/Newsletter";
+import { BlogSearchButton } from "@/components/BlogSearchButton";
 
 async function Blog(): Promise<JSX.Element> {
   const blogs = await getPosts();
@@ -16,6 +17,9 @@ async function Blog(): Promise<JSX.Element> {
         title="Blog"
         subtitle="Find all the latest blog articles from now-u below"
       />
+
+      <BlogSearchButton />
+
       <div className="flex flex-col items-center">
         <div className="max-w-screen-2xl grid col-span-1 first:col-span-2 md:grid-cols-2 gap-5 m-5 sm:mx-32 sm:my-10">
           {blogs.map((blog) => (

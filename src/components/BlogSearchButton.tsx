@@ -100,18 +100,6 @@ export function BlogSearchButton(): React.ReactElement {
           </div>
           {/* Search Results with h: 5 * 60 + 48 */}
           <div id="results" ref={resultsRef} className="mt-2 h-[348px] overflow-y-scroll scroll-auto">
-            <Result key="12"
-                    result={
-              {
-                id: "hello",
-                data: async (): Promise<PagefindSearchResultData> => {
-                  return {
-                    meta: { title: "Hello" },
-                    url: '',
-                    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                  }
-                }
-              }} />
             {results.map((result: PagefindSearchResultRow, index) => (
               <Result key={result.id} result={result} />
             ))}

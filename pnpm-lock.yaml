@@ -35,9 +35,6 @@ importers:
       '@next/third-parties':
         specifier: ^14.1.0
         version: 14.1.0(next@14.0.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
-      '@pagefind/default-ui':
-        specifier: ^1.1.0
-        version: 1.1.0
       '@radix-ui/react-toast':
         specifier: ^1.1.5
         version: 1.1.5(@types/react-dom@18.2.14)(@types/react@18.2.31)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -458,9 +455,6 @@ packages:
     resolution: {integrity: sha512-QjQSE/L5oS1C8N8GdljGaWtjCBMgMtfrPAoiCmINTu9Y9dp0ggAyXvF8K7Qg3VyIMYJ6v8vg2PN7Z3b+AaAqUA==}
     cpu: [x64]
     os: [darwin]
-
-  '@pagefind/default-ui@1.1.0':
-    resolution: {integrity: sha512-+XiAJAK++C64nQcD7s3Prdmd5S92lT05fwjOxm0L1jj80jbL+tmvcqkkFnPpoqhnicIPgcAX/Y5W0HRZnBt35w==}
 
   '@pagefind/linux-arm64@1.1.0':
     resolution: {integrity: sha512-8zjYCa2BtNEL7KnXtysPtBELCyv5DSQ4yHeK/nsEq6w4ToAMTBl0K06khqxdSGgjMSwwrxvLzq3so0LC5Q14dA==}
@@ -2538,8 +2532,6 @@ snapshots:
 
   '@pagefind/darwin-x64@1.1.0':
     optional: true
-
-  '@pagefind/default-ui@1.1.0': {}
 
   '@pagefind/linux-arm64@1.1.0':
     optional: true

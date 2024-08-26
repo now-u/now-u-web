@@ -6,7 +6,7 @@ import { LinkButton } from "@/components/Button";
 import {
   faFacebookF,
   faInstagram,
-  faTwitter,
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -75,7 +75,7 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
                   <FontAwesomeIcon
                     className="hover:cursor-pointer hover:text-white"
                     size="xl"
-                    icon={faTwitter}
+                    icon={faXTwitter}
                   />
                 </Link>
               ) : null}

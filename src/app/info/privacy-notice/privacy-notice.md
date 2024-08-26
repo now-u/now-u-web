@@ -1,4 +1,5 @@
-﻿## 1. Who we are
+﻿
+## 1. Who we are
 
 Welcome to the Privacy Notice of now-u, a community interest company (“CIC”) incorporated in England and Wales (Registration Number 12709184).
 

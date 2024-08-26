@@ -9,7 +9,7 @@ const PartnersPage = async (): Promise<JSX.Element> => {
       .path("/organisations/")
       .method("get")
       .create();
-    const response = await getPartners({});
+    const response = await getPartners(undefined);
 
     if (!response.ok) {
       console.error("Failed to fetch partners");

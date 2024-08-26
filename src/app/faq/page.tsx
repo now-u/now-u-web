@@ -6,7 +6,7 @@ import { FAQBlock } from "@/app/faq/FAQBlock";
 
 async function getFaqs(): Promise<Faq[]> {
   const getFaqs = apiClient.path("/faqs/").method("get").create();
-  const response = await getFaqs({});
+  const response = await getFaqs(undefined);
   if (!response.ok) {
     console.error("Failed to fetch faqs");
     return [];

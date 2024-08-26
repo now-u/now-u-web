@@ -33,7 +33,7 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
 export default async function CausesPage(): Promise<JSX.Element> {
   async function getCauses(): Promise<Cause[]> {
     const getPartners = apiClient.path("/causes/").method("get").create();
-    const response = await getPartners({});
+    const response = await getPartners(undefined);
 
     if (!response.ok) {
       console.error("Failed to fetch causes");

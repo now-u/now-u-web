@@ -1,21 +1,11 @@
 import React from "react";
 
-import { apiClient, type Organisation } from "@/services/api";
+import { getOrganisations } from "@/services/api";
 import { PartnerTile } from "./PartnerTile";
 import { LinkButton } from "@/components/Button";
 
-export async function getPartners(): Promise<Organisation[]> {
-  const getPartners = apiClient.path("/organisations/").method("get").create();
-  const response = await getPartners({});
-  if (!response.ok) {
-    console.error("Failed to fetch partners");
-    return [];
-  }
-  return response.data;
-}
-
 export async function PartnerGrid(): Promise<JSX.Element> {
-  const partners = await getPartners();
+  const partners = await getOrganisations();
 
   return (
     <div className="max-w-screen-xl flex flex-col ">

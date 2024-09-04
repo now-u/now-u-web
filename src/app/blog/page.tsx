@@ -19,7 +19,13 @@ async function Blog(): Promise<JSX.Element> {
       <div className="flex flex-col items-center">
         <div className="max-w-screen-2xl grid col-span-1 first:col-span-2 md:grid-cols-2 gap-5 m-5 sm:mx-32 sm:my-10">
           {blogs.map((blog) => (
-            <BlogTile key={blog.slug} post={blog} />
+            <BlogTile key={blog.slug}
+                      href={`blog/${blog.slug}`}
+                      headerImageURL={blog.headerImage}
+                      title={blog.title}
+                      authors={blog.author?.full_name === undefined ? [] : [blog.author.full_name]}
+                      readingTime={blog.readingTime}
+            />
           ))}
         </div>
       </div>

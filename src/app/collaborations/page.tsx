@@ -1,23 +1,11 @@
 import { Header } from "@/components/Header";
 import React from "react";
 import { PartnerCard } from "@/app/collaborations/PartnerCard";
-import { apiClient, type Organisation } from "@/services/api";
+import { getOrganisations } from "@/services/api";
 
 const PartnersPage = async (): Promise<JSX.Element> => {
-  async function getOrganizations(): Promise<Organisation[]> {
-    const getPartners = apiClient
-      .path("/organisations/")
-      .method("get")
-      .create();
-    const response = await getPartners({});
 
-    if (!response.ok) {
-      console.error("Failed to fetch partners");
-      return [];
-    }
-    return response.data;
-  }
-  const partners = await getOrganizations();
+  const partners = await getOrganisations();
 
   return (
     <>

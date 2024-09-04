@@ -7,9 +7,9 @@ import { navigation as headerNavigation, type NamedRoute } from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
-  faTwitter,
   faFacebookF,
   faLinkedinIn,
+  faXTwitter
 } from "@fortawesome/free-brands-svg-icons";
 import { AppStoreBadge } from "./AppStoreBadge";
 
@@ -21,6 +21,7 @@ const navigation: NamedRoute[] = [
   { text: "Press", to: "/press" },
   { text: "Cookie Notice", to: "/info/cookie-policy" },
   { text: "Privacy Notice", to: "/info/privacy-notice" },
+  { text: "Terms and Conditions for Users", to: "/info/terms-and-conditions-for-users" },
 ];
 
 export const socialMediaLinks = [
@@ -36,7 +37,7 @@ export const socialMediaLinks = [
   },
   {
     key: 3,
-    icon: faTwitter,
+    icon: faXTwitter,
     link: "https://twitter.com/now_u_app",
   },
   {

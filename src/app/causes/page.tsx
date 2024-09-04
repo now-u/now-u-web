@@ -3,7 +3,7 @@ import React from "react";
 import { HeaderCauses } from "@/components/Header";
 import { Newsletter } from "@/components/Newsletter";
 import Image from "next/image";
-import { apiClient, type Cause } from "@/services/api";
+import { type Cause, getCauses } from "@/services/api";
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   const { header_image: headerImage, title } = props.cause;
@@ -31,16 +31,6 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
 };
 
 export default async function CausesPage(): Promise<JSX.Element> {
-  async function getCauses(): Promise<Cause[]> {
-    const getPartners = apiClient.path("/causes/").method("get").create();
-    const response = await getPartners({});
-
-    if (!response.ok) {
-      console.error("Failed to fetch causes");
-      return [];
-    }
-    return response.data;
-  }
 
   const causes = await getCauses();
 

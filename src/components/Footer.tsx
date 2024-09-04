@@ -21,6 +21,7 @@ const navigation: NamedRoute[] = [
   { text: "Press", to: "/press" },
   { text: "Cookie Notice", to: "/info/cookie-policy" },
   { text: "Privacy Notice", to: "/info/privacy-notice" },
+  { text: "Terms and Conditions for Users", to: "/info/terms-and-conditions-for-users" },
 ];
 
 export const socialMediaLinks = [

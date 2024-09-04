@@ -6,11 +6,12 @@ import { faClock } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 import Placeholder from "@/assets/graphics/placeholder.png";
 
-interface BlogTileProps {
-  href: string,
+export interface BlogTileProps {
+  id: string
+  href: string
   headerImageURL: string
   title: string
-  authors: string[],
+  authors: string[]
   readingTime: string
 }
 

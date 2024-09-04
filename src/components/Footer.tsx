@@ -7,9 +7,9 @@ import { navigation as headerNavigation, type NamedRoute } from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
-  faTwitter,
   faFacebookF,
   faLinkedinIn,
+  faXTwitter
 } from "@fortawesome/free-brands-svg-icons";
 import { AppStoreBadge } from "./AppStoreBadge";
 
@@ -36,7 +36,7 @@ export const socialMediaLinks = [
   },
   {
     key: 3,
-    icon: faTwitter,
+    icon: faXTwitter,
     link: "https://twitter.com/now_u_app",
   },
   {

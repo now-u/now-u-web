@@ -40,15 +40,6 @@ function AuthorTile(props: { author: BlogWriter }): JSX.Element {
   );
 }
 
-// TODO Type this properly
-export async function generateStaticParams(): Promise<any> {
-  const postsFilePath = "src/app/blog/posts";
-  const fileNames = fs.readdirSync(postsFilePath);
-  return fileNames.map((fileName) => ({
-    slug: fileName.replace(".md", ""),
-  }));
-}
-
 export default async function Page({
   params,
 }: {

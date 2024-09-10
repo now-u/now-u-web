@@ -1,5 +1,4 @@
 import React from "react";
-import fs from "fs";
 import md from "markdown-it";
 import { getPostBySlug } from "../utils";
 import { type BlogWriter } from "../writers";

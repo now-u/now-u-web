@@ -25,15 +25,6 @@ export async function getStaticPostSlugs(): Promise<string[]> {
 }
 
 /**
- * Dynamic blogs have integer blog id as slug.
- * Use this to differentiate between static and dynamic slugs.
- * @param slug Blog post slug string.
- */
-export function isStaticBlogPost(slug: string): boolean {
-  return isNaN(parseInt(slug))
-}
-
-/**
  * Get a static post using slug.
  * @param slug URL slug string. Should be a non-numerical string.
  */
@@ -70,8 +61,7 @@ export async function getStaticPostBySlug(slug: string): Promise<Post> {
  * @param slug URL slug string that denotes a remote blog integer ID.
  */
 export async function getDynamicPostBySlug(slug: string): Promise<Post | undefined> {
-  const blogID = parseInt(slug)
-  const blog = await getBlogPost(blogID)
+  const blog = await getBlogPost(slug)
   if (blog !== null) {
     const blogAuthor = blog.authors.length > 0 ? blog.authors[0] : null
     return {
@@ -80,8 +70,7 @@ export async function getDynamicPostBySlug(slug: string): Promise<Post | undefin
       subtitle: blog.subtitle,
       content: blog.body,
       author: {
-        // TODO: author currently don't have ID
-        id: blogAuthor?.picture?.id ?? blogID,
+        id: blogAuthor?.id ?? -1,
         full_name: blogAuthor?.name ?? "",
         description: blogAuthor?.description ?? "",
         profile_picture_url: blogAuthor?.picture?.url ?? ""
@@ -101,11 +90,7 @@ export async function getDynamicPostBySlug(slug: string): Promise<Post | undefin
  * @param slug URL slug in a string.
  */
 export async function getPostBySlug(slug: string): Promise<Post | undefined> {
-  if (isStaticBlogPost(slug)) { // Get a static post.
-    return await getStaticPostBySlug(slug);
-  } else { // Get a remote post from API.
-    return await getDynamicPostBySlug(slug)
-  }
+  return await getDynamicPostBySlug(slug)
 }
 
 /**

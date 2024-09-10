@@ -11,54 +11,58 @@ export const apiClient = createClient<paths>({
 });
 
 export async function getCauses(): Promise<Cause[]> {
-  const { data, error, response } = await apiClient.GET("/causes/")
+  const { data, error, response } = await apiClient.GET("/causes/");
 
   if (!response.ok || error !== undefined) {
     console.error(`[${response.status}] Failed to fetch causes: ${error}`);
     return [];
   }
 
-  return data;
+  return data.results ?? [];
 }
 
 export async function getFaqs(): Promise<Faq[]> {
-    const { data, error, response } = await apiClient.GET("/faqs/");
+  const { data, error, response } = await apiClient.GET("/faqs/");
 
-    if (!response.ok || error !== undefined) {
-      console.error(`[${response.status}] Failed to fetch faqs: ${error}`);
-      return [];
-    }
+  if (!response.ok || error !== undefined) {
+    console.error(`[${response.status}] Failed to fetch faqs: ${error}`);
+    return [];
+  }
 
-    return data;
+  return data.results ?? [];
 }
 
 export async function getOrganisations(): Promise<Organisation[]> {
   const { data, error, response } = await apiClient.GET("/organisations/");
 
   if (!response.ok || error !== undefined) {
-    console.error(`[${response.status}] Failed to fetch organisations: ${error}`);
+    console.error(
+      `[${response.status}] Failed to fetch organisations: ${error}`,
+    );
     return [];
   }
 
-  return data;
+  return data.results ?? []
 }
 
 export async function getBlogPosts(): Promise<BlogPost[]> {
   const { data, error, response } = await apiClient.GET("/blogs/");
 
   if (!response.ok || error !== undefined) {
-    console.error(`[${response.status}] Failed to fetch blog post list: ${error}`);
+    console.error(
+      `[${response.status}] Failed to fetch blog post list: ${error}`,
+    );
     return [];
   }
 
-  return data;
+  return data.results ?? [];
 }
 
-export async function getBlogPost(postID: number): Promise<BlogPost | null> {
-  const { data, error, response } = await apiClient.GET("/blogs/{id}/", {
+export async function getBlogPost(postSlug: string): Promise<BlogPost | null> {
+  const { data, error, response } = await apiClient.GET("/blogs/{slug}/", {
     params: {
-      path: { id: postID }
-    }
+      path: { slug: postSlug },
+    },
   });
 
   if (!response.ok || error !== undefined) {

@@ -10,8 +10,8 @@ async function Blog(): Promise<JSX.Element> {
 
   const allBlogs: BlogTileProps[] = remotePosts.map((blog) => {
       return {
-        id: `remote-${blog.slug}`,
-        href: `blog/${blog.id}`,
+        id: `remote-blog-${blog.id.toString()}`,
+        href: `blog/${blog.slug}`,
         headerImageURL: blog.header_image.url,
         title: blog.title,
         authors: blog.authors.filter((author) => author.name).map((author) => author.name ?? ""),

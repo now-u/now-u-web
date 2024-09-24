@@ -56,13 +56,19 @@ export default async function Page({
       <title>{`now-u | ${blog.title}`}</title>
 
       <div className="w-full flex flex-col items-center lg:my-10">
-        <div className="flex-col prose mx-4">
+        <div className="flex-col prose prose-gray mx-4">
           <Link className="underline text-orange font-bold" href={"/blog"}>
             {" "}
             {"< "} Back{" "}
           </Link>
+          <div className="mt-4">
+            <h1 className="text-3xl">{blog.title}</h1>
+            {blog.subtitle !== "" && (
+              <p className="text-gray-500">{blog.subtitle}</p>
+            )}
+          </div>
+          <hr className="my-0"/>
           <div
-            className="mt-2"
             dangerouslySetInnerHTML={{ __html: md().render(blog.content) }}
           />
           {blog.author !== null && (

@@ -1,7 +1,6 @@
 import React from "react";
 import md from "markdown-it";
 import { getPostBySlug } from "../utils";
-import { type BlogWriter } from "../writers";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -10,30 +9,33 @@ import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
 // NOTE: https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour
 
-function AuthorTile(props: { author: BlogWriter }): JSX.Element {
-  const { author } = props;
+function AuthorTile(props: {
+  name: string;
+  description: string;
+  profilePictureURL: string;
+}): JSX.Element {
   return (
     <div className="flex flex-col mt-10 mb-6 gap-4 md:flex-row md:items-center">
       <div className="aspect-square h-24 w-24 md:h-32 md:w-32 relative">
-        {author.profile_picture_url !== "" ? (
+        {props.profilePictureURL !== "" ? (
           <Image
-            src={author.profile_picture_url}
+            src={props.profilePictureURL}
             alt="Blog Image"
             className="object-cover object-center w-full h-full rounded-full m-0"
             sizes="100vw"
             fill
           />
-        ) :
+        ) : (
           <FontAwesomeIcon
             className="object-cover object-center w-full h-full rounded-full m-0"
             color="#DDD"
             icon={faUserCircle}
           />
-        }
+        )}
       </div>
       <div>
-        <p className="m-0 mb-2 font-bold"> {author.full_name} </p>
-        <p className="m-0"> {author.description} </p>
+        <p className="m-0 mb-2 font-bold"> {props.name} </p>
+        <p className="m-0"> {props.description} </p>
       </div>
     </div>
   );
@@ -63,7 +65,13 @@ export default async function Page({
             className="mt-2"
             dangerouslySetInnerHTML={{ __html: md().render(blog.content) }}
           />
-          {blog.author !== null && <AuthorTile author={blog.author} />}
+          {blog.author !== null && (
+            <AuthorTile
+              name={blog.author.full_name}
+              description={blog.author.description}
+              profilePictureURL={blog.author.profile_picture_url}
+            />
+          )}
         </div>
       </div>
     </>

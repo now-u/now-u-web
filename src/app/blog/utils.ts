@@ -69,7 +69,8 @@ export async function getDynamicPostBySlug(slug: string): Promise<Post | undefin
       title: blog.title,
       subtitle: blog.subtitle,
       content: blog.body,
-      author: {
+      // Maps API author to BlogWriter type
+      author: blogAuthor === null ? null : {
         id: blogAuthor?.id ?? -1,
         full_name: blogAuthor?.name ?? "",
         description: blogAuthor?.description ?? "",

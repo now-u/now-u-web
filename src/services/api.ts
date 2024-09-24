@@ -10,8 +10,23 @@ export const apiClient = createClient<paths>({
   baseUrl: "https://causes.dev.apiv2.now-u.com",
 });
 
-export async function getCauses(): Promise<Cause[]> {
-  const { data, error, response } = await apiClient.GET("/causes/");
+export async function getCauses(
+  limit: number = 0,
+  offset: number | undefined = undefined,
+): Promise<Cause[]> {
+  const { data, error, response } = await apiClient.GET("/causes/", {
+    params: {
+      query:
+        offset === undefined
+          ? {
+              limit,
+            }
+          : {
+              limit,
+              offset,
+            },
+    },
+  });
 
   if (!response.ok || error !== undefined) {
     console.error(`[${response.status}] Failed to fetch causes: ${error}`);
@@ -22,7 +37,13 @@ export async function getCauses(): Promise<Cause[]> {
 }
 
 export async function getFaqs(): Promise<Faq[]> {
-  const { data, error, response } = await apiClient.GET("/faqs/");
+  const { data, error, response } = await apiClient.GET("/faqs/", {
+    params: {
+      query: {
+        limit: 0,
+      },
+    },
+  });
 
   if (!response.ok || error !== undefined) {
     console.error(`[${response.status}] Failed to fetch faqs: ${error}`);
@@ -32,8 +53,23 @@ export async function getFaqs(): Promise<Faq[]> {
   return data.results ?? [];
 }
 
-export async function getOrganisations(): Promise<Organisation[]> {
-  const { data, error, response } = await apiClient.GET("/organisations/");
+export async function getOrganisations(
+  limit: number = 0,
+  offset: number | undefined = undefined,
+): Promise<Organisation[]> {
+  const { data, error, response } = await apiClient.GET("/organisations/", {
+    params: {
+      query:
+        offset === undefined
+          ? {
+              limit,
+            }
+          : {
+              limit,
+              offset,
+            },
+    },
+  });
 
   if (!response.ok || error !== undefined) {
     console.error(
@@ -42,11 +78,31 @@ export async function getOrganisations(): Promise<Organisation[]> {
     return [];
   }
 
-  return data.results ?? []
+  return data.results ?? [];
 }
 
-export async function getBlogPosts(): Promise<BlogPost[]> {
-  const { data, error, response } = await apiClient.GET("/blogs/");
+/**
+ * Get a list of blog posts.
+ * @param limit the maximum number of blog posts to fetch. Use 0 to represent no upper limit.
+ * @param offset the current result page offset.
+ */
+export async function getBlogPosts(
+  limit: number = 0,
+  offset: number | undefined = undefined,
+): Promise<BlogPost[]> {
+  const { data, error, response } = await apiClient.GET("/blogs/", {
+    params: {
+      query:
+        offset === undefined
+          ? {
+              limit,
+            }
+          : {
+              limit,
+              offset,
+            },
+    },
+  });
 
   if (!response.ok || error !== undefined) {
     console.error(

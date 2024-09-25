@@ -47,8 +47,8 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
         <p className="md:h-36 overflow-scroll">{description}</p>
         <div className="flex justify-between flex-wrap">
           <ul className="flex self-center my-4 py-6">
+            {instagramLink != null ? (
             <li className="px-2">
-              {instagramLink != null ? (
                 <Link href={instagramLink} target="_blank" rel="noreferrer">
                   <FontAwesomeIcon
                     className="hover:cursor-pointer hover:text-white"
@@ -56,10 +56,11 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
                     icon={faInstagram}
                   />
                 </Link>
-              ) : null}
             </li>
+            ) : null}
+            {facebookLink != null ? (
             <li className="px-2">
-              {facebookLink != null ? (
+
                 <Link href={facebookLink} target="_blank" rel="noreferrer">
                   <FontAwesomeIcon
                     className="hover:cursor-pointer hover:text-white"
@@ -67,10 +68,10 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
                     icon={faFacebookF}
                   />
                 </Link>
-              ) : null}
             </li>
+            ) : null}
+            {twitterLink != null ? (
             <li className="px-2">
-              {twitterLink != null ? (
                 <Link href={twitterLink} target="_blank" rel="noreferrer">
                   <FontAwesomeIcon
                     className="hover:cursor-pointer hover:text-white"
@@ -78,8 +79,8 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
                     icon={faXTwitter}
                   />
                 </Link>
-              ) : null}
             </li>
+            ) : null}
           </ul>
           {websiteLink != null ? (
             <LinkButton

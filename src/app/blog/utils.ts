@@ -1,9 +1,9 @@
-import fs from "fs";
-import matter from "gray-matter";
-import { type BlogWriter, getBlogWriter } from "./writers";
+import { type BlogWriter} from "./writers";
+import { getBlogPost } from "@/services/api";
 
-const POSTS_FILE_PATH = "src/app/blog/posts";
-
+/**
+ * Type for rendering blog post page.
+ */
 export interface Post {
   slug: string;
   title: string;
@@ -15,46 +15,31 @@ export interface Post {
   publishedDate: string;
 }
 
-export async function getPostSlugs(): Promise<string[]> {
-  const fileNames = fs.readdirSync(POSTS_FILE_PATH);
-  return fileNames.map((fileName) => fileName.replace(".md", ""));
-}
-
-export async function getPostBySlug(slug: string): Promise<Post> {
-  const readFile = fs.readFileSync(`${POSTS_FILE_PATH}/${slug}.md`, "utf-8");
-  const {
-    data: {
-      title,
-      subtitle,
-      authorId,
-      headerImage,
-      readingTime,
-      publishedDate,
-    },
-    content,
-  } = matter(readFile);
-
-  const author = authorId != null ? getBlogWriter(authorId) : null;
-
-  return {
-    slug,
-    title,
-    subtitle,
-    content,
-    author,
-    headerImage,
-    readingTime,
-    publishedDate,
-  };
-}
-
-export async function getPosts(): Promise<Post[]> {
-  const slugs = await getPostSlugs();
-  const blogs = await Promise.all(slugs.map(getPostBySlug));
-  blogs.sort(
-    (b1, b2) =>
-      new Date(b2.publishedDate).getTime() -
-      new Date(b1.publishedDate).getTime(),
-  );
-  return blogs;
+/**
+ * Get a remote blog post using slug.
+ * @param slug URL slug string that denotes a remote blog slug.
+ */
+export async function getPostBySlug(slug: string): Promise<Post | undefined> {
+  const blog = await getBlogPost(slug)
+  if (blog !== null) {
+    const blogAuthor = blog.authors.length > 0 ? blog.authors[0] : null
+    return {
+      slug,
+      title: blog.title,
+      subtitle: blog.subtitle,
+      content: blog.body,
+      // Maps API author to BlogWriter type
+      author: blogAuthor === null ? null : {
+        id: blogAuthor?.id ?? -1,
+        full_name: blogAuthor?.name ?? "",
+        description: blogAuthor?.description ?? "",
+        profile_picture_url: blogAuthor?.picture?.url ?? ""
+      },
+      headerImage: blog.header_image.url,
+      readingTime: blog.reading_time.toString(),
+      publishedDate: blog.release_at
+    }
+  } else {
+    return undefined
+  }
 }

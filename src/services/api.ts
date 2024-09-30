@@ -10,55 +10,115 @@ export const apiClient = createClient<paths>({
   baseUrl: "https://causes.dev.apiv2.now-u.com",
 });
 
-export async function getCauses(): Promise<Cause[]> {
-  const { data, error, response } = await apiClient.GET("/causes/")
+export async function getCauses(
+  limit: number = 0,
+  offset: number | undefined = undefined,
+): Promise<Cause[]> {
+  const { data, error, response } = await apiClient.GET("/causes/", {
+    params: {
+      query:
+        offset === undefined
+          ? {
+              limit,
+            }
+          : {
+              limit,
+              offset,
+            },
+    },
+  });
 
   if (!response.ok || error !== undefined) {
     console.error(`[${response.status}] Failed to fetch causes: ${error}`);
     return [];
   }
 
-  return data;
+  return data.results ?? [];
 }
 
 export async function getFaqs(): Promise<Faq[]> {
-    const { data, error, response } = await apiClient.GET("/faqs/");
-
-    if (!response.ok || error !== undefined) {
-      console.error(`[${response.status}] Failed to fetch faqs: ${error}`);
-      return [];
-    }
-
-    return data;
-}
-
-export async function getOrganisations(): Promise<Organisation[]> {
-  const { data, error, response } = await apiClient.GET("/organisations/");
-
-  if (!response.ok || error !== undefined) {
-    console.error(`[${response.status}] Failed to fetch organisations: ${error}`);
-    return [];
-  }
-
-  return data;
-}
-
-export async function getBlogPosts(): Promise<BlogPost[]> {
-  const { data, error, response } = await apiClient.GET("/blogs/");
-
-  if (!response.ok || error !== undefined) {
-    console.error(`[${response.status}] Failed to fetch blog post list: ${error}`);
-    return [];
-  }
-
-  return data;
-}
-
-export async function getBlogPost(postID: number): Promise<BlogPost | null> {
-  const { data, error, response } = await apiClient.GET("/blogs/{id}/", {
+  const { data, error, response } = await apiClient.GET("/faqs/", {
     params: {
-      path: { id: postID }
-    }
+      query: {
+        limit: 0,
+      },
+    },
+  });
+
+  if (!response.ok || error !== undefined) {
+    console.error(`[${response.status}] Failed to fetch faqs: ${error}`);
+    return [];
+  }
+
+  return data.results ?? [];
+}
+
+export async function getOrganisations(
+  limit: number = 0,
+  offset: number | undefined = undefined,
+): Promise<Organisation[]> {
+  const { data, error, response } = await apiClient.GET("/organisations/", {
+    params: {
+      query:
+        offset === undefined
+          ? {
+              limit,
+            }
+          : {
+              limit,
+              offset,
+            },
+    },
+  });
+
+  if (!response.ok || error !== undefined) {
+    console.error(
+      `[${response.status}] Failed to fetch organisations: ${error}`,
+    );
+    return [];
+  }
+
+  return data.results ?? [];
+}
+
+/**
+ * Get a list of blog posts.
+ * @param limit the maximum number of blog posts to fetch. Use 0 to represent no upper limit.
+ * @param offset the current result page offset.
+ */
+export async function getBlogPosts(
+  limit: number = 0,
+  offset: number | undefined = undefined,
+): Promise<BlogPost[]> {
+  const { data, error, response } = await apiClient.GET("/blogs/", {
+    params: {
+      query:
+        offset === undefined
+          ? {
+              limit,
+            }
+          : {
+              limit,
+              offset,
+            },
+    },
+  });
+
+  if (!response.ok || error !== undefined) {
+    console.error(
+      `[${response.status}] Failed to fetch blog post list: ${error}`,
+    );
+    return [];
+  }
+
+  return data.results ?? [];
+}
+
+export async function getBlogPost(postSlug: string): Promise<BlogPost | null> {
+  const { data, error, response } = await apiClient.GET("/blogs/{slug}/", {
+    params: {
+      path: { slug: postSlug },
+    },
   });
 
   if (!response.ok || error !== undefined) {

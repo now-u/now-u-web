@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderCauses, SectionBody } from "@/components/Header";
+import { Header, SectionBody } from "@/components/Header";
 import { BodyText, TitleText } from "@/components/Text";
 import { IconRow } from "@/components/IconRow";
 import { LinkButton } from "@/components/Button";
@@ -38,11 +38,11 @@ const About = (): JSX.Element => {
     <>
       <title>now-u | About Us</title>
       <div className="flex flex-col text-center">
-        <HeaderCauses
-          title="About now-u"
+        <Header
+          title="About now&#8288;-&#8288;u"
           body={[
             "now-u is a new non-profit with a mission to inform, involve and inspire people to help tackle some of the world's most pressing social and environmental issues.",
-            "We aspire to become the new model of collective action and altruism, connecting you with charitable campaigns and bringing people together to create a world of good.",
+            "We aspire to become the new model of collective action and altruism, connecting you with charitable campaigns and bringing people together to create a world of good."
           ]}
         />
         <div className="flex flex-col lg:flex-row place-content-around bg-cream place-items-center px-5 py-10">

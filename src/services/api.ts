@@ -10,30 +10,15 @@ export const apiClient = createClient<paths>({
   baseUrl: "https://causes.dev.apiv2.now-u.com",
 });
 
-export async function getCauses(
-  limit: number = 0,
-  offset: number | undefined = undefined,
-): Promise<Cause[]> {
-  const { data, error, response } = await apiClient.GET("/causes/", {
-    params: {
-      query:
-        offset === undefined
-          ? {
-              limit,
-            }
-          : {
-              limit,
-              offset,
-            },
-    },
-  });
+export async function getCauses(): Promise<Cause[]> {
+  const { data, error, response } = await apiClient.GET("/causes/");
 
   if (!response.ok || error !== undefined) {
     console.error(`[${response.status}] Failed to fetch causes: ${error}`);
     return [];
   }
 
-  return data.results ?? [];
+  return data ?? [];
 }
 
 export async function getFaqs(): Promise<Faq[]> {

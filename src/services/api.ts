@@ -8,6 +8,10 @@ export type BlogPost = components["schemas"]["Blog"];
 
 export const apiClient = createClient<paths>({
   baseUrl: "https://causes.dev.apiv2.now-u.com",
+  fetch: fetch,
+  next: {
+    revalidate: 60
+  }
 });
 
 export async function getCauses(): Promise<Cause[]> {

@@ -3,7 +3,7 @@ import { HeaderCauses, SectionBody } from "@/components/Header";
 import { BodyText, TitleText } from "@/components/Text";
 import { IconRow } from "@/components/IconRow";
 import { LinkButton } from "@/components/Button";
-import { AppStoreBadge } from "@/components/AppStoreBadge";
+import { AppStoreBadge, PlayStoreBadge } from "@/components/AppStoreBadge";
 import { Newsletter } from "@/components/Newsletter";
 import Elgars from "@/assets/images/elgars.png";
 import PhoneIcon from "@/assets/graphics/phone_icon.png";
@@ -102,13 +102,9 @@ const About = (): JSX.Element => {
           <div className="py-5 max-w-screen-xl text-center">
             <IconRow iconList={icons} />
           </div>
-          <div className="flex items-center mt-5 md:justify-start">
-            <div className="w-36 h-12 md:w-60 md:h-20 relative mr-3">
-              <AppStoreBadge store="AppleStore" />
-            </div>
-            <div className="w-36 h-12 md:w-60 md:h-20 relative">
-              <AppStoreBadge store="GooglePlayStore" />
-            </div>
+          <div className="flex flex-row gap-2 items-center mt-5 md:justify-center w-72 sm:w-96 md:w-[64rem]">
+              <AppStoreBadge/>
+              <PlayStoreBadge/>
           </div>
         </div>
         <div className="flex justify-center">

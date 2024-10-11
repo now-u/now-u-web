@@ -31,8 +31,8 @@ export function BlogTile({ href, headerImageURL, title, authors, readingTime }: 
             }}
             alt="Blog Image"
             className="object-cover w-full h-full rounded-t-lg"
-            sizes="100vw"
-            fill
+            width={250}
+            height={250}
           />
         </div>
         <div className="flex flex-row justify-between p-4 items-stretch">

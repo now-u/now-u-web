@@ -1,53 +1,31 @@
 import React from "react";
-import GoogleStoreBadgeSVG from "@/assets/google-store.svg";
+import GoogleStoreBadgePNG from "@/assets/google-store.svg";
 import AppleStoreBadgeSVG from "@/assets/apple-store.svg";
 import { APPLE_STORE_URL, GOOGLE_STORE_URL } from "@/utils/constants";
 import Link from "next/link";
 import Image from "next/image";
 
-interface AppStoreData {
-  asset: string;
-  link: string;
+export function AppStoreBadge(): React.ReactNode {
+  return (
+    <Link href={APPLE_STORE_URL} target="_blank" rel="noreferrer" className="select-none">
+      <Image
+        src={AppleStoreBadgeSVG}
+        alt="download app from apple store"
+        width={260}
+        height={80}
+      />
+    </Link>
+  );
 }
 
-export const GooglePlayBadgeType: AppStoreData = {
-  asset: GoogleStoreBadgeSVG,
-  link: GOOGLE_STORE_URL,
-};
-
-export const AppleStoreBadgeType: AppStoreData = {
-  asset: AppleStoreBadgeSVG,
-  link: APPLE_STORE_URL,
-};
-
-type AppStore = "AppleStore" | "GooglePlayStore";
-const appStoreDataMap: Record<AppStore, AppStoreData> = {
-  AppleStore: {
-    asset: AppleStoreBadgeSVG,
-    link: APPLE_STORE_URL,
-  },
-  GooglePlayStore: {
-    asset: GoogleStoreBadgeSVG,
-    link: GOOGLE_STORE_URL,
-  },
-};
-
-export function AppStoreBadge(props: {
-  store: AppStore;
-  border?: boolean;
-}): JSX.Element {
-  const { asset, link } = appStoreDataMap[props.store];
+export const PlayStoreBadge = () : React.ReactNode => {
   return (
-    <Link href={link} target="_blank" rel="noreferrer">
+    <Link href={GOOGLE_STORE_URL} target="_blank" rel="noreferrer" className="select-none">
       <Image
-        src={asset}
-        alt="download app from apple store"
-        className={
-          props.border === true
-            ? "border-4 border-white rounded-lg bg-white"
-            : ""
-        }
-        fill
+        src={GoogleStoreBadgePNG}
+        alt="Download App from Play Store."
+        width={260}
+        height={80}
       />
     </Link>
   );

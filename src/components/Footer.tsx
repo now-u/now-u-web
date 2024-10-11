@@ -3,26 +3,21 @@
 import React from "react";
 import Link from "next/link";
 import NowULogo from "@/assets/now-u-logo.svg";
-import { navigation as headerNavigation, type NamedRoute } from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
   faFacebookF,
   faLinkedinIn,
-  faXTwitter
+  faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { AppStoreBadge } from "./AppStoreBadge";
-
+import { AppStoreBadge, PlayStoreBadge } from "./AppStoreBadge";
 import Image from "next/image";
-
-const navigation: NamedRoute[] = [
-  ...headerNavigation,
-  { text: "FAQ", to: "/faq" },
-  { text: "Press", to: "/press" },
-  { text: "Cookie Notice", to: "/info/cookie-policy" },
-  { text: "Privacy Notice", to: "/info/privacy-notice" },
-  { text: "Terms and Conditions for Users", to: "/info/terms-and-conditions-for-users" },
-];
+import {
+  aboutRoutes,
+  legalAndInfoRoutes,
+  mainRoutes,
+  type NamedRoute,
+} from "@/model/Routes";
 
 export const socialMediaLinks = [
   {
@@ -49,67 +44,78 @@ export const socialMediaLinks = [
 
 export const Footer = (): JSX.Element => {
   return (
-    <div className="bg-cream w-full flex px-5 py-5 justify-center">
-      <div className="max-w-screen-2xl flex w-full">
-        <div className="mx-10 mt-5 w-full">
-          <Link href="/">
-            <Image
-              className="mx-auto md:mx-0 h-5 w-auto"
-              src={NowULogo}
-              alt="now-u"
-            />
-          </Link>
-          <div className="flex flex-col">
-            <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-3 text-center mb-5 lg:mb-0 md:flex md:divide-x-2 md:divide-current my-5">
-              {navigation.map((route) => (
-                <Link
-                  className="hover:underline px-5 md:first:pl-0 my-1"
-                  key={route.text}
-                  href={route.to}
-                >
-                  {" "}
-                  {route.text}{" "}
-                </Link>
-              ))}
-            </div>
-            <div className="flex justify-center md:justify-end mb-3 space-x-8">
-              {socialMediaLinks.map((socialMedia) => {
-                return (
-                  <Link
-                    key={socialMedia.key}
-                    href={socialMedia.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {" "}
-                    <FontAwesomeIcon
-                      className="hover:cursor-pointer hover:text-orange"
-                      size="2xl"
-                      icon={socialMedia.icon}
-                    />
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-          <div className="flex flex-col text-center md:text-start">
-            <div className="flex justify-center md:justify-end pt-4 mb-5 md:mb-0">
-              <div className="flex-col items-center flex sm:flex-row pt-4 gap-2">
-                <div className="w-36 h-12 hover:cursor-pointer relative">
-                  <AppStoreBadge store="AppleStore" />
-                </div>
-                <div className="w-36 h-12 hover:cursor-pointer relative">
-                  <AppStoreBadge store="GooglePlayStore" />
-                </div>
-              </div>
-            </div>
-            <p className="text-slate-500">
-              Community Interest Company (12709184) and Charitable Incorporated
-              Organisation (1196568)
-            </p>
-          </div>
+    <div className="bg-cream px-16 py-10 justify-center max-w-screen-2xl w-full flex flex-col gap-2">
+      {/* now-u Logo */}
+      <Link href="/">
+        <Image
+          className="mx-auto md:mx-0 h-5 w-auto"
+          src={NowULogo}
+          alt="now-u"
+        />
+      </Link>
+      {/* Links */}
+
+      <div className="my-4 flex flex-col gap-4 sm:flex-row sm:gap-16 sm:justify-center md:justify-start">
+        <FooterLinkSection title="Links" routes={mainRoutes} />
+        <FooterLinkSection title="About now-u" routes={aboutRoutes} />
+        <FooterLinkSection title="Terms" routes={legalAndInfoRoutes} />
+      </div>
+
+      <div className="flex justify-center md:justify-end my-3 space-x-8">
+        {socialMediaLinks.map((socialMedia) => {
+          return (
+            <Link
+              className="p-2"
+              key={socialMedia.key}
+              href={socialMedia.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              <FontAwesomeIcon
+                className="hover:cursor-pointer hover:text-orange"
+                size="2xl"
+                icon={socialMedia.icon}
+              />
+            </Link>
+          );
+        })}
+      </div>
+
+      <div className="self-center md:self-end">
+        <div className="flex flex-row items-center w-72 gap-2">
+          <AppStoreBadge />
+          <PlayStoreBadge />
         </div>
       </div>
+
+      <p className="text-slate-500">
+        Community Interest Company (12709184) and Charitable Incorporated
+        Organisation (1196568)
+      </p>
+    </div>
+  );
+};
+
+const FooterLinkSection = ({
+  title,
+  routes,
+}: {
+  title: string;
+  routes: NamedRoute[];
+}): React.ReactNode => {
+  return (
+    <div>
+      <h4 className="text-gray-500">{title}</h4>
+      <ul className="list-none">
+        {routes.map((route) => (
+          <li key={route.text} className="p-0">
+            <Link className="hover:underline" href={route.to}>
+              <div>{route.text}</div>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

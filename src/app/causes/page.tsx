@@ -13,10 +13,8 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
         className="rounded-t-lg h-60 w-full object-cover"
         src={headerImage.url}
         alt={title ?? "cause-image"}
-        width={100}
-        height={100}
-        // TODO Fix optimization for these images
-        unoptimized={true}
+        width={260}
+        height={260}
       />
       <div className="p-5">
         <div className="flex items-center justify-start flex-1 space-x-4">

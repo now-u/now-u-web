@@ -21,8 +21,9 @@ export const PartnerTile = (props: { partner: Organisation }): JSX.Element => {
           setSrc(Placeholder);
         }}
         alt={partner.name ?? "partner-logo"}
-        width={500}
-        height={500}
+        width={240}
+        height={240}
+        loading="lazy"
         className="h-44 object-contain object-top"
       />
     </div>

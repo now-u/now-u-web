@@ -1,45 +1,129 @@
 import Link from "next/link";
-import React from "react";
+import React, { type MouseEvent } from "react";
 import { type UrlObject } from "url";
 
-interface ButtonProps {
-  buttonText: string;
-  href: string | UrlObject;
-  target?: string;
-  variant?: string;
+type ButtonStyle = "text" | "primary" | "secondary"
+type ButtonSize = "small" | "medium" | "large"
+
+interface GenericButtonProps {
+  textColor?: string;
+  size?: ButtonSize;
+  buttonStyle?: ButtonStyle;
+  disabled?: boolean;
 }
 
-export const buttonVariant: Record<string, string> = {
-  orange:
-    "bg-orange text-black font-bold py-3 px-4 rounded-lg hover:drop-shadow-xl hover:-translate-y-1 active:translate-y-0 active:drop-shadow-none no-underline",
-  white:
-    "bg-white text-black font-bold py-3 px-4 rounded-lg hover:drop-shadow-xl hover:-translate-y-1 active:translate-y-0 active:drop-shadow-none no-underline",
-  disabled:
-    "border border-black text-black font-bold py-3 px-4 rounded-lg no-underline opacity-25 cursor-not-allowed",
-};
+interface LinkButtonProps extends GenericButtonProps {
+  title?: string;
+  href: string | UrlObject;
+  target?: string;
+  children?: React.ReactNode;
+}
 
-export const buttonStyle =
-  "bg-orange text-black font-bold py-3 px-4 rounded-lg hover:drop-shadow-xl hover:-translate-y-1 active:translate-y-0 active:drop-shadow-none no-underline";
+interface ButtonProps extends GenericButtonProps, React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+{
+  title?: string;
+  onClick?: (event: MouseEvent) => void;
+  children?: React.ReactNode;
+}
 
-export const LinkButton = (props: ButtonProps): JSX.Element => {
-  const { href, buttonText, target, variant = "orange" } = props;
+const buttonStyleClassName = (props: GenericButtonProps, defaultButtonStyle: ButtonStyle = "primary"): string => {
+  const {
+    textColor,
+    size = "medium",
+    buttonStyle = defaultButtonStyle,
+    disabled
+  } = props;
+
+  const commonBorderedButtonStyle: string = ""
+  const inferredTextColor = (textColor ?? undefined) !== undefined ? textColor : (buttonStyle === "primary" ? "text-white" : "text-amber");
+
+  let fontWeight: string;
+  let fontSize: string;
+  let padding: string;
+  let shadow: string;
+  const activeStyle: string = "active:brightness-[80%] cursor-pointer";
+  let disabledStyle: string = "";
+  let backgroundColor: string = ""
+
+  switch (size) {
+    case "small": {
+      padding = "px-6 py-1";
+      fontSize = "text-base";
+      fontWeight = "font-normal";
+      break;
+    }
+    case "medium": {
+      padding = "px-11 py-2";
+      fontSize = "text-lg";
+      fontWeight = disabled === true ? "font-normal" : "font-bold";
+      break;
+    }
+    case "large": {
+      padding = "px-10 py-3";
+      fontSize = "text-lg";
+      fontWeight = disabled === true ? "font-normal" : "font-bold";
+      break;
+    }
+  }
+
+
+  switch (buttonStyle) {
+    case "primary": {
+      shadow = "";
+      disabledStyle = "bg-primary-disabled cursor-none"
+      backgroundColor = "bg-amber"
+      break;
+    }
+    case "secondary": {
+      shadow = "shadow";
+      disabledStyle = "text-secondary-disabled cursor-none"
+      backgroundColor = "bg-white"
+      break;
+    }
+    default: {
+      shadow = ""
+      break;
+    }
+  }
+
+  if (buttonStyle === "text") {
+    return `${inferredTextColor} ${fontSize} ${fontWeight} hover:underline`
+  } else {
+    return `${commonBorderedButtonStyle} ${inferredTextColor} ${fontSize} ${fontWeight} ${backgroundColor} ${padding} ${shadow} rounded-lg ${disabled === true ? disabledStyle : activeStyle} select-none`;
+  }
+}
+
+export const LinkButton = (props: LinkButtonProps): JSX.Element => {
+  const {
+    title,
+    href,
+    target,
+    children,
+  } = props;
   return (
     <div className="mt-10 mb-10">
-      <Link className={buttonVariant[variant]} href={href} target={target}>
-        {buttonText}
-      </Link>
+        <Link
+          href={href}
+          target={target}
+          className={buttonStyleClassName(props, "text")}
+        >
+          {title}{children}
+        </Link>
     </div>
   );
 };
 
+
+
 export const Button = (
-  props: React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  >,
-): JSX.Element => {
+  props: ButtonProps
+): React.ReactNode => {
+  // Not ideal, need to manually specify members not in html button props:
+  const { textColor, size, buttonStyle, disabled, ...htmlButtonProps } = props
+
   return (
-    <button className={buttonStyle} {...props}>
+    <button className={buttonStyleClassName(props, "primary")} {...htmlButtonProps}>
+      {props.title}
       {props.children}
     </button>
   );

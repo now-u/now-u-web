@@ -75,8 +75,9 @@ const About = (): JSX.Element => {
                 ]}
               />
               <LinkButton
-                buttonText="Get in Touch"
-                href={{ pathname: "/get-in-touch" }}
+                title="Get in Touch"
+                href={{ pathname: "/get-in-touch"}}
+                buttonStyle="primary"
               />
             </div>
           </div>
@@ -91,8 +92,9 @@ const About = (): JSX.Element => {
               ]}
             />
             <LinkButton
-              buttonText="Meet the team"
+              title="Meet the team"
               href="https://www.linkedin.com/company/now-u/people/"
+              buttonStyle="primary"
               target={"_blank"}
             />
           </div>

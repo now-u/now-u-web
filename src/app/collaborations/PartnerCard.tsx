@@ -84,10 +84,10 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
           </ul>
           {websiteLink != null ? (
             <LinkButton
-              variant={"white"}
-              buttonText={"View website"}
+              title={"View website"}
               href={websiteLink}
               target={"_blank"}
+              buttonStyle="secondary"
             ></LinkButton>
           ) : null}
         </div>

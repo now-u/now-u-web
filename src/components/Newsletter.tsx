@@ -86,7 +86,7 @@ export function Newsletter(): JSX.Element {
               className="placeholder:pl-2 block p-3 mb-4 rounded-md md:mr-4 md:w-2/3"
             />
             <div className="w-min mr-8">
-              <Button type="submit"> Subscribe </Button>
+              <Button type="submit" textColor="text-oxford-blue">Subscribe</Button>
             </div>
           </form>
         </div>

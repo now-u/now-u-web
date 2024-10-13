@@ -14,7 +14,7 @@ export async function PartnerGrid(): Promise<JSX.Element> {
           <PartnerTile key={partner.id.toString()} partner={partner} />
         ))}
       </div>
-      <LinkButton buttonText={"View All"} href={"/collaborations"} />
+      <LinkButton title={"View All"} href={"/collaborations"} buttonStyle="primary" />
     </div>
   );
 }

@@ -82,7 +82,7 @@ function Home(): JSX.Element {
                 <br />
                 <SubtitleText text="We work closely with trusted charities across our cause areas to provide informative & engaging learning materials, effective actions and impactful campaigns." />
               </div>
-              <LinkButton buttonText="View Causes" href="/causes" />
+              <LinkButton title="View Causes" href="/causes" buttonStyle="primary"/>
             </div>
             <Image
               className="order-1 m-auto md:order-2 w-2/3 md:w-1/3 lg:w-1/4 pb-5 xl:p-1"
@@ -105,7 +105,7 @@ function Home(): JSX.Element {
                 <br />
                 <SubtitleText text="We are made up of two non-profit teams working side by side: one creating our digital products and one developing our campaigns." />
               </div>
-              <LinkButton buttonText="Learn more" href="/about" />
+              <LinkButton title="Learn more" href="/about" buttonStyle="primary"/>
             </div>
           </div>
         </div>

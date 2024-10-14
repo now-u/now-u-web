@@ -62,6 +62,8 @@ export function Newsletter(): JSX.Element {
         <Image
           className="w-48 h-auto"
           src={NewsletterGraphic}
+          width={250}
+          height={250}
           alt="explore screenshot"
         />
       </div>

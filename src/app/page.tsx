@@ -11,7 +11,7 @@ import TickIcon from "@/assets/graphics/tick_icon.png";
 import ClipboardIcon from "@/assets/graphics/clipboard_icon.png";
 import GlobeIcon from "@/assets/graphics/globe_icon.png";
 import Image from "next/image";
-import { AppStoreBadge } from "@/components/AppStoreBadge";
+import { AppStoreBadge, PlayStoreBadge } from "@/components/AppStoreBadge";
 import { Newsletter } from "@/components/Newsletter";
 
 const icons = [
@@ -52,20 +52,18 @@ function Home(): JSX.Element {
                   <SubtitleText text="Download the now-u app to learn more about important social and environmental issues and to find effective ways to support causes you care about." />
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start pt-4 mb-5 md:mb-0 gap-3">
-                <div className="w-48 h-16 md:w-60 md:h-20 relative">
-                  <AppStoreBadge store="AppleStore" border />
-                </div>
-                <div className="w-48 h-16 md:w-60 md:h-20 relative">
-                  <AppStoreBadge store="GooglePlayStore" border />
-                </div>
+              <div className="flex flex-col items-center sm:flex-row justify-center md:justify-start pt-4 mb-5 md:mb-0 gap-2">
+                  <AppStoreBadge/>
+                  <PlayStoreBadge/>
               </div>
             </div>
             <div className="flex order-1 md:order-2 w-2/3 max-md:px-4 sm:mx-8 lg:mx-10">
               <Image
                 className="w-full md:w-1/2 pb-5 xl:p-1 m-auto"
                 src={ExploreScreenImage}
+                width={120} height={120}
                 alt="explore screenshot"
+                loading="lazy"
               />
             </div>
           </div>
@@ -87,6 +85,8 @@ function Home(): JSX.Element {
             <Image
               className="order-1 m-auto md:order-2 w-2/3 md:w-1/3 lg:w-1/4 pb-5 xl:p-1"
               src={CausesGlobe}
+              width={120} height={120}
+              loading="lazy"
               alt="causes graphic"
             />
           </div>
@@ -96,6 +96,8 @@ function Home(): JSX.Element {
             <Image
               className="w-2/3 m-auto md:w-1/2 lg:w-1/3 pb-5 xl:p-1"
               src={LoveGlobe}
+              width={150} height={150}
+              loading="lazy"
               alt="love graphic"
             />
             <div className="pb-5 md:w-1/2">

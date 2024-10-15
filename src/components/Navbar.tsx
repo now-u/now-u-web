@@ -17,7 +17,7 @@ export const navigation: NamedRoute[] = [
   { text: "Home", to: "/" },
   { text: "Causes", to: "/causes" },
   { text: "About Us", to: "/about" },
-  { text: "Partnership", to: "/partnership" },
+  { text: "Partnership", to: "/charity-partnership" },
   { text: "Blog", to: "/blog" },
   { text: "Get In Touch", to: "/get-in-touch" },
 ];

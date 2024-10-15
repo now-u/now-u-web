@@ -13,6 +13,7 @@ import { LinkButton } from "@/components/Button";
 export default function PartnershipPage(): React.ReactElement {
   return (
     <>
+      <title>now-u | Charity Partnership</title>
       <Header
         title="Partnership"
         subtitle="Partner with now-u: Empower Change Together"
@@ -52,7 +53,7 @@ export default function PartnershipPage(): React.ReactElement {
               impact, share your story, and make a lasting difference in the
               lives of those who need it most.
             </ExpandContentButton>
-            <LinkButton buttonStyle="primary" href="mailto:partnerships@now-u.com"
+            <LinkButton buttonStyle="primary" href="https://forms.monday.com/forms/cc4aaf4815a82d3f5450e5f519a12f1f?r=euc1"
                         target="_blank" rel="noreferrer"
                         className="md:self-start my-4">Partner with us</LinkButton>
           </div>
@@ -117,8 +118,8 @@ export default function PartnershipPage(): React.ReactElement {
             community and drive significant positive change. Join us in our
             mission to inform, involve, and inspire action for a better world.
           </p>
-          <LinkButton buttonStyle="primary" href="mailto:partnerships@now-u.com"
-                      target="_blank" rel="noreferrer"
+          <LinkButton buttonStyle="primary" href="https://forms.monday.com/forms/cc4aaf4815a82d3f5450e5f519a12f1f?r=euc1"
+                      target="_blank"
                       className="md:self-start my-4">Partner with us</LinkButton>
         </div>
         <div className="max-w-screen-md lg:max-w-screen-lg flex flex-col lg:flex-row gap-2 w-full mt-2 mb-8 px-4"> {/* Partner Role Cards */}

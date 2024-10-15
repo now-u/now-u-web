@@ -118,7 +118,8 @@ export default function PartnershipPage(): React.ReactElement {
             mission to inform, involve, and inspire action for a better world.
           </p>
           <LinkButton buttonStyle="primary" href="mailto:partnerships@now-u.com"
-                      className="md:self-start">Partner with us</LinkButton>
+                      target="_blank" rel="noreferrer"
+                      className="md:self-start my-4">Partner with us</LinkButton>
         </div>
         <div className="max-w-screen-md lg:max-w-screen-lg flex flex-col lg:flex-row gap-2 w-full mt-2 mb-8 px-4"> {/* Partner Role Cards */}
           <PartnershipRoleCard

@@ -2,40 +2,55 @@ import Link from "next/link";
 import React, { type MouseEvent } from "react";
 import { type UrlObject } from "url";
 
-type ButtonStyle = "text" | "primary" | "secondary"
-type ButtonSize = "small" | "medium" | "large"
+type ButtonStyle = "text" | "primary" | "secondary";
+type ButtonSize = "small" | "medium" | "large";
 
 interface GenericButtonProps {
   textColor?: string;
   size?: ButtonSize;
   buttonStyle?: ButtonStyle;
   disabled?: boolean;
+  /// Additional `class` properties
+  className?: string;
 }
 
 interface LinkButtonProps extends GenericButtonProps {
   title?: string;
   href: string | UrlObject;
   target?: string;
+  rel?: string;
   children?: React.ReactNode;
 }
 
-interface ButtonProps extends GenericButtonProps, React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
-{
+interface ButtonProps
+  extends GenericButtonProps,
+    React.DetailedHTMLProps<
+      React.ButtonHTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    > {
   title?: string;
   onClick?: (event: MouseEvent) => void;
   children?: React.ReactNode;
 }
 
-const buttonStyleClassName = (props: GenericButtonProps, defaultButtonStyle: ButtonStyle = "primary"): string => {
+const buttonStyleClassName = (
+  props: GenericButtonProps,
+  defaultButtonStyle: ButtonStyle = "primary",
+): string => {
   const {
     textColor,
     size = "medium",
     buttonStyle = defaultButtonStyle,
-    disabled
+    disabled,
   } = props;
 
-  const commonBorderedButtonStyle: string = ""
-  const inferredTextColor = (textColor ?? undefined) !== undefined ? textColor : (buttonStyle === "primary" ? "text-white" : "text-amber");
+  const commonBorderedButtonStyle: string = "";
+  const inferredTextColor =
+    (textColor ?? undefined) !== undefined
+      ? textColor
+      : buttonStyle === "primary"
+        ? "text-white"
+        : "text-amber";
 
   let fontWeight: string;
   let fontSize: string;
@@ -43,7 +58,7 @@ const buttonStyleClassName = (props: GenericButtonProps, defaultButtonStyle: But
   let shadow: string;
   const activeStyle: string = "active:brightness-[80%] cursor-pointer";
   let disabledStyle: string = "";
-  let backgroundColor: string = ""
+  let backgroundColor: string = "";
 
   switch (size) {
     case "small": {
@@ -66,63 +81,58 @@ const buttonStyleClassName = (props: GenericButtonProps, defaultButtonStyle: But
     }
   }
 
-
   switch (buttonStyle) {
     case "primary": {
       shadow = "";
-      disabledStyle = "bg-primary-disabled cursor-none"
-      backgroundColor = "bg-amber"
+      disabledStyle = "bg-primary-disabled cursor-none";
+      backgroundColor = "bg-amber";
       break;
     }
     case "secondary": {
       shadow = "shadow";
-      disabledStyle = "text-secondary-disabled cursor-none"
-      backgroundColor = "bg-white"
+      disabledStyle = "text-secondary-disabled cursor-none";
+      backgroundColor = "bg-white";
       break;
     }
     default: {
-      shadow = ""
+      shadow = "";
       break;
     }
   }
 
   if (buttonStyle === "text") {
-    return `${inferredTextColor} ${fontSize} ${fontWeight} hover:underline`
+    return `${inferredTextColor} ${fontSize} ${fontWeight} hover:underline`;
   } else {
-    return `${commonBorderedButtonStyle} ${inferredTextColor} ${fontSize} ${fontWeight} ${backgroundColor} ${padding} ${shadow} rounded-lg ${disabled === true ? disabledStyle : activeStyle} select-none`;
+    return `text-center ${commonBorderedButtonStyle} ${inferredTextColor} ${fontSize} ${fontWeight} ${backgroundColor} ${padding} ${shadow} rounded-lg ${
+      disabled === true ? disabledStyle : activeStyle
+    } select-none`;
   }
-}
+};
 
 export const LinkButton = (props: LinkButtonProps): JSX.Element => {
-  const {
-    title,
-    href,
-    target,
-    children,
-  } = props;
+  const { title, href, target, children, className, rel } = props;
   return (
-    <div className="mt-10 mb-10">
-        <Link
-          href={href}
-          target={target}
-          className={buttonStyleClassName(props, "text")}
-        >
-          {title}{children}
-        </Link>
-    </div>
+    <Link
+      rel={rel ?? ""}
+      href={href}
+      target={target}
+      className={`${buttonStyleClassName(props, "text")} ${className ?? ""}`}
+    >
+      {title}
+      {children}
+    </Link>
   );
 };
 
-
-
-export const Button = (
-  props: ButtonProps
-): React.ReactNode => {
+export const Button = (props: ButtonProps): React.ReactNode => {
   // Not ideal, need to manually specify members not in html button props:
-  const { textColor, size, buttonStyle, disabled, ...htmlButtonProps } = props
+  const { textColor, size, buttonStyle, disabled, className, ...htmlButtonProps } = props;
 
   return (
-    <button className={buttonStyleClassName(props, "primary")} {...htmlButtonProps}>
+    <button
+      className={`${buttonStyleClassName(props, "primary")} ${className ?? ""}`}
+      {...htmlButtonProps}
+    >
       {props.title}
       {props.children}
     </button>

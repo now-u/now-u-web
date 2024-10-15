@@ -11,18 +11,18 @@ export default function ExpandContentButton(props: {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div>
-      {isExpanded && <div className="transition-transform">{props.children}</div>}
+    <div className="">
+      <div className={`py-4 transition-all
+      ${isExpanded ? "block": "hidden"}`}>{props.children}</div>
       <button
-        className="text-orange text-lg font-medium flex flex-row items-baseline gap-2"
+        className="text-left text-orange text-lg font-medium flex flex-row items-baseline gap-2"
         onClick={() => {
           setIsExpanded(!isExpanded);
         }}
       >
         {props.title}
-        <FontAwesomeIcon icon={isExpanded ? faChevronUp : faChevronDown} />
+        <FontAwesomeIcon size="xs" icon={isExpanded ? faChevronUp : faChevronDown} />
       </button>
-      ;
     </div>
   );
 }

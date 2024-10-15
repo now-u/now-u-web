@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HeaderCauses } from "@/components/Header";
+import { Header } from "@/components/Header";
 import { Newsletter } from "@/components/Newsletter";
 import Image from "next/image";
 import { type Cause, getCauses } from "@/services/api";
@@ -39,7 +39,7 @@ export default async function CausesPage(): Promise<JSX.Element> {
       <title>now-u | Causes</title>
 
       <div className="flex flex-col text-center">
-        <HeaderCauses
+        <Header
           title="Our Causes"
           body={[
             "Built around the United Nations Sustainable Development Goals (SDGs), our work at now-u focuses on six core causes.",

@@ -67,7 +67,7 @@ export default function PartnershipPage(): React.ReactElement {
           >
             <div className="object-cover">
               <Image
-                className="h-48 md:w-[20rem] md:h-96 lg:w-[32rem]"
+                className="h-36 md:w-[20rem] md:h-96 lg:w-[32rem] px-4"
                 src={WhoShouldPartnerWithUsImage}
                 alt="A picture of two people shaking hands."
               />

@@ -33,7 +33,7 @@ export default function PartnershipPage(): React.ReactElement {
           </div>
 
           <div className="partnership-section-text md:w-1/2 flex flex-col gap-2">
-            <h2 className="text-xl font-bold">Why partner with us?</h2>
+            <h2 className="text-xl font-bold font-heading">Why partner with us?</h2>
             <p className="font-medium">
               Partnering with now-u means joining a dynamic and passionate
               movement committed to making a tangible difference.
@@ -67,14 +67,14 @@ export default function PartnershipPage(): React.ReactElement {
           >
             <div className="object-cover">
               <Image
-                className="h-48 md:w-[26rem] md:h-96 lg:w-full"
+                className="h-48 md:w-[20rem] md:h-96 lg:w-[32rem]"
                 src={WhoShouldPartnerWithUsImage}
                 alt="A picture of two people shaking hands."
               />
             </div>
 
             <div className="partnership-section-text md:w-1/2 flex flex-col gap-2">
-              <h2 className="text-xl font-bold">Who should partner with us?</h2>
+              <h2 className="text-xl font-bold font-heading">Who should partner with us?</h2>
               <p className="font-medium">
                 We invite diverse organisations to collaborate with us,
                 including charities, non-profits, social enterprises, and
@@ -93,7 +93,7 @@ export default function PartnershipPage(): React.ReactElement {
               </ExpandContentButton>
               <LinkButton
                 className="md:self-start my-4"
-                title="View Our Collaborations"
+                title="View our collaborations"
                 href={{ pathname: "/collaborations" }}
                 buttonStyle="primary"
               />
@@ -102,7 +102,7 @@ export default function PartnershipPage(): React.ReactElement {
         </div>
 
         <div className="max-w-screen-md lg:max-w-screen-lg flex flex-col gap-8 my-4 px-4"> {/* How our charity partnership work */}
-          <h2 className="text-xl font-bold">
+          <h2 className="text-xl font-bold font-heading">
             How our charity partnerships work
           </h2>
           <p>
@@ -122,7 +122,7 @@ export default function PartnershipPage(): React.ReactElement {
                       target="_blank"
                       className="md:self-start my-4">Partner with us</LinkButton>
         </div>
-        <div className="max-w-screen-md lg:max-w-screen-lg flex flex-col lg:flex-row gap-2 w-full mt-2 mb-8 px-4"> {/* Partner Role Cards */}
+        <div className="max-w-screen-md lg:max-w-screen-lg flex flex-col lg:flex-row gap-2 w-full mb-8 px-4"> {/* Partner Role Cards */}
           <PartnershipRoleCard
             className="bg-amber"
             icon={PartnerIcon}
@@ -180,7 +180,7 @@ const PartnershipRoleCard = (
   props: PartnershipRoleCardProps,
 ): React.ReactNode => {
   return (
-    <div className={`flex flex-col gap-4 p-8 ${props.className} items-start lg:items-center`}>
+    <div className={`flex flex-col gap-4 p-6 ${props.className} items-start lg:items-center`}>
       <div className="flex flex-col items-start lg:items-center gap-2">
         <Image
           src={props.icon}
@@ -189,11 +189,11 @@ const PartnershipRoleCard = (
           height="100"
           width="68"
         />
-        <h4 className="font-bold text-lg">{props.title}</h4>
+        <h4 className="font-bold font-heading text-lg">{props.title}</h4>
       </div>
-      <div className="flex-grow flex flex-col items-center gap-4 justify-between">
+      <div className="flex-grow flex flex-col items-start gap-8 justify-between">
         <div className="">
-          <h5 className="font-bold">Benefits:</h5>
+          <h5 className="font-bold font-heading">Benefits:</h5>
           <ul className="list-disc list-outside pl-6">
             {props.benefits.map((benefit, index) => (
               <li key={`${props.title}-benefit-${index}`}>{benefit}</li>
@@ -201,10 +201,10 @@ const PartnershipRoleCard = (
           </ul>
         </div>
         <div className="">
-          <h5 className="font-bold">Your role:</h5>
+          <h5 className="font-bold font-heading">Your role:</h5>
           <ul className="list-disc list-outside pl-6">
-            {props.benefits.map((benefit, index) => (
-              <li key={`${props.title}-benefit-${index}`}>{benefit}</li>
+            {props.roleResponsibilities.map((benefit, index) => (
+              <li key={`${props.title}-responsibility-${index}`}>{benefit}</li>
             ))}
           </ul>
         </div>

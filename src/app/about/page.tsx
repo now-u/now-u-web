@@ -46,7 +46,7 @@ const About = (): JSX.Element => {
           ]}
         />
         <div className="flex flex-col lg:flex-row place-content-around bg-cream place-items-center px-5 py-10">
-          <div className="max-w-screen-xl flex flex-col md:flex-row justify-between my-10">
+          <div className="md:max-w-screen-md lg:max-w-screen-lg flex flex-col md:flex-row justify-between my-10">
             <div className="md:w-2/4 lg:w-1/2 xl:w-3/5 text-left">
               <SectionBody
                 title="Our Story"
@@ -65,8 +65,7 @@ const About = (): JSX.Element => {
           </div>
         </div>
         <div className="bg-slate-100  w-full flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
-          <div className="max-w-screen-xl flex flex-col md:flex-row items-center justify-around">
-            <div className="text-left pb-5">
+          <div className="md:max-w-screen-md lg:max-w-screen-lg flex flex-col items-center md:items-start md:text-left justify-around">
               <TitleText text="Our charity journey" />
               <BodyText
                 text={[
@@ -75,11 +74,11 @@ const About = (): JSX.Element => {
                 ]}
               />
               <LinkButton
+                className="mt-6 md:self-start"
                 title="Get in Touch"
                 href={{ pathname: "/get-in-touch"}}
                 buttonStyle="primary"
               />
-            </div>
           </div>
         </div>
         <div className="max-w-screen-xl flex flex-col md:flex-row py-20 px-10 self-center">

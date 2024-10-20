@@ -6,9 +6,9 @@ import { LinkButton } from "@/components/Button";
 import { AppStoreBadge, PlayStoreBadge } from "@/components/AppStoreBadge";
 import { Newsletter } from "@/components/Newsletter";
 import Elgars from "@/assets/images/elgars.png";
-import PhoneIcon from "@/assets/graphics/phone_icon.png";
-import LoudspeakerIcon from "@/assets/graphics/loudspeaker_icon.png";
-import LightbulbIcon from "@/assets/graphics/lightbulb_icon.png";
+import PhoneIcon from "@/assets/graphics/phone_icon.webp";
+import LoudspeakerIcon from "@/assets/graphics/loudspeaker_icon.webp";
+import LightbulbIcon from "@/assets/graphics/lightbulb_icon.webp";
 
 import Image from "next/image";
 

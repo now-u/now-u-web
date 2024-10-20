@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image, { type StaticImageData } from "next/image";
-import Placeholder from "@/assets/graphics/placeholder.png";
+import Placeholder from "@/assets/graphics/placeholder.webp";
 import { LinkButton } from "@/components/Button";
 import {
   faFacebookF,

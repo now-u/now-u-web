@@ -4,12 +4,12 @@ import { SectionBody } from "@/components/Header";
 import { HeaderText, SubtitleText, TitleText } from "@/components/Text";
 import { PartnerGrid } from "@/components/PartnerGrid";
 import { IconRow } from "@/components/IconRow";
-import ExploreScreenImage from "@/assets/graphics/explore_screen.png";
-import CausesGlobe from "@/assets/graphics/causes_globe.png";
-import LoveGlobe from "@/assets/graphics/love_globe.png";
-import TickIcon from "@/assets/graphics/tick_icon.png";
-import ClipboardIcon from "@/assets/graphics/clipboard_icon.png";
-import GlobeIcon from "@/assets/graphics/globe_icon.png";
+import ExploreScreenImage from "@/assets/graphics/explore_screen.webp";
+import CausesGlobe from "@/assets/graphics/causes_globe.webp";
+import LoveGlobe from "@/assets/graphics/love_globe.webp";
+import TickIcon from "@/assets/graphics/tick_icon.webp";
+import ClipboardIcon from "@/assets/graphics/clipboard_icon.webp";
+import GlobeIcon from "@/assets/graphics/globe_icon.webp";
 import Image from "next/image";
 import { AppStoreBadge, PlayStoreBadge } from "@/components/AppStoreBadge";
 import { Newsletter } from "@/components/Newsletter";
@@ -61,7 +61,7 @@ function Home(): JSX.Element {
               <Image
                 className="w-full md:w-1/2 pb-5 xl:p-1 m-auto"
                 src={ExploreScreenImage}
-                width={120} height={120}
+                width={250} height={250}
                 alt="explore screenshot"
                 loading="lazy"
               />
@@ -85,7 +85,7 @@ function Home(): JSX.Element {
             <Image
               className="order-1 m-auto md:order-2 w-2/3 md:w-1/3 lg:w-1/4 pb-5 xl:p-1"
               src={CausesGlobe}
-              width={120} height={120}
+              width={240} height={240}
               loading="lazy"
               alt="causes graphic"
             />
@@ -96,7 +96,7 @@ function Home(): JSX.Element {
             <Image
               className="w-2/3 m-auto md:w-1/2 lg:w-1/3 pb-5 xl:p-1"
               src={LoveGlobe}
-              width={150} height={150}
+              width={240} height={240}
               loading="lazy"
               alt="love graphic"
             />

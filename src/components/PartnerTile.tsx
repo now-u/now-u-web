@@ -2,7 +2,7 @@
 import { type Organisation } from "@/services/api";
 import Image, { type StaticImageData } from "next/image";
 import React, { useState } from "react";
-import Placeholder from "@/assets/graphics/placeholder.png";
+import Placeholder from "@/assets/graphics/placeholder.webp";
 
 export const PartnerTile = (props: { partner: Organisation }): JSX.Element => {
   const partner = props.partner;

@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 
-import NewsletterGraphic from "@/assets/graphics/newsletter_graphic.png";
+import NewsletterGraphic from "@/assets/graphics/newsletter_graphic.webp";
 import { Button } from "./Button";
 import { subscribeToNewsLetter } from "@/actions/mailchimp";
 import { useToast } from "./ui/use-toast";

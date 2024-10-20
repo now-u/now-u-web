@@ -4,7 +4,7 @@ import Image, { type StaticImageData } from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
-import Placeholder from "@/assets/graphics/placeholder.png";
+import Placeholder from "@/assets/graphics/placeholder.webp";
 
 export interface BlogTileProps {
   id: string
@@ -31,8 +31,8 @@ export function BlogTile({ href, headerImageURL, title, authors, readingTime }: 
             }}
             alt="Blog Image"
             className="object-cover w-full h-full rounded-t-lg"
-            width={250}
-            height={250}
+            width={360}
+            height={200}
           />
         </div>
         <div className="flex flex-row justify-between p-4 items-stretch">

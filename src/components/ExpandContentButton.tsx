@@ -12,7 +12,7 @@ export default function ExpandContentButton(props: {
 
   return (
     <div className="">
-      <div className={`py-4 transition-all
+      <div className={`pb-4 transition-all
       ${isExpanded ? "block": "hidden"}`}>{props.children}</div>
       <button
         className="text-left text-orange text-lg font-medium flex flex-row items-baseline gap-2"

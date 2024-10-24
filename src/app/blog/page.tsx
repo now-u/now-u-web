@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HeaderSubtitle } from "@/components/Header";
+import { Header } from "@/components/Header";
 import { BlogTile, type BlogTileProps } from "@/components/BlogTile";
 import { Newsletter } from "@/components/Newsletter";
 import { getBlogPosts } from "@/services/api";
@@ -25,9 +25,9 @@ async function Blog(): Promise<JSX.Element> {
     <>
       <title>now-u | Blog</title>
 
-      <HeaderSubtitle
+      <Header
         title="Blog"
-        subtitle="Find all the latest blog articles from now-u below"
+        body="Find all the latest blog articles from now-u below"
       />
 
       {allBlogs.length > 0 ? (

@@ -18,9 +18,23 @@ module.exports = {
     },
     extend: {
       colors: {
+        amber: "#FF8800",
+        "venetian-red": "#D30001",
+        sunflower: "#F3B700",
+        salomie: "#FFDC79",
+        "oxford-blue": "#011A43",
+        red: "#FF0000",
+        "carolina-blue": "#2697D3",
+        "olive-drab": "#59981A",
+        "light-orange": "#FFF3E5",
+
+        // background color of buttons
+        "primary-disabled": "#FFCF99",
+        "secondary-disabled": "#FFE7CC",
+
         orange: "#FF8800",
         blue: "#011A43",
-        black: "#17171A",
+        black: "#373A4A",
         grey: "#6D7181",
         "light-grey": "#F7F8FC",
         cream: "#FFF3E5",

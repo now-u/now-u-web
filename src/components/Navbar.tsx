@@ -9,11 +9,10 @@ import NowULogo from "@/assets/now-u-logo.svg";
 import Image from "next/image";
 import { type NamedRoute, navigationRoutes } from "@/model/Routes";
 
-
 const NavbarLink = (
-  props: NamedRoute & { isMobile?: boolean },
+  props: NamedRoute & { isMobile?: boolean, onClick?: () => void },
 ): JSX.Element => {
-  const { text, to, isMobile } = props;
+  const { text, to, isMobile, onClick } = props;
   const isActive = false;
 
   return (
@@ -27,6 +26,7 @@ const NavbarLink = (
         "px-3 py-2 text-xl font-bold rounded-md font-heading",
         isMobile ?? false ? "block text-base" : "text-sm",
       )}
+      onClick={onClick ?? (() => { })}
       aria-current={isActive != null ? "page" : undefined}
     >
       {text}
@@ -36,8 +36,8 @@ const NavbarLink = (
 
 export const Navbar = (): JSX.Element => {
   return (
-    <Disclosure as="nav" className="flex flex-col bg-white w-full items-center">
-      {({ open }) => (
+    <Disclosure as="nav" className="flex flex-col bg-white w-full items-center sticky top-0 z-10 bg-opacity-90 backdrop-blur-lg shadow shadow-sm">
+      {({ open, close }) => (
         <>
           <div className="max-w-screen-2xl flex w-full justify-between">
             <div className="flex w-full h-16 items-center justify-between mx-4 sm:mx-8 lg:mx-10">

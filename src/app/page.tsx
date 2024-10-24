@@ -73,14 +73,14 @@ function Home(): JSX.Element {
         </div>
         <div className="bg-cream w-full flex flex-col md:flex-row justify-center place-items-center py-20">
           <div className="max-w-screen-xl flex flex-col md:flex-row  px-5 ">
-            <div className="order-2 md:order-1 md:w-3/5">
+            <div className="order-2 md:order-1 md:w-3/5 flex flex-col gap-2">
               <TitleText text="Explore our causes" />
               <div className="w-4/5">
                 <SubtitleText text="Drawing on the United Nations Sustainable Development Goals, we focus on 6 social and environmental causes." />
                 <br />
                 <SubtitleText text="We work closely with trusted charities across our cause areas to provide informative & engaging learning materials, effective actions and impactful campaigns." />
               </div>
-              <LinkButton buttonText="View Causes" href="/causes" />
+              <LinkButton className="md:self-start mt-6" title="View Causes" href="/causes" buttonStyle="primary"/>
             </div>
             <Image
               className="order-1 m-auto md:order-2 w-2/3 md:w-1/3 lg:w-1/4 pb-5 xl:p-1"
@@ -100,14 +100,14 @@ function Home(): JSX.Element {
               loading="lazy"
               alt="love graphic"
             />
-            <div className="pb-5 md:w-1/2">
+            <div className="pb-5 md:w-1/2 flex flex-col">
               <TitleText text="A new non-profit" />
               <div className="w-4/5">
                 <SubtitleText text="At now-u, we aim to empower anyone to take action for causes they care about, in partnership with charities." />
                 <br />
                 <SubtitleText text="We are made up of two non-profit teams working side by side: one creating our digital products and one developing our campaigns." />
               </div>
-              <LinkButton buttonText="Learn more" href="/about" />
+              <LinkButton className="mt-6 md:self-start" title="Learn more" href="/about" buttonStyle="primary"/>
             </div>
           </div>
         </div>

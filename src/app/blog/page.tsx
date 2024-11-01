@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { BlogTile, type BlogTileProps } from "@/components/BlogTile";
 import { Newsletter } from "@/components/Newsletter";
 import { getBlogPosts } from "@/services/api";
+import BlogSearchButton from "@/components/BlogSearchBar";
 
 async function Blog(): Promise<JSX.Element> {
   const remotePosts = await getBlogPosts();
@@ -29,6 +30,10 @@ async function Blog(): Promise<JSX.Element> {
         title="Blog"
         body="Find all the latest blog articles from now-u below"
       />
+
+
+      <BlogSearchButton />
+
 
       {allBlogs.length > 0 ? (
         <div className="max-w-screen-2xl">

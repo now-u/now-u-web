@@ -55,8 +55,8 @@ export default async function Page({
     <>
       <title>{`now-u | ${blog.title}`}</title>
 
-      <div className="w-full flex flex-col items-center lg:my-10">
-        <div className="flex-col prose prose-gray mx-4">
+      <div className="w-full flex flex-col items-center">
+        <div className="w-full flex flex-col py-10 px-4 prose prose-gray">
           <Link className="underline text-orange font-bold" href={"/blog"}>
             {" "}
             {"< "} Back{" "}

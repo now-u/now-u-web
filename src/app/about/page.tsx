@@ -1,14 +1,14 @@
 import React from "react";
-import { HeaderCauses, SectionBody } from "@/components/Header";
+import { Header, SectionBody } from "@/components/Header";
 import { BodyText, TitleText } from "@/components/Text";
 import { IconRow } from "@/components/IconRow";
 import { LinkButton } from "@/components/Button";
-import { AppStoreBadge } from "@/components/AppStoreBadge";
+import { AppStoreBadge, PlayStoreBadge } from "@/components/AppStoreBadge";
 import { Newsletter } from "@/components/Newsletter";
 import Elgars from "@/assets/images/elgars.png";
-import PhoneIcon from "@/assets/graphics/phone_icon.png";
-import LoudspeakerIcon from "@/assets/graphics/loudspeaker_icon.png";
-import LightbulbIcon from "@/assets/graphics/lightbulb_icon.png";
+import PhoneIcon from "@/assets/graphics/phone_icon.webp";
+import LoudspeakerIcon from "@/assets/graphics/loudspeaker_icon.webp";
+import LightbulbIcon from "@/assets/graphics/lightbulb_icon.webp";
 
 import Image from "next/image";
 
@@ -38,15 +38,15 @@ const About = (): JSX.Element => {
     <>
       <title>now-u | About Us</title>
       <div className="flex flex-col text-center">
-        <HeaderCauses
-          title="About now-u"
+        <Header
+          title="About now&#8288;-&#8288;u"
           body={[
             "now-u is a new non-profit with a mission to inform, involve and inspire people to help tackle some of the world's most pressing social and environmental issues.",
-            "We aspire to become the new model of collective action and altruism, connecting you with charitable campaigns and bringing people together to create a world of good.",
+            "We aspire to become the new model of collective action and altruism, connecting you with charitable campaigns and bringing people together to create a world of good."
           ]}
         />
         <div className="flex flex-col lg:flex-row place-content-around bg-cream place-items-center px-5 py-10">
-          <div className="max-w-screen-xl flex flex-col md:flex-row justify-between my-10">
+          <div className="md:max-w-screen-md lg:max-w-screen-lg flex flex-col md:flex-row justify-between my-10">
             <div className="md:w-2/4 lg:w-1/2 xl:w-3/5 text-left">
               <SectionBody
                 title="Our Story"
@@ -65,8 +65,7 @@ const About = (): JSX.Element => {
           </div>
         </div>
         <div className="bg-slate-100  w-full flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
-          <div className="max-w-screen-xl flex flex-col md:flex-row items-center justify-around">
-            <div className="text-left pb-5">
+          <div className="md:max-w-screen-md lg:max-w-screen-lg flex flex-col items-center md:items-start md:text-left justify-around">
               <TitleText text="Our charity journey" />
               <BodyText
                 text={[
@@ -75,10 +74,11 @@ const About = (): JSX.Element => {
                 ]}
               />
               <LinkButton
-                buttonText="Get in Touch"
-                href={{ pathname: "/get-in-touch" }}
+                className="mt-6 md:self-start"
+                title="Get in Touch"
+                href={{ pathname: "/get-in-touch"}}
+                buttonStyle="primary"
               />
-            </div>
           </div>
         </div>
         <div className="max-w-screen-xl flex flex-col md:flex-row py-20 px-10 self-center">
@@ -91,8 +91,9 @@ const About = (): JSX.Element => {
               ]}
             />
             <LinkButton
-              buttonText="Meet the team"
+              title="Meet the team"
               href="https://www.linkedin.com/company/now-u/people/"
+              buttonStyle="primary"
               target={"_blank"}
             />
           </div>
@@ -102,13 +103,9 @@ const About = (): JSX.Element => {
           <div className="py-5 max-w-screen-xl text-center">
             <IconRow iconList={icons} />
           </div>
-          <div className="flex items-center mt-5 md:justify-start">
-            <div className="w-36 h-12 md:w-60 md:h-20 relative mr-3">
-              <AppStoreBadge store="AppleStore" />
-            </div>
-            <div className="w-36 h-12 md:w-60 md:h-20 relative">
-              <AppStoreBadge store="GooglePlayStore" />
-            </div>
+          <div className="flex flex-row gap-2 items-center mt-5 md:justify-center w-72 sm:w-96 md:w-[64rem]">
+              <AppStoreBadge/>
+              <PlayStoreBadge/>
           </div>
         </div>
         <div className="flex justify-center">

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HeaderSubtitle } from "@/components/Header";
+import { Header } from "@/components/Header";
 import { BlogTile, type BlogTileProps } from "@/components/BlogTile";
 import { Newsletter } from "@/components/Newsletter";
 import { getBlogPosts } from "@/services/api";
@@ -25,13 +25,13 @@ async function Blog(): Promise<JSX.Element> {
     <>
       <title>now-u | Blog</title>
 
-      <HeaderSubtitle
+      <Header
         title="Blog"
-        subtitle="Find all the latest blog articles from now-u below"
+        body="Find all the latest blog articles from now-u below"
       />
 
       {allBlogs.length > 0 ? (
-        <div className="max-w-screen-2xl">
+        <div className="max-w-screen-2xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 m-5 sm:mx-32 sm:my-10">
             {allBlogs.map((blog) => (
               <BlogTile key={blog.id} {...blog} />

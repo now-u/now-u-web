@@ -12,7 +12,7 @@ export default async function Page(): Promise<JSX.Element> {
     <>
       <title>{`now-u | Terms and Conditions for Users`}</title>
 
-      <div className="prose mx-auto my-20">
+      <div className="max-w-prose prose mx-auto my-20 px-4">
         <div
           id={"terms-and-conditions-for-users"}
           dangerouslySetInnerHTML={{ __html: md().render(termsFile) }}

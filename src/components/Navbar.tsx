@@ -7,24 +7,12 @@ import { classNames } from "@/utils/classNames";
 import Link from "next/link";
 import NowULogo from "@/assets/now-u-logo.svg";
 import Image from "next/image";
-
-export interface NamedRoute {
-  to: string;
-  text: string;
-}
-
-export const navigation: NamedRoute[] = [
-  { text: "Home", to: "/" },
-  { text: "Causes", to: "/causes" },
-  { text: "About Us", to: "/about" },
-  { text: "Blog", to: "/blog" },
-  { text: "Get In Touch", to: "/get-in-touch" },
-];
+import { type NamedRoute, navigationRoutes } from "@/model/Routes";
 
 const NavbarLink = (
-  props: NamedRoute & { isMobile?: boolean },
+  props: NamedRoute & { isMobile?: boolean, onClick?: () => void },
 ): JSX.Element => {
-  const { text, to, isMobile } = props;
+  const { text, to, isMobile, onClick } = props;
   const isActive = false;
 
   return (
@@ -38,6 +26,7 @@ const NavbarLink = (
         "px-3 py-2 text-xl font-bold rounded-md font-heading",
         isMobile ?? false ? "block text-base" : "text-sm",
       )}
+      onClick={onClick ?? (() => { })}
       aria-current={isActive != null ? "page" : undefined}
     >
       {text}
@@ -47,8 +36,8 @@ const NavbarLink = (
 
 export const Navbar = (): JSX.Element => {
   return (
-    <Disclosure as="nav" className="flex flex-col bg-white w-full items-center">
-      {({ open }) => (
+    <Disclosure as="nav" className="flex flex-col bg-white w-full items-center sticky top-0 z-10 bg-opacity-90 backdrop-blur-lg shadow shadow-sm">
+      {({ open, close }) => (
         <>
           <div className="max-w-screen-2xl flex w-full justify-between">
             <div className="flex w-full h-16 items-center justify-between mx-4 sm:mx-8 lg:mx-10">
@@ -88,7 +77,7 @@ export const Navbar = (): JSX.Element => {
               <div className="hidden sm:ml-6 md:block">
                 <div className="flex space-x-4">
                   {/* Slice 1 to skip the home link when not on mobile */}
-                  {navigation.slice(1).map((item) => (
+                  {navigationRoutes.slice(1).map((item) => (
                     <NavbarLink key={item.to} {...item} />
                   ))}
                 </div>
@@ -98,7 +87,7 @@ export const Navbar = (): JSX.Element => {
 
           <Disclosure.Panel className="relative md:hidden flex flex-col w-full items-end">
             <div className="absolute bg-white w-full space-y-1 px-2 pt-2 pb-3 text-right border-t-2 border-orange drop-shadow-lg">
-              {navigation.map((item) => (
+              {navigationRoutes.map((item) => (
                 <NavbarLink key={item.to} isMobile={true} {...item} />
               ))}
             </div>

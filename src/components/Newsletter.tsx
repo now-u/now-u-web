@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 
-import NewsletterGraphic from "@/assets/graphics/newsletter_graphic.png";
+import NewsletterGraphic from "@/assets/graphics/newsletter_graphic.webp";
 import { Button } from "./Button";
 import { subscribeToNewsLetter } from "@/actions/mailchimp";
 import { useToast } from "./ui/use-toast";
@@ -62,6 +62,8 @@ export function Newsletter(): JSX.Element {
         <Image
           className="w-48 h-auto"
           src={NewsletterGraphic}
+          width={250}
+          height={250}
           alt="explore screenshot"
         />
       </div>
@@ -86,7 +88,7 @@ export function Newsletter(): JSX.Element {
               className="placeholder:pl-2 block p-3 mb-4 rounded-md md:mr-4 md:w-2/3"
             />
             <div className="w-min mr-8">
-              <Button type="submit"> Subscribe </Button>
+              <Button type="submit" textColor="text-oxford-blue">Subscribe</Button>
             </div>
           </form>
         </div>

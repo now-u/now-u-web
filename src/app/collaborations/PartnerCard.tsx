@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image, { type StaticImageData } from "next/image";
-import Placeholder from "@/assets/graphics/placeholder.png";
+import Placeholder from "@/assets/graphics/placeholder.webp";
 import { LinkButton } from "@/components/Button";
 import {
   faFacebookF,
@@ -38,6 +38,7 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
           width={260}
           height={260}
           className="h-24 object-contain self-center"
+          loading="lazy"
         />
       </div>
       <div className="flex flex-col px-2 sm:px-8">
@@ -45,7 +46,7 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
           {name}
         </h2>
         <p className="md:h-36 overflow-scroll">{description}</p>
-        <div className="flex justify-between flex-wrap">
+        <div className="flex justify-between items-center flex-wrap">
           <ul className="flex self-center my-4 py-6">
             {instagramLink != null ? (
             <li className="px-2">
@@ -84,10 +85,10 @@ export function PartnerCard(props: { partner: Organisation }): JSX.Element {
           </ul>
           {websiteLink != null ? (
             <LinkButton
-              variant={"white"}
-              buttonText={"View website"}
+              title={"View website"}
               href={websiteLink}
               target={"_blank"}
+              buttonStyle="secondary"
             ></LinkButton>
           ) : null}
         </div>

@@ -12,7 +12,7 @@ export default async function Page(): Promise<JSX.Element> {
     <>
       <title>{`now-u | Cookie Policy`}</title>
 
-      <div className="prose mx-auto my-20">
+      <div className="max-w-prose prose mx-auto my-20 px-4">
         <h1>Cookie Policy</h1>
         <div
           id={"cookie-cookie-policy"}

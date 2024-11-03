@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HeaderCauses } from "@/components/Header";
+import { Header } from "@/components/Header";
 import { Newsletter } from "@/components/Newsletter";
 import Image from "next/image";
 import { type Cause, getCauses } from "@/services/api";
@@ -13,10 +13,8 @@ const CauseTile = (props: { cause: Cause }): JSX.Element => {
         className="rounded-t-lg h-60 w-full object-cover"
         src={headerImage.url}
         alt={title ?? "cause-image"}
-        width={100}
-        height={100}
-        // TODO Fix optimization for these images
-        unoptimized={true}
+        width={260}
+        height={260}
       />
       <div className="p-5">
         <div className="flex items-center justify-start flex-1 space-x-4">
@@ -39,7 +37,7 @@ export default async function CausesPage(): Promise<JSX.Element> {
       <title>now-u | Causes</title>
 
       <div className="flex flex-col text-center">
-        <HeaderCauses
+        <Header
           title="Our Causes"
           body={[
             "Built around the United Nations Sustainable Development Goals (SDGs), our work at now-u focuses on six core causes.",

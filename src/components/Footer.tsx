@@ -44,7 +44,8 @@ export const socialMediaLinks = [
 
 export const Footer = (): JSX.Element => {
   return (
-    <div className="bg-cream px-16 py-10 justify-center max-w-screen-2xl w-full flex flex-col gap-2">
+    <div className="bg-cream">
+    <div className="px-16 py-10 justify-center max-w-screen-2xl w-full flex flex-col gap-2 mx-auto">
       {/* now-u Logo */}
       <Link href="/">
         <Image
@@ -93,6 +94,7 @@ export const Footer = (): JSX.Element => {
         Community Interest Company (12709184) and Charitable Incorporated
         Organisation (1196568)
       </p>
+    </div>
     </div>
   );
 };

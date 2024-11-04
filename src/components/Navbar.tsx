@@ -36,7 +36,7 @@ const NavbarLink = (
 
 export const Navbar = (): JSX.Element => {
   return (
-    <Disclosure as="nav" className="flex flex-col bg-white w-full items-center sticky top-0 z-10 bg-opacity-90 backdrop-blur-lg shadow shadow-sm">
+    <Disclosure as="nav" className="flex flex-col bg-white w-full items-center sticky top-0 z-10 bg-opacity-90 backdrop-blur-lg shadow-sm">
       {({ open, close }) => (
         <>
           <div className="max-w-screen-2xl flex w-full justify-between">
@@ -45,7 +45,7 @@ export const Navbar = (): JSX.Element => {
               <div className="flex flex-1 items-center lg:items-stretch lg:justify-start">
                 <div className="flex flex-shrink-0 items-center">
                   {/* Mobile Icon */}
-                  <Link href="/">
+                  <Link href="/" onClick={() => { close() }}>
                     <Image
                       className="block h-5 w-auto lg:hidden"
                       src={NowULogo}
@@ -88,7 +88,7 @@ export const Navbar = (): JSX.Element => {
           <Disclosure.Panel className="relative md:hidden flex flex-col w-full items-end">
             <div className="absolute bg-white w-full space-y-1 px-2 pt-2 pb-3 text-right border-t-2 border-orange drop-shadow-lg">
               {navigationRoutes.map((item) => (
-                <NavbarLink key={item.to} isMobile={true} {...item} />
+                <NavbarLink key={item.to} isMobile={true} {...item} onClick={() => { close() }}  />
               ))}
             </div>
           </Disclosure.Panel>

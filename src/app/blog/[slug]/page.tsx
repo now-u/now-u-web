@@ -61,13 +61,23 @@ export default async function Page({
             {" "}
             {"< "} Back{" "}
           </Link>
+          <div className="">
+            <Image
+              src={blog.headerImage}
+              alt="Blog Header Image"
+              className="object-cover w-full h-64 m-0 rounded-lg mt-4 my-2"
+              width={448}
+              height={252}
+            />
+          </div>
           <div className="mt-4">
-            <h1 className="text-3xl">{blog.title}</h1>
+            <h1 className="text-3xl mb-2">{blog.title}</h1>
             {blog.subtitle !== "" && (
-              <p className="text-gray-500">{blog.subtitle}</p>
+              <p className="text-gray-500 mt-0">{blog.subtitle}</p>
             )}
           </div>
-          <hr className="my-0"/>
+          <hr className="m-0" />
+          {/* Divider */}
           <div
             dangerouslySetInnerHTML={{ __html: md().render(blog.content) }}
           />

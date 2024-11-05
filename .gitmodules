@@ -1,0 +1,3 @@
+[submodule "src/assets/fonts"]
+	path = src/assets/fonts
+	url = https://github.com/now-u/now-u-fonts.git

@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Filter non-archived blog posts
   const blogPosts: MetadataRoute.Sitemap = (await getBlogPosts())
     .filter((b) => {
-      if (b.end_at !== null && b.end_at !== undefined) {
+      if (b.end_at) {
         const endDate = Date.parse(b.end_at);
         return now < endDate;
       } else {
@@ -17,7 +17,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
     .map((blog) => ({
       url: `https://www.now-u.com/blog/${blog.slug}`,
-      lastModified: new Date(blog.release_at),
+      lastModified: blog.updated_at ? new Date(blog.updated_at) : undefined,
       changeFrequency: "yearly",
       priority: 0.8, // blogs are less critical
     }));
@@ -25,43 +25,43 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const mainLinks: MetadataRoute.Sitemap = [
     {
       url: "https://www.now-u.com",
-      lastModified: new Date(),
+      lastModified: new Date("2024-11-06"),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: "https://www.now-u.com/causes",
-      lastModified: new Date(),
+      lastModified: new Date("2024-11-06"),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: "https://www.now-u.com/about",
-      lastModified: new Date(),
+      lastModified: new Date("2024-11-06"),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: "https://www.now-u.com/charity-partnership",
-      lastModified: new Date(),
+      lastModified: new Date("2024-11-06"),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: "https://www.now-u.com/blog",
-      lastModified: new Date(),
+      lastModified: new Date("2024-11-06"),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: "https://www.now-u.com/get-in-touch",
-      lastModified: new Date(),
+      lastModified: new Date("2024-11-06"),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: "https://www.now-u.com/press",
-      lastModified: new Date(),
+      lastModified: new Date("2024-11-06"),
       changeFrequency: "monthly",
       priority: 1,
     },

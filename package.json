@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "pnpm run generate && next dev",
-    "build": "pnpm run generate && next build",
+    "build": "pnpm run restore-fonts-submodule && pnpm run generate && next build",
     "start": "next start",
     "format": "prettier --write .",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "generate": "pnpm run generate-api-client",
-    "generate-api-client": "npx openapi-typescript https://causes.dev.apiv2.now-u.com/api/schema/ --output src/services/apiTypes.ts"
+    "generate-api-client": "npx openapi-typescript https://causes.dev.apiv2.now-u.com/api/schema/ --output src/services/apiTypes.ts",
+    "restore-fonts-submodule": "test -d src/assets/fonts && echo \"fonts submodule exist\" || git submodule add --force  https://github.com/now-u/now-u-fonts.git ./src/assets/fonts"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",

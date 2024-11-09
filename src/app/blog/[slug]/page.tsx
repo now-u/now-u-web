@@ -5,9 +5,52 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleExclamation, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleExclamation,
+  faUserCircle,
+} from "@fortawesome/free-solid-svg-icons";
+import type { Metadata, ResolvingMetadata } from "next";
 
 // NOTE: https://blog.openreplay.com/creating-a-markdown-blog-powered-by-next-js-in-under-an-hour
+
+interface MetadataProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata(
+  { params }: MetadataProps,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const slug = (await params).slug;
+  const blog = await getPostBySlug(slug);
+
+  if (blog !== undefined) {
+    const author = blog.author?.full_name;
+    const headerImage = blog.headerImage;
+
+    return {
+      title: `${blog.title} - now-u Blog`,
+      description: blog.subtitle,
+      authors: author !== undefined ? [{ name: author }] : [],
+      openGraph: {
+        type: "article",
+        images: [
+          {
+            url: headerImage,
+          },
+        ],
+        locale: "en_GB",
+        publishedTime: blog.publishedDate,
+        modifiedTime: blog.updateDate,
+        expirationTime: blog.archiveDate,
+      },
+    };
+  } else {
+    return {
+      title: "Unknown Blog Post",
+    };
+  }
+}
 
 function AuthorTile(props: {
   name: string;
@@ -50,12 +93,11 @@ export default async function Page({
   if (blog === undefined) {
     notFound();
   }
-  const archiveDate: number = Date.parse(blog.archiveDate ?? "")
+  const archiveDate: number = Date.parse(blog.archiveDate ?? "");
   const blogIsArchived = isNaN(archiveDate) ? false : Date.now() > archiveDate;
 
   return (
     <>
-      <title>{`now-u | ${blog.title}`}</title>
 
       <div className="w-full flex flex-col items-center">
         <div className="w-full flex flex-col py-10 px-4 prose prose-gray">
@@ -65,13 +107,19 @@ export default async function Page({
           </Link>
 
           {/* Archived Warning Banner */}
-          { blogIsArchived &&
-          <div className="flex flex-row items-baseline gap-3 py-2 px-4 rounded-xl bg-carolina-blue text-white mt-4">
-            <FontAwesomeIcon icon={faCircleExclamation} className="translate-y-[3px]" />
-            <p className="m-0 font-bold">The article you are looking at is archived and possibly outdated!</p>
-          </div>
-          }
-          
+          {blogIsArchived && (
+            <div className="flex flex-row items-baseline gap-3 py-2 px-4 rounded-xl bg-carolina-blue text-white mt-4">
+              <FontAwesomeIcon
+                icon={faCircleExclamation}
+                className="translate-y-[3px]"
+              />
+              <p className="m-0 font-bold">
+                The article you are looking at is archived and possibly
+                outdated!
+              </p>
+            </div>
+          )}
+
           <div className="">
             <Image
               src={blog.headerImage}

@@ -4,6 +4,11 @@ import { Header } from "@/components/Header";
 import { Newsletter } from "@/components/Newsletter";
 import Image from "next/image";
 import { type Cause, getCauses } from "@/services/api";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "now-u | Causes"
+}
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {
   const { header_image: headerImage, title } = props.cause;
@@ -34,8 +39,6 @@ export default async function CausesPage(): Promise<JSX.Element> {
 
   return (
     <>
-      <title>now-u | Causes</title>
-
       <div className="flex flex-col text-center">
         <Header
           title="Our Causes"

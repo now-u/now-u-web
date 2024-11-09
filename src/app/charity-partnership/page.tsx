@@ -7,13 +7,17 @@ import WhoShouldPartnerWithUsImage from "../../assets/partnership-page/who-shoul
 import PartnerIcon from "../../assets/partnership-page/icon-partner.svg";
 import CollaboratorIcon from "../../assets/partnership-page/icon-collaborator.svg";
 import AssociateIcon from "../../assets/partnership-page/icon-associate.svg";
-
 import { LinkButton } from "@/components/Button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "now-u | Charity Partnership"
+}
+
 
 export default function PartnershipPage(): React.ReactElement {
   return (
     <>
-      <title>now-u | Charity Partnership</title>
       <Header
         title="Charity Partnership"
         subtitle="Partner with now-u: Empower Change Together"

@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { getRequiredEnvironmentVariable } from "@/utils/getRequiredEnvironmentVariable";
 import { Toaster } from "@/components/ui/toaster";
 import { ScrollHack } from "@/components/ScrollHack";
+import { Metadata } from "next";
 
 const Analytics = lazy(async () => await import("@/components/Analytics"));
 
@@ -39,6 +40,14 @@ const ppPangram = localFont({
   ],
   variable: '--font-pppangram'
 })
+
+export const metadata: Metadata = {
+  title: "now-u",
+  openGraph: {
+    siteName: "now-u",
+    type: "website"
+  }
+}
 
 interface RootLayoutProps {
   children: React.ReactNode;

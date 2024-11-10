@@ -11,6 +11,19 @@ import LoudspeakerIcon from "@/assets/graphics/loudspeaker_icon.webp";
 import LightbulbIcon from "@/assets/graphics/lightbulb_icon.webp";
 
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "now-u | About Us",
+  openGraph: {
+    images: [
+      {
+        url: Elgars.src,
+        alt: "Picture of the founders – siblings James and Lizzie Elgar",
+      },
+    ],
+  }
+}
 
 const icons = [
   {
@@ -36,7 +49,6 @@ const icons = [
 const About = (): JSX.Element => {
   return (
     <>
-      <title>now-u | About Us</title>
       <div className="flex flex-col text-center">
         <Header
           title="About now&#8288;-&#8288;u"

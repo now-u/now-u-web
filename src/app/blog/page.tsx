@@ -4,6 +4,11 @@ import { Header } from "@/components/Header";
 import { BlogTile, type BlogTileProps } from "@/components/BlogTile";
 import { Newsletter } from "@/components/Newsletter";
 import { getBlogPosts } from "@/services/api";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | now-u"
+}
 
 async function Blog(): Promise<JSX.Element> {
   const remotePosts = await getBlogPosts();
@@ -23,8 +28,6 @@ async function Blog(): Promise<JSX.Element> {
 
   return (
     <>
-      <title>now-u | Blog</title>
-
       <Header
         title="Blog"
         body="Find all the latest blog articles from now-u below"

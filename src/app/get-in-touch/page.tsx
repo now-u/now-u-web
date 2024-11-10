@@ -9,6 +9,11 @@ import {
 
 import { Header } from "@/components/Header";
 import { ContactTile } from "./ContactTile";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Get In Touch | now-u"
+}
 
 const contacts = [
   {
@@ -36,8 +41,6 @@ const contacts = [
 const GetInTouch = (): JSX.Element => {
   return (
     <>
-      <title>now-u | Get In Touch</title>
-
       <div className="text-center">
         <Header title="Get in Touch" />
       </div>

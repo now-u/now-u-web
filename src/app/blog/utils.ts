@@ -13,6 +13,7 @@ export interface Post {
   headerImage: string;
   readingTime: string;
   publishedDate: string;
+  updateDate: string;
   archiveDate?: string;
 }
 
@@ -39,6 +40,7 @@ export async function getPostBySlug(slug: string): Promise<Post | undefined> {
       headerImage: blog.header_image.url,
       readingTime: blog.reading_time.toString(),
       publishedDate: blog.release_at,
+      updateDate: blog.updated_at,
       archiveDate: blog.end_at ?? undefined
     }
   } else {

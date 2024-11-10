@@ -6,6 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { PRESS_EMAIL } from "@/utils/constants";
 import { type PressArticle, pressArticles } from "./pressArticles";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Press | now-u"
+}
 
 interface PressPack {
   title: string;
@@ -95,7 +100,6 @@ export default async function Press(): Promise<JSX.Element> {
 
   return (
     <>
-      <title>now-u | Press</title>
       <div>
         <Header title="Press" />
         <div className="bg-cream m-5 sm:m-10 text-center p-4 rounded-lg">

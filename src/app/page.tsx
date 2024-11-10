@@ -13,6 +13,12 @@ import GlobeIcon from "@/assets/graphics/globe_icon.webp";
 import Image from "next/image";
 import { AppStoreBadge, PlayStoreBadge } from "@/components/AppStoreBadge";
 import { Newsletter } from "@/components/Newsletter";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Drive Changes | now-u"
+}
+
 
 const icons = [
   {
@@ -38,8 +44,6 @@ const icons = [
 function Home(): JSX.Element {
   return (
     <>
-      <title>now-u | Home</title>
-
       <div className="grid place-items-center">
         <div className="bg-gradient-to-b from-gradlight w-full to-graddark flex justify-around">
           <div className="max-w-screen-xl flex flex-col md:flex-row w-full place-items-center py-20 px-5">

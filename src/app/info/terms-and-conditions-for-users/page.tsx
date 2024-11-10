@@ -1,6 +1,11 @@
 import React from "react";
 import fs from "fs";
 import md from "markdown-it";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions for Users | now-u"
+}
 
 export default async function Page(): Promise<JSX.Element> {
   const termsFile = fs.readFileSync(
@@ -10,8 +15,6 @@ export default async function Page(): Promise<JSX.Element> {
 
   return (
     <>
-      <title>{`now-u | Terms and Conditions for Users`}</title>
-
       <div className="max-w-prose prose mx-auto my-20 px-4">
         <div
           id={"terms-and-conditions-for-users"}

@@ -12,7 +12,7 @@ import { ContactTile } from "./ContactTile";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "now-u | Get In Touch"
+  title: "Get In Touch | now-u"
 }
 
 const contacts = [

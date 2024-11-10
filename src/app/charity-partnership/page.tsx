@@ -11,7 +11,7 @@ import { LinkButton } from "@/components/Button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "now-u | Charity Partnership"
+  title: "Charity Partnership | now-u"
 }
 
 

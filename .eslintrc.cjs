@@ -32,6 +32,7 @@ module.exports = {
       },
     ],
     "@typescript-eslint/naming-convention": 1,
+    "@typescript-eslint/strict-boolean-expressions": "warn"
   },
   settings: {
     react: { version: "18.2.0" },

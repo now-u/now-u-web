@@ -5,7 +5,7 @@ import { getOrganisations } from "@/services/api";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "now-u | Collaborations"
+  title: "Collaborations | now-u"
 }
 
 const PartnersPage = async (): Promise<JSX.Element> => {

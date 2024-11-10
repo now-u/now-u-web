@@ -4,7 +4,7 @@ import md from "markdown-it";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "now-u | Terms and Conditions for Users"
+  title: "Terms and Conditions for Users | now-u"
 }
 
 export default async function Page(): Promise<JSX.Element> {

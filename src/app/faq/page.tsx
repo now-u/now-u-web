@@ -6,7 +6,7 @@ import { FAQBlock } from "@/app/faq/FAQBlock";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "now-u | FAQs"
+  title: "FAQs | now-u"
 }
 
 

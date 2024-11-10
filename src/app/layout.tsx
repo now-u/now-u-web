@@ -7,7 +7,8 @@ import { Footer } from "@/components/Footer";
 import { getRequiredEnvironmentVariable } from "@/utils/getRequiredEnvironmentVariable";
 import { Toaster } from "@/components/ui/toaster";
 import { ScrollHack } from "@/components/ScrollHack";
-import { Metadata } from "next";
+import OGImage from "assets/graphics/og-image.png"
+import type { Metadata } from "next";
 
 const Analytics = lazy(async () => await import("@/components/Analytics"));
 
@@ -42,9 +43,16 @@ const ppPangram = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.now-u.com'),
   title: "now-u",
+  description: "Learn more about this non-profit with a mission to inform, involve and inspire people to help tackle some of the world's most pressing social and environmental issues.",
   openGraph: {
     siteName: "now-u",
+    images: [
+      {
+        url: OGImage.src,
+      }
+    ],
     type: "website"
   }
 }

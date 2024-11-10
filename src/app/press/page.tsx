@@ -9,7 +9,7 @@ import { type PressArticle, pressArticles } from "./pressArticles";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "now-u | Press"
+  title: "Press | now-u"
 }
 
 interface PressPack {

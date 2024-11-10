@@ -7,7 +7,7 @@ import { type Cause, getCauses } from "@/services/api";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "now-u | Causes"
+  title: "Causes | now-u"
 }
 
 const CauseTile = (props: { cause: Cause }): JSX.Element => {

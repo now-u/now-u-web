@@ -16,7 +16,7 @@ import { Newsletter } from "@/components/Newsletter";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "now-u | Home"
+  title: "Drive Changes | now-u"
 }
 
 

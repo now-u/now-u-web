@@ -4,10 +4,10 @@ import { Header } from "@/components/Header";
 import { BlogTile, type BlogTileProps } from "@/components/BlogTile";
 import { Newsletter } from "@/components/Newsletter";
 import { getBlogPosts } from "@/services/api";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "now-u | Blog"
+  title: "Blog | now-u"
 }
 
 async function Blog(): Promise<JSX.Element> {

@@ -2,6 +2,11 @@ import { Header } from "@/components/Header";
 import React from "react";
 import { PartnerCard } from "@/app/collaborations/PartnerCard";
 import { getOrganisations } from "@/services/api";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Collaborations | now-u"
+}
 
 const PartnersPage = async (): Promise<JSX.Element> => {
 
@@ -9,8 +14,6 @@ const PartnersPage = async (): Promise<JSX.Element> => {
 
   return (
     <>
-      <title>now-u | Collaborations</title>
-
       <div className="text-center">
         <Header title="Collaborations" />
       </div>

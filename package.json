@@ -34,6 +34,7 @@
     "eslint": "8.52.0",
     "eslint-config-next": "13.5.6",
     "gray-matter": "^4.0.3",
+    "html-to-text": "^9.0.5",
     "instantsearch.css": "^8.5.1",
     "lucide-react": "^0.309.0",
     "markdown-it": "^13.0.2",
@@ -53,6 +54,7 @@
   },
   "devDependencies": {
     "@types/gtag.js": "0.0.19",
+    "@types/html-to-text": "^9.0.4",
     "@types/mailchimp__mailchimp_marketing": "^3.0.20",
     "@types/markdown-it": "^13.0.9",
     "@types/node": "20.8.7",

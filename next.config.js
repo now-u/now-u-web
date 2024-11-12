@@ -9,12 +9,12 @@ const nextConfig = {
       {
         source: "/app/feedback",
         destination: "https://forms.gle/xenzFkRVrELsqnnB9",
-        permanent: true, // Use true for 301 redirect, false for 302
+        permanent: false, // Use true for 301 redirect, false for 302
       },
       {
         source: "/app/research/signup",
         destination: "https://forms.gle/DjSdjH1DfNtRwXiP7",
-        permanent: true, // Use true for 301 redirect, false for 302
+        permanent: false, // Use true for 301 redirect, false for 302
       },
     ];
   },

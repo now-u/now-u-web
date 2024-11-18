@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { instantMeiliSearch } from "@meilisearch/instant-meilisearch";
 
 
@@ -19,20 +19,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import type { BlogPost } from "@/services/api";
-import MarkdownIt from "markdown-it";
-import { htmlToText } from "html-to-text";
-
-// const { searchClient } = instantMeiliSearch(
-//   'https://ms-adf78ae33284-106.lon.meilisearch.io',
-//   'a63da4928426f12639e19d62886f621130f3fa9ff3c7534c5d179f0f51c4f303'
-// );
 
 const { searchClient } = instantMeiliSearch(
   "https://search.dev.apiv2.now-u.com",
   "aaae5a4efcd407ca2c568ad9bcafda8f5362526a4b14ab8d746df52a7e7415a6",
 );
-
-const markdownParser = new MarkdownIt({ html: false });
 
 export function BlogSearchButton(): React.ReactElement {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,19 +85,25 @@ export function BlogSearchButton(): React.ReactElement {
   );
 }
 
+
+
 const SearchBar = (): React.ReactNode => {
   const resultsRef = useRef<HTMLDivElement>(null);
-  const queryHook: (query: string, hook: (value: string) => void) => void = (
-    query,
-    search,
-  ) => {
-    setTimeout(() => {
+
+  const [timerId, setTimerId] = useState<NodeJS.Timeout | undefined>(undefined);
+
+  const queryHook = useCallback((query: string, search: (value: string) => void) => {
+    if (timerId !== undefined) {
+      clearTimeout(timerId)
+    }
+
+    setTimerId(setTimeout(() => {
       search(query);
       if (resultsRef.current !== null) {
         resultsRef.current.scrollTop = 0; // scroll the search results to top.
       }
-    }, 1000); // debounce
-  };
+    }, 500)); // debounce
+  }, [timerId])
 
   return (
     <InstantSearch indexName="blogs" searchClient={searchClient}>
@@ -147,11 +144,6 @@ const SearchBar = (): React.ReactNode => {
 };
 
 const HitComponent = ({ hit }: Hit<{ hit: BlogPost }>): React.ReactNode => (
-  // <article key={hit.id}>
-  //   <img src={hit.image} alt={hit.name} />
-  //   <h1>{hit.name}</h1>
-  //   <p>${hit.description}</p>
-  // </article>
   <Link key={hit.id} href={`/blog/${hit.slug}`}>
     <div className="px-2 py-2 flex flex-row justify-between overflow-x-hidden gap-2 hover:bg-neutral-100">
       <div className="flex flex-col items-start overflow-x-hidden">
@@ -160,10 +152,7 @@ const HitComponent = ({ hit }: Hit<{ hit: BlogPost }>): React.ReactNode => (
         </h3>
 
         <p className="text-neutral-400 line-clamp-2 overflow-ellipsis w-full">
-          {htmlToText(markdownParser.render(hit.body.substring(0, 300), {}), {
-            wordwrap: false,
-          })}
-          {/* <Highlight className="text-neutral-400 line-clamp-2" attribute="body" hit={hit} /> */}
+          <Highlight attribute="subtitle" hit={hit} />
         </p>
       </div>
 
@@ -175,7 +164,7 @@ const HitComponent = ({ hit }: Hit<{ hit: BlogPost }>): React.ReactNode => (
         height={100}
       />
     </div>
-    <hr className="" />
+    <hr />
   </Link>
 );
 

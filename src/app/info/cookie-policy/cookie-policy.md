@@ -1,7 +1,7 @@
 ﻿
 ## Updated August 2023
 
-Website: [wwwnow-u.com](https://now-u.com)
+Website: [www.now-u.com](https://www.now-u.com)
 
 ## Who are we?
 

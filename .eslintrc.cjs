@@ -8,6 +8,7 @@ module.exports = {
     "standard-with-typescript",
     "prettier",
     "next",
+    "plugin:storybook/recommended"
   ],
   overrides: [],
   parserOptions: {

@@ -13,10 +13,8 @@ pnpm install
 pnpm run dev
 ```
 
-## TODO
+## Storybook
 
-- Blog view page -> add header image and way to go back
-- Blog list page -> fix tile heights not matching
-- Home fix all partner images
-- Fix copy on all pages
-- FAQ page for mobile
+We use storybook to smooth our component testing process.
+
+For a newer version of component (for example, a redesign of button and button states), always create stories and component inside the `src/stories` folder. Production ready components should be presented in `src/components`, so move the component file to `src/components` when it becomes production ready. 

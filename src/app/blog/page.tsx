@@ -5,6 +5,7 @@ import { BlogTile, type BlogTileProps } from "@/components/BlogTile";
 import { Newsletter } from "@/components/Newsletter";
 import { getBlogPosts } from "@/services/api";
 import type { Metadata } from "next";
+import BlogSearchButton from "@/components/BlogSearchBar";
 
 export const metadata: Metadata = {
   title: "Blog | now-u"
@@ -32,7 +33,7 @@ async function Blog(): Promise<JSX.Element> {
         title="Blog"
         body="Find all the latest blog articles from now-u below"
       />
-
+      <BlogSearchButton />
       {allBlogs.length > 0 ? (
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 m-5 sm:mx-32 sm:my-10">

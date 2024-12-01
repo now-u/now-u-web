@@ -7,11 +7,19 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    "@storybook/addon-themes",
+    // "storybook-addon-pseudo-states"
   ],
   framework: {
     name: "@storybook/nextjs",
     options: {},
   },
-  staticDirs: ["../public"],
+  staticDirs: [
+    "../public",
+    {
+      from: "../src/assets/fonts",
+      to: "src/assets/fonts"
+    }
+  ],
 };
 export default config;

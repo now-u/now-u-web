@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  darkMode: ["selector"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -9,15 +9,71 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    screens: {
+      // v3
+      "tablet": "640px",
+      "desktop": "1024px",
+      // v2
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1400px',
+    },
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      padding: "2rem"
     },
     extend: {
       colors: {
+        // -- v3 Semantic Colors
+        'brand-primary': '#FF8800',
+        'brand-secondary': '#011A43',
+
+        'accent-red': '#FF0000',
+        'accent-venetian-red': '#D30001',
+        'accent-salomie': '#FFDC79',
+        'accent-sunflower': '#F3B700',
+        'accent-olive-drab': '#59981A',
+        'accent-carolina-blue': '#2697D3',
+        'accent-oxford-blue': '#011A43',
+
+        'txt-primary': '#17171A',
+        'txt-secondary': '#5D6071',
+        'txt-disabled': '#838796',
+        'txt-hyperlink': '#0000FF',
+
+        'txt-primary-dark': '#FFFFFF',
+        'txt-secondary-dark': '#CCDAF2',
+        'txt-disabled-dark': '#7191C8',
+        'txt-hyperlink-dark': '#FFFFFF',
+
+        'framework-border': '#C3C6D3',
+        'framework-border-focus': '#989CAD',
+        'framework-background-primary': '#FFFFFF',
+        'framework-background-secondary': '#F3F5FB',
+        'framework-background-tertiary': '#E8EAF4',
+        'shadow': 'rgba(23, 23, 26, 0.3)',
+
+        'framework-border-dark': '#335B9D',
+        'framework-border-focus-dark': '#5582CC',
+        'framework-background-primary-dark': '#011A43',
+        'framework-background-secondary-dark': '#09295E',
+        'framework-background-tertiary-dark': '#193F7F',
+        'shadow-dark': 'rgba(0, 0, 0, 0.3)',
+
+        'status-success': '#2DA665',
+        'status-warning': '#DB9E03',
+        'status-error': '#E43F07',
+        'status-information': '#2ABEEB',
+
+        'status-success-dark': '#7FE3A9',
+        'status-warning-dark': '#FFD860',
+        'status-error-dark': '#FF7878',
+        'status-information-dark': '#6FDCFF',
+
+        // -- Old colors
+        // TODO: remove old colors when v3 completes
         amber: "#FF8800",
         "venetian-red": "#D30001",
         sunflower: "#F3B700",
@@ -102,5 +158,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography")],
+
 };

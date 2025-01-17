@@ -21,5 +21,9 @@ const config: StorybookConfig = {
       to: "src/assets/fonts"
     }
   ],
+  managerHead: (head) => `
+    ${head}
+    <meta name="robots" content="noindex" />
+  `,
 };
 export default config;

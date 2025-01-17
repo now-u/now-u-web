@@ -31,3 +31,4 @@ dist-ssr
 .next/
 
 *storybook.log
+/storybook-static

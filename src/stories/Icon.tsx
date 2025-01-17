@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import Image from "next/image";
 import actionAdvocate from "@/assets/icons/actions/advocate.svg";
 import actionGetInformed from "@/assets/icons/actions/get-informed.svg";

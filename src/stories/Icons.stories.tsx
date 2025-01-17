@@ -13,6 +13,6 @@ type Story = StoryObj<typeof meta>;
 
 export const ActionsAdvocate: Story = {
   args: {
-    name: "advocate"
+    name: "action-advocate"
   }
 };

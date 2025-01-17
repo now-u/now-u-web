@@ -1,13 +1,15 @@
 import Heading from "@/stories/Heading";
-import React from "react";
+import React, { type ReactElement } from "react";
 import Icon, { type AtomIcon } from "@/stories/Icon";
+import { type ButtonProps } from "@/stories/Button";
 
 interface ContentProps {
   icon?: AtomIcon;
   caption: string
   heading: string
   subheading?: string
-  body: string
+  body: string,
+  children: ReactElement<ButtonProps>
 }
 
 const Content: React.FC<ContentProps> = (
@@ -17,6 +19,7 @@ const Content: React.FC<ContentProps> = (
     <Heading style="quaternary"
              eyebrow={caption} title={heading} subtitle={subheading} />
     <p className="text-body text-txt-secondary">{body}</p>
+    
   </div>
 }
 

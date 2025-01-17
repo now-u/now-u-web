@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Image from "next/image";
 import actionAdvocate from "@/assets/icons/actions/advocate.svg";
 import actionGetInformed from "@/assets/icons/actions/get-informed.svg";
@@ -21,7 +21,7 @@ interface IconProps {
   className?: string
 }
 
-const Icon: React.FC<IconProps> = ({ name, alt, className }) => {
+export const Icon: React.FC<IconProps> = ({ name, alt, className}) => {
   const source = AtomIcons[name];
 
   return <Image src={source} alt={alt ?? name} role="presentation" className={className ?? ""} />;

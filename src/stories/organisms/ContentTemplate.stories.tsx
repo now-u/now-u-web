@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Content from "@/stories/Content";
+import ContentTemplate from "@/stories/organisms/ContentTemplate";
 
 const meta = {
   title: 'Organisms/Content Template',
-  component: Content,
+  component: ContentTemplate,
   tags: ['autodocs']
-} satisfies Meta<typeof Content>;
+} satisfies Meta<typeof ContentTemplate>;
 
 export default meta;
 

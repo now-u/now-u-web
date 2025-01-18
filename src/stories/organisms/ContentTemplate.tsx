@@ -1,5 +1,6 @@
-import Heading from "@/stories/Heading";
-import Icon, { type AtomIcon } from "@/stories/Icon";
+import Heading from "@/stories/atoms/Heading";
+import Icon, { type AtomIcon } from "@/stories/atoms/Icon";
+import React from "react";
 
 interface ContentProps {
   icon?: AtomIcon;
@@ -9,7 +10,7 @@ interface ContentProps {
   body: string
 }
 
-const Content: React.FC<ContentProps> = (
+const ContentTemplate: React.FC<ContentProps> = (
   {icon, caption, heading, subheading, body}) => {
   return <div className="flex flex-col items-start gap-6 desktop:gap-8">
     {icon && <Icon name={icon} alt={caption} className="w-8 h-8 tablet:w-12 tablet:h-12 desktop:w-16 desktop:h-16"/> }
@@ -19,4 +20,4 @@ const Content: React.FC<ContentProps> = (
   </div>
 }
 
-export default Content;
+export default ContentTemplate;

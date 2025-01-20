@@ -21,6 +21,7 @@ jobs:
       # Manual Checkout
       - uses: actions/checkout@v4
         with:
+          submodules: true
           fetch-depth: 0
       # Set up Node
       - uses: actions/setup-node@v4

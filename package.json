@@ -9,6 +9,7 @@
     "format": "prettier --write .",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
+    "generate-icon-components": "node generate-icon-components.js",
     "generate": "pnpm run generate-api-client",
     "generate-api-client": "npx openapi-typescript https://causes.dev.apiv2.now-u.com/api/schema/ --output src/services/apiTypes.ts",
     "storybook": "storybook dev -p 6006",

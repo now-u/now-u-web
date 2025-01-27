@@ -4,6 +4,7 @@ import ActionsAdvocateIcon from "@/stories/atoms/icons/ActionsAdvocateIcon";
 import ActionsGetInvolvedIcon from "@/stories/atoms/icons/ActionsGetInvolvedIcon";
 import ActionsGetInformedIcon from "@/stories/atoms/icons/ActionsGetInformedIcon";
 import ActionsRaiseMoneyIcon from "@/stories/atoms/icons/ActionsRaiseMoneyIcon";
+import Button from "@/stories/atoms/Button";
 
 const actionIcons = { ActionsAdvocateIcon, ActionsGetInvolvedIcon, ActionsGetInformedIcon, ActionsRaiseMoneyIcon };
 
@@ -38,7 +39,12 @@ export const Template: Story = {
     caption: "caption",
     heading: "Lorem Content Template",
     subheading: "Lorem Subheading",
-    body: "This is a description for the content template component. Use this component whenever a generic heading / description / button arrangement is required."
+    body: "This is a description for the content template component. Use this component whenever a generic heading / description / button arrangement is required.",
+    children: (
+      <>
+        <Button style="primary" title="button" />
+        <Button style="secondary" title="button" />
+      </>
+    )
   }
 };
-

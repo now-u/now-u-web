@@ -100,8 +100,10 @@ function generateStoriesFile(components) {
   }).join("\n");
 
   const storyMDX = `
-import { IconGallery, IconItem } from "@storybook/blocks";
+import { IconGallery, IconItem, Meta } from "@storybook/blocks";
 ${imports}
+
+<Meta title="atoms/Icons" />
 
 # Icons
 

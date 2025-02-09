@@ -32,7 +32,7 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       className={`${styleClasses}
       rounded-[8px] text-button py-[12.5px]
-      desktop:py-[18.5px] px-[32px] focus:outline-none focus:ring
+      desktop:py-[18.5px] px-[32px] focus:outline-hidden focus:ring-3
       `}
       onClick={onClick}
       disabled={disabled}

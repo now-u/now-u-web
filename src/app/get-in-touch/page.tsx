@@ -45,7 +45,7 @@ const GetInTouch = (): JSX.Element => {
         <Header title="Get in Touch" />
       </div>
       <div className="flex flex-col items-center">
-        <div className="max-w-screen-2xl grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-20 m-10">
+        <div className="max-w-(--breakpoint-2xl) grid grid-cols-1 lg:grid-cols-2 gap-y-12 gap-x-20 m-10">
           {contacts.map(({ email, icon, emailDescription }) => (
             <ContactTile
               key={email}

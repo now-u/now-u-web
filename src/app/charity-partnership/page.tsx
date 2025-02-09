@@ -25,7 +25,7 @@ export default function PartnershipPage(): React.ReactElement {
       />
 
       <div className="flex flex-col items-center gap-8"> {/* Main container */}
-        <div  className="partnership-section max-w-screen-md lg:max-w-screen-lg
+        <div  className="partnership-section max-w-(--breakpoint-md) lg:max-w-(--breakpoint-lg)
         flex flex-col items-center px-4 py-8 md:flex-row-reverse justify-center gap-4"
         > {/* Why partner with us? */}
           <div className="object-cover mx-auto">
@@ -66,7 +66,7 @@ export default function PartnershipPage(): React.ReactElement {
         <div className="bg-light-orange w-full mx-auto flex flex-col items-center">
           <div
             className="partnership-section
-        max-w-screen-md lg:max-w-screen-lg
+        max-w-(--breakpoint-md) lg:max-w-(--breakpoint-lg)
         bg-light-orange flex flex-col items-center px-4 py-8 md:flex-row justify-center gap-6"
           >
             <div className="object-cover">
@@ -105,7 +105,7 @@ export default function PartnershipPage(): React.ReactElement {
           </div>
         </div>
 
-        <div className="max-w-screen-md lg:max-w-screen-lg flex flex-col gap-8 my-4 px-4"> {/* How our charity partnership work */}
+        <div className="max-w-(--breakpoint-md) lg:max-w-(--breakpoint-lg) flex flex-col gap-8 my-4 px-4"> {/* How our charity partnership work */}
           <h2 className="text-xl font-bold font-heading">
             How our charity partnerships work
           </h2>
@@ -126,7 +126,7 @@ export default function PartnershipPage(): React.ReactElement {
                       target="_blank"
                       className="md:self-start my-4">Partner with us</LinkButton>
         </div>
-        <div className="max-w-screen-md lg:max-w-screen-lg flex flex-col lg:flex-row gap-2 w-full mb-8 px-4"> {/* Partner Role Cards */}
+        <div className="max-w-(--breakpoint-md) lg:max-w-(--breakpoint-lg) flex flex-col lg:flex-row gap-2 w-full mb-8 px-4"> {/* Partner Role Cards */}
           <PartnershipRoleCard
             className="bg-amber"
             icon={PartnerIcon}
@@ -195,7 +195,7 @@ const PartnershipRoleCard = (
         />
         <h4 className="font-bold font-heading text-lg">{props.title}</h4>
       </div>
-      <div className="flex-grow flex flex-col items-start gap-8 justify-between">
+      <div className="grow flex flex-col items-start gap-8 justify-between">
         <div className="">
           <h5 className="font-bold font-heading">Benefits:</h5>
           <ul className="list-disc list-outside pl-6">

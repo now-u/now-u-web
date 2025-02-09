@@ -45,8 +45,8 @@ function Home(): JSX.Element {
   return (
     <>
       <div className="grid place-items-center">
-        <div className="bg-gradient-to-b from-gradlight w-full to-graddark flex justify-around">
-          <div className="max-w-screen-xl flex flex-col md:flex-row w-full place-items-center py-20 px-5">
+        <div className="bg-linear-to-b from-gradlight w-full to-graddark flex justify-around">
+          <div className="max-w-(--breakpoint-xl) flex flex-col md:flex-row w-full place-items-center py-20 px-5">
             <div className="">
               <div className="text-center mt-3 md:mt-0 md:text-start pb-5 flex flex-col items-center md:items-start">
                 <div className="md:w-4/5 mb-3">
@@ -76,7 +76,7 @@ function Home(): JSX.Element {
           <IconRow iconList={icons} />
         </div>
         <div className="bg-cream w-full flex flex-col md:flex-row justify-center place-items-center py-20">
-          <div className="max-w-screen-xl flex flex-col md:flex-row  px-5 ">
+          <div className="max-w-(--breakpoint-xl) flex flex-col md:flex-row  px-5 ">
             <div className="order-2 md:order-1 md:w-3/5 flex flex-col gap-2">
               <TitleText text="Explore our causes" />
               <div className="w-4/5">
@@ -96,7 +96,7 @@ function Home(): JSX.Element {
           </div>
         </div>
         <div className="angled-divider bg-slate-100 w-full flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
-          <div className="max-w-screen-2xl flex flex-col md:flex-row ">
+          <div className="max-w-(--breakpoint-2xl) flex flex-col md:flex-row ">
             <Image
               className="w-2/3 m-auto md:w-1/2 lg:w-1/3 pb-5 xl:p-1"
               src={LoveGlobe}

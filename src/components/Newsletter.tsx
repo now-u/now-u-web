@@ -57,7 +57,7 @@ export function Newsletter(): JSX.Element {
   }
 
   return (
-    <div className="max-w-screen-2xl flex bg-blue md:m-10 py-10 w-full md:w-2/3 items-center flex-col md:flex-row md:justify-between">
+    <div className="max-w-(--breakpoint-2xl) flex bg-blue md:m-10 py-10 w-full md:w-2/3 items-center flex-col md:flex-row md:justify-between text-left">
       <div className="max-md:w-full">
         <Image
           className="w-48 h-auto"
@@ -85,7 +85,7 @@ export function Newsletter(): JSX.Element {
               placeholder="Your email address"
               type="email"
               required={true}
-              className="placeholder:pl-2 block p-3 mb-4 rounded-md md:mr-4 md:w-2/3"
+              className="placeholder:pl-2 block p-3 mb-4 rounded-md md:mr-4 md:w-2/3 bg-white"
             />
             <div className="w-min mr-8">
               <Button type="submit" textColor="text-oxford-blue">Subscribe</Button>

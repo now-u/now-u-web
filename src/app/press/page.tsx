@@ -60,7 +60,7 @@ function PressTile(props: { article: PressArticle }): JSX.Element {
   return (
     <a
       href={link}
-      className="bg-white shadow-xl shadow-grey-400 w-full flex flex-col hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm"
+      className="bg-white shadow-xl shadow-grey-400 w-full flex flex-col hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-xs"
     >
       <div className="relative h-32">
         <Image

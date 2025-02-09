@@ -58,7 +58,7 @@ const About = (): JSX.Element => {
           ]}
         />
         <div className="flex flex-col lg:flex-row place-content-around bg-cream place-items-center px-5 py-10">
-          <div className="md:max-w-screen-md lg:max-w-screen-lg flex flex-col md:flex-row justify-between my-10">
+          <div className="md:max-w-(--breakpoint-md) lg:max-w-(--breakpoint-lg) flex flex-col md:flex-row justify-between my-10">
             <div className="md:w-2/4 lg:w-1/2 xl:w-3/5 text-left">
               <SectionBody
                 title="Our Story"
@@ -77,7 +77,7 @@ const About = (): JSX.Element => {
           </div>
         </div>
         <div className="bg-slate-100  w-full flex flex-col md:flex-row justify-around place-items-center px-5 py-20">
-          <div className="md:max-w-screen-md lg:max-w-screen-lg flex flex-col items-center md:items-start md:text-left justify-around">
+          <div className="md:max-w-(--breakpoint-md) lg:max-w-(--breakpoint-lg) flex flex-col items-center md:items-start md:text-left justify-around">
               <TitleText text="Our charity journey" />
               <BodyText
                 text={[
@@ -93,7 +93,7 @@ const About = (): JSX.Element => {
               />
           </div>
         </div>
-        <div className="max-w-screen-xl flex flex-col md:flex-row py-20 px-10 self-center">
+        <div className="max-w-(--breakpoint-xl) flex flex-col md:flex-row py-20 px-10 self-center">
           <div className="flex flex-col items-center justify-center text-center max-w-3xl">
             <SectionBody
               title="Our team"
@@ -112,7 +112,7 @@ const About = (): JSX.Element => {
         </div>
         <div className="bg-slate-100 py-10 md:py-20 xl:pt-32 flex flex-col place-items-center">
           <TitleText text="How you can help" />
-          <div className="py-5 max-w-screen-xl text-center">
+          <div className="py-5 max-w-(--breakpoint-xl) text-center">
             <IconRow iconList={icons} />
           </div>
           <div className="flex flex-row gap-2 items-center mt-5 md:justify-center w-72 sm:w-96 md:w-[64rem]">

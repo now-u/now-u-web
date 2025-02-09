@@ -21,7 +21,7 @@ const ContentTemplate: React.FC<ContentProps> = ({
 }) => {
   const Icon = icon;
   return (
-    <div className="flex flex-col items-start gap-[32px] desktop:gap-8 p-[32px]">
+    <div className="flex flex-col items-start gap-[24px] desktop:gap-[32px] p-[24px] tablet:p-[32px]">
       {Icon !== undefined && (
         <Icon className="w-8 h-8 tablet:w-12 tablet:h-12 desktop:w-16 desktop:h-16" />
       )}

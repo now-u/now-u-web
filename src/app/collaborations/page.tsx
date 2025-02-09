@@ -18,7 +18,7 @@ const PartnersPage = async (): Promise<JSX.Element> => {
         <Header title="Collaborations" />
       </div>
       <div className="flex justify-around">
-        <div className="flex max-w-screen-xl justify-center flex-wrap gap-8 py-8">
+        <div className="flex max-w-(--breakpoint-xl) justify-center flex-wrap gap-8 py-8">
           {partners.map((partner) => (
             <PartnerCard partner={partner} key={partner.id} />
           ))}

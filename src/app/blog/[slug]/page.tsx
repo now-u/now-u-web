@@ -100,7 +100,8 @@ export default async function Page({
     <>
 
       <div className="w-full flex flex-col items-center">
-        <div className="w-full flex flex-col py-10 px-4 prose prose-gray">
+        <div className="max-w-prose py-10 px-4">
+        <div className="w-full flex flex-col prose prose-gray prose-hr:m-0">
           <Link className="underline text-orange font-bold" href={"/blog"}>
             {" "}
             {"< "} Back{" "}
@@ -135,18 +136,19 @@ export default async function Page({
               <p className="text-gray-500 mt-0">{blog.subtitle}</p>
             )}
           </div>
-          <hr className="m-0" />
+          <hr />
           {/* Divider */}
           <div
             dangerouslySetInnerHTML={{ __html: md().render(blog.content) }}
           />
-          {blog.author !== null && (
-            <AuthorTile
-              name={blog.author.full_name}
-              description={blog.author.description}
-              profilePictureURL={blog.author.profile_picture_url}
-            />
-          )}
+        </div>
+        {blog.author !== null && (
+          <AuthorTile
+            name={blog.author.full_name}
+            description={blog.author.description}
+            profilePictureURL={blog.author.profile_picture_url}
+          />
+        )}
         </div>
       </div>
     </>

@@ -1,6 +1,197 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin 'tailwindcss-animate';
+@plugin '@tailwindcss/typography';
+
+@source '../**/*.{ts,tsx}';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-tablet: 640px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1400px;
+
+  --color-brand-primary: #ff8800;
+  --color-brand-secondary: #011a43;
+  --color-accent-red: #ff0000;
+  --color-accent-venetian-red: #d30001;
+  --color-accent-salomie: #ffdc79;
+  --color-accent-sunflower: #f3b700;
+  --color-accent-olive-drab: #59981a;
+  --color-accent-carolina-blue: #2697d3;
+  --color-accent-oxford-blue: #011a43;
+  --color-txt-primary: #17171a;
+  --color-txt-secondary: #5d6071;
+  --color-txt-disabled: #838796;
+  --color-txt-hyperlink: #0000ff;
+  --color-txt-primary-dark: #ffffff;
+  --color-txt-secondary-dark: #ccdaf2;
+  --color-txt-disabled-dark: #7191c8;
+  --color-txt-hyperlink-dark: #ffffff;
+  --color-framework-border: #c3c6d3;
+  --color-framework-border-focus: #989cad;
+  --color-framework-background-primary: #ffffff;
+  --color-framework-background-secondary: #f3f5fb;
+  --color-framework-background-tertiary: #e8eaf4;
+  --color-shadow: rgba(23, 23, 26, 0.3);
+  --color-framework-border-dark: #335b9d;
+  --color-framework-border-focus-dark: #5582cc;
+  --color-framework-background-primary-dark: #011a43;
+  --color-framework-background-secondary-dark: #09295e;
+  --color-framework-background-tertiary-dark: #193f7f;
+  --color-shadow-dark: rgba(0, 0, 0, 0.3);
+  --color-status-success: #2da665;
+  --color-status-warning: #db9e03;
+  --color-status-error: #e43f07;
+  --color-status-information: #2abeeb;
+  --color-status-success-dark: #7fe3a9;
+  --color-status-warning-dark: #ffd860;
+  --color-status-error-dark: #ff7878;
+  --color-status-information-dark: #6fdcff;
+  --color-amber: #ff8800;
+  --color-venetian-red: #d30001;
+  --color-sunflower: #f3b700;
+  --color-salomie: #ffdc79;
+  --color-oxford-blue: #011a43;
+  --color-red: #ff0000;
+  --color-carolina-blue: #2697d3;
+  --color-olive-drab: #59981a;
+  --color-light-orange: #fff3e5;
+  --color-primary-disabled: #ffcf99;
+  --color-secondary-disabled: #ffe7cc;
+  --color-orange: #ff8800;
+  --color-blue: #011a43;
+  --color-black: #373a4a;
+  --color-grey: #6d7181;
+  --color-light-grey: #f7f8fc;
+  --color-cream: #fff3e5;
+  --color-gradlight: #fd8824;
+  --color-graddark: #ffdc79;
+  --color-orangepartners: #ffa033;
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  --font-sans: var(--font-pppangram);
+  --font-heading: var(--font-pppangram);
+  --font-subheading: var(--font-pppangram);
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility text-h1 {
+  @apply font-bold text-[37px] tablet:text-[45px] desktop:text-[54px];
+}
+
+@utility text-h2 {
+  @apply font-bold text-[31px] tablet:text-[37px] desktop:text-[45px];
+}
+
+@utility text-h3 {
+  @apply font-bold text-[26px] tablet:text-[31px] desktop:text-[37px];
+}
+
+@utility text-h4 {
+  @apply font-bold text-[22px] tablet:text-[26px] desktop:text-[31px];
+}
+
+@utility text-h5 {
+  @apply font-bold text-[18px] tablet:text-[22px] desktop:text-[26px];
+}
+
+@utility text-h6 {
+  @apply font-bold text-[15px] tablet:text-[18px] desktop:text-[22px];
+}
+
+@utility text-eyebrow {
+  @apply font-bold text-[12px] leading-tight tablet:text-[15px] desktop:text-[18px];
+}
+
+@utility text-button {
+  @apply font-bold text-[15px] desktop:text-[18px];
+}
+
+@utility text-body {
+  @apply font-medium text-[15px] desktop:text-[18px];
+}
+
+@utility text-caption {
+  @apply font-medium text-[12px];
+}
+
 @layer base {
     :root {
         /* v3 variables */
@@ -125,48 +316,4 @@
     p, button, table, th, td {
         @apply leading-normal;
     }
-}
-
-@layer utilities {
-
-    .text-h1 {
-        @apply font-bold text-[37px] tablet:text-[45px] desktop:text-[54px];
-    }
-
-    .text-h2 {
-        @apply font-bold text-[31px] tablet:text-[37px] desktop:text-[45px];
-    }
-
-    .text-h3 {
-        @apply font-bold text-[26px] tablet:text-[31px] desktop:text-[37px];
-    }
-
-    .text-h4 {
-        @apply font-bold text-[22px] tablet:text-[26px] desktop:text-[31px];
-    }
-
-    .text-h5 {
-        @apply font-bold text-[18px] tablet:text-[22px] desktop:text-[26px];
-    }
-
-    .text-h6 {
-        @apply font-bold text-[15px] tablet:text-[18px] desktop:text-[22px];
-    }
-
-    .text-eyebrow {
-        @apply font-bold text-[12px] leading-tight tablet:text-[15px] desktop:text-[18px];
-    }
-
-    .text-button {
-        @apply font-bold text-[15px] desktop:text-[18px];
-    }
-
-    .text-body {
-        @apply font-medium text-[15px] desktop:text-[18px];
-    }
-
-    .text-caption {
-        @apply font-medium text-[12px];
-    }
-
 }

@@ -22,7 +22,7 @@ export function BlogTile({ href, headerImageURL, title, authors, readingTime }: 
 
   return (
     <Link href={href}>
-      <div className="bg-cream h-full rounded-lg hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-sm">
+      <div className="bg-cream h-full rounded-lg hover:-translate-y-1 active:translate-y-1 hover:drop-shadow-md active:drop-shadow-xs">
         <div className="w-full h-64 relative top-0 right-0 rounded-lg">
           <Image
             src={src}

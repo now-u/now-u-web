@@ -37,7 +37,7 @@ export function BlogSearchButton(): React.ReactElement {
           setIsOpen(true);
         }}
       >
-        <div className="pl-1 pr-2 py-2 rounded-lg bg-neutral-50 bg-opacity-90 hover:bg-neutral-100 backdrop-blur border border-slate-300 w-full flex flex-row gap-2">
+        <div className="pl-1 pr-2 py-2 rounded-lg bg-neutral-50 bg-opacity-90 hover:bg-neutral-100 backdrop-blur-sm border border-slate-300 w-full flex flex-row gap-2">
           <div className="flex items-center ps-3 pointer-events-none">
             <FontAwesomeIcon
               className="text-neutral-400 hover:cursor-pointer hover:text-neutral-700 antialiased"
@@ -114,7 +114,7 @@ const SearchBar = (): React.ReactNode => {
         classNames={{
           root: "w-full p-2 ",
           form: "p-2 border rounded-lg text-md flex flex-row",
-          input: "w-full focus:outline-none",
+          input: "w-full focus:outline-hidden",
           submit: "p-2 hover:bg-slate-100 rounded",
           reset: "hidden",
         }}
@@ -151,7 +151,7 @@ const HitComponent = ({ hit }: Hit<{ hit: BlogPost }>): React.ReactNode => (
           <Highlight attribute="title" hit={hit} />
         </h3>
 
-        <p className="text-neutral-400 line-clamp-2 overflow-ellipsis w-full">
+        <p className="text-neutral-400 line-clamp-2 text-ellipsis w-full">
           <Highlight attribute="subtitle" hit={hit} />
         </p>
       </div>

@@ -35,7 +35,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Template: Story = {
   args: {
-    src: 'https://picsum.photos/480/300',
+    src: 'https://picsum.photos/720/600',
     alt: "Image description",
     icon: ActionsAdvocateIcon,
     caption: "caption",

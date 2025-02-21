@@ -28,7 +28,7 @@ const ContentTile: React.FC<ContentTileProps> = ({
 }) => {
   return (
     <div className="flex flex-col bg-framework-background-secondary rounded-container w-full">
-      <div role="presentation" className={imageClassName ?? ""}>
+      <div role="presentation" className={imageClassName ?? "" + "aspect-video relative"}>
         <Image src={src} alt={alt} width="480" height="270" className="block object-cover relative w-full h-full rounded-t-container" />
       </div>
       <div role="presentation" className="">

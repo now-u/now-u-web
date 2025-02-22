@@ -22,7 +22,7 @@ const ContentTemplate: React.FC<ContentProps> = ({
   const Icon = icon;
   return (
     <div className="flex flex-col items-start gap-[24px] desktop:gap-[32px] p-[24px] tablet:p-[32px]">
-      {Icon !== undefined && (
+      {Icon !== undefined  && (
         <Icon className="w-8 h-8 tablet:w-12 tablet:h-12 desktop:w-16 desktop:h-16" />
       )}
       <Heading
@@ -31,7 +31,7 @@ const ContentTemplate: React.FC<ContentProps> = ({
         title={heading}
         subtitle={subheading ?? undefined}
       />
-      {body && <p className="text-body text-txt-secondary">{body}</p>}
+      {body  && <p className="text-body text-txt-secondary">{body}</p>}
       <div className="flex flex-row gap-[16px]">{children}</div>
     </div>
   );

@@ -23,8 +23,8 @@ async function Blog(): Promise<JSX.Element> {
       />
       <BlogSearchButton />
       {remotePosts.length > 0 ? (
-        <div className="max-w-(--breakpoint-2xl) mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 m-5 sm:mx-32 sm:my-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 tablet:grid-cols-2 gap-[24px] mx-[24px] py-[32px]">
             {remotePosts.map((blog) => (
               <Link key={`remote-blog-${blog.id.toString()}`} href={`/blog/${blog.slug}`}>
                 <BlogTile src={blog.header_image.url} alt={blog.title}

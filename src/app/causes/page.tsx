@@ -5,6 +5,7 @@ import { Newsletter } from "@/components/Newsletter";
 import Image from "next/image";
 import { type Cause, getCauses } from "@/services/api";
 import type { Metadata } from "next";
+import ContentTile from "@/stories/organisms/ContentTile";
 
 export const metadata: Metadata = {
   title: "Causes | now-u"
@@ -47,15 +48,12 @@ export default async function CausesPage(): Promise<JSX.Element> {
             "Our causes support the call to action to end poverty and inequality, protect the planet and ensure that all people enjoy health, justice and prosperity.",
           ]}
         />
-        <div className="flex flex-col items-center space-y-1 py-20">
+        <div className="flex flex-col items-center space-y-1 py-[64px]">
           <div
-            className="
-            grid grid-cols-1 gap-10 mx-2
-            md:grid-cols-2 md:mx-10
-            "
+            className="max-w-4xl grid grid-cols-1 gap-[24px] tablet:grid-cols-2 mx-[24px]"
           >
             {causes?.map((cause) => {
-              return <CauseTile key={cause.id} cause={cause} />;
+              return <ContentTile key={cause.id} src={cause.header_image.url} alt={cause.title ?? "cause-image"} heading={cause.title} body={cause.description} />;
             })}
           </div>
         </div>

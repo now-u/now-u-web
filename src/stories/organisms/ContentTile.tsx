@@ -1,7 +1,6 @@
 import { type IconComponent } from "@/stories/atoms/Icon";
 import React from "react";
 import ContentTemplate from "@/stories/organisms/ContentTemplate";
-import Image from "next/image";
 import ImageFrame from "@/stories/atoms/ImageFrame";
 
 interface ContentTileProps {

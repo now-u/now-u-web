@@ -13,14 +13,14 @@ const ImageFrame: React.FC<ImageFrameProps> =
   return (
     <div
       role="presentation"
-      className={(containerClassName ?? "") + " aspect-video relative"}
+      className={(containerClassName ?? "") + " relative"}
     >
       <Image
         src={src}
         alt={alt}
         width="480"
         height="270"
-        className= {(imageClassName ?? "") + " block object-cover relative w-full h-full"}
+        className= {(imageClassName ?? "") + " aspect-video block object-cover relative w-full h-full"}
       />
     </div>
   );

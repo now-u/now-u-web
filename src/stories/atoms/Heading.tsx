@@ -2,7 +2,7 @@ import React from "react";
 
 interface HeadingProps {
   style: "primary" | "secondary" | "tertiary" | "quaternary";
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   subtitle?: string;
 }
@@ -18,9 +18,11 @@ const Heading: React.FC<HeadingProps> = ({
       return (
         <header>
           <div className="flex flex-col items-start gap-4" role="presentation">
+            { eyebrow &&
             <p className="text-eyebrow text-txt-secondary uppercase tracking-[8%]">
               {eyebrow}
             </p>
+            }
             <h1 className="text-h1 text-txt-primary">{title}</h1>
             <p className="text-h3 text-txt-secondary">{subtitle}</p>
           </div>

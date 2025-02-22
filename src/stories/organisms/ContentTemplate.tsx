@@ -4,10 +4,10 @@ import React from "react";
 
 interface ContentProps {
   icon?: IconComponent;
-  caption: string;
+  caption?: string;
   heading: string;
   subheading?: string;
-  body: string;
+  body?: string;
   children?: React.ReactNode;
 }
 
@@ -27,14 +27,12 @@ const ContentTemplate: React.FC<ContentProps> = ({
       )}
       <Heading
         style="quaternary"
-        eyebrow={caption}
+        eyebrow={caption ?? undefined}
         title={heading}
-        subtitle={subheading}
+        subtitle={subheading ?? undefined}
       />
-      <p className="text-body text-txt-secondary">{body}</p>
-      <div className="flex flex-row gap-[16px]">
-        { children }
-      </div>
+      {body && <p className="text-body text-txt-secondary">{body}</p>}
+      <div className="flex flex-row gap-[16px]">{children}</div>
     </div>
   );
 };

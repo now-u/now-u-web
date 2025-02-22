@@ -2,23 +2,22 @@ import { type IconComponent } from "@/stories/atoms/Icon";
 import React from "react";
 import ContentTemplate from "@/stories/organisms/ContentTemplate";
 import Image from "next/image";
+import ImageFrame from "@/stories/atoms/ImageFrame";
 
 interface ContentTileProps {
   src: string;
   alt: string;
-  imageClassName?: string;
   icon?: IconComponent;
-  caption: string;
+  caption?: string;
   heading: string;
   subheading?: string;
-  body: string;
+  body?: string;
   children?: React.ReactNode;
 }
 
 const ContentTile: React.FC<ContentTileProps> = ({
   src,
   alt,
-  imageClassName,
   icon,
   caption,
   heading,
@@ -28,16 +27,14 @@ const ContentTile: React.FC<ContentTileProps> = ({
 }) => {
   return (
     <div className="flex flex-col bg-framework-background-secondary rounded-container w-full">
-      <div role="presentation" className={imageClassName ?? "" + "aspect-video relative"}>
-        <Image src={src} alt={alt} width="480" height="270" className="block object-cover relative w-full h-full rounded-t-container" />
-      </div>
+      <ImageFrame src={src} alt={alt} imageClassName="rounded-t-container"/>
       <div role="presentation" className="">
         <ContentTemplate
           icon={icon}
-          caption={caption}
+          caption={caption ?? undefined}
           heading={heading}
           subheading={subheading}
-          body={body}
+          body={body ?? undefined}
         >
           {children}
         </ContentTemplate>

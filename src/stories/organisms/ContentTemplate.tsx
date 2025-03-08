@@ -31,7 +31,7 @@ const ContentTemplate: React.FC<ContentProps> = ({
         title={heading}
         subtitle={subheading ?? undefined}
       />
-      {body  && <p className="text-body text-txt-secondary">{body}</p>}
+      {body  && <p className="text-left text-body text-txt-secondary">{body}</p>}
       <div className="flex flex-row gap-[16px]">{children}</div>
     </div>
   );

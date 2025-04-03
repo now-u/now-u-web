@@ -59,7 +59,7 @@ function AuthorTile(props: {
 }): JSX.Element {
   return (
     <div className="flex flex-col mt-10 mb-6 gap-4 md:flex-row md:items-center">
-      <div className="aspect-square h-24 w-24 md:h-32 md:w-32 relative">
+      <div className="aspect-square flex items-center h-24 w-24 md:h-32 md:w-32 relative">
         {props.profilePictureURL !== "" ? (
           <Image
             src={props.profilePictureURL}
@@ -73,6 +73,7 @@ function AuthorTile(props: {
             className="object-cover object-center w-full h-full rounded-full m-0"
             color="#DDD"
             icon={faUserCircle}
+            size="6x"
           />
         )}
       </div>

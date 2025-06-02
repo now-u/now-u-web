@@ -45,7 +45,7 @@ export const socialMediaLinks = [
 export const Footer = (): JSX.Element => {
   return (
     <div className="bg-cream">
-      <div className="px-16 py-10 justify-center max-w-screen-2xl w-full flex flex-col gap-2 mx-auto">
+      <div className="px-16 py-10 justify-center max-w-(--breakpoint-2xl) w-full flex flex-col gap-2 mx-auto">
         <div className="flex flex-col gap-6 min-[952px]:flex-row min-[952px]:justify-between min-[952px]:items-center">
           {/* Logo + Sectioned links */}
           <div className="">

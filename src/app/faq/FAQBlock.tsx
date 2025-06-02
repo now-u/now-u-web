@@ -8,7 +8,7 @@ export function FAQBlock({ faqs }: { faqs: Faq[] }): JSX.Element {
       {faqs.map(({ id, question, answer }) => (
         <Disclosure key={id}>
           {({ open }) => (
-            <div className="max-w-screen-2xl flex flex-col w-4/5 md:w-1/2">
+            <div className="max-w-(--breakpoint-2xl) flex flex-col w-4/5 md:w-1/2">
               <div className="flex flex-col w-full" key={id}>
                 <Disclosure.Button className="flex w-full justify-between border-cream border-t-2 px-4 py-3 mb-2 text-left hover:opacity-60">
                   <span>{question}</span>

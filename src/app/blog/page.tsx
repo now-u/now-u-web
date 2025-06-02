@@ -1,30 +1,19 @@
 import React from "react";
 
 import { Header } from "@/components/Header";
-import { BlogTile, type BlogTileProps } from "@/components/BlogTile";
 import { Newsletter } from "@/components/Newsletter";
 import { getBlogPosts } from "@/services/api";
 import type { Metadata } from "next";
+import BlogSearchButton from "@/components/BlogSearchBar";
+import BlogTile from "@/stories/organisms/BlogTile";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Blog | now-u"
-}
+};
 
 async function Blog(): Promise<JSX.Element> {
   const remotePosts = await getBlogPosts();
-
-  const allBlogs: BlogTileProps[] = remotePosts.map((blog) => {
-    return {
-      id: `remote-blog-${blog.id.toString()}`,
-      href: `blog/${blog.slug}`,
-      headerImageURL: blog.header_image.url,
-      title: blog.title,
-      authors: blog.authors
-        .filter((author) => author.name)
-        .map((author) => author.name ?? ""),
-      readingTime: blog.reading_time.toString(),
-    };
-  });
 
   return (
     <>
@@ -32,12 +21,17 @@ async function Blog(): Promise<JSX.Element> {
         title="Blog"
         body="Find all the latest blog articles from now-u below"
       />
-
-      {allBlogs.length > 0 ? (
-        <div className="max-w-screen-2xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 m-5 sm:mx-32 sm:my-10">
-            {allBlogs.map((blog) => (
-              <BlogTile key={blog.id} {...blog} />
+      <BlogSearchButton />
+      {remotePosts.length > 0 ? (
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 tablet:grid-cols-2 gap-[24px] mx-[24px] py-[32px]">
+            {remotePosts.map((blog) => (
+              <Link key={`remote-blog-${blog.id.toString()}`} href={`/blog/${blog.slug}`}>
+                <BlogTile src={blog.header_image.url} alt={blog.title}
+                          title={blog.title}
+                          author={blog.authors.length > 0 ? (blog.authors[0].name ?? "") : ""}
+                          estimatedReadingTimeInMinutes={blog.reading_time} />
+              </Link>
             ))}
           </div>
         </div>

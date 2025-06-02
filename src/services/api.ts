@@ -9,11 +9,13 @@ export type BlogPost = components["schemas"]["Blog"];
 export const apiClient = createClient<paths>({
   baseUrl: "https://causes.dev.apiv2.now-u.com",
   fetch: fetch,
-  cache: "no-store"
+  cache: "no-store",
 });
 
 export async function getCauses(): Promise<Cause[]> {
-  const { data, error, response } = await apiClient.GET("/causes/");
+  const { data, error, response } = await apiClient.GET("/causes/", {
+    cache: "no-store"
+  });
 
   if (!response.ok || error !== undefined) {
     console.error(`[${response.status}] Failed to fetch causes: ${error}`);
@@ -30,6 +32,7 @@ export async function getFaqs(): Promise<Faq[]> {
         limit: 0,
       },
     },
+    cache: "no-store"
   });
 
   if (!response.ok || error !== undefined) {
@@ -55,6 +58,7 @@ export async function getOrganisations(
               limit,
               offset,
             },
+      cache: "no-store",
     },
   });
 
@@ -88,6 +92,7 @@ export async function getBlogPosts(
               limit,
               offset,
             },
+      cache: "no-store",
     },
   });
 
@@ -106,6 +111,7 @@ export async function getBlogPost(postSlug: string): Promise<BlogPost | null> {
     params: {
       path: { slug: postSlug },
     },
+    cache: "no-store",
   });
 
   if (!response.ok || error !== undefined) {

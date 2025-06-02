@@ -17,7 +17,7 @@ export const Header = (props: {
   body?: string | string[];
 }): JSX.Element => {
   return (
-    <div className="bg-gradient-to-b from-gradlight to-graddark flex flex-col items-center px-5 py-20 md:px-20 lg:px-32 xl:px-64 gap-6 text-center">
+    <div className="bg-linear-to-b from-gradlight to-graddark flex flex-col items-center px-5 py-20 md:px-20 lg:px-32 xl:px-64 gap-6 text-center">
       {/* Title */}
       <h1 className="text-5xl font-black font-heading"> {props.title} </h1>
       {/* Subtitle */}

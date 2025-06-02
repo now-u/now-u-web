@@ -59,7 +59,7 @@ function AuthorTile(props: {
 }): JSX.Element {
   return (
     <div className="flex flex-col mt-10 mb-6 gap-4 md:flex-row md:items-center">
-      <div className="aspect-square h-24 w-24 md:h-32 md:w-32 relative">
+      <div className="aspect-square flex items-center h-24 w-24 md:h-32 md:w-32 relative">
         {props.profilePictureURL !== "" ? (
           <Image
             src={props.profilePictureURL}
@@ -73,6 +73,7 @@ function AuthorTile(props: {
             className="object-cover object-center w-full h-full rounded-full m-0"
             color="#DDD"
             icon={faUserCircle}
+            size="6x"
           />
         )}
       </div>
@@ -100,7 +101,8 @@ export default async function Page({
     <>
 
       <div className="w-full flex flex-col items-center">
-        <div className="w-full flex flex-col py-10 px-4 prose prose-gray">
+        <div className="max-w-prose py-10 px-4">
+        <div className="w-full flex flex-col prose prose-gray prose-hr:m-0">
           <Link className="underline text-orange font-bold" href={"/blog"}>
             {" "}
             {"< "} Back{" "}
@@ -135,18 +137,19 @@ export default async function Page({
               <p className="text-gray-500 mt-0">{blog.subtitle}</p>
             )}
           </div>
-          <hr className="m-0" />
+          <hr />
           {/* Divider */}
           <div
             dangerouslySetInnerHTML={{ __html: md().render(blog.content) }}
           />
-          {blog.author !== null && (
-            <AuthorTile
-              name={blog.author.full_name}
-              description={blog.author.description}
-              profilePictureURL={blog.author.profile_picture_url}
-            />
-          )}
+        </div>
+        {blog.author !== null && (
+          <AuthorTile
+            name={blog.author.full_name}
+            description={blog.author.description}
+            profilePictureURL={blog.author.profile_picture_url}
+          />
+        )}
         </div>
       </div>
     </>

@@ -89,7 +89,7 @@ const buttonStyleClassName = (
       break;
     }
     case "secondary": {
-      shadow = "shadow";
+      shadow = "shadow-sm";
       disabledStyle = "text-secondary-disabled cursor-none";
       backgroundColor = "bg-white";
       break;

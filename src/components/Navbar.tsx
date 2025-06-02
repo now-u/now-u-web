@@ -36,14 +36,14 @@ const NavbarLink = (
 
 export const Navbar = (): JSX.Element => {
   return (
-    <Disclosure as="nav" className="flex flex-col bg-white w-full items-center sticky top-0 z-10 bg-opacity-90 backdrop-blur-lg shadow-sm">
+    <Disclosure as="nav" className="flex flex-col bg-white w-full items-center sticky top-0 z-10 bg-opacity-90 backdrop-blur-lg shadow-xs">
       {({ open, close }) => (
         <>
-          <div className="max-w-screen-2xl flex w-full justify-between">
+          <div className="max-w-(--breakpoint-2xl) flex w-full justify-between">
             <div className="flex w-full h-16 items-center justify-between mx-4 sm:mx-8 lg:mx-10">
               {/* Logo */}
               <div className="flex flex-1 items-center lg:items-stretch lg:justify-start">
-                <div className="flex flex-shrink-0 items-center">
+                <div className="flex shrink-0 items-center">
                   {/* Mobile Icon */}
                   <Link href="/" onClick={() => { close() }}>
                     <Image
@@ -63,7 +63,7 @@ export const Navbar = (): JSX.Element => {
 
               {/* Mobile menu button */}
               <div className="inset-y-0 left-0 flex items-center md:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />

@@ -8,6 +8,7 @@ module.exports = {
     "standard-with-typescript",
     "prettier",
     "next",
+    "plugin:storybook/recommended"
   ],
   overrides: [],
   parserOptions: {
@@ -32,7 +33,7 @@ module.exports = {
       },
     ],
     "@typescript-eslint/naming-convention": 1,
-    "@typescript-eslint/strict-boolean-expressions": "warn"
+    "@typescript-eslint/strict-boolean-expressions": 'off'
   },
   settings: {
     react: { version: "18.2.0" },
